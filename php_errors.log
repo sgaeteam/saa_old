@@ -1,0 +1,7 @@
+[03-Mar-2018 19:55:27 UTC] PHP Fatal error:  Call to a member function calendar() on null in /home/ubuntu/workspace/storage/framework/views/ed8e57a9b31d45a5be750ba5db97b48bdd7c5d74.php on line 17
+[03-Mar-2018 20:04:08 UTC] PHP Fatal error:  Class 'crocodicstudio\crudbooster\controllers\EventModel' not found in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/AdminController.php on line 39
+[04-Mar-2018 20:17:21 UTC] PHP Fatal error:  Class 'crocodicstudio\crudbooster\controllers\EventModel' not found in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/AdminController.php on line 39
+[04-Mar-2018 20:38:39 UTC] PHP Fatal error:  Call to a member function calendar() on null in /home/ubuntu/workspace/storage/framework/views/ed8e57a9b31d45a5be750ba5db97b48bdd7c5d74.php on line 17
+[04-Mar-2018 20:51:45 UTC] PHP Fatal error:  Call to a member function calendar() on null in /home/ubuntu/workspace/storage/framework/views/ed8e57a9b31d45a5be750ba5db97b48bdd7c5d74.php on line 17
+[04-Mar-2018 20:52:09 UTC] PHP Fatal error:  Call to a member function calendar() on null in /home/ubuntu/workspace/storage/framework/views/ed8e57a9b31d45a5be750ba5db97b48bdd7c5d74.php on line 17
+[04-Mar-2018 20:54:36 UTC] PHP Fatal error:  Call to a member function calendar() on null in /home/ubuntu/workspace/storage/framework/views/ed8e57a9b31d45a5be750ba5db97b48bdd7c5d74.php on line 17
