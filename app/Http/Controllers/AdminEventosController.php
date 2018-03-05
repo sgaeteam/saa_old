@@ -30,36 +30,34 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Cliente Id","name"=>"cliente_id","join"=>"clientes,nome"];
+			$this->col[] = ["label"=>"Cliente","name"=>"cliente_id","join"=>"clientes,nome"];
 			$this->col[] = ["label"=>"Evento Numero","name"=>"evento_numero"];
 			$this->col[] = ["label"=>"Total","name"=>"total"];
 			$this->col[] = ["label"=>"Titulo","name"=>"titulo"];
-			$this->col[] = ["label"=>"Start Date","name"=>"start_date"];
-			$this->col[] = ["label"=>"End Date","name"=>"end_date"];
-			$this->col[] = ["label"=>"All Day","name"=>"all_day"];
+			$this->col[] = ["label"=>"Inicio","name"=>"start_date"];
+			$this->col[] = ["label"=>"Termino","name"=>"end_date"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Titulo','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9','datatable'=>'clientes,nome'];
 			$this->form[] = ['label'=>'Evento Numero','name'=>'evento_numero','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cliente','name'=>'cliente_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','table'=>'evento__detalhes','foreign_key'=>'evento_id'];
+			$this->form[] = ['label'=>'Cliente','name'=>'cliente_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'clientes,nome'];
 			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9','readonly'=>'1'];
-			$this->form[] = ['label'=>'Fim','name'=>'end_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Dia inteiro?','name'=>'all_day','type'=>'checkbox','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Titulo','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9','datatable'=>'clientes,nome'];
-			//$this->form[] = ['label'=>'Evento Numero','name'=>'evento_numero','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9','table'=>'evento__detalhes','foreign_key'=>'evento_id'];
-			//$this->form[] = ['label'=>'Cliente','name'=>'cliente_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			# OLD END FORM
+			# START FORM DO NOT REMOVE THIS LINE
+			$columns = [];
+			$columns[] = ['label'=>'Produto','name'=>'produto_id','type'=>'datamodal','datamodal_table'=>'produtos','datamodal_columns'=>'nome,valor','datamodal_select_to'=>'valor:produto_valor','datamodal_where'=>'','datamodal_size'=>'large'];
+			$columns[] = ['label'=>'Valor','name'=>'produto_valor','type'=>'number','readonly'=>true];
+			$columns[] = ['label'=>'Quantidade','name'=>'quantidade','type'=>'number','required'=>true];
+			$columns[] = ['label'=>'Desconto','name'=>'desconto','type'=>'number','required'=>false, 'default'=>0.0];
+			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true];
+			$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','columns'=>$columns,'table'=>'evento__detalhes','foreign_key'=>'evento_id'];
+			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10','readonly'=>true];
+			# END FORM DO NOT REMOVE THIS LINE
+
 
 			/* 
 	        | ---------------------------------------------------------------------- 

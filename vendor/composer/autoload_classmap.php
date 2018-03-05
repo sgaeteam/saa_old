@@ -7,6 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddDatesToEventos' => $baseDir . '/database/migrations/2018_03_04_232159_add_dates_to_eventos.php',
+    'AddDescontoToEventos' => $baseDir . '/database/migrations/2018_03_05_232424_add_desconto_to_eventos.php',
+    'AddDescontoToEventosDetalhe' => $baseDir . '/database/migrations/2018_03_05_233403_add_desconto_to_eventos_detalhe.php',
     'AddGroupSetting' => $baseDir . '/database/migrations/2016_09_16_035347_add_group_setting.php',
     'AddLabelSetting' => $baseDir . '/database/migrations/2016_09_16_045425_add_label_setting.php',
     'AddMethodTypeApicustom' => $baseDir . '/database/migrations/2016_10_01_141740_add_method_type_apicustom.php',
