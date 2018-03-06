@@ -16,6 +16,4 @@
     {!! $calendar->script() !!} 
 </body>
 </html>
-
-
 @endsection
