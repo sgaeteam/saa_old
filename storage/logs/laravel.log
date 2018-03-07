@@ -7201,3 +7201,19 @@ Stack trace:
 [2018-03-06 01:46:53] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function format() on null' in /home/ubuntu/workspace/vendor/maddhatter/laravel-fullcalendar/src/MaddHatter/LaravelFullcalendar/EventCollection.php:39
 Stack trace:
 #0 {main}  
+[2018-03-07 01:29:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in /home/ubuntu/workspace/database/migrations/2018_03_07_012758_create_atividades_table.php:29
+Stack trace:
+#0 {main}  
+[2018-03-07 01:30:19] local.ERROR: exception 'Symfony\Component\Console\Exception\RuntimeException' with message 'Not enough arguments (missing: "name").' in /home/ubuntu/workspace/vendor/symfony/console/Input/Input.php:83
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(256): Symfony\Component\Console\Input\Input->validate()
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 {main}  
+[2018-03-07 01:31:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in /home/ubuntu/workspace/database/migrations/2018_03_07_012758_create_atividades_table.php:29
+Stack trace:
+#0 {main}  

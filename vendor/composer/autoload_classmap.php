@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'AddDatesToEventos' => $baseDir . '/database/migrations/2018_03_04_232159_add_dates_to_eventos.php',
-    'AddDescontoToEventos' => $baseDir . '/database/migrations/2018_03_05_232424_add_desconto_to_eventos.php',
     'AddDescontoToEventosDetalhe' => $baseDir . '/database/migrations/2018_03_05_233403_add_desconto_to_eventos_detalhe.php',
     'AddGroupSetting' => $baseDir . '/database/migrations/2016_09_16_035347_add_group_setting.php',
     'AddLabelSetting' => $baseDir . '/database/migrations/2016_09_16_045425_add_label_setting.php',
@@ -36,6 +35,7 @@ return array(
     'Cms_usersSeeder' => $baseDir . '/database/seeds/CBSeeder.php',
     'CobrancasTableSeeder' => $baseDir . '/database/seeds/CobrancasTableSeeder.php',
     'Cpdf' => $vendorDir . '/dompdf/dompdf/lib/Cpdf.php',
+    'CreateAtividadesTable' => $baseDir . '/database/migrations/2018_03_07_012758_create_atividades_table.php',
     'CreateCategoriasTable' => $baseDir . '/database/migrations/2018_02_27_022453_create_categorias_table.php',
     'CreateClientesTable' => $baseDir . '/database/migrations/2018_02_23_210556_create_clientes_table.php',
     'CreateCmsEmailTemplates' => $baseDir . '/database/migrations/2016_11_15_132350_create_cms_email_templates.php',
