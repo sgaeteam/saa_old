@@ -34,6 +34,7 @@ class Calendar
             'right' => 'month,agendaWeek,agendaDay',
         ],
         'eventLimit' => true,
+        'timeFormat' => 'H(:mm)',
     ];
 
     /**
@@ -97,7 +98,7 @@ class Calendar
 
         return $this->view->make('fullcalendar::script', [
             'id' => $this->getId(),
-            'options' => $options,
+            'options' => $options
         ]);
     }
 

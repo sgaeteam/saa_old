@@ -85,8 +85,8 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://sgc-crudbooster-sgaeteam.c9users.io/admin/login">CrudBooster</a>
-                    <a href="https://sgc-crudbooster-sgaeteam.c9users.io/phpmyadmin">PhpMyAdmin</a>
+                    <a href="https://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login">CrudBooster</a>
+                    <a href="https://sgc-crudbooster-stable-sgaeteam.c9users.io/phpmyadmin">PhpMyAdmin</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>

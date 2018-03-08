@@ -91,13 +91,13 @@ return [
     'button_close'                   => 'Fechar',
     'button_submit'                  => 'Enviar',
     'button_logout'                  => 'Sair',
-    'button_sign_in'                 => 'Cadastrar',
+    'button_sign_in'                 => 'Acessar',
     'button_selected_action'         => 'Ações em massa',
     'button_download_file'           => 'Download',
     'button_reset'                   => 'Reset',
     'export_dialog_title'            => "Exportar dados",
     'export_dialog_filename'         => 'Nome do arquivo',
-    'export_dialog_help_filename'    => 'VocẼ pode renomear o arquivo de acordo com sua vontade',
+    'export_dialog_help_filename'    => 'Você pode renomear o arquivo de acordo com sua vontade',
     'export_dialog_maxdata'          => "Dados máximos",
     'export_dialog_help_maxdata'     => 'Mínimo entre 1 e o máximo de 100,000 linhas por exportação',
     'export_dialog_columns'          => 'Colunas',
@@ -231,7 +231,7 @@ return [
      //datamodal 
     'datamodal_select'=>'Select',
     'datamodal_search_and_enter'=>'Search and enter...',
-    'datamodal_enter_to_search'=>'Enter to search',
-    'datamodal_browse_data'=>'Browse Data' ,
+    'datamodal_enter_to_search'=>'Insira para buscar',
+    'datamodal_browse_data'=>'Carregar' ,
 
 ];
