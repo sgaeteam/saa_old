@@ -7217,6 +7217,7 @@ Stack trace:
 [2018-03-07 01:31:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'public' (T_PUBLIC)' in /home/ubuntu/workspace/database/migrations/2018_03_07_012758_create_atividades_table.php:29
 Stack trace:
 #0 {main}  
+<<<<<<< HEAD
 [2018-03-08 19:53:28] local.ERROR: exception 'ReflectionException' with message 'Class App\Http\Controllers\AdminAreaCompetenciasController does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:749
 Stack trace:
 #0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(749): ReflectionClass->__construct('App\\Http\\Contro...')
@@ -7240,3 +7241,233 @@ Stack trace:
 #18 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #19 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
 #20 {main}  
+=======
+[2018-03-08 01:36:55] local.ERROR: exception 'ReflectionException' with message 'Class AtividadesTableSeeder does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:749
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(749): ReflectionClass->__construct('AtividadesTable...')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(644): Illuminate\Container\Container->build('AtividadesTable...', Array)
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(709): Illuminate\Container\Container->make('AtividadesTable...', Array)
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(74): Illuminate\Foundation\Application->make('AtividadesTable...')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): Illuminate\Database\Console\Seeds\SeedCommand->getSeeder()
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2292): Illuminate\Database\Console\Seeds\SeedCommand->Illuminate\Database\Console\Seeds\{closure}()
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\Database\Eloquent\Model::unguarded(Object(Closure))
+#7 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#9 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#10 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 {main}  
+[2018-03-08 01:38:43] local.ERROR: exception 'ReflectionException' with message 'Class AtividadesTableSeeder.php does not exist' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php:749
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(749): ReflectionClass->__construct('AtividadesTable...')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(644): Illuminate\Container\Container->build('AtividadesTable...', Array)
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(709): Illuminate\Container\Container->make('AtividadesTable...', Array)
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(74): Illuminate\Foundation\Application->make('AtividadesTable...')
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): Illuminate\Database\Console\Seeds\SeedCommand->getSeeder()
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2292): Illuminate\Database\Console\Seeds\SeedCommand->Illuminate\Database\Console\Seeds\{closure}()
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\Database\Eloquent\Model::unguarded(Object(Closure))
+#7 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#9 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#10 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 {main}  
+[2018-03-08 01:41:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Models\Atividade' not found' in /home/ubuntu/workspace/database/seeds/AtividadesTableSeeder.php:64
+Stack trace:
+#0 {main}  
+[2018-03-08 01:44:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'App\Models\Atividade' not found' in /home/ubuntu/workspace/database/seeds/AtividadesTableSeeder.php:64
+Stack trace:
+#0 {main}  
+[2018-03-08 02:35:21] local.ERROR: exception 'ErrorException' with message 'include(/home/ubuntu/workspace/vendor/composer/../../database/migrations/2018_03_08_023258_create_Area_Competencias_table.php): failed to open stream: No such file or directory' in /home/ubuntu/workspace/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/u...', '/home/ubuntu/wo...', 444, Array)
+#1 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Composer\Autoload\includeFile()
+#2 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ubuntu/wo...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('CreateAreaCompe...')
+#4 [internal function]: spl_autoload_call('CreateAreaCompe...')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(75): class_exists('CreateAreaCompe...')
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(49): Illuminate\Database\Migrations\MigrationCreator->ensureMigrationDoesntAlreadyExist('create_area_com...')
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(98): Illuminate\Database\Migrations\MigrationCreator->create('create_area_com...', '/home/ubuntu/wo...', NULL, false)
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(81): Illuminate\Database\Console\Migrations\MigrateMakeCommand->writeMigration('create_area_com...', NULL, false)
+#9 [internal function]: Illuminate\Database\Console\Migrations\MigrateMakeCommand->fire()
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#12 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2018-03-08 02:35:49] local.ERROR: exception 'ErrorException' with message 'include(/home/ubuntu/workspace/vendor/composer/../../database/migrations/2018_03_08_023258_create_Area_Competencias_table.php): failed to open stream: No such file or directory' in /home/ubuntu/workspace/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/u...', '/home/ubuntu/wo...', 444, Array)
+#1 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Composer\Autoload\includeFile()
+#2 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ubuntu/wo...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('CreateAreaCompe...')
+#4 [internal function]: spl_autoload_call('CreateAreaCompe...')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(75): class_exists('CreateAreaCompe...')
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(49): Illuminate\Database\Migrations\MigrationCreator->ensureMigrationDoesntAlreadyExist('create_area_com...')
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(98): Illuminate\Database\Migrations\MigrationCreator->create('create_area_com...', '/home/ubuntu/wo...', NULL, false)
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(81): Illuminate\Database\Console\Migrations\MigrateMakeCommand->writeMigration('create_area_com...', NULL, false)
+#9 [internal function]: Illuminate\Database\Console\Migrations\MigrateMakeCommand->fire()
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#12 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2018-03-08 02:36:51] local.ERROR: exception 'ErrorException' with message 'include(/home/ubuntu/workspace/vendor/composer/../../database/migrations/2018_03_08_023258_create_Area_Competencias_table.php): failed to open stream: No such file or directory' in /home/ubuntu/workspace/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/u...', '/home/ubuntu/wo...', 444, Array)
+#1 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Composer\Autoload\includeFile()
+#2 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ubuntu/wo...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('CreateAreaCompe...')
+#4 [internal function]: spl_autoload_call('CreateAreaCompe...')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(75): class_exists('CreateAreaCompe...')
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(49): Illuminate\Database\Migrations\MigrationCreator->ensureMigrationDoesntAlreadyExist('create_area_com...')
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(98): Illuminate\Database\Migrations\MigrationCreator->create('create_area_com...', '/home/ubuntu/wo...', NULL, false)
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(81): Illuminate\Database\Console\Migrations\MigrateMakeCommand->writeMigration('create_area_com...', NULL, false)
+#9 [internal function]: Illuminate\Database\Console\Migrations\MigrateMakeCommand->fire()
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#12 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2018-03-08 02:38:08] local.ERROR: exception 'ErrorException' with message 'include(/home/ubuntu/workspace/vendor/composer/../../database/migrations/2018_03_08_023258_create_Area_Competencias_table.php): failed to open stream: No such file or directory' in /home/ubuntu/workspace/vendor/composer/ClassLoader.php:444
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError(2, 'include(/home/u...', '/home/ubuntu/wo...', 444, Array)
+#1 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(444): Composer\Autoload\includeFile()
+#2 /home/ubuntu/workspace/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/home/ubuntu/wo...')
+#3 [internal function]: Composer\Autoload\ClassLoader->loadClass('CreateAreaCompe...')
+#4 [internal function]: spl_autoload_call('CreateAreaCompe...')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(75): class_exists('CreateAreaCompe...')
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Migrations/MigrationCreator.php(49): Illuminate\Database\Migrations\MigrationCreator->ensureMigrationDoesntAlreadyExist('create_area_com...')
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(98): Illuminate\Database\Migrations\MigrationCreator->create('create_area_com...', '/home/ubuntu/wo...', NULL, false)
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Migrations/MigrateMakeCommand.php(81): Illuminate\Database\Console\Migrations\MigrateMakeCommand->writeMigration('create_area_com...', NULL, false)
+#9 [internal function]: Illuminate\Database\Console\Migrations\MigrateMakeCommand->fire()
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#12 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Migrations\MigrateMakeCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 {main}  
+[2018-03-08 03:12:04] local.ERROR: exception 'PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sgaetea1_sgc_dev.area__competencias' doesn't exist' in /home/ubuntu/workspace/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:77
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php(77): PDO->prepare('insert into `ar...', Array)
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(476): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `ar...')
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(763): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'insert into `ar...', Array)
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(726): Illuminate\Database\Connection->runQueryCallback('insert into `ar...', Array, Object(Closure))
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(481): Illuminate\Database\Connection->run('insert into `ar...', Array, Object(Closure))
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\Database\Connection->statement('insert into `ar...', Array)
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `ar...', Array)
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2154): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ar...', Array, 'id')
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1470): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#9 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1574): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#12 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1471): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(561): Illuminate\Database\Eloquent\Model->save()
+#14 /home/ubuntu/workspace/database/seeds/AreaCompetenciasTableSeeder.php(34): Illuminate\Database\Eloquent\Model::create(Array)
+#15 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): AreaCompetenciasTableSeeder->run()
+#16 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2292): Illuminate\Database\Console\Seeds\SeedCommand->Illuminate\Database\Console\Seeds\{closure}()
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\Database\Eloquent\Model::unguarded(Object(Closure))
+#18 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#19 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#20 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#21 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#28 {main}
+
+Next exception 'Doctrine\DBAL\Driver\PDOException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sgaetea1_sgc_dev.area__competencias' doesn't exist' in /home/ubuntu/workspace/vendor/doctrine/dbal/lib/Doctrine/DBAL/Driver/PDOConnection.php:79
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(476): Doctrine\DBAL\Driver\PDOConnection->prepare('insert into `ar...')
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(763): Illuminate\Database\Connection->Illuminate\Database\{closure}(Object(Illuminate\Database\MySqlConnection), 'insert into `ar...', Array)
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(726): Illuminate\Database\Connection->runQueryCallback('insert into `ar...', Array, Object(Closure))
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(481): Illuminate\Database\Connection->run('insert into `ar...', Array, Object(Closure))
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\Database\Connection->statement('insert into `ar...', Array)
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `ar...', Array)
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2154): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ar...', Array, 'id')
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1470): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#9 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1574): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#11 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1471): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#12 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(561): Illuminate\Database\Eloquent\Model->save()
+#13 /home/ubuntu/workspace/database/seeds/AreaCompetenciasTableSeeder.php(34): Illuminate\Database\Eloquent\Model::create(Array)
+#14 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): AreaCompetenciasTableSeeder->run()
+#15 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2292): Illuminate\Database\Console\Seeds\SeedCommand->Illuminate\Database\Console\Seeds\{closure}()
+#16 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\Database\Eloquent\Model::unguarded(Object(Closure))
+#17 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#18 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#19 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#20 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#26 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#27 {main}
+
+Next exception 'Illuminate\Database\QueryException' with message 'SQLSTATE[42S02]: Base table or view not found: 1146 Table 'sgaetea1_sgc_dev.area__competencias' doesn't exist (SQL: insert into `area__competencias` (`sigla`, `descricao`, `updated_at`, `created_at`) values (E, MM, 2018-03-08 03:12:03, 2018-03-08 03:12:03))' in /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php:770
+Stack trace:
+#0 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(726): Illuminate\Database\Connection->runQueryCallback('insert into `ar...', Array, Object(Closure))
+#1 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(481): Illuminate\Database\Connection->run('insert into `ar...', Array, Object(Closure))
+#2 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Connection.php(435): Illuminate\Database\Connection->statement('insert into `ar...', Array)
+#3 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php(32): Illuminate\Database\Connection->insert('insert into `ar...', Array)
+#4 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php(2154): Illuminate\Database\Query\Processors\Processor->processInsertGetId(Object(Illuminate\Database\Query\Builder), 'insert into `ar...', Array, 'id')
+#5 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php(1470): Illuminate\Database\Query\Builder->insertGetId(Array, 'id')
+#6 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->__call('insertGetId', Array)
+#7 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1609): Illuminate\Database\Eloquent\Builder->insertGetId(Array, 'id')
+#8 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1574): Illuminate\Database\Eloquent\Model->insertAndSetId(Object(Illuminate\Database\Eloquent\Builder), Array)
+#9 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(1471): Illuminate\Database\Eloquent\Model->performInsert(Object(Illuminate\Database\Eloquent\Builder))
+#10 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(561): Illuminate\Database\Eloquent\Model->save()
+#11 /home/ubuntu/workspace/database/seeds/AreaCompetenciasTableSeeder.php(34): Illuminate\Database\Eloquent\Model::create(Array)
+#12 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(63): AreaCompetenciasTableSeeder->run()
+#13 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php(2292): Illuminate\Database\Console\Seeds\SeedCommand->Illuminate\Database\Console\Seeds\{closure}()
+#14 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Database/Console/Seeds/SeedCommand.php(64): Illuminate\Database\Eloquent\Model::unguarded(Object(Closure))
+#15 [internal function]: Illuminate\Database\Console\Seeds\SeedCommand->fire()
+#16 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Container/Container.php(508): call_user_func_array(Array, Array)
+#17 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(169): Illuminate\Container\Container->call(Array)
+#18 /home/ubuntu/workspace/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#19 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Console/Command.php(155): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#20 /home/ubuntu/workspace/vendor/symfony/console/Application.php(817): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#21 /home/ubuntu/workspace/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Database\Console\Seeds\SeedCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#22 /home/ubuntu/workspace/vendor/symfony/console/Application.php(116): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#23 /home/ubuntu/workspace/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(121): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#24 /home/ubuntu/workspace/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#25 {main}  
+[2018-03-08 03:22:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Area__Competencia' not found' in /home/ubuntu/workspace/database/seeds/AreaCompetenciasTableSeeder.php:34
+Stack trace:
+#0 {main}  
+>>>>>>> ade1540f708c82c5ac122a7c19bad603cd7eea68
