@@ -70,4 +70,15 @@ class Evento extends Model implements IdentifiableEvent // Event
             'color' => $this->background_color,
         ];
     }
+    
+    public function atividade()
+    {
+        return $this->hasOne('App\Atividade');
+    }
+    
+    public function espaco()
+    {
+        return $this->hasOne('App\Espaco');
+    }    
+    
 }

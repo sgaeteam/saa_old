@@ -25,3 +25,26 @@
 [06-Mar-2018 01:36:35 UTC] PHP Fatal error:  Call to a member function format() on null in /home/ubuntu/workspace/vendor/maddhatter/laravel-fullcalendar/src/MaddHatter/LaravelFullcalendar/EventCollection.php on line 39
 [06-Mar-2018 01:39:11 UTC] PHP Fatal error:  Call to a member function format() on null in /home/ubuntu/workspace/vendor/maddhatter/laravel-fullcalendar/src/MaddHatter/LaravelFullcalendar/EventCollection.php on line 39
 [06-Mar-2018 01:46:53 UTC] PHP Fatal error:  Call to a member function format() on null in /home/ubuntu/workspace/vendor/maddhatter/laravel-fullcalendar/src/MaddHatter/LaravelFullcalendar/EventCollection.php on line 39
+[14-Mar-2018 02:09:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 61
+[14-Mar-2018 02:09:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 61
+[14-Mar-2018 02:09:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 61
+[14-Mar-2018 02:10:15 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 61
+[14-Mar-2018 02:10:24 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 61
+[14-Mar-2018 02:10:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 59
+[14-Mar-2018 02:12:00 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 59
+[14-Mar-2018 02:15:28 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 59
+[14-Mar-2018 02:16:18 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 59
+[14-Mar-2018 02:18:03 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 59
+[14-Mar-2018 02:18:52 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 50
+[14-Mar-2018 02:19:47 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 50
+[14-Mar-2018 02:20:57 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 50
+[14-Mar-2018 02:21:08 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 50
+[15-Mar-2018 23:45:07 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[15-Mar-2018 23:51:22 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[16-Mar-2018 01:12:16 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[16-Mar-2018 01:40:22 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 403
+[17-Mar-2018 20:28:23 UTC] PHP Fatal error:  Call to a member function dependentes() on null in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 182
+[17-Mar-2018 20:32:14 UTC] PHP Fatal error:  Call to a member function dependentes() on null in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 182
+[17-Mar-2018 20:33:28 UTC] PHP Fatal error:  Call to a member function dependentes() on null in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 182
+[17-Mar-2018 20:41:07 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[17-Mar-2018 20:43:19 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
