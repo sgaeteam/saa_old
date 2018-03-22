@@ -54,6 +54,7 @@ return array(
     'CreateEspacosTable' => $baseDir . '/database/migrations/2018_03_09_013541_create_espacos_table.php',
     'CreateEventoDetalhesTable' => $baseDir . '/database/migrations/2018_02_23_211318_create_evento__detalhes_table.php',
     'CreateEventosTable' => $baseDir . '/database/migrations/2018_02_23_210625_create_eventos_table.php',
+    'CreateFornecedoresTable' => $baseDir . '/database/migrations/2018_03_21_161352_create_fornecedores_table.php',
     'CreateNullableCmsApicustom' => $baseDir . '/database/migrations/2016_09_17_104728_create_nullable_cms_apicustom.php',
     'CreateProdutosTable' => $baseDir . '/database/migrations/2018_02_22_212328_create_produtos_table.php',
     'CreateSociosTable' => $baseDir . '/database/migrations/2018_03_10_000657_create_socios_table.php',

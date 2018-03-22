@@ -437,6 +437,7 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'CreateEspacosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_09_013541_create_espacos_table.php',
         'CreateEventoDetalhesTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_23_211318_create_evento__detalhes_table.php',
         'CreateEventosTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_23_210625_create_eventos_table.php',
+        'CreateFornecedoresTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_21_161352_create_fornecedores_table.php',
         'CreateNullableCmsApicustom' => __DIR__ . '/../..' . '/database/migrations/2016_09_17_104728_create_nullable_cms_apicustom.php',
         'CreateProdutosTable' => __DIR__ . '/../..' . '/database/migrations/2018_02_22_212328_create_produtos_table.php',
         'CreateSociosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_10_000657_create_socios_table.php',
