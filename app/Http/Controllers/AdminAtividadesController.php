@@ -30,20 +30,67 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Descrição","name"=>"descricao"];
-			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade"];
+			$this->col[] = ["label"=>"Título","name"=>"titulo"];
+			$this->col[] = ["label"=>"Sigla","name"=>"sigla"];
+			$this->col[] = ["label"=>"Data Início","name"=>"data_inicio"];
+			$this->col[] = ["label"=>"Data Fim","name"=>"data_fim"];
+			$this->col[] = ["label"=>"Duração","name"=>"duracao"];
+			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
+			$this->col[] = ["label"=>"Professor","name"=>"professor_id","join"=>"professores,nome"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Título','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Seg','name'=>'seg','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Seg','name'=>'hora_inicio_seg','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Ter','name'=>'ter','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Ter','name'=>'hora_inicio_ter','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Qua','name'=>'qua','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Qua','name'=>'hora_inicio_qua','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Qui','name'=>'qui','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Qui','name'=>'hora_inicio_qui','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sex','name'=>'sex','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Sex','name'=>'hora_inicio_sex','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sab','name'=>'sab','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Sab','name'=>'hora_inicio_sab','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Dom','name'=>'dom','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Hora Inicio Dom','name'=>'hora_inicio_dom','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
+			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
-			//$this->form[] = ["label"=>"Descicao","name"=>"descicao","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Mensalidade","name"=>"mensalidade","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
+			//$this->form[] = ['label'=>'Título','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Seg','name'=>'seg','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Seg','name'=>'hora_inicio_seg','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Ter','name'=>'ter','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Ter','name'=>'hora_inicio_ter','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Qua','name'=>'qua','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Qua','name'=>'hora_inicio_qua','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Qui','name'=>'qui','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Qui','name'=>'hora_inicio_qui','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Sex','name'=>'sex','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Sex','name'=>'hora_inicio_sex','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Sab','name'=>'sab','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Sab','name'=>'hora_inicio_sab','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Dom','name'=>'dom','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Hora Inicio Dom','name'=>'hora_inicio_dom','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
+			//$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
 			# OLD END FORM
 
 			/* 

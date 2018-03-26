@@ -30,8 +30,7 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Cliente","name"=>"cliente_id","join"=>"clientes,nome"];
-			$this->col[] = ["label"=>"Evento Numero","name"=>"evento_numero"];
+			$this->col[] = ["label"=>"Responsável","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Total","name"=>"total"];
 			$this->col[] = ["label"=>"Titulo","name"=>"titulo"];
 			$this->col[] = ["label"=>"Inicio","name"=>"start_date"];
@@ -40,9 +39,8 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Titulo','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9','datatable'=>'clientes,nome'];
-			$this->form[] = ['label'=>'Evento Numero','name'=>'evento_numero','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cliente','name'=>'cliente_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'clientes,nome'];
+			$this->form[] = ['label'=>'Titulo','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Responsável','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
 			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9','readonly'=>'1'];
 			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
