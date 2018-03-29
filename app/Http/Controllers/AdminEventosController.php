@@ -31,18 +31,22 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Responsável","name"=>"socio_id","join"=>"socios,nome"];
-			$this->col[] = ["label"=>"Total","name"=>"total"];
-			$this->col[] = ["label"=>"Titulo","name"=>"titulo"];
+			$this->col[] = ["label"=>"Espaço","name"=>"espaco_id","join"=>"espacos,nome"];
 			$this->col[] = ["label"=>"Inicio","name"=>"start_date"];
-			$this->col[] = ["label"=>"Termino","name"=>"end_date"];
+			$this->col[] = ["label"=>"Termino","name"=>"end_date"];			
+			$this->col[] = ["label"=>"Total","name"=>"total","callback_php"=>'"R$ ".number_format([total],2,",",".")'];
+			$this->col[] = ["label"=>"Título do Evento","name"=>"titulo"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Titulo','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Responsável','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
+			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Eventos","Atividades & Eventos")'];
 			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9','readonly'=>'1'];
 			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Título do Evento','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Valor do Espaço','name'=>'espaco_valor','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Desconto','name'=>'espaco_desconto','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -158,12 +162,18 @@
 	        	$(function() {
 	        	
 	        		setInterval(function() {
+		        		
 		        		var total = 0;
 		        		$('#table-consumo tbody .sub_total').each(function() {
 		        			var amount = parseInt($(this).text());	
 		        			total += amount;
 		        		})
-		        		$('#total').val(total);
+		        		
+		        		var subtotal = 0;
+		        		subtotal = parseInt($('#espaco_valor').val()) - parseInt($('#espaco_desconto').val());
+		        		
+		        		$('#total').val(total+subtotal);
+		        		
 	        		},500);
 	        		
 	        	})

@@ -48,3 +48,30 @@
 [17-Mar-2018 20:33:28 UTC] PHP Fatal error:  Call to a member function dependentes() on null in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 182
 [17-Mar-2018 20:41:07 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
 [17-Mar-2018 20:43:19 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 01:09:33 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:09:51 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:09:52 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:10:25 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:10:25 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:10:25 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:10:32 UTC] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 43
+[29-Mar-2018 01:16:05 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:16:14 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:16:15 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:22:21 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:22:31 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:22:41 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:22:51 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:01 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:11 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:21 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:32 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:41 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:23:51 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:01 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:11 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:21 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:31 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:41 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 01:24:51 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
+[29-Mar-2018 07:49:53 UTC] PHP Parse error:  syntax error, unexpected ''Eventos'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 44

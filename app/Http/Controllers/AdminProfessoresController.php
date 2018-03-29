@@ -36,9 +36,9 @@
 			$this->col[] = ["label"=>"Telefone","name"=>"telefone"];
 			$this->col[] = ["label"=>"Celular","name"=>"celular"];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
-			$this->col[] = ["label"=>"Hora Aula","name"=>"hora_aula"];
-			# END COLUMNS DO NOT REMOVE THIS LINE
 
+			$this->col[] = ["label"=>"Hora Aula","name"=>"hora_aula","callback_php"=>'"R$ ".number_format([hora_aula],2,",",".")'];
+			# END COLUMNS DO NOT REMOVE THIS LINE
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];

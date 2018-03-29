@@ -32,21 +32,24 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Nome","name"=>"nome","width"=>"250"];
 			$this->col[] = ["label"=>"Descrição","name"=>"descricao","width"=>"600"];
-			$this->col[] = ["label"=>"Capacidade","name"=>"capacidade","width"=>"100"];
+			$this->col[] = ["label"=>"Capacidade","name"=>"capacidade","width"=>"50"];
+			$this->col[] = ["label"=>"Finalidade","name"=>"finalidade","width"=>"50"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'textarea','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Capacidade','name'=>'capacidade','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Finalidade','name'=>'finalidade','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Atividades;Atividades & Eventos;Eventos;Inativo;Inoperante;Reserva'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
 			//$this->form = [];
 			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'textarea','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'textarea','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Capacidade','name'=>'capacidade','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Finalidade','name'=>'finalidade','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Atividades;Eventos;Atividades & Eventos'];
 			# OLD END FORM
 
 			/* 

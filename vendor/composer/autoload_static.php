@@ -416,6 +416,8 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'AlterEventosTableNewFields' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_022544_alter_eventos_table_new_fields.php',
         'AlterProdutosTableAddFornecedor' => __DIR__ . '/../..' . '/database/migrations/2018_03_26_020844_alter_produtos_table_add_fornecedor.php',
         'AlterSociosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_10_222521_alter_socios_table.php',
+        'AlterTableEventosAddValorEspaco' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_004018_alter_table_eventos_add_valor_espaco.php',
+        'AlterTableEventosRenameDestino' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_000211_alter_table_eventos_rename_destino.php',
         'AreaCompetenciasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaCompetenciasTableSeeder.php',
         'AtividadesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AtividadesTableSeeder.php',
         'CBSeeder' => __DIR__ . '/../..' . '/database/seeds/CBSeeder.php',

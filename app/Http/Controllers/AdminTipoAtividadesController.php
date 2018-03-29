@@ -31,7 +31,7 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Descricao","name"=>"descricao"];
-			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade"];
+			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade","callback_php"=>'"R$ ".number_format([mensalidade],2,",",".")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
