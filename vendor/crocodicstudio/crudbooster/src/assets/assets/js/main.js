@@ -74,7 +74,8 @@
 					singleDatePicker: true,
         			showDropdowns: true,
         			minDate: '1900-01-01',
-					format:'YYYY-MM-DD'
+					format:'YYYY-MM-DD',
+					lang: 'pt-br'
 				})
 			}
 
@@ -86,9 +87,9 @@
 				    timePicker:true,
 				    timePicker12Hour: false,
 				    timePickerIncrement: 5,
-				    timePickerSeconds: true,
+				    timePickerSeconds: false,
 				    autoApply: true,
-					format:'YYYY-MM-DD HH:mm:ss'
+					format:'YYYY-MM-DD HH:mm'
 				})
 			}
 
@@ -96,8 +97,10 @@
 		    if($(".timepicker").length > 0) {
 		    	$(".timepicker").timepicker({
 			      showInputs: true,
-			      showSeconds: true,
-			      showMeridian:false
+			      showSeconds: false,
+			      showMeridian:false,
+			      lang: 'pt-br',
+  					theme: 'dark'
 			    });	
 		    }
 

@@ -75,3 +75,43 @@
 [29-Mar-2018 01:24:41 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
 [29-Mar-2018 01:24:51 UTC] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 35
 [29-Mar-2018 07:49:53 UTC] PHP Parse error:  syntax error, unexpected ''Eventos'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 44
+[29-Mar-2018 09:15:39 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminProfessoresController.php on line 50
+[29-Mar-2018 09:15:44 UTC] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminProfessoresController.php on line 50
+[29-Mar-2018 16:41:53 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:09:54 UTC] PHP Fatal error:  Class 'Form' not found in /home/ubuntu/workspace/storage/framework/views/bcb33fb8bf43c58898e909aa4bb9c7cb4c53bf65.php on line 20
+[29-Mar-2018 20:27:04 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:41:53 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:50:18 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:50:37 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:52:04 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:53:44 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:56:14 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 20:56:45 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[29-Mar-2018 21:09:17 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:09:22 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:09:23 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:09:27 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:09:37 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:09:47 UTC] PHP Parse error:  syntax error, unexpected 'page_title' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 380
+[29-Mar-2018 21:11:10 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 381
+[29-Mar-2018 21:11:11 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 381
+[29-Mar-2018 21:11:13 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 381
+[29-Mar-2018 21:11:18 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 381
+[29-Mar-2018 21:11:28 UTC] PHP Fatal error:  Cannot use [] for reading in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 381
+[31-Mar-2018 02:55:50 UTC] PHP Fatal error:  Class 'Form' not found in /home/ubuntu/workspace/storage/framework/views/67cdf30dd4b5ba4acd8896af51ee9db841f3c69f.php on line 20
+[31-Mar-2018 11:02:20 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 409
+[31-Mar-2018 11:11:18 UTC] PHP Fatal error:  Class 'Form' not found in /home/ubuntu/workspace/storage/framework/views/67cdf30dd4b5ba4acd8896af51ee9db841f3c69f.php on line 29
+[31-Mar-2018 11:13:13 UTC] PHP Fatal error:  Class 'Form' not found in /home/ubuntu/workspace/storage/framework/views/67cdf30dd4b5ba4acd8896af51ee9db841f3c69f.php on line 29
+[31-Mar-2018 15:58:42 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:01:09 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:22:47 UTC] PHP Fatal error:  Call to undefined function vardump() in /home/ubuntu/workspace/storage/framework/views/bcb33fb8bf43c58898e909aa4bb9c7cb4c53bf65.php on line 39
+[31-Mar-2018 16:23:42 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/ubuntu/workspace/storage/framework/views/bcb33fb8bf43c58898e909aa4bb9c7cb4c53bf65.php on line 39
+[31-Mar-2018 16:27:28 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:33:09 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:33:22 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:34:08 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:34:26 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[31-Mar-2018 16:34:52 UTC] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[01-Apr-2018 15:20:21 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195
+[02-Apr-2018 08:53:07 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195
+[02-Apr-2018 08:53:41 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195

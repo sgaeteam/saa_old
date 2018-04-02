@@ -557,7 +557,7 @@
     },
 
     setDefaultTime: function(defaultTime){
-      if (!this.$element.val()) {
+      if (!this.$element.val()) { 
         if (defaultTime === 'current') {
           var dTime = new Date(),
             hours = dTime.getHours(),

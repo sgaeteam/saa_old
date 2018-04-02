@@ -29,7 +29,7 @@ if(!function_exists('extract_unit')) {
 
 if(!function_exists('now')) {
 	function now() {		
-		return date('Y-m-d H:i:s');
+		return null; //date('Y-m-d H:i:s');
 	}
 }
 

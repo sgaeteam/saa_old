@@ -4,6 +4,8 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use Illuminate\Support\Facades\Route;
+
 
 	class AdminAtividadesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -30,20 +32,22 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Título","name"=>"titulo"];
+			$this->col[] = ["label"=>"Professor","name"=>"professor_id","join"=>"professores,nome"];
+			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
+			$this->col[] = ["label"=>"Descrição da Atividade","name"=>"titulo"];
 			$this->col[] = ["label"=>"Sigla","name"=>"sigla"];
 			$this->col[] = ["label"=>"Data Início","name"=>"data_inicio"];
 			$this->col[] = ["label"=>"Data Fim","name"=>"data_fim"];
 			$this->col[] = ["label"=>"Duração","name"=>"duracao"];
-			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
-			$this->col[] = ["label"=>"Professor","name"=>"professor_id","join"=>"professores,nome"];
+
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Título','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
+			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
+			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
@@ -62,8 +66,6 @@
 			$this->form[] = ['label'=>'Hora Inicio Sab','name'=>'hora_inicio_sab','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Dom','name'=>'dom','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Hora Inicio Dom','name'=>'hora_inicio_dom','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
-			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -190,7 +192,7 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
+	        $this->script_js = null;
 
 
             /*
@@ -367,6 +369,43 @@
 
 
 	    //By the way, you can still create your own method in here... :) 
+		public function getAdd() {
+			
+			$this->cbLoader();
+			
+			//Create an Auth
+			if(!CRUDBooster::isCreate() && $this->global_privilege==FALSE || $this->button_add==FALSE) {
+				CRUDBooster::insertLog(trans('crudbooster.log_try_add',['module'=>CRUDBooster::getCurrentModule()->name ]));
+				CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+	
 
-
+			# START FORM DO NOT REMOVE THIS LINE
+			$this->form = [];
+			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
+			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
+			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'DOM','name'=>'hora_inicio_dom','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SEG','name'=>'hora_inicio_seg','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'TER','name'=>'hora_inicio_ter','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'QUA','name'=>'hora_inicio_qua','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'QUI','name'=>'hora_inicio_qui','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SEX','name'=>'hora_inicio_sex','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SAB','name'=>'hora_inicio_sab','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
+		    # END FORM DO NOT REMOVE THIS LINE
+		  
+			$data = [];
+			$data['page_title'] = trans("crudbooster.add_data_page_title",['module'=>CRUDBooster::getCurrentModule()->name]);
+			$data['page_menu']  = Route::getCurrentRoute()->getActionName();
+			$data['command']    = 'add';
+			$data['forms']		= $this->form;
+			//Please use cbView method instead view method from laravel
+			$this->cbView('atividade_add',$data);
+		}
+		
 	}

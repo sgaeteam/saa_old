@@ -122,8 +122,8 @@
                     <?php $__currentLoopData = $index_button; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ib): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
                      <a href='<?php echo e($ib["url"]); ?>' id='<?php echo e(str_slug($ib["label"])); ?>' class='btn <?php echo e(($ib['color'])?'btn-'.$ib['color']:'btn-primary'); ?> btn-sm' 
                       <?php if($ib['onClick']): ?> onClick='return <?php echo e($ib["onClick"]); ?>' <?php endif; ?>
-                      <?php if($ib['onMouseOever']): ?> onMouseOever='return <?php echo e($ib["onMouseOever"]); ?>' <?php endif; ?>
-                      <?php if($ib['onMoueseOut']): ?> onMoueseOut='return <?php echo e($ib["onMoueseOut"]); ?>' <?php endif; ?>
+                      <?php if($ib['onMouseOver']): ?> onMouseOver='return <?php echo e($ib["onMouseOver"]); ?>' <?php endif; ?>
+                      <?php if($ib['onMouseOut']): ?> onMouseOut='return <?php echo e($ib["onMouseOut"]); ?>' <?php endif; ?>
                       <?php if($ib['onKeyDown']): ?> onKeyDown='return <?php echo e($ib["onKeyDown"]); ?>' <?php endif; ?>
                       <?php if($ib['onLoad']): ?> onLoad='return <?php echo e($ib["onLoad"]); ?>' <?php endif; ?>
                       >
