@@ -98,6 +98,7 @@
 		    	$(".timepicker").timepicker({
 			      showInputs: true,
 			      showSeconds: false,
+			      defaultTime: null,
 			      showMeridian:false,
 			      lang: 'pt-br',
   					theme: 'dark'

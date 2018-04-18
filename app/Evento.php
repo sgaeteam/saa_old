@@ -3,10 +3,10 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use MaddHatter\LaravelFullcalendar\Event;
+use CRUDBooster;
 use MaddHatter\LaravelFullcalendar\IdentifiableEvent;
 
-class Evento extends Model implements IdentifiableEvent // Event
+class Evento extends Model implements IdentifiableEvent
 {
     protected $dates = ['start_date', 'end_date'];
 
@@ -68,6 +68,7 @@ class Evento extends Model implements IdentifiableEvent // Event
     {
         return [
             'color' => $this->background_color,
+            'url'   => CRUDBooster::adminPath().'/eventos/detail/'.$this->getId().'?return_url='.CRUDBooster::adminPath().'/eventos?m=3',
         ];
     }
     

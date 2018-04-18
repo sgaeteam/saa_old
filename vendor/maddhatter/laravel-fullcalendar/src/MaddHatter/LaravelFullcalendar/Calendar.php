@@ -35,7 +35,7 @@ class Calendar
         ],
         'eventLimit' => true,
         'timeFormat' => 'H(:mm)',
-         'editable'  => true,
+         'editable'  => false,
     ];
 
     /**

@@ -17,7 +17,7 @@
 			$this->orderby = "id,desc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
-			$this->button_bulk_action = true;
+			$this->button_bulk_action = false;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
 			$this->button_edit = true;
@@ -33,67 +33,33 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Professor","name"=>"professor_id","join"=>"professores,nome"];
+			$this->col[] = ["label"=>"Espaço","name"=>"espaco_id","join"=>"espacos,nome"];
 			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
 			$this->col[] = ["label"=>"Descrição da Atividade","name"=>"titulo"];
-			$this->col[] = ["label"=>"Sigla","name"=>"sigla"];
 			$this->col[] = ["label"=>"Data Início","name"=>"data_inicio"];
 			$this->col[] = ["label"=>"Data Fim","name"=>"data_fim"];
 			$this->col[] = ["label"=>"Duração","name"=>"duracao"];
-
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
+			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Atividades","Atividades & Eventos")'];
 			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
 			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Seg','name'=>'seg','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Seg','name'=>'hora_inicio_seg','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Ter','name'=>'ter','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Ter','name'=>'hora_inicio_ter','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Qua','name'=>'qua','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Qua','name'=>'hora_inicio_qua','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Qui','name'=>'qui','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Qui','name'=>'hora_inicio_qui','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sex','name'=>'sex','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Sex','name'=>'hora_inicio_sex','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sab','name'=>'sab','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Sab','name'=>'hora_inicio_sab','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Dom','name'=>'dom','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Hora Inicio Dom','name'=>'hora_inicio_dom','type'=>'datetime','validation'=>'date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			# END FORM DO NOT REMOVE THIS LINE
-
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Título','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Seg','name'=>'seg','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Seg','name'=>'hora_inicio_seg','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Ter','name'=>'ter','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Ter','name'=>'hora_inicio_ter','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Qua','name'=>'qua','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Qua','name'=>'hora_inicio_qua','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Qui','name'=>'qui','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Qui','name'=>'hora_inicio_qui','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sex','name'=>'sex','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Sex','name'=>'hora_inicio_sex','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sab','name'=>'sab','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Sab','name'=>'hora_inicio_sab','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Dom','name'=>'dom','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Hora Inicio Dom','name'=>'hora_inicio_dom','type'=>'datetime','validation'=>'required|date_format:Y-m-d H:i:s','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
-			//$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
-			# OLD END FORM
+			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'DOM','name'=>'hora_inicio_dom','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SEG','name'=>'hora_inicio_seg','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'TER','name'=>'hora_inicio_ter','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'QUA','name'=>'hora_inicio_qua','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'QUI','name'=>'hora_inicio_qui','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SEX','name'=>'hora_inicio_sex','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'SAB','name'=>'hora_inicio_sab','type'=>'time','validation'=>'date_format:H:i','width'=>'col-sm-10'];
+			# END FORM DO NOT REMOVE THIS LINE 
+		
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -121,8 +87,10 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */
-	        $this->addaction = array();
-
+	        $this->addaction = array(['label'=>'Agendar','icon'=>'fa fa-clock-o','color'=>'danger','url'=>CRUDBooster::mainpath('set-paid').'/[id]']);
+	    //  $this->addaction[] = ['label'=>'Set Active','url'=>CRUDBooster::mainpath('set-status/active/[id]'),'icon'=>'fa fa-check','color'=>'success','showIf'=>"[status] == 'pending'"];
+		//	$this->addaction[] = ['label'=>'Set Pending','url'=>CRUDBooster::mainpath('set-status/pending/[id]'),'icon'=>'fa fa-ban','color'=>'warning','showIf'=>"[status] == 'active'", 'confirmation' => true];
+		//  $this->addaction[] = ['label'=>'Set Paid','icon'=>'fa fa-money','color'=>'warning','url'=>CRUDBooster::mainpath('set-paid').'/[id]','showIf'=>'[status] == "belum lunas"'];
 
 	        /* 
 	        | ---------------------------------------------------------------------- 
@@ -302,6 +270,7 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
+	        dd($postdata);
 
 	    }
 
@@ -379,16 +348,16 @@
 				CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
 			}
 	
-
+/*
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
+			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Atividades","Atividades & Eventos")'];
 			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
 			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Data Cancelamento','name'=>'data_cancelamento','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'DOM','name'=>'hora_inicio_dom','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'SEG','name'=>'hora_inicio_seg','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
@@ -398,7 +367,7 @@
 			$this->form[] = ['label'=>'SEX','name'=>'hora_inicio_sex','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'SAB','name'=>'hora_inicio_sab','type'=>'time','validation'=>'date_format:H:i:s','width'=>'col-sm-10'];
 		    # END FORM DO NOT REMOVE THIS LINE
-		  
+*/		  
 			$data = [];
 			$data['page_title'] = trans("crudbooster.add_data_page_title",['module'=>CRUDBooster::getCurrentModule()->name]);
 			$data['page_menu']  = Route::getCurrentRoute()->getActionName();

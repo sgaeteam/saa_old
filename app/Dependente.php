@@ -11,3 +11,4 @@ class Dependente extends Model
         return $this->belongsTo('App\Socio');
     }
 }
+

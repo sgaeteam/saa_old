@@ -180,20 +180,57 @@
 		</div>
 		
 		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-dependentes">
-			<div class="box-body" id="parent-form-area">
-				<style type="text/css">
-					#table-detail tr td:first-child {
-						font-weight: bold;
-						width: 25%;
-					}
-				</style>
-				<div class='table-responsive'>
-					<table id='table-detail' class='table table-striped'>
-						@foreach($dependentes as $dependente)
-							<tr><td>{{$dependente->nome}} ({{$dependente->grau}})</td><td>
-						@endforeach
-					</table>
-				</div>	
+			<div class="tab-content">
+				<div class="panel infolist">
+					<div class="panel-body">
+				        <div class="panel panel-default" id="tab-info">
+				           <div class="panel-heading">
+				             <strong><i class='{{CRUDBooster::getCurrentModule()->icon}}'></i> {!! $page_title or "Page Title" !!}</strong>
+				           </div> 
+				
+				           <div class="panel-body" style="padding:20px 0px 0px 0px">
+				           	
+								<div class="box-body" id="parent-form-area">
+									<style type="text/css">
+										#table-detail tr td:first-child {
+											font-weight: bold;
+											width: 25%;
+										}
+									</style>
+									<div class='table-responsive'>
+										<table id='table-detail' class="table table-striped table-bordered">
+											<thead>
+													<th>Nome</th>
+													<th>Grau de parentesco</th>
+													<th>Sexo</th>
+													<th>Data de Nascimento</th>
+											</thead>
+											<tbody>
+												@foreach($dependentes as $dependente)
+													<tr>
+														<td>{{$dependente->nome}}</td>
+														<td>{{$dependente->grau}}</td>
+														<td>{{$dependente->sexo}}</td>
+														<td>
+															{{$dependente->data_nascimento}} 
+															@php
+															   echo("(".Carbon\Carbon::parse($dependente->data_nascimento)->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
+															@endphp
+														</td>
+													</tr>	
+												@endforeach
+												
+												
+											</tbody>	
+										</table>
+									</div>
+								</div>
+								<div class="box-footer" style="background: #F5F5F5">  
+								</div>	
+							</div>	
+						</div>		
+					</div>			
+				</div>
 			</div>
 		</div>
 		

@@ -115,3 +115,209 @@
 [01-Apr-2018 15:20:21 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195
 [02-Apr-2018 08:53:07 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195
 [02-Apr-2018 08:53:41 UTC] PHP Parse error:  syntax error, unexpected '''' (T_CONSTANT_ENCAPSED_STRING) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 195
+[05-Apr-2018 02:18:15 UTC] PHP Fatal error:  Call to undefined function App\Http\Controllers\checkDisponibilidade() in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 298
+[05-Apr-2018 02:20:52 UTC] PHP Fatal error:  Call to a member function input() on array in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 398
+[05-Apr-2018 02:31:35 UTC] PHP Fatal error:  Call to a member function input() on array in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 398
+[05-Apr-2018 08:58:06 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 398
+[05-Apr-2018 08:59:09 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Evento' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 402
+[05-Apr-2018 09:00:07 UTC] PHP Fatal error:  Class 'Evento' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 403
+[09-Apr-2018 23:35:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:15 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:25 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:28 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:35 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:38 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:44 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:48 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:54 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:35:58 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:04 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:24 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:28 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:34 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:38 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:44 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:48 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:54 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:36:58 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:05 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:24 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:28 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:34 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:38 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:45 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:48 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:54 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:37:58 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:04 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:24 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:31 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:34 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:38 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:46 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:48 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:54 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:38:58 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:04 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:24 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:29 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:34 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:38 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:44 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:48 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:54 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:39:58 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:40:04 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:40:08 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:40:14 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[09-Apr-2018 23:40:18 UTC] PHP Parse error:  syntax error, unexpected '&' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[10-Apr-2018 01:46:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:46:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:46:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:05 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:05 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:05 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:15 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:16 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:17 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:25 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:25 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:35 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:35 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:45 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 01:47:45 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[10-Apr-2018 03:39:28 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:29 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:32 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:41 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:48 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:50 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:51 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:59 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:39:59 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:01 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:09 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:09 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:28 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:29 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:38 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:39 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:42 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:45 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:49 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:49 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:59 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:40:59 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:08 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:09 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:19 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:29 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 03:41:29 UTC] PHP Parse error:  syntax error, unexpected '=' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 309
+[10-Apr-2018 04:38:19 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 327
+[10-Apr-2018 04:39:27 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 315
+[10-Apr-2018 04:39:39 UTC] PHP Parse error:  syntax error, unexpected ')', expecting variable (T_VARIABLE) or '$' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 315
+[10-Apr-2018 04:43:10 UTC] PHP Fatal error:  Call to undefined function App\Http\Controllers\serializeArray() in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 312
+[10-Apr-2018 05:06:16 UTC] PHP Fatal error:  Call to undefined function App\Http\Controllers\put() in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 314
+[11-Apr-2018 04:36:03 UTC] PHP Parse error:  syntax error, unexpected 'default' (T_DEFAULT) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 317
+[11-Apr-2018 17:29:46 UTC] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 318
+[11-Apr-2018 17:50:55 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 319
+[11-Apr-2018 19:10:21 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 326
+[11-Apr-2018 19:10:34 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 326
+[11-Apr-2018 19:10:34 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 326
+[11-Apr-2018 20:03:24 UTC] PHP Parse error:  syntax error, unexpected 'default' (T_DEFAULT) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 319
+[11-Apr-2018 20:09:36 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Redirect' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 319
+[11-Apr-2018 20:14:19 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 349
+[11-Apr-2018 20:17:43 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 354
+[12-Apr-2018 08:52:21 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:52:31 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:52:31 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:52:42 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:52:51 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:01 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:12 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:21 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:32 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:42 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:50 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:53:51 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:02 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:11 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:21 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:31 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:42 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:54:52 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:02 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:11 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:22 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:31 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:41 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:55:51 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:56:01 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:56:12 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[12-Apr-2018 08:56:21 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 331
+[13-Apr-2018 21:13:38 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 320
+[13-Apr-2018 21:14:21 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 320
+[13-Apr-2018 21:14:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 321
+[13-Apr-2018 21:16:08 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[13-Apr-2018 21:16:09 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[13-Apr-2018 21:16:11 UTC] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[13-Apr-2018 21:16:21 UTC] PHP Fatal error:  Call to undefined function App\Http\Controllers\getTitulo() in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 307
+[15-Apr-2018 22:45:21 UTC] PHP Fatal error:  Call to undefined method stdClass::age() in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 213
+[15-Apr-2018 22:54:12 UTC] PHP Fatal error:  Call to undefined method stdClass::getAge() in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 213
+[15-Apr-2018 23:23:06 UTC] PHP Parse error:  syntax error, unexpected 'anos' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 216
+[15-Apr-2018 23:23:15 UTC] PHP Parse error:  syntax error, unexpected 'anos' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 216
+[15-Apr-2018 23:26:50 UTC] PHP Fatal error:  Call to a member function diff() on null in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 216
+[15-Apr-2018 23:28:31 UTC] PHP Fatal error:  Call to a member function diff() on string in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 216
+[15-Apr-2018 23:29:53 UTC] PHP Fatal error:  Class 'Carbon' not found in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 216
+[15-Apr-2018 23:42:12 UTC] PHP Fatal error:  Call to a member function format() on string in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 214
+[15-Apr-2018 23:43:52 UTC] PHP Fatal error:  Call to a member function format() on string in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 214
+[15-Apr-2018 23:44:31 UTC] PHP Fatal error:  Call to a member function format() on string in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 214
+[16-Apr-2018 00:00:42 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:00:44 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:00:45 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:00:52 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:00:54 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:00:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:02 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:05 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:06 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:12 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:15 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:17 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:22 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:24 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:25 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:32 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:34 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:35 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:43 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:45 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:45 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:52 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:54 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:01:55 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:02:02 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:02:04 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:02:05 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:02:12 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 00:02:14 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 341
+[16-Apr-2018 01:38:23 UTC] PHP Parse error:  syntax error, unexpected 'CRUDBooster' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Evento.php on line 71

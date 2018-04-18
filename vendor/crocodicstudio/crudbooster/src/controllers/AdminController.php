@@ -45,14 +45,14 @@ class AdminController extends CBController {
     public function loadCalendar()
     {
         $staticEvent = \Calendar::event(
-            'Macaco que Voa',
+            'Hoje: DIA DA MALDADE!',
             true,
-            Carbon::today()->setTime(0, 0),
-            Carbon::today()->setTime(23, 59),
+            Carbon::yesterday()->setTime(0, 0),
+            Carbon::yesterday()->setTime(23, 59),
             null,
             [
                 'color' => '#F00000',
-                'url' => 'http://google.com',
+                'url' => 'http://google.com/search?q=dia+da+maldade',
             ]
         );
         

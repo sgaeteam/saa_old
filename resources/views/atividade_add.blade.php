@@ -35,8 +35,6 @@
                          @include("crudbooster::default.form_detail")  
                       @else
                          @include("crudbooster::default.form_body") 
-                            <p><input type="checkbox" name="check-categoria" onclick="document.getElementById('categoria').disabled = !this.checked;"> Categoria:</p>
-   <p><input type="text" name="categoria" id="categoria" size="40" disabled="disabled"> </p>
                       @endif
                     </div><!-- /.box-body -->
                     <div class="box-footer" style="background: #F5F5F5">  

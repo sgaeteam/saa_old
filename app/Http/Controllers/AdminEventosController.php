@@ -2,8 +2,10 @@
 
 	use Session;
 	use Request;
+	use Route;
 	use DB;
 	use CRUDBooster;
+	use App\Evento;
 
 	class AdminEventosController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -42,8 +44,10 @@
 			$this->form = [];
 			$this->form[] = ['label'=>'Responsável','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
 			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Eventos","Atividades & Eventos")'];
-			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9','readonly'=>'1'];
-			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required|after:today','width'=>'col-sm-9','readonly'=>'1'];
+			
+			
+			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required|after:start_date','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Descrição do Evento','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Valor do Espaço','name'=>'espaco_valor','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Desconto','name'=>'espaco_desconto','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10'];
@@ -111,7 +115,7 @@
 	        | @type    = warning,success,danger,info        
 	        | 
 	        */
-	        $this->alert        = array();
+	        $this->alert        = array(['Ocupado','danger']);
 	                
 
 	        
@@ -294,8 +298,27 @@
 	    |
 	    */
 	    public function hook_before_add(&$postdata) {        
-	        //Your code here
 
+	        // Verifica se o espaço já está reservado para o período escolhido
+	        $eventoAgendado = $this->checkDisponibilidade($postdata);
+
+    	    if (isset($eventoAgendado)) {
+    	    	
+    	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y H:i');
+    	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y H:i');
+
+
+				if(Request::ajax()) {
+					$res = response()->json(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->send();
+					exit;
+				}
+				else{
+					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->withInput();
+					\Session::driver()->save();
+					$res->send();
+		        	exit;
+				}	        
+    	    }
 	    }
 
 	    /* 
@@ -362,6 +385,55 @@
 
 
 	    //By the way, you can still create your own method in here... :) 
+		/**
+		 * Verifica disponibilidade de data antes de criar o evento.
+		 *
+		 * @param  array  $request
+		 * @return bool
+		 * 
+		 * 
+		  // Debug de Query 
+		  DB::enableQueryLog(); 
+		  DB::table('eventos')->where(function ($query) use ($inicio, $espaco) {
+						  $query->where('data_inicial'	, '<='	, $inicio);
+						  $query->where('data_final'	, '>='	, $inicio);
+						  $query->where('espaco_id'		, '='	, $espaco);
+						  $query->whereNull('deleted_at');
+				})
+				->orWhere(function ($query) use ($fim, $espaco) {
+						  $query->where('data_inicial'	, '<='	, $fim);
+						  $query->where('data_final'	, '>='	, $fim);
+						  $query->where('espaco_id'		, '='	, $espaco); 
+						  $query->whereNull('deleted_at');
+				})->first();
+		  dd(DB::getQueryLog());
+		*/
+		
+		public function checkDisponibilidade(array $request) {
 
+			$inicio 	= date("Y-m-d G:i A",strtotime(str_replace('/', '-', $request['start_date'])));
+			$fim 		= date("Y-m-d G:i A",strtotime(str_replace('/', '-', $request['end_date'])));
+			$espaco 	= $request['espaco_id'];
+			
+			$evento = Evento::where(function ($query) use ($inicio, $espaco) {
+									  $query->where('start_date'	, '<='	, $inicio);
+									  $query->where('end_date'		, '>='	, $inicio);
+									  $query->where('espaco_id'		, '='	, $espaco);
+									  $query->whereNull('deleted_at');
+							})
+							->orWhere(function ($query) use ($fim, $espaco) {
+									  $query->where('start_date'	,  '<='	, $fim);
+									  $query->where('end_date'		,  '>='	, $fim);
+									  $query->where('espaco_id'		,  '='	, $espaco);
+									  $query->whereNull('deleted_at');   					
+					  })->first();
+
+	        if(isset($evento)) {
+	        	
+	        	return $evento; // Período já OCUPADO para o espaço escolhido!
+	        }
+	       
+	        return null; // Período DISPONÍVEL para o espaço escolhido!
+		}	
 
 	}
