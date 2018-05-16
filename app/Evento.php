@@ -9,6 +9,7 @@ use MaddHatter\LaravelFullcalendar\IdentifiableEvent;
 class Evento extends Model implements IdentifiableEvent
 {
     protected $dates = ['start_date', 'end_date'];
+    protected $fillable = ['start_date', 'end_date', 'atividade_id', 'espaco_id', 'titulo', 'created_at', 'updated_at'];
 
     /**
      * Get the event's id number
@@ -58,6 +59,16 @@ class Evento extends Model implements IdentifiableEvent
     {
         return $this->end_date;
     }
+    
+    /**
+     * Get the end time
+     *
+     * @return DateTime
+     */
+    public function getAtividadeId()
+    {
+        return $this->atividade_id;
+    }    
 
     /**
      * Optional FullCalendar.io settings for this event
@@ -66,10 +77,18 @@ class Evento extends Model implements IdentifiableEvent
      */
     public function getEventOptions()
     {
-        return [
-            'color' => $this->background_color,
-            'url'   => CRUDBooster::adminPath().'/eventos/detail/'.$this->getId().'?return_url='.CRUDBooster::adminPath().'/eventos?m=3',
-        ];
+        if (is_null($this->getAtividadeId())) {
+            return [
+                'color' => '#F00000',
+                'url'   => CRUDBooster::adminPath().'/eventos/detail/'.$this->getId().'?return_url='.CRUDBooster::adminPath().'/eventos?m=3',
+            ];
+        }
+        else {
+            return [
+                'color' => $this->background_color,
+                'url'   => CRUDBooster::adminPath().'/eventos/detail/'.$this->getId().'?return_url='.CRUDBooster::adminPath().'/eventos?m=3',
+            ];        
+        }
     }
     
     public function atividade()

@@ -4,3 +4,9 @@
 		box-shadow: 0px 0px 20px #aaaaaa;
 	}
 </style>
+
+<script type="text/javascript">
+	$(function() {
+		$('#timepicker').timepicker();
+	});
+</script>

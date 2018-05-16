@@ -45,8 +45,6 @@
 			$this->form[] = ['label'=>'Responsável','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
 			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Eventos","Atividades & Eventos")'];
 			$this->form[] = ['label'=>'Inicio','name'=>'start_date','type'=>'datetime','validation'=>'required|after:today','width'=>'col-sm-9','readonly'=>'1'];
-			
-			
 			$this->form[] = ['label'=>'Termino','name'=>'end_date','type'=>'datetime','validation'=>'required|after:start_date','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Descrição do Evento','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Valor do Espaço','name'=>'espaco_valor','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
@@ -277,6 +275,7 @@
 	    */
 	    public function hook_query_index(&$query) {
 	        //Your code here
+	          $query->whereNull('atividade_id');
 	            
 	    }
 
@@ -383,8 +382,8 @@
 	    }
 
 
-
 	    //By the way, you can still create your own method in here... :) 
+
 		/**
 		 * Verifica disponibilidade de data antes de criar o evento.
 		 *
@@ -407,8 +406,7 @@
 						  $query->whereNull('deleted_at');
 				})->first();
 		  dd(DB::getQueryLog());
-		*/
-		
+		*/	    
 		public function checkDisponibilidade(array $request) {
 
 			$inicio 	= date("Y-m-d G:i A",strtotime(str_replace('/', '-', $request['start_date'])));

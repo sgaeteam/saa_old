@@ -41,7 +41,6 @@ Route::group(['middleware'=>['web'],'prefix'=>config('crudbooster.ADMIN_PATH'),'
 	Route::get('logout', ['uses'=>'AdminController@getLogout','as'=>'getLogout']);			
 	Route::post('login', ['uses'=>'AdminController@postLogin','as'=>'postLogin']);	
 	Route::get('login', ['uses'=>'AdminController@getLogin','as'=>'getLogin']);	
-	
 });
 
 
@@ -58,7 +57,11 @@ Route::group(['middleware'=>['web','\crocodicstudio\crudbooster\middlewares\CBBa
 			}			
 		} catch (Exception $e) {
 			
-		}			
+		}	
+		
+	// Rotas personalizadas do negócio (By M97 | https://laracasts.com/discuss/channels/laravel/please-explain-naming-controller-routes-uses-as ):
+	Route::get('atividades/agendar/{id}', ['uses'=>'AdminAtividadesController@agendar','as'=>'atividade.agendar']);	
+	Route::get('atividades/suspender/{id}', ['uses'=>'AdminAtividadesController@suspender','as'=>'atividade.suspender']);	
 });
 
 

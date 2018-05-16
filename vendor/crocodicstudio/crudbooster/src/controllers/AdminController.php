@@ -47,8 +47,8 @@ class AdminController extends CBController {
         $staticEvent = \Calendar::event(
             'Hoje: DIA DA MALDADE!',
             true,
-            Carbon::yesterday()->setTime(0, 0),
-            Carbon::yesterday()->setTime(23, 59),
+            Carbon::today()->setTime(0, 0),
+            Carbon::today()->setTime(23, 59),
             null,
             [
                 'color' => '#F00000',
@@ -56,9 +56,9 @@ class AdminController extends CBController {
             ]
         );
         
-        $databaseEvents = $this->calendarEvento->all();
+        $databaseEvents = $this->calendarEvento->whereNull('deleted_at')->get();
         $calendar = \Calendar::addEvent($staticEvent)->addEvents($databaseEvents);
-        return $calendar; //view('la.dashboard', compact('calendar'));
+        return $calendar;
         
     }	
 

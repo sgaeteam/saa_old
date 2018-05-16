@@ -416,6 +416,7 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'AlterEventosTableNewFields' => __DIR__ . '/../..' . '/database/migrations/2018_03_23_022544_alter_eventos_table_new_fields.php',
         'AlterProdutosTableAddFornecedor' => __DIR__ . '/../..' . '/database/migrations/2018_03_26_020844_alter_produtos_table_add_fornecedor.php',
         'AlterSociosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_10_222521_alter_socios_table.php',
+        'AlterTableAtividadesAddAgendado' => __DIR__ . '/../..' . '/database/migrations/2018_05_15_084259_alter_table_atividades_add_agendado.php',
         'AlterTableAtividadesAddEspacoid' => __DIR__ . '/../..' . '/database/migrations/2018_04_03_210149_alter_table_atividades_add_espacoid.php',
         'AlterTableEventosAddValorEspaco' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_004018_alter_table_eventos_add_valor_espaco.php',
         'AlterTableEventosRenameDestino' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_000211_alter_table_eventos_rename_destino.php',
