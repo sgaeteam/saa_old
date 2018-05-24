@@ -168,19 +168,19 @@
 						prefix: 'R$',
 						centsSeparator: ',',
 						thousandsSeparator: '.',
-						centsLimit: 2
+						clearOnEmpty: true
 					});	   
 		  
 	        		setInterval(function() {
 		        		
-		        		var total_consumo = 0;
+		        		var total_consumo = 0.0;
 		        		$('#table-consumo tbody .sub_total').each(function() {
-		        			var amount = parseInt($(this).text());	
+		        			var amount = parseFloat($(this).text());	
 		        			total_consumo += amount;
 		        		})
 		        		
-		        		var total_espaco = 0;
-		        		total_espaco = (parseInt($('#espaco_valor').val()) || 0) - (parseInt($('#espaco_desconto').val()) || 0);
+		        		var total_espaco = 0.0;
+		        		total_espaco = (parseFloat($('#espaco_valor').val()) || 0) - (parseFloat($('#espaco_desconto').val()) || 0);
 		        		
 		        		$('#total').val(total_consumo+total_espaco);
       		
@@ -303,8 +303,8 @@
 
     	    if (isset($eventoAgendado)) {
     	    	
-    	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y H:i');
-    	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y H:i');
+    	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y | H:i');
+    	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y | H:i');
 
 
 				if(Request::ajax()) {
@@ -342,7 +342,27 @@
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
 	        //Your code here
+	        
+	        // Verifica se o espaço já está reservado para o período escolhido
+	        $eventoAgendado = $this->checkDisponibilidade($postdata);
 
+    	    if (isset($eventoAgendado)) {
+    	    	
+    	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y | H:i');
+    	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y | H:i');
+
+
+				if(Request::ajax()) {
+					$res = response()->json(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->send();
+					exit;
+				}
+				else{
+					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->withInput();
+					\Session::driver()->save();
+					$res->send();
+		        	exit;
+				}	        
+    	    }
 	    }
 
 	    /* 
@@ -366,7 +386,11 @@
 	    */
 	    public function hook_before_delete($id) {
 	        //Your code here
-
+	        $hoje = date('Y-m-d H:i:s');					
+			DB::table('evento__detalhes')
+	        ->whereNull('deleted_at')
+            ->where('evento_id',$id)
+	        ->update(array('deleted_at'=>$hoje)); 
 	    }
 
 	    /* 

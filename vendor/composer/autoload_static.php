@@ -390,6 +390,7 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
 
     public static $classMap = array (
         'AddDatesToEventos' => __DIR__ . '/../..' . '/database/migrations/2018_03_04_232159_add_dates_to_eventos.php',
+        'AddDeleteToEventoDetalhes' => __DIR__ . '/../..' . '/database/migrations/2018_05_22_135743_add_delete_to_evento_detalhes.php',
         'AddDescontoToEventosDetalhe' => __DIR__ . '/../..' . '/database/migrations/2018_03_05_233403_add_desconto_to_eventos_detalhe.php',
         'AddGroupSetting' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_035347_add_group_setting.php',
         'AddLabelSetting' => __DIR__ . '/../..' . '/database/migrations/2016_09_16_045425_add_label_setting.php',
@@ -418,6 +419,7 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'AlterSociosTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_10_222521_alter_socios_table.php',
         'AlterTableAtividadesAddAgendado' => __DIR__ . '/../..' . '/database/migrations/2018_05_15_084259_alter_table_atividades_add_agendado.php',
         'AlterTableAtividadesAddEspacoid' => __DIR__ . '/../..' . '/database/migrations/2018_04_03_210149_alter_table_atividades_add_espacoid.php',
+        'AlterTableEventosAddProfessorid' => __DIR__ . '/../..' . '/database/migrations/2018_05_24_185310_alter_table_eventos_add_professorid.php',
         'AlterTableEventosAddValorEspaco' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_004018_alter_table_eventos_add_valor_espaco.php',
         'AlterTableEventosRenameDestino' => __DIR__ . '/../..' . '/database/migrations/2018_03_28_000211_alter_table_eventos_rename_destino.php',
         'AreaCompetenciasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaCompetenciasTableSeeder.php',

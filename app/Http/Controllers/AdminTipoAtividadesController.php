@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use Route;
 
 	class AdminTipoAtividadesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -39,12 +40,6 @@
 			$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|numeric|min:0','width'=>'col-sm-6'];
 			# END FORM DO NOT REMOVE THIS LINE
-
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|double|min:0','width'=>'col-sm-6'];
-			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -320,6 +315,32 @@
 
 
 	    //By the way, you can still create your own method in here... :) 
+		public function getDetail($id) {
+			
+			//Create an Auth
 
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
+				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
+				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
+			}
+
+	  		$this->cbLoader();
+	  		$hoje = date('Y-m-d H:i:s');					
+			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
+			$module = CRUDBooster::getCurrentModule();
+			$data = [];
+			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
+			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
+			$data['row'] = $row;
+			$data['atividades'] = DB::table('atividades')
+						            ->join('professores', 'atividades.professor_id', '=', 'professores.id')
+						            ->join('espacos', 'atividades.espaco_id', '=', 'espacos.id')
+						            ->select('atividades.*', 'espacos.nome as espaco', 'professores.nome as professor')
+						            ->where('atividades.tipoatividade_id',$id)->where('atividades.data_fim','>=',$hoje)->whereNull('atividades.deleted_at')->orderBy('atividades.data_inicio', 'asc')->get();			
+			$data['command'] = 'detail';
+		    //Please use cbView method instead view method from laravel
+			Session::put('current_row_id',$id);
+			$this->cbView('tipoatividade_detail',$data);
+		}
 
 	}

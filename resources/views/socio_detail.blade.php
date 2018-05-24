@@ -212,7 +212,7 @@
 														<td>{{$dependente->grau}}</td>
 														<td>{{$dependente->sexo}}</td>
 														<td>
-															{{$dependente->data_nascimento}} 
+															{{Carbon\Carbon::parse($dependente->data_nascimento)->format('d/m/Y')}} 
 															@php
 															   echo("(".Carbon\Carbon::parse($dependente->data_nascimento)->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
 															@endphp

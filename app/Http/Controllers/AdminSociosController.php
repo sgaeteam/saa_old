@@ -360,7 +360,11 @@
 	    */
 	    public function hook_before_delete($id) {
 	        //Your code here
-
+	        $hoje = date('Y-m-d H:i:s');					
+			DB::table('dependentes')
+	        ->whereNull('deleted_at')
+            ->where('socio_id',$id)
+	        ->update(array('deleted_at'=>$hoje)); 
 	    }
 
 	    /* 

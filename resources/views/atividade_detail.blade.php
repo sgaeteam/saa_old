@@ -105,7 +105,7 @@
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
 													<th>Titulo</th>
-													<th>Inicio</th>
+													<th>Início</th>
 													<th>Fim</th>
 													<th>Dia da Semana</th>
 											</thead>
@@ -113,8 +113,8 @@
 												@foreach($eventos as $evento)
 													<tr>
 														<td>{{$evento->titulo}}</td>
-														<td>{{$evento->start_date}}</td>
-														<td>{{$evento->end_date}}</td>
+														<td>{{Carbon\Carbon::parse($evento->start_date)->format('d/m/Y | H:i')}}</td>
+														<td>{{Carbon\Carbon::parse($evento->end_date)->format('d/m/Y | H:i')}}</td>
 														<td>
 															@php
 																$data = date("w", strtotime($evento->start_date));

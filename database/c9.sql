@@ -2,10 +2,10 @@
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tempo de Geração: 16/05/2018 às 20:54
--- Versão do servidor: 5.5.59-0ubuntu0.14.04.1
--- Versão do PHP: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: May 24, 2018 at 09:59 PM
+-- Server version: 5.5.59-0ubuntu0.14.04.1
+-- PHP Version: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de dados: `c9`
+-- Database: `c9`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `area__competencias`
+-- Table structure for table `area__competencias`
 --
 
 CREATE TABLE IF NOT EXISTS `area__competencias` (
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `area__competencias` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `area__competencias`
+-- Dumping data for table `area__competencias`
 --
 
 INSERT INTO `area__competencias` (`id`, `sigla`, `descricao`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `area__competencias` (`id`, `sigla`, `descricao`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Table structure for table `atividades`
 --
 
 CREATE TABLE IF NOT EXISTS `atividades` (
@@ -75,22 +75,23 @@ CREATE TABLE IF NOT EXISTS `atividades` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Fazendo dump de dados para tabela `atividades`
+-- Dumping data for table `atividades`
 --
 
 INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `data_fim`, `data_cancelamento`, `duracao`, `hora_inicio_seg`, `hora_inicio_ter`, `hora_inicio_qua`, `hora_inicio_qui`, `hora_inicio_sex`, `hora_inicio_sab`, `hora_inicio_dom`, `tipoatividade_id`, `professor_id`, `espaco_id`, `agendado`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Futebol Sênior', 'FUTS', 'Aulas de futebol para melhor idade', '2018-03-30', '2018-10-31', '0000-00-00', '01:00:00', '20:00:00', '00:00:00', '20:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 3, 2, 9, 1, '2018-03-26 11:45:38', '2018-04-25 04:34:29', NULL),
 (2, 'Aula de Dança para Casais', 'ADC', '', '2018-05-14', '2018-05-31', '0000-00-00', '02:00:00', '20:30:00', '00:00:00', '09:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 2, 1, 8, 0, '2018-03-26 11:55:08', '2018-05-15 23:34:08', NULL),
-(3, 'Natação Baby', 'NTBY', '', '2018-05-15', '2018-06-30', NULL, '01:00:00', '00:00:00', '08:00:00', '00:00:00', '08:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 3, 11, 0, '2018-05-16 15:53:36', NULL, NULL),
-(4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', NULL, '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 1, '2018-05-16 17:38:53', '2018-05-16 17:46:42', NULL);
+(3, 'Natação Baby', 'NTBY', '', '2018-05-15', '2018-06-30', NULL, '01:00:00', '00:00:00', '08:00:00', '00:00:00', '08:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 3, 11, 1, '2018-05-16 15:53:36', NULL, NULL),
+(4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', NULL, '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 0, '2018-05-16 17:38:53', '2018-05-16 17:46:42', '2018-05-22 13:44:15'),
+(5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', NULL, '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 0, '2018-05-24 08:41:04', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE IF NOT EXISTS `categorias` (
@@ -105,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
--- Fazendo dump de dados para tabela `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descricao`, `mensalidade`, `convites`) VALUES
@@ -132,7 +133,7 @@ INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descr
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_apicustom`
+-- Table structure for table `cms_apicustom`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_apicustom` (
@@ -158,7 +159,7 @@ CREATE TABLE IF NOT EXISTS `cms_apicustom` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_apikey`
+-- Table structure for table `cms_apikey`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_apikey` (
@@ -174,7 +175,7 @@ CREATE TABLE IF NOT EXISTS `cms_apikey` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_dashboard`
+-- Table structure for table `cms_dashboard`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_dashboard` (
@@ -190,7 +191,7 @@ CREATE TABLE IF NOT EXISTS `cms_dashboard` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_email_queues`
+-- Table structure for table `cms_email_queues`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_email_queues` (
@@ -212,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `cms_email_queues` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_email_templates`
+-- Table structure for table `cms_email_templates`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_email_templates` (
@@ -231,7 +232,7 @@ CREATE TABLE IF NOT EXISTS `cms_email_templates` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_email_templates`
+-- Dumping data for table `cms_email_templates`
 --
 
 INSERT INTO `cms_email_templates` (`id`, `name`, `slug`, `subject`, `content`, `description`, `from_name`, `from_email`, `cc_email`, `created_at`, `updated_at`) VALUES
@@ -240,7 +241,7 @@ INSERT INTO `cms_email_templates` (`id`, `name`, `slug`, `subject`, `content`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_logs`
+-- Table structure for table `cms_logs`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_logs` (
@@ -253,10 +254,10 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=483 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=507 ;
 
 --
--- Fazendo dump de dados para tabela `cms_logs`
+-- Dumping data for table `cms_logs`
 --
 
 INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `id_cms_users`, `created_at`, `updated_at`) VALUES
@@ -743,12 +744,36 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `i
 (479, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/agendar/4', 'Agendar atividade 4 em Agendar Atividades', 1, '2018-05-16 17:39:17', NULL),
 (480, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/suspender/4', 'Suspender atividade 4 em Agendar Atividades', 1, '2018-05-16 17:41:06', NULL),
 (481, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/agendar/4', 'Agendar atividade 4 em Agendar Atividades', 1, '2018-05-16 17:42:40', NULL),
-(482, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/edit-save/4', 'Atualizar dados de  em Agendar Atividades', 1, '2018-05-16 17:46:42', NULL);
+(482, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/edit-save/4', 'Atualizar dados de  em Agendar Atividades', 1, '2018-05-16 17:46:42', NULL),
+(483, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-17 09:15:37', NULL),
+(484, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 6 em Matricular Usuários', 1, '2018-05-17 09:29:36', NULL),
+(485, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/usuarios/add-save', 'Adicionar novo conteúdo de 5 em Usuários', 1, '2018-05-17 09:59:57', NULL),
+(486, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-05-17 22:40:18', NULL),
+(487, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-05-19 03:27:22', NULL),
+(488, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/agendar/3', 'Agendar atividade 3 em Agendar Atividades', 1, '2018-05-19 06:34:44', NULL),
+(489, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/edit-save/25', 'Atualizar dados de  em Alugar Espaços', 1, '2018-05-19 07:18:17', NULL),
+(490, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:59.0) Gecko/20100101 Firefox/59.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/edit-save/25', 'Atualizar dados de  em Alugar Espaços', 1, '2018-05-19 07:27:57', NULL),
+(491, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-05-21 23:24:11', NULL),
+(492, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-05-22 13:33:10', NULL),
+(493, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/delete/4', 'Excluir o conteúdo de 4 em Agendar Atividades', 1, '2018-05-22 13:37:29', NULL),
+(494, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/delete/4', 'Excluir o conteúdo de 4 em Agendar Atividades', 1, '2018-05-22 13:44:15', NULL),
+(495, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 379 em Alugar Espaços', 1, '2018-05-22 13:52:13', NULL),
+(496, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/edit-save/22', 'Atualizar dados de  em Alugar Espaços', 1, '2018-05-22 14:06:12', NULL),
+(497, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/delete/22', 'Excluir o conteúdo de 22 em Alugar Espaços', 1, '2018-05-22 14:06:49', NULL),
+(498, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/eventos/delete/22', 'Excluir o conteúdo de 22 em Alugar Espaços', 1, '2018-05-22 14:07:32', NULL),
+(499, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 3 em Socios', 1, '2018-05-23 05:26:29', NULL),
+(500, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 4 em Dependentes', 1, '2018-05-23 05:27:40', NULL),
+(501, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/dependentes/edit-save/4', 'Atualizar dados de  em Dependentes', 1, '2018-05-23 05:28:22', NULL),
+(502, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/socios/delete/3', 'Excluir o conteúdo de 3 em Socios', 1, '2018-05-23 05:29:56', NULL),
+(503, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-05-23 19:50:37', NULL),
+(504, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-05-23 22:56:28', NULL),
+(505, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-24 08:37:45', NULL),
+(506, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 5 em Agendar Atividades', 1, '2018-05-24 08:41:04', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_menus`
+-- Table structure for table `cms_menus`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_menus` (
@@ -769,7 +794,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
--- Fazendo dump de dados para tabela `cms_menus`
+-- Dumping data for table `cms_menus`
 --
 
 INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_id`, `is_active`, `is_dashboard`, `id_cms_privileges`, `sorting`, `created_at`, `updated_at`) VALUES
@@ -796,7 +821,7 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_moduls`
+-- Table structure for table `cms_moduls`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_moduls` (
@@ -814,7 +839,7 @@ CREATE TABLE IF NOT EXISTS `cms_moduls` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 --
--- Fazendo dump de dados para tabela `cms_moduls`
+-- Dumping data for table `cms_moduls`
 --
 
 INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controller`, `is_protected`, `is_active`, `created_at`, `updated_at`) VALUES
@@ -847,7 +872,7 @@ INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controlle
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_notifications`
+-- Table structure for table `cms_notifications`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_notifications` (
@@ -864,7 +889,7 @@ CREATE TABLE IF NOT EXISTS `cms_notifications` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_privileges`
+-- Table structure for table `cms_privileges`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_privileges` (
@@ -878,7 +903,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_privileges`
+-- Dumping data for table `cms_privileges`
 --
 
 INSERT INTO `cms_privileges` (`id`, `name`, `is_superadmin`, `theme_color`, `created_at`, `updated_at`) VALUES
@@ -887,7 +912,7 @@ INSERT INTO `cms_privileges` (`id`, `name`, `is_superadmin`, `theme_color`, `cre
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_privileges_roles`
+-- Table structure for table `cms_privileges_roles`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
@@ -905,7 +930,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
 
 --
--- Fazendo dump de dados para tabela `cms_privileges_roles`
+-- Dumping data for table `cms_privileges_roles`
 --
 
 INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, `is_edit`, `is_delete`, `id_cms_privileges`, `id_cms_moduls`, `created_at`, `updated_at`) VALUES
@@ -943,7 +968,7 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_settings`
+-- Table structure for table `cms_settings`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_settings` (
@@ -961,7 +986,7 @@ CREATE TABLE IF NOT EXISTS `cms_settings` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
--- Fazendo dump de dados para tabela `cms_settings`
+-- Dumping data for table `cms_settings`
 --
 
 INSERT INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `dataenum`, `helper`, `created_at`, `updated_at`, `group_setting`, `label`) VALUES
@@ -985,7 +1010,7 @@ INSERT INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `data
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_statistics`
+-- Table structure for table `cms_statistics`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_statistics` (
@@ -998,7 +1023,7 @@ CREATE TABLE IF NOT EXISTS `cms_statistics` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_statistics`
+-- Dumping data for table `cms_statistics`
 --
 
 INSERT INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -1007,7 +1032,7 @@ INSERT INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_statistic_components`
+-- Table structure for table `cms_statistic_components`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
@@ -1025,7 +1050,7 @@ CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
--- Fazendo dump de dados para tabela `cms_statistic_components`
+-- Dumping data for table `cms_statistic_components`
 --
 
 INSERT INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`, `component_name`, `area_name`, `sorting`, `name`, `config`, `created_at`, `updated_at`) VALUES
@@ -1037,7 +1062,7 @@ INSERT INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_users`
+-- Table structure for table `cms_users`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_users` (
@@ -1054,7 +1079,7 @@ CREATE TABLE IF NOT EXISTS `cms_users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_users`
+-- Dumping data for table `cms_users`
 --
 
 INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `created_at`, `updated_at`, `status`) VALUES
@@ -1063,7 +1088,7 @@ INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_pri
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cobrancas`
+-- Table structure for table `cobrancas`
 --
 
 CREATE TABLE IF NOT EXISTS `cobrancas` (
@@ -1076,7 +1101,7 @@ CREATE TABLE IF NOT EXISTS `cobrancas` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Fazendo dump de dados para tabela `cobrancas`
+-- Dumping data for table `cobrancas`
 --
 
 INSERT INTO `cobrancas` (`id`, `created_at`, `updated_at`, `deleted_at`, `descricao`) VALUES
@@ -1089,7 +1114,7 @@ INSERT INTO `cobrancas` (`id`, `created_at`, `updated_at`, `deleted_at`, `descri
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dependentes`
+-- Table structure for table `dependentes`
 --
 
 CREATE TABLE IF NOT EXISTS `dependentes` (
@@ -1103,21 +1128,22 @@ CREATE TABLE IF NOT EXISTS `dependentes` (
   `grau` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `socio_id` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
--- Fazendo dump de dados para tabela `dependentes`
+-- Dumping data for table `dependentes`
 --
 
 INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `sexo`, `data_nascimento`, `grau`, `socio_id`) VALUES
 (1, '2018-03-11 05:02:47', '2018-03-11 07:05:23', NULL, 'Pedrita Flintstones', 'Feminino', '2010-01-01', 'Filha', 2),
 (2, '2018-03-11 05:03:43', '2018-03-11 07:05:01', NULL, 'Vilma Flintstones', 'Feminino', '1980-08-19', 'Esposa', 2),
-(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', NULL, 'Bruno teste', 'Feminino', '1997-03-06', 'vizinho', 1);
+(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', NULL, 'Bruno teste', 'Feminino', '1997-03-06', 'vizinho', 1),
+(4, '2018-05-23 05:27:40', '2018-05-23 05:28:22', '2018-05-23 05:29:56', 'CLAUDIA MARQUES NOGUEIRA', 'Feminino', '2014-03-15', 'Prima', 3);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `espacos`
+-- Table structure for table `espacos`
 --
 
 CREATE TABLE IF NOT EXISTS `espacos` (
@@ -1133,7 +1159,7 @@ CREATE TABLE IF NOT EXISTS `espacos` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
--- Fazendo dump de dados para tabela `espacos`
+-- Dumping data for table `espacos`
 --
 
 INSERT INTO `espacos` (`id`, `nome`, `descricao`, `capacidade`, `finalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1152,7 +1178,7 @@ INSERT INTO `espacos` (`id`, `nome`, `descricao`, `capacidade`, `finalidade`, `c
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `eventos`
+-- Table structure for table `eventos`
 --
 
 CREATE TABLE IF NOT EXISTS `eventos` (
@@ -1168,146 +1194,161 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `socio_id` int(11) DEFAULT NULL,
   `espaco_id` int(11) NOT NULL,
   `atividade_id` int(11) DEFAULT NULL,
+  `professor_id` int(11) DEFAULT NULL,
   `espaco_valor` double NOT NULL,
   `espaco_desconto` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=366 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=380 ;
 
 --
--- Fazendo dump de dados para tabela `eventos`
+-- Dumping data for table `eventos`
 --
 
-INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, `titulo`, `start_date`, `end_date`, `all_day`, `socio_id`, `espaco_id`, `atividade_id`, `espaco_valor`, `espaco_desconto`) VALUES
-(1, '2018-02-24 11:46:07', NULL, '2018-04-12 12:55:58', 10000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, 0, 0),
-(2, '2018-02-24 11:52:38', NULL, '2018-04-12 12:55:58', 1000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, 0, 0),
-(3, '2018-02-26 21:50:55', NULL, '2018-04-12 12:55:40', 65000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, 0, 0),
-(4, '2018-03-06 06:41:57', NULL, '2018-04-12 12:55:40', 67500, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, 0, 0),
-(5, '2018-03-06 07:51:43', '2018-03-08 01:11:36', '2018-04-12 12:55:40', 95000, 'Baba do Marceleza', '2018-03-10 15:30:00', '2018-03-10 18:00:00', 0, NULL, 0, NULL, 0, 0),
-(6, '2018-03-07 21:30:33', '2018-03-26 11:23:12', '2018-04-12 12:55:40', 250000, 'Reuniao SGC', '2018-03-20 18:00:00', '2018-03-20 18:55:00', 0, 1, 0, NULL, 0, 0),
-(7, '2018-03-14 23:39:41', '2018-04-08 13:01:58', '2018-04-12 12:55:40', 124998, 'Evento Continuo X', '2018-03-14 14:00:00', '2018-03-16 18:00:00', 0, 1, 9, NULL, 8000, 0),
-(8, '2018-03-14 23:59:33', '2018-03-26 11:21:51', '2018-04-12 12:55:40', 500000, 'Aniversário de 15 anos', '2018-03-13 19:00:00', '2018-03-18 00:00:00', 0, 2, 0, NULL, 0, 0),
-(9, '2018-03-29 15:58:12', NULL, '2018-04-12 12:55:40', 9, 'Almoço Mexicano con la familia', '2018-03-31 11:00:00', '2018-03-31 16:00:00', 0, 1, 6, NULL, 10000, 1000),
-(10, '2018-04-10 05:03:04', NULL, '2018-04-12 12:55:40', 12, 'Yabbadabbadoo', '2018-03-31 12:00:00', '2018-03-31 13:00:00', 0, 2, 6, NULL, 12345, 0),
-(11, '2018-04-10 05:26:04', NULL, '2018-04-12 12:55:40', 12, 'Yabbadabbadoo 2', '2018-03-31 12:00:00', '2018-03-31 13:00:00', 0, 2, 6, NULL, 12345, 0),
-(12, '2018-04-10 08:49:50', NULL, '2018-04-12 12:55:40', 1000, 'Yabbadabbadoo 4', '2018-03-31 13:00:00', '2018-03-31 14:00:00', 0, 2, 6, NULL, 1000000, 0),
-(13, '2018-04-10 11:38:41', NULL, '2018-04-12 12:55:40', 1234, 'Yabbadabbadoo 5', '2018-03-31 13:00:00', '2018-03-31 15:00:00', 0, 2, 6, NULL, 1234567, 0),
-(14, '2018-04-12 00:51:20', NULL, '2018-04-12 12:55:40', 987654, 'Desfile de lingerie', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, 987654321, 0),
-(15, '2018-04-12 01:21:29', NULL, '2018-04-12 12:55:40', 987654, 'Baby Swimming', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, 987654321, 0),
-(16, '2018-04-12 01:22:07', NULL, '2018-04-12 12:55:40', 987654, 'Scarface', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, 987654321, 0),
-(17, '2018-04-12 02:56:10', NULL, '2018-04-12 12:55:40', 987654, 'Teste Evento', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, 987654321, 0),
-(18, '2018-04-12 03:01:03', NULL, '2018-04-12 12:55:40', 987654, 'Champs', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, 987654321, 0),
-(19, '2018-04-12 03:11:19', NULL, '2018-04-12 12:55:40', 987654, 'Champs', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, 987654321, 0),
-(20, '2018-04-12 03:12:53', NULL, '2018-04-12 12:55:40', 987654, 'Champs Lig', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, 987654321, 0),
-(21, '2018-04-12 03:49:47', NULL, '2018-04-12 12:55:40', 987654, 'Champs Lig', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, 987654321, 0),
-(22, '2018-04-12 12:55:06', NULL, NULL, 1223456, 'Baba da Aldeia', '2018-04-14 15:30:00', '2018-04-14 18:00:00', 0, 1, 9, NULL, 1223456767, 0),
-(23, '2018-04-12 13:20:58', NULL, NULL, 1223, 'Aniversário', '2018-04-14 13:00:00', '2018-04-14 18:00:00', 0, 2, 9, NULL, 1223456, 0),
-(24, '2018-04-16 06:49:38', NULL, NULL, 10, 'Almoço Mexicano con la familia 2', '2018-04-16 00:00:00', '2018-04-17 18:00:00', 0, 1, 6, NULL, 10000, 0),
-(25, '2018-04-26 04:27:08', NULL, NULL, 1200, 'Baba Yabbadabbadoo', '2018-05-07 19:00:00', '2018-05-07 21:00:00', 0, 2, 9, NULL, 1200000, 0),
-(278, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-16 20:00:00', '2018-05-16 21:00:00', 0, NULL, 9, 1, 0, 0),
-(279, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-21 20:00:00', '2018-05-21 21:00:00', 0, NULL, 9, 1, 0, 0),
-(280, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-23 20:00:00', '2018-05-23 21:00:00', 0, NULL, 9, 1, 0, 0),
-(281, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-28 20:00:00', '2018-05-28 21:00:00', 0, NULL, 9, 1, 0, 0),
-(282, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-30 20:00:00', '2018-05-30 21:00:00', 0, NULL, 9, 1, 0, 0),
-(266, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-02 20:00:00', '2018-04-02 21:00:00', 0, NULL, 9, 1, 0, 0),
-(267, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-04 20:00:00', '2018-04-04 21:00:00', 0, NULL, 9, 1, 0, 0),
-(268, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-09 20:00:00', '2018-04-09 21:00:00', 0, NULL, 9, 1, 0, 0),
-(269, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-11 20:00:00', '2018-04-11 21:00:00', 0, NULL, 9, 1, 0, 0),
-(270, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-16 20:00:00', '2018-04-16 21:00:00', 0, NULL, 9, 1, 0, 0),
-(271, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-18 20:00:00', '2018-04-18 21:00:00', 0, NULL, 9, 1, 0, 0),
-(272, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-23 20:00:00', '2018-04-23 21:00:00', 0, NULL, 9, 1, 0, 0),
-(273, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-25 20:00:00', '2018-04-25 21:00:00', 0, NULL, 9, 1, 0, 0),
-(274, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-30 20:00:00', '2018-04-30 21:00:00', 0, NULL, 9, 1, 0, 0),
-(292, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-04 20:00:00', '2018-07-04 21:00:00', 0, NULL, 9, 1, 0, 0),
-(287, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-18 20:00:00', '2018-06-18 21:00:00', 0, NULL, 9, 1, 0, 0),
-(288, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-20 20:00:00', '2018-06-20 21:00:00', 0, NULL, 9, 1, 0, 0),
-(289, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-25 20:00:00', '2018-06-25 21:00:00', 0, NULL, 9, 1, 0, 0),
-(290, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-27 20:00:00', '2018-06-27 21:00:00', 0, NULL, 9, 1, 0, 0),
-(291, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-02 20:00:00', '2018-07-02 21:00:00', 0, NULL, 9, 1, 0, 0),
-(293, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-09 20:00:00', '2018-07-09 21:00:00', 0, NULL, 9, 1, 0, 0),
-(283, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-04 20:00:00', '2018-06-04 21:00:00', 0, NULL, 9, 1, 0, 0),
-(284, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-06 20:00:00', '2018-06-06 21:00:00', 0, NULL, 9, 1, 0, 0),
-(275, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-02 20:00:00', '2018-05-02 21:00:00', 0, NULL, 9, 1, 0, 0),
-(276, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-09 20:00:00', '2018-05-09 21:00:00', 0, NULL, 9, 1, 0, 0),
-(277, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-14 20:00:00', '2018-05-14 21:00:00', 0, NULL, 9, 1, 0, 0),
-(286, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-13 20:00:00', '2018-06-13 21:00:00', 0, NULL, 9, 1, 0, 0),
-(285, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-11 20:00:00', '2018-06-11 21:00:00', 0, NULL, 9, 1, 0, 0),
-(313, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-17 20:00:00', '2018-09-17 21:00:00', 0, NULL, 9, 1, 0, 0),
-(312, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-12 20:00:00', '2018-09-12 21:00:00', 0, NULL, 9, 1, 0, 0),
-(311, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-10 20:00:00', '2018-09-10 21:00:00', 0, NULL, 9, 1, 0, 0),
-(309, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-03 20:00:00', '2018-09-03 21:00:00', 0, NULL, 9, 1, 0, 0),
-(310, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-05 20:00:00', '2018-09-05 21:00:00', 0, NULL, 9, 1, 0, 0),
-(316, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-26 20:00:00', '2018-09-26 21:00:00', 0, NULL, 9, 1, 0, 0),
-(315, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-24 20:00:00', '2018-09-24 21:00:00', 0, NULL, 9, 1, 0, 0),
-(314, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-19 20:00:00', '2018-09-19 21:00:00', 0, NULL, 9, 1, 0, 0),
-(304, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-15 20:00:00', '2018-08-15 21:00:00', 0, NULL, 9, 1, 0, 0),
-(305, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-20 20:00:00', '2018-08-20 21:00:00', 0, NULL, 9, 1, 0, 0),
-(306, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-22 20:00:00', '2018-08-22 21:00:00', 0, NULL, 9, 1, 0, 0),
-(307, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-27 20:00:00', '2018-08-27 21:00:00', 0, NULL, 9, 1, 0, 0),
-(308, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-29 20:00:00', '2018-08-29 21:00:00', 0, NULL, 9, 1, 0, 0),
-(303, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-13 20:00:00', '2018-08-13 21:00:00', 0, NULL, 9, 1, 0, 0),
-(302, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-08 20:00:00', '2018-08-08 21:00:00', 0, NULL, 9, 1, 0, 0),
-(294, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-11 20:00:00', '2018-07-11 21:00:00', 0, NULL, 9, 1, 0, 0),
-(295, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-16 20:00:00', '2018-07-16 21:00:00', 0, NULL, 9, 1, 0, 0),
-(296, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-18 20:00:00', '2018-07-18 21:00:00', 0, NULL, 9, 1, 0, 0),
-(297, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-23 20:00:00', '2018-07-23 21:00:00', 0, NULL, 9, 1, 0, 0),
-(298, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-25 20:00:00', '2018-07-25 21:00:00', 0, NULL, 9, 1, 0, 0),
-(299, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-30 20:00:00', '2018-07-30 21:00:00', 0, NULL, 9, 1, 0, 0),
-(300, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-01 20:00:00', '2018-08-01 21:00:00', 0, NULL, 9, 1, 0, 0),
-(301, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-06 20:00:00', '2018-08-06 21:00:00', 0, NULL, 9, 1, 0, 0),
-(338, '2018-05-16 16:02:56', '2018-05-16 16:02:56', NULL, 0, 'Natação Baby', '2018-05-15 08:00:00', '2018-05-15 09:00:00', 0, NULL, 11, 3, 0, 0),
-(337, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, 0, 0),
-(334, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, 0, 0),
-(335, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-23 09:00:00', '2018-05-23 11:00:00', 0, NULL, 8, 2, 0, 0),
-(336, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, 0, 0),
-(343, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-31 08:00:00', '2018-05-31 09:00:00', 0, NULL, 11, 3, 0, 0),
-(342, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-29 08:00:00', '2018-05-29 09:00:00', 0, NULL, 11, 3, 0, 0),
-(341, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-24 08:00:00', '2018-05-24 09:00:00', 0, NULL, 11, 3, 0, 0),
-(340, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-22 08:00:00', '2018-05-22 09:00:00', 0, NULL, 11, 3, 0, 0),
-(339, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-17 08:00:00', '2018-05-17 09:00:00', 0, NULL, 11, 3, 0, 0),
-(329, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, 0, 0),
-(330, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-23 09:00:00', '2018-05-23 11:00:00', 0, NULL, 8, 2, 0, 0),
-(331, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, 0, 0),
-(332, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, 0, 0),
-(333, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, 0, 0),
-(325, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-29 20:00:00', '2018-10-29 21:00:00', 0, NULL, 9, 1, 0, 0),
-(326, '2018-05-15 22:16:12', '2018-05-16 01:18:28', '2018-05-16 01:18:28', 9170, 'Volley Scarface', '2018-05-20 08:00:00', '2018-05-20 10:00:00', 0, 1, 8, NULL, 100000, 20000),
-(327, '2018-05-16 00:29:51', '2018-05-16 00:29:51', NULL, 0, 'Aula de Dança para Casais', '2018-05-14 20:30:00', '2018-05-14 22:30:00', 0, NULL, 8, 2, 0, 0),
-(328, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, 0, 0),
-(323, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-22 20:00:00', '2018-10-22 21:00:00', 0, NULL, 9, 1, 0, 0),
-(324, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-24 20:00:00', '2018-10-24 21:00:00', 0, NULL, 9, 1, 0, 0),
-(317, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-01 20:00:00', '2018-10-01 21:00:00', 0, NULL, 9, 1, 0, 0),
-(318, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-03 20:00:00', '2018-10-03 21:00:00', 0, NULL, 9, 1, 0, 0),
-(319, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-08 20:00:00', '2018-10-08 21:00:00', 0, NULL, 9, 1, 0, 0),
-(320, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-10 20:00:00', '2018-10-10 21:00:00', 0, NULL, 9, 1, 0, 0),
-(321, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-15 20:00:00', '2018-10-15 21:00:00', 0, NULL, 9, 1, 0, 0),
-(322, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-17 20:00:00', '2018-10-17 21:00:00', 0, NULL, 9, 1, 0, 0),
-(344, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, 0, 0),
-(345, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, 0, 0),
-(346, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, 0, 0),
-(347, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, 0, 0),
-(348, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, 0, 0),
-(349, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, 0, 0),
-(350, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, 0, 0),
-(351, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, 0, 0),
-(352, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-05-18 07:00:00', '2018-05-18 09:00:30', 0, NULL, 11, 4, 0, 0),
-(353, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-05-25 07:00:00', '2018-05-25 09:00:30', 0, NULL, 11, 4, 0, 0),
-(354, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-01 07:00:00', '2018-06-01 09:00:30', 0, NULL, 11, 4, 0, 0),
-(355, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-08 07:00:00', '2018-06-08 09:00:30', 0, NULL, 11, 4, 0, 0),
-(356, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-15 07:00:00', '2018-06-15 09:00:30', 0, NULL, 11, 4, 0, 0),
-(357, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-22 07:00:00', '2018-06-22 09:00:30', 0, NULL, 11, 4, 0, 0),
-(358, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-29 07:00:00', '2018-06-29 09:00:30', 0, NULL, 11, 4, 0, 0),
-(359, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-05-18 07:00:00', '2018-05-18 09:00:30', 0, NULL, 11, 4, 0, 0),
-(360, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-05-25 07:00:00', '2018-05-25 09:00:30', 0, NULL, 11, 4, 0, 0),
-(361, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-06-01 07:00:00', '2018-06-01 09:00:30', 0, NULL, 11, 4, 0, 0),
-(362, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-06-08 07:00:00', '2018-06-08 09:00:30', 0, NULL, 11, 4, 0, 0),
-(363, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-06-15 07:00:00', '2018-06-15 09:00:30', 0, NULL, 11, 4, 0, 0),
-(364, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-06-22 07:00:00', '2018-06-22 09:00:30', 0, NULL, 11, 4, 0, 0),
-(365, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-06-29 07:00:00', '2018-06-29 09:00:30', 0, NULL, 11, 4, 0, 0);
+INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, `titulo`, `start_date`, `end_date`, `all_day`, `socio_id`, `espaco_id`, `atividade_id`, `professor_id`, `espaco_valor`, `espaco_desconto`) VALUES
+(1, '2018-02-24 11:46:07', NULL, '2018-04-12 12:55:58', 10000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, NULL, 0, 0),
+(2, '2018-02-24 11:52:38', NULL, '2018-04-12 12:55:58', 1000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, NULL, 0, 0),
+(3, '2018-02-26 21:50:55', NULL, '2018-04-12 12:55:40', 65000, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, NULL, 0, 0),
+(4, '2018-03-06 06:41:57', NULL, '2018-04-12 12:55:40', 67500, '', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, NULL, 0, NULL, NULL, 0, 0),
+(5, '2018-03-06 07:51:43', '2018-03-08 01:11:36', '2018-04-12 12:55:40', 95000, 'Baba do Marceleza', '2018-03-10 15:30:00', '2018-03-10 18:00:00', 0, NULL, 0, NULL, NULL, 0, 0),
+(6, '2018-03-07 21:30:33', '2018-03-26 11:23:12', '2018-04-12 12:55:40', 250000, 'Reuniao SGC', '2018-03-20 18:00:00', '2018-03-20 18:55:00', 0, 1, 0, NULL, NULL, 0, 0),
+(7, '2018-03-14 23:39:41', '2018-04-08 13:01:58', '2018-04-12 12:55:40', 124998, 'Evento Continuo X', '2018-03-14 14:00:00', '2018-03-16 18:00:00', 0, 1, 9, NULL, NULL, 8000, 0),
+(8, '2018-03-14 23:59:33', '2018-03-26 11:21:51', '2018-04-12 12:55:40', 500000, 'Aniversário de 15 anos', '2018-03-13 19:00:00', '2018-03-18 00:00:00', 0, 2, 0, NULL, NULL, 0, 0),
+(9, '2018-03-29 15:58:12', NULL, '2018-04-12 12:55:40', 9, 'Almoço Mexicano con la familia', '2018-03-31 11:00:00', '2018-03-31 16:00:00', 0, 1, 6, NULL, NULL, 10000, 1000),
+(10, '2018-04-10 05:03:04', NULL, '2018-04-12 12:55:40', 12, 'Yabbadabbadoo', '2018-03-31 12:00:00', '2018-03-31 13:00:00', 0, 2, 6, NULL, NULL, 12345, 0),
+(11, '2018-04-10 05:26:04', NULL, '2018-04-12 12:55:40', 12, 'Yabbadabbadoo 2', '2018-03-31 12:00:00', '2018-03-31 13:00:00', 0, 2, 6, NULL, NULL, 12345, 0),
+(12, '2018-04-10 08:49:50', NULL, '2018-04-12 12:55:40', 1000, 'Yabbadabbadoo 4', '2018-03-31 13:00:00', '2018-03-31 14:00:00', 0, 2, 6, NULL, NULL, 1000000, 0),
+(13, '2018-04-10 11:38:41', NULL, '2018-04-12 12:55:40', 1234, 'Yabbadabbadoo 5', '2018-03-31 13:00:00', '2018-03-31 15:00:00', 0, 2, 6, NULL, NULL, 1234567, 0),
+(14, '2018-04-12 00:51:20', NULL, '2018-04-12 12:55:40', 987654, 'Desfile de lingerie', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, NULL, 987654321, 0),
+(15, '2018-04-12 01:21:29', NULL, '2018-04-12 12:55:40', 987654, 'Baby Swimming', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, NULL, 987654321, 0),
+(16, '2018-04-12 01:22:07', NULL, '2018-04-12 12:55:40', 987654, 'Scarface', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, NULL, 987654321, 0),
+(17, '2018-04-12 02:56:10', NULL, '2018-04-12 12:55:40', 987654, 'Teste Evento', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, NULL, 987654321, 0),
+(18, '2018-04-12 03:01:03', NULL, '2018-04-12 12:55:40', 987654, 'Champs', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, NULL, 987654321, 0),
+(19, '2018-04-12 03:11:19', NULL, '2018-04-12 12:55:40', 987654, 'Champs', '2018-03-31 12:00:00', '2018-03-31 15:00:00', 0, 1, 6, NULL, NULL, 987654321, 0),
+(20, '2018-04-12 03:12:53', NULL, '2018-04-12 12:55:40', 987654, 'Champs Lig', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, NULL, 987654321, 0),
+(21, '2018-04-12 03:49:47', NULL, '2018-04-12 12:55:40', 987654, 'Champs Lig', '2018-03-31 14:00:00', '2018-03-31 17:00:00', 0, 2, 6, NULL, NULL, 987654321, 0),
+(22, '2018-04-12 12:55:06', '2018-05-22 14:06:12', '2018-05-22 14:07:32', 4583723767, 'Baba da Aldeia', '2018-05-30 15:30:00', '2018-05-30 18:00:00', 0, 1, 9, NULL, NULL, 1223456767, 0),
+(23, '2018-04-12 13:20:58', NULL, NULL, 1223, 'Aniversário', '2018-04-14 13:00:00', '2018-04-14 18:00:00', 0, 2, 9, NULL, NULL, 1223456, 0),
+(24, '2018-04-16 06:49:38', NULL, NULL, 10, 'Almoço Mexicano con la familia 2', '2018-04-16 00:00:00', '2018-04-17 18:00:00', 0, 1, 6, NULL, NULL, 10000, 0),
+(25, '2018-04-26 04:27:08', '2018-05-19 07:27:57', NULL, 125057, 'Baba Yabbadabbadoo', '2018-05-19 19:00:00', '2018-05-19 21:00:00', 0, 2, 9, NULL, NULL, 1250570, 0),
+(278, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-16 20:00:00', '2018-05-16 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(279, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-21 20:00:00', '2018-05-21 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(280, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-23 20:00:00', '2018-05-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(281, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-28 20:00:00', '2018-05-28 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(282, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-30 20:00:00', '2018-05-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(266, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-02 20:00:00', '2018-04-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(267, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-04 20:00:00', '2018-04-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(268, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-09 20:00:00', '2018-04-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(269, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-11 20:00:00', '2018-04-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(270, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-16 20:00:00', '2018-04-16 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(271, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-18 20:00:00', '2018-04-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(272, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-23 20:00:00', '2018-04-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(273, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-25 20:00:00', '2018-04-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(274, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-30 20:00:00', '2018-04-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(292, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-04 20:00:00', '2018-07-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(287, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-18 20:00:00', '2018-06-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(288, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-20 20:00:00', '2018-06-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(289, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-25 20:00:00', '2018-06-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(290, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-27 20:00:00', '2018-06-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(291, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-02 20:00:00', '2018-07-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(293, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-09 20:00:00', '2018-07-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(283, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-04 20:00:00', '2018-06-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(284, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-06 20:00:00', '2018-06-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(275, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-02 20:00:00', '2018-05-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(276, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-09 20:00:00', '2018-05-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(277, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-14 20:00:00', '2018-05-14 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(286, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-13 20:00:00', '2018-06-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(285, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-11 20:00:00', '2018-06-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(313, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-17 20:00:00', '2018-09-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(312, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-12 20:00:00', '2018-09-12 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(311, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-10 20:00:00', '2018-09-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(309, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-03 20:00:00', '2018-09-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(310, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-05 20:00:00', '2018-09-05 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(316, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-26 20:00:00', '2018-09-26 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(315, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-24 20:00:00', '2018-09-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(314, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-19 20:00:00', '2018-09-19 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(304, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-15 20:00:00', '2018-08-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(305, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-20 20:00:00', '2018-08-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(306, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-22 20:00:00', '2018-08-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(307, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-27 20:00:00', '2018-08-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(308, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-29 20:00:00', '2018-08-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(303, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-13 20:00:00', '2018-08-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(302, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-08 20:00:00', '2018-08-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(294, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-11 20:00:00', '2018-07-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(295, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-16 20:00:00', '2018-07-16 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(296, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-18 20:00:00', '2018-07-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(297, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-23 20:00:00', '2018-07-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(298, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-25 20:00:00', '2018-07-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(299, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-30 20:00:00', '2018-07-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(300, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-01 20:00:00', '2018-08-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(301, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-06 20:00:00', '2018-08-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(338, '2018-05-16 16:02:56', '2018-05-16 16:02:56', NULL, 0, 'Natação Baby', '2018-05-15 08:00:00', '2018-05-15 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(337, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(334, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(335, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-23 09:00:00', '2018-05-23 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(336, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(343, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-31 08:00:00', '2018-05-31 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(342, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-29 08:00:00', '2018-05-29 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(341, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-24 08:00:00', '2018-05-24 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(340, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-22 08:00:00', '2018-05-22 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(339, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-05-17 08:00:00', '2018-05-17 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(329, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(330, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-23 09:00:00', '2018-05-23 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(331, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(332, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(333, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(325, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-29 20:00:00', '2018-10-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(326, '2018-05-15 22:16:12', '2018-05-16 01:18:28', '2018-05-16 01:18:28', 9170, 'Volley Scarface', '2018-05-20 08:00:00', '2018-05-20 10:00:00', 0, 1, 8, NULL, NULL, 100000, 20000),
+(327, '2018-05-16 00:29:51', '2018-05-16 00:29:51', NULL, 0, 'Aula de Dança para Casais', '2018-05-14 20:30:00', '2018-05-14 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(328, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(323, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-22 20:00:00', '2018-10-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(324, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-24 20:00:00', '2018-10-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(317, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-01 20:00:00', '2018-10-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(318, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-03 20:00:00', '2018-10-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(319, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-08 20:00:00', '2018-10-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(320, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-10 20:00:00', '2018-10-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(321, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-15 20:00:00', '2018-10-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(322, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-17 20:00:00', '2018-10-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(344, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(345, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(346, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(347, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(348, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(349, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(350, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(351, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(352, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-05-18 07:00:00', '2018-05-18 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(353, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-05-25 07:00:00', '2018-05-25 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(354, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-01 07:00:00', '2018-06-01 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(355, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-08 07:00:00', '2018-06-08 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(356, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-15 07:00:00', '2018-06-15 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(357, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-22 07:00:00', '2018-06-22 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(358, '2018-05-16 17:39:17', '2018-05-16 17:39:17', '2018-05-16 17:41:06', 0, 'Baby Swimming', '2018-06-29 07:00:00', '2018-06-29 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(359, '2018-05-16 17:42:40', '2018-05-16 17:42:40', NULL, 0, 'Baby Swimming', '2018-05-18 07:00:00', '2018-05-18 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(360, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-05-25 07:00:00', '2018-05-25 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(361, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-06-01 07:00:00', '2018-06-01 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(362, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-06-08 07:00:00', '2018-06-08 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(363, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-06-15 07:00:00', '2018-06-15 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(364, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-06-22 07:00:00', '2018-06-22 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(365, '2018-05-16 17:42:40', '2018-05-16 17:42:40', '2018-05-22 13:44:15', 0, 'Baby Swimming', '2018-06-29 07:00:00', '2018-06-29 09:00:30', 0, NULL, 11, 4, NULL, 0, 0),
+(366, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-17 08:00:00', '2018-05-17 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(367, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-22 08:00:00', '2018-05-22 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(368, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-24 08:00:00', '2018-05-24 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(369, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-29 08:00:00', '2018-05-29 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(370, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-31 08:00:00', '2018-05-31 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(371, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(372, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(373, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(374, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(375, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(376, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(377, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(378, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(379, '2018-05-22 13:52:13', NULL, NULL, 12245, 'Evento do Rato', '2018-05-25 10:00:00', '2018-05-25 12:00:00', 0, 2, 8, NULL, NULL, 1234500, 10000);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `evento__detalhes`
+-- Table structure for table `evento__detalhes`
 --
 
 CREATE TABLE IF NOT EXISTS `evento__detalhes` (
@@ -1320,31 +1361,34 @@ CREATE TABLE IF NOT EXISTS `evento__detalhes` (
   `quantidade` int(11) NOT NULL DEFAULT '0',
   `sub_total` double NOT NULL,
   `desconto` double NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=18 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
--- Fazendo dump de dados para tabela `evento__detalhes`
+-- Dumping data for table `evento__detalhes`
 --
 
-INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `produto_id`, `produto_valor`, `quantidade`, `sub_total`, `desconto`) VALUES
-(1, NULL, NULL, 3, 1, 5500, 10, 55000, 0),
-(2, NULL, NULL, 3, 3, 2000, 1, 2000, 0),
-(3, NULL, NULL, 3, 2, 4000, 2, 8000, 0),
-(4, NULL, NULL, 4, 3, 2500, 1, 2500, 0),
-(5, NULL, NULL, 4, 2, 3000, 5, 15000, 0),
-(6, NULL, NULL, 4, 1, 5000, 10, 50000, 0),
-(10, NULL, NULL, 5, 3, 2500, 20, 50000, 0),
-(11, NULL, NULL, 5, 1, 5000, 10, 45000, 5000),
-(15, NULL, NULL, 6, 3, 2500, 100, 250000, 0),
-(16, NULL, NULL, 7, 3, 2500, 50, 124990, 10),
-(14, NULL, NULL, 8, 1, 5000, 100, 500000, 0),
-(17, NULL, NULL, 326, 5, 4545, 2, 9090, 0);
+INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `produto_id`, `produto_valor`, `quantidade`, `sub_total`, `desconto`, `deleted_at`) VALUES
+(1, NULL, NULL, 3, 1, 5500, 10, 55000, 0, NULL),
+(2, NULL, NULL, 3, 3, 2000, 1, 2000, 0, NULL),
+(3, NULL, NULL, 3, 2, 4000, 2, 8000, 0, NULL),
+(4, NULL, NULL, 4, 3, 2500, 1, 2500, 0, NULL),
+(5, NULL, NULL, 4, 2, 3000, 5, 15000, 0, NULL),
+(6, NULL, NULL, 4, 1, 5000, 10, 50000, 0, NULL),
+(10, NULL, NULL, 5, 3, 2500, 20, 50000, 0, NULL),
+(11, NULL, NULL, 5, 1, 5000, 10, 45000, 5000, NULL),
+(15, NULL, NULL, 6, 3, 2500, 100, 250000, 0, NULL),
+(16, NULL, NULL, 7, 3, 2500, 50, 124990, 10, NULL),
+(14, NULL, NULL, 8, 1, 5000, 100, 500000, 0, NULL),
+(17, NULL, NULL, 326, 5, 4545, 2, 9090, 0, NULL),
+(19, NULL, NULL, 22, 5, 4545, 60, 272700, 0, '2018-05-22 14:07:32'),
+(18, NULL, NULL, 22, 10, 50045, 666, 33329970, 0, '2018-05-22 14:07:32');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `fornecedores`
+-- Table structure for table `fornecedores`
 --
 
 CREATE TABLE IF NOT EXISTS `fornecedores` (
@@ -1363,7 +1407,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `fornecedores`
+-- Dumping data for table `fornecedores`
 --
 
 INSERT INTO `fornecedores` (`id`, `nome`, `documento`, `tipo_documento`, `nome_contato`, `telefone`, `celular`, `email`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1374,7 +1418,7 @@ INSERT INTO `fornecedores` (`id`, `nome`, `documento`, `tipo_documento`, `nome_c
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `matriculas`
+-- Table structure for table `matriculas`
 --
 
 CREATE TABLE IF NOT EXISTS `matriculas` (
@@ -1388,10 +1432,10 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
--- Fazendo dump de dados para tabela `matriculas`
+-- Dumping data for table `matriculas`
 --
 
 INSERT INTO `matriculas` (`id`, `atividade_id`, `usuario_id`, `data_matricula`, `mensalidade`, `desconto`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1399,12 +1443,13 @@ INSERT INTO `matriculas` (`id`, `atividade_id`, `usuario_id`, `data_matricula`, 
 (2, 3, 1, '2018-03-20', 50000, 20000, '2018-03-26 11:09:29', NULL, '2018-03-26 11:11:43'),
 (3, 2, 2, '2018-03-26', 50000, 30000, '2018-03-26 11:57:21', NULL, NULL),
 (4, 2, 4, '2018-03-26', 20000, 0, '2018-03-26 11:57:51', NULL, NULL),
-(5, 1, 3, '2018-03-26', 100000, 0, '2018-03-26 12:00:17', NULL, NULL);
+(5, 1, 3, '2018-03-26', 100000, 0, '2018-03-26 12:00:17', NULL, NULL),
+(6, 1, 4, '2018-05-17', 130000, 0, '2018-05-17 09:29:36', NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -1412,10 +1457,10 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=62 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=64 ;
 
 --
--- Fazendo dump de dados para tabela `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1472,12 +1517,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (58, '2018_03_28_000211_alter_table_eventos_rename_destino', 17),
 (59, '2018_03_28_004018_alter_table_eventos_add_valor_espaco', 18),
 (60, '2018_04_03_210149_alter_table_atividades_add_espacoid', 19),
-(61, '2018_05_15_084259_alter_table_atividades_add_agendado', 20);
+(61, '2018_05_15_084259_alter_table_atividades_add_agendado', 20),
+(62, '2018_05_22_135743_add_delete_to_evento_detalhes', 21),
+(63, '2018_05_24_185310_alter_table_eventos_add_professorid', 22);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produtos`
+-- Table structure for table `produtos`
 --
 
 CREATE TABLE IF NOT EXISTS `produtos` (
@@ -1492,7 +1539,7 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
--- Fazendo dump de dados para tabela `produtos`
+-- Dumping data for table `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `valor`, `fornecedor_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1506,7 +1553,7 @@ INSERT INTO `produtos` (`id`, `nome`, `valor`, `fornecedor_id`, `created_at`, `u
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professores`
+-- Table structure for table `professores`
 --
 
 CREATE TABLE IF NOT EXISTS `professores` (
@@ -1525,7 +1572,7 @@ CREATE TABLE IF NOT EXISTS `professores` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `professores`
+-- Dumping data for table `professores`
 --
 
 INSERT INTO `professores` (`id`, `nome`, `documento`, `tipo_documento`, `telefone`, `celular`, `email`, `hora_aula`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1536,7 +1583,7 @@ INSERT INTO `professores` (`id`, `nome`, `documento`, `tipo_documento`, `telefon
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `socios`
+-- Table structure for table `socios`
 --
 
 CREATE TABLE IF NOT EXISTS `socios` (
@@ -1573,20 +1620,21 @@ CREATE TABLE IF NOT EXISTS `socios` (
   `data_adesao` date DEFAULT NULL,
   `obs` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `socios`
+-- Dumping data for table `socios`
 --
 
 INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `matricula`, `funcao`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `areacompetencia_id`, `categoria_id`, `cobranca_id`, `outra_matricula`, `data_adesao`, `obs`) VALUES
 (1, '2018-03-11 04:03:53', '2018-03-11 09:39:02', NULL, 'Tony Montana', '1982', 'Administrador', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 11, 1, '', '1960-12-31', ''),
-(2, '2018-03-11 04:11:41', '2018-03-14 07:12:24', NULL, 'Fred Flintstones', 'YabbaDabbaDoo', '', '', '', '1900-12-14', '', '', '', '', '', '', '', '', '', 'M', 'C', '', '', '', '', '', 3, 14, 3, '', '1900-12-21', '');
+(2, '2018-03-11 04:11:41', '2018-03-14 07:12:24', NULL, 'Fred Flintstones', 'YabbaDabbaDoo', '', '', '', '1900-12-14', '', '', '', '', '', '', '', '', '', 'M', 'C', '', '', '', '', '', 3, 14, 3, '', '1900-12-21', ''),
+(3, '2018-05-23 05:26:29', NULL, '2018-05-23 05:29:56', 'PALOMA SANTANA DA SILVA MOREIRA', '', '', '', '', '1999-07-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 14, 3, '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_atividades`
+-- Table structure for table `tipo_atividades`
 --
 
 CREATE TABLE IF NOT EXISTS `tipo_atividades` (
@@ -1600,7 +1648,7 @@ CREATE TABLE IF NOT EXISTS `tipo_atividades` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
--- Fazendo dump de dados para tabela `tipo_atividades`
+-- Dumping data for table `tipo_atividades`
 --
 
 INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1621,7 +1669,7 @@ INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -1652,17 +1700,18 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Fazendo dump de dados para tabela `usuarios`
+-- Dumping data for table `usuarios`
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `cobranca_id`, `obs`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Paulo Cintura', '', '', '1972-07-13', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '2018-03-26 10:34:58', NULL, NULL),
 (2, 'Pato Donald', '', '', '1931-12-24', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 4, '', '2018-03-26 10:35:52', NULL, NULL),
 (3, 'Seu Boneco', '', '', '1984-10-30', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 4, '', '2018-03-26 10:36:36', NULL, NULL),
-(4, 'Margarida', '', '', '1945-05-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '2018-03-26 10:37:09', NULL, NULL);
+(4, 'Margarida', '', '', '1945-05-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '2018-03-26 10:37:09', NULL, NULL),
+(5, 'Bolsonaro 2018', '12314312343', '3214234234', '2018-05-31', 'rua do ai quem quer', 'ogro gogo', 'melao', 'do', '54665464', '5450000045454', '4546405450', 'chota12@genitallia.c', '4546464', 'd', 'e', '', '', '', '', '', 1, '', '2018-05-17 09:59:57', NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

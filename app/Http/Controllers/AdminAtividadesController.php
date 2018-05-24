@@ -322,7 +322,18 @@
 	    */
 	    public function hook_before_delete($id) {
 	        //Your code here
-
+			$hoje = date('Y-m-d H:i:s');					
+			DB::table('eventos')
+	        ->whereNull('deleted_at')
+            ->where('atividade_id',$id)
+            ->where('start_date','>=',$hoje)
+	        ->update(array('deleted_at'=>$hoje)); 
+				  
+			DB::table($this->table)
+	        ->whereNull('deleted_at')
+	        ->where($this->primary_key,$id)
+	        ->where('agendado','1')
+	        ->update(array('agendado'=>'0'));
 	    }
 
 	    /* 
@@ -377,9 +388,9 @@
 			
 			foreach ($period as $dt) {
 				
-				switch ($dt->format("l")) {
+				switch ($dt->format("w")) {
 					
-				    case "Sunday":
+				    case "0":
 				    	if (isset($agendaSemanal['dom'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['dom']);			
@@ -417,7 +428,7 @@
 				    	}
 				        break;
 				        
-				    case "Monday":
+				    case "1":
 				    	if (isset($agendaSemanal['seg'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['seg']);			
@@ -455,7 +466,7 @@
 				    	}
 				        break;
 				        
-				    case "Tuesday":
+				    case "2":
 				    	if (isset($agendaSemanal['ter'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['ter']);			
@@ -493,7 +504,7 @@
 				    	}
 				        break;
 				        
-				    case "Wednesday":
+				    case "3":
 				    	if (isset($agendaSemanal['qua'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qua']);			
@@ -530,7 +541,7 @@
 				    	}
 				        break;
 				        
-				    case "Thursday":
+				    case "4":
 				    	if (isset($agendaSemanal['qui'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qui']);			
@@ -568,7 +579,7 @@
 				    	}
 				        break;
 				        
-				    case "Friday":
+				    case "5":
 				    	if (isset($agendaSemanal['sex'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sex']);			
@@ -606,7 +617,7 @@
 				    	}
 				        break;
 				        
-				    case "Saturday":
+				    case "6":
 				    	if (isset($agendaSemanal['sab'])) {
 				    		
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sab']);			

@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use Route;
 
 	class AdminEspacosController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -44,13 +45,6 @@
 			$this->form[] = ['label'=>'Finalidade','name'=>'finalidade','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Atividades;Atividades & Eventos;Eventos;Inativo;Inoperante;Reserva'];
 			# END FORM DO NOT REMOVE THIS LINE
 
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Descrição','name'=>'descricao','type'=>'textarea','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Capacidade','name'=>'capacidade','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Finalidade','name'=>'finalidade','type'=>'select2','validation'=>'required','width'=>'col-sm-9','dataenum'=>'Atividades;Eventos;Atividades & Eventos'];
-			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -326,6 +320,28 @@
 
 
 	    //By the way, you can still create your own method in here... :) 
+		public function getDetail($id) {
+			
+			//Create an Auth
 
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
+				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
+				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
+			}
+
+	  		$this->cbLoader();
+	  		$hoje = date('Y-m-d H:i:s');					
+			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
+			$module = CRUDBooster::getCurrentModule();
+			$data = [];
+			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
+			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
+			$data['row'] = $row;
+			$data['eventos'] = DB::table('eventos')->where('espaco_id',$id)->where('start_date','>=',$hoje)->whereNull('deleted_at')->orderBy('start_date', 'asc')->get();
+			$data['command'] = 'detail';
+		    //Please use cbView method instead view method from laravel
+			Session::put('current_row_id',$id);
+			$this->cbView('espaco_detail',$data);
+		}
 
 	}
