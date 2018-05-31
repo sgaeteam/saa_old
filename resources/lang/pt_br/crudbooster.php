@@ -100,7 +100,7 @@ return [
     'button_sign_in'                 => 'Entrar',
     'button_selected_action'         => 'Ações em massa',
     'button_download_file'           => 'Download',
-    'button_reset'                   => 'Reset',
+    'button_reset'                   => 'Limpar',
     'export_dialog_title'            => "Exportar dados",
     'export_dialog_filename'         => 'Nome do arquivo',
     'export_dialog_help_filename'    => 'VocẼ pode renomear o arquivo de acordo com sua vontade',
@@ -235,9 +235,9 @@ return [
     'privileges_module_list_delete' =>'Excluir',
 
      //datamodal 
-    'datamodal_select'=>'Select',
-    'datamodal_search_and_enter'=>'Search and enter...',
-    'datamodal_enter_to_search'=>'Enter to search',
-    'datamodal_browse_data'=>'Navegar' ,
+    'datamodal_select'=>'Selecionar',
+    'datamodal_search_and_enter'=>'Digite uma palavra e pressione enter para buscar...',
+    'datamodal_enter_to_search'=>'Digite para pesquisar',
+    'datamodal_browse_data'=>'Procurar' ,
 
 ];

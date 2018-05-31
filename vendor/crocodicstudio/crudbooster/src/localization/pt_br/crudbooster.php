@@ -94,7 +94,7 @@ return [
     'button_sign_in'                 => 'Acessar',
     'button_selected_action'         => 'Ações em massa',
     'button_download_file'           => 'Download',
-    'button_reset'                   => 'Reset',
+    'button_reset'                   => 'Limpar',
     'export_dialog_title'            => "Exportar dados",
     'export_dialog_filename'         => 'Nome do arquivo',
     'export_dialog_help_filename'    => 'Você pode renomear o arquivo de acordo com sua vontade',
@@ -203,6 +203,7 @@ return [
     //filemanager
     'chose_an_image' =>'Escolha uma imagem ',
     'chose_an_file' =>'Escolha um arquivo ',
+    'search_an_file' =>'Procurar arquivo ',
     
     //action confirmation
     'confirmation_title'            => 'Confirmação',

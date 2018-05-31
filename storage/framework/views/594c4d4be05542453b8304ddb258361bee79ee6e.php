@@ -21,7 +21,7 @@
 			<div class='row'>
 				<div class='col-sm-10'>
 					<div class="panel panel-default">
-						<div class="panel-heading"><i class="fa fa-pencil-square-o"></i> Form</div>
+						<div class="panel-heading"><i class="fa fa-pencil-square-o"></i> <?php echo e(trans('crudbooster.action_add_data')); ?> <?php echo e($form['label']); ?></div>
 						<div class="panel-body child-form-area">
 							<?php $__currentLoopData = $form['columns']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $col): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>	
 							<?php $name_column = $name.$col['name'];?>
@@ -29,7 +29,7 @@
 								<?php if($col['type']!='hidden'): ?>
 								<label class="control-label col-sm-2"><?php echo e($col['label']); ?>
 
-								<?php if(!empty($col['required'])): ?> <span class="text-danger" title="This field is required">*</span> <?php endif; ?>
+								<?php if(!empty($col['required'])): ?> <span class="text-danger" title="Este campo é obrigatório">*</span> <?php endif; ?>
 								</label>
 								<?php endif; ?>
 								<div class="col-sm-10">
@@ -67,7 +67,7 @@
 									  <input type="hidden" class="input-id">
 								      <input type="text" class="form-control input-label <?php echo e($col['required']?"required":""); ?>" readonly>
 								      <span class="input-group-btn">
-								        <button class="btn btn-primary" onclick="showModal<?php echo e($name_column); ?>()" type="button"><i class='fa fa-search'></i> Browse Data</button>
+								        <button class="btn btn-primary" onclick="showModal<?php echo e($name_column); ?>()" type="button"><i class='fa fa-search'></i> <?php echo e(trans('crudbooster.datamodal_browse_data')); ?></button>
 								      </span>
 								    </div><!-- /input-group -->
 
@@ -105,7 +105,7 @@
 									    <div class="modal-content">
 									      <div class="modal-header">
 									        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-									        <h4 class="modal-title"><i class='fa fa-search'></i> Browse Data <?php echo e($col['label']); ?></h4>
+									        <h4 class="modal-title"><i class='fa fa-search'></i> <?php echo e(trans('crudbooster.datamodal_browse_data')); ?> <?php echo e($col['label']); ?></h4>
 									      </div>
 									      <div class="modal-body">
 									        <iframe id='iframe-modal-<?php echo e($name_column); ?>' style="border:0;height: 430px;width: 100%" src=""></iframe>
@@ -126,12 +126,13 @@
 									  <input type="hidden" class="input-id">
 								      <input type="text" class="form-control input-label <?php echo e($col['required']?"required":""); ?>" readonly>
 								      <span class="input-group-btn">
-								        <button class="btn btn-primary" id="btn-upload-<?php echo e($name_column); ?>" onclick="showFakeUpload<?php echo e($name_column); ?>()" type="button"><i class='fa fa-search'></i> Browse File</button>
+								        <button class="btn btn-primary" id="btn-upload-<?php echo e($name_column); ?>" onclick="showFakeUpload<?php echo e($name_column); ?>()" type="button"><i class='fa fa-search'></i> <?php echo e(trans('crudbooster.search_an_file')); ?></button>
 								      </span>
 								    </div><!-- /input-group -->
 
 								    <div id="loading-<?php echo e($name_column); ?>" class='text-info' style="display: none">
-								    	<i class='fa fa-spin fa-spinner'></i> Please wait loading...
+								    	<i class='fa fa-spin fa-spinner'></i> <?php echo e(trans('crudbooster.text_loading')); ?>
+
 								    </div>
 
 								    <input type="file" id='fake-upload-<?php echo e($name_column); ?>' style="display: none">
@@ -172,12 +173,12 @@
 
 										  if(is_image_only) {
 										  	  if($.inArray(extension, img_extension) == -1) {
-										  	  	sweetAlert('Warning','Your file extension is not allowed !','warning');
+										  	  	sweetAlert('Warning','Sua extensão de arquivo não é permitida !','warning');
 												return false;    
 										  	  }
 										  }else{										  	
 											  if($.inArray(extension, available_extension) == -1) {
-												sweetAlert('Warning','Your file extension is not allowed !','warning');
+												sweetAlert('Warning','Sua extensão de arquivo não é permitida !','warning');
 												return false;    
 											  } 
 										  }
@@ -364,7 +365,7 @@
 									$('#panel-form-<?php echo e($name); ?> .required').each(function() {
 										var v = $(this).val();																	
 										if(v == '') {											
-											sweetAlert("Oops","Please complete the form !","warning");
+											sweetAlert("Oops","Por favor, preencha o formulário !","warning");
 											is_false += 1;
 										}
 									})
@@ -431,8 +432,8 @@
 							</script>
 						</div>
 						<div class="panel-footer" align="right">
-							<input type='button' class='btn btn-default' id="btn-reset-form-<?php echo e($name); ?>" onclick="resetForm<?php echo e($name); ?>()" value='Reset Form'/>
-							<input type='button' id='btn-add-table-<?php echo e($name); ?>' class='btn btn-primary' onclick="addToTable<?php echo e($name); ?>()" value='Add To Table'/>
+							<input type='button' class='btn btn-default' id="btn-reset-form-<?php echo e($name); ?>" onclick="resetForm<?php echo e($name); ?>()" value="<?php echo e(trans('crudbooster.button_reset')); ?>"/>
+							<input type='button' id='btn-add-table-<?php echo e($name); ?>' class='btn btn-primary' onclick="addToTable<?php echo e($name); ?>()" value='<?php echo e(trans('crudbooster.button_add')); ?>'/>
 						</div>
 					</div>
 				</div>
@@ -440,7 +441,8 @@
 
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<i class='fa fa-table'></i> Table Detail
+					<i class='fa fa-table'></i> <?php echo e(trans('crudbooster.action_detail_data')); ?> <?php echo e($form['label']); ?>
+
 				</div>
 				<div class="panel-body no-padding table-responsive"  style="max-height: 400px;overflow: auto;">
 					<table id='table-<?php echo e($name); ?>' class='table table-striped table-bordered'>
