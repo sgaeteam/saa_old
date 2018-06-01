@@ -346,10 +346,10 @@
             </div>            
         </div>
 
-        <div class='statistic-row row'>
+        <!--div class='statistic-row row'>
                 <div id='area5' class="col-sm-12 connectedSortable">
  
                 </div>
-        </div>
+        </div-->
     
     </div><!--END STATISTIC AREA-->

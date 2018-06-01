@@ -14,9 +14,42 @@
 	use Illuminate\Support\Facades\PDF;
 	use Illuminate\Support\Facades\Excel;
 	use CRUDBooster;
+	use Carbon\Carbon;
+	use App\Evento;
 
 	class StatisticBuilderController extends CBController {
-
+		
+		/**
+	     * @var Evento
+	     */
+	    private $calendarEvento;
+	    /**
+	     * @param CalendarEvent $calendarEvent
+	     */
+	    public function __construct(Evento $calendarEvento)
+	    {
+	        $this->calendarEvento = $calendarEvento;
+	    }
+    	
+    	public function loadCalendar()
+	    {
+	        $staticEvent = \Calendar::event(
+	            'Hoje: DIA DA MALDADE!',
+	            true,
+	            Carbon::today()->setTime(0, 0),
+	            Carbon::today()->setTime(23, 59),
+	            null,
+	            [
+	                'color' => '#F00000',
+	                'url' => 'http://google.com/search?q=dia+da+maldade',
+	            ]
+	        );
+	        
+	        $databaseEvents = $this->calendarEvento->whereNull('deleted_at')->get();
+	        $calendar = \Calendar::addEvent($staticEvent)->addEvents($databaseEvents);
+	        return $calendar;
+	        
+	    }
 	    public function cbInit() {
 	        $this->table              = "cms_statistics";
 	        $this->primary_key        = "id";
@@ -64,8 +97,10 @@
 	    	$this->cbLoader();
 			$row               = CRUDBooster::first($this->table,['slug'=>$slug]);
 			$id_cms_statistics = $row->id;
-			$page_title        = $row->name;	    				
-	    	return view('crudbooster::statistic_builder.show',compact('page_title','id_cms_statistics'));
+			$page_title        = $row->name;
+			$events = $this->loadCalendar();
+			$calendar = $events;
+	    	return view('crudbooster::statistic_builder.show',compact('page_title','id_cms_statistics','calendar'));
 	    }
 
 	    public function getBuilder($id_cms_statistics) {

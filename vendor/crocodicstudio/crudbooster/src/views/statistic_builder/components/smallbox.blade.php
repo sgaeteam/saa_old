@@ -9,7 +9,7 @@
 	    <div class="icon">
 	      <i class="ion [icon]"></i>
 	    </div>
-	    <a href="[link]" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+	    <a href="{{CRUDBooster::adminPath()}}/[link]" class="small-box-footer">Mais informações <i class="fa fa-arrow-circle-right"></i></a>
 	</div>
 
 	<div class='action pull-right'>
