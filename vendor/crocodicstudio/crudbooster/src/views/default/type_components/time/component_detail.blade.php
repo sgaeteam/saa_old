@@ -1,1 +1,1 @@
-{{$value}}
+{{ str_replace("00:00", null, date("H:i", strtotime($value))) }}

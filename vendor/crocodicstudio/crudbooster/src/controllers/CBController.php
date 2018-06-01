@@ -785,9 +785,17 @@ class CBController extends Controller {
 			if(!$name) continue;
 
 			if($di['type']=='money') {
-				$request_all[$name] = preg_replace('/[^\d-]+/', '', $request_all[$name]);
+				$request_all[$name] = preg_replace('/[^\d-.]+/', '', $request_all[$name]);
 			}
 
+			if($ro['type']=='date') {
+				$date = $request_all[$name].split("/");
+				$d = parseInt($date[0], 10);
+        		$m = parseInt($date[1], 10);
+        		$y = parseInt($date[2], 10);
+    			$request_all[$name] = date("Y-m-d",$request_all[$name]);
+    			//$request_all[$name] = new Date($y, $m - 1, $d);
+			}	
 
 			if(@$di['validation']) {
 
@@ -886,8 +894,16 @@ class CBController extends Controller {
 			$inputdata = Request::get($name);
 
 			if($ro['type']=='money') {
-				$inputdata = preg_replace('/[^\d-]+/', '', $inputdata);
+				$inputdata = preg_replace('/[^\d-.]+/', '', $inputdata);
 			}
+			
+			if($ro['type']=='date') {
+				$date = $inputdata.split("/");
+				$d = parseInt($date[0], 10);
+        		$m = parseInt($date[1], 10);
+        		$y = parseInt($date[2], 10);
+    			$inputdata = date("Y-m-d",$inputdata);
+			}			
 
 			if($ro['type']=='child') continue;
 

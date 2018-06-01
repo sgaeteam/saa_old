@@ -41,15 +41,15 @@
 			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
 			$this->col[] = ["label"=>"Descrição da Atividade","name"=>"titulo"];
 			$this->col[] = ["label"=>"Sigla","name"=>"sigla"];
-			$this->col[] = ["label"=>"Data Início","name"=>"data_inicio"];
-			$this->col[] = ["label"=>"Duração","name"=>"duracao"];
+			$this->col[] = ["label"=>"Início","name"=>"data_inicio","callback_php"=>'date("d/m/Y",strtotime($row->data_inicio))'];
+			$this->col[] = ["label"=>"Duração","name"=>"duracao","callback_php"=>'date("H:i",strtotime($row->duracao))'];
 			$this->col[] = ["label"=>"Agendado","name"=>"agendado","callback_php"=>'($row->agendado == 1 ? "Sim" : "Não")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
-			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Atividades","Atividades & Eventos")'];
+			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Atividades","Atividades & Eventos") and `deleted_at` is null'];
 			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
 			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];

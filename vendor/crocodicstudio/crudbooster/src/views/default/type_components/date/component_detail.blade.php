@@ -1,1 +1,1 @@
-{{ date("F, d Y", strtotime($value)) }}
+{{ date("d/m/Y", strtotime($value)) }}

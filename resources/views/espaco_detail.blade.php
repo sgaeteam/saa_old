@@ -104,6 +104,7 @@
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
 													<th>Titulo</th>
+													<th>Tipo</th>													
 													<th>Inicio</th>
 													<th>Fim</th>
 													<th>Dia da Semana</th>
@@ -112,6 +113,16 @@
 												@foreach($eventos as $evento)
 													<tr>
 														<td>{{$evento->titulo}}</td>
+														<td>
+															@php
+																if (isset($evento->atividade_id)) {
+																	echo "Atividade do Clube";
+																}
+																else {
+																	echo "Aluguel do Espaço";
+																}
+															@endphp
+														</td>
 														<td>{{Carbon\Carbon::parse($evento->start_date)->format('d/m/Y | H:i')}}</td>
 														<td>{{Carbon\Carbon::parse($evento->end_date)->format('d/m/Y | H:i')}}</td>
 														<td>
