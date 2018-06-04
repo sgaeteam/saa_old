@@ -74,10 +74,10 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$columns = [];
-			$columns[] = ['label'=>'Nome','name'=>'dependente_nome','type'=>'text','readonly'=>false];
-			$columns[] = ['label'=>'Data Nascimento','name'=>'dependente_dtnasc','type'=>'date','validation'=>'date','readonly'=>false];
-			$columns[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'radio','readonly'=>false,'dataenum'=>'Masculino;Feminino'];
-			$columns[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'radio','readonly'=>false,'dataenum'=>'Esposo(a);Filho(a);Neto(a)'];
+			$columns[] = ['label'=>'Nome','name'=>'dependente_nome','type'=>'text','readonly'=>false,'required'=>true];
+			$columns[] = ['label'=>'Data Nascimento','name'=>'dependente_dtnasc','type'=>'date','validation'=>'date','readonly'=>false,'required'=>true];
+			$columns[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'select','required'=>true,'dataenum'=>['Masculino','Feminino']];
+			$columns[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'select','required'=>true,'dataenum'=>['Cônjuge','Filho(a)']];
 			$this->form[] = ['label'=>'Dependentes','name'=>'dependentes','type'=>'child','columns'=>$columns,'table'=>'dependentes','foreign_key'=>'socio_id'];
 			# END FORM DO NOT REMOVE THIS LINE
 

@@ -587,3 +587,5 @@
 [03-Jun-2018 20:02:54 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''dataenum'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 80
 [03-Jun-2018 20:03:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''dataenum'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 80
 [03-Jun-2018 20:03:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''dataenum'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 80
+[04-Jun-2018 20:51:40 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 77
+[04-Jun-2018 20:51:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/app/Http/Controllers/AdminSociosController.php on line 77
