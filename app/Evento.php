@@ -9,7 +9,7 @@ use MaddHatter\LaravelFullcalendar\IdentifiableEvent;
 class Evento extends Model implements IdentifiableEvent
 {
     protected $dates = ['start_date', 'end_date'];
-    protected $fillable = ['start_date', 'end_date', 'atividade_id', 'espaco_id', 'titulo', 'created_at', 'updated_at'];
+    protected $fillable = ['start_date', 'end_date', 'atividade_id','professor_id', 'espaco_id', 'titulo', 'created_at', 'updated_at'];
 
     /**
      * Get the event's id number

@@ -119,6 +119,44 @@
 										/>
 									@elseif($col['type']=='textarea')		
 									<textarea id='{{$name_column}}' name='{{$col["name"]}}' class='form-control {{$col['required']?"required":""}}' {{($col['readonly']===true)?"readonly":""}} ></textarea>
+									@elseif($col['type']=='date')
+                                    <div class="input-group">                                
+                                        <span class="input-group-addon child_open-datetimepicker"><a><i class='fa fa-calendar '></i></a></span>
+                                        <input type='text' title="{{$col['label']}}" class='form-control notfocus child_input_date {{$col['required']?"required":""}}' name="{{$col["name"]}}" id="{{$name_column}}" value='{{$col["value"]}}'/>                       
+                                    </div>
+                                    @push('bottom')
+
+                                    @if (App::getLocale() != 'en')
+                                        <script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/locales/bootstrap-datepicker.'.App::getLocale().'.js') }}" charset="UTF-8"></script>
+                                    @endif
+                                    <script type="text/javascript">
+                                        var lang = '{{App::getLocale()}}';
+                                        $(function() {
+                                            $('.child_input_date').datepicker({
+                                                format: 'dd/mm/yyyy',
+                                                @if (App::getLocale() == 'ar')
+                                                rtl: true,
+                                                @endif
+                                                language: lang
+                                            });
+                                            
+                                            $('.child_open-datetimepicker').click(function() {
+                                                  $(this).next('.child_input_date').datepicker('show');
+                                            });
+                                            
+                                        });
+
+                                    </script>
+                                    @endpush
+
+	                                @elseif($col['type'] =='datetime')
+	                                <div class="input-group">           
+	                                            
+	                                    <span class="input-group-addon"><a href='javascript:void(0)' onclick='$("#{{$name_column}}").data("daterangepicker").toggle()'><i class='fa fa-calendar'></i></a></span>
+	                                    
+	                                    <input type='text' title="{{$col['label']}}" readonly class='form-control notfocus datetimepicker' name="{{$col["name"]}}" id="{{$name_column}}" value='{{$col["value"]}}'/>                   
+	                                </div>
+									
 									@elseif($col['type']=='upload')
 									<div id='{{$name_column}}' class="input-group">
 									  <input type="hidden" class="input-id">

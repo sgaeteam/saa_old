@@ -103,10 +103,11 @@
 									<div class='table-responsive'>
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
-													<th>Titulo</th>
-													<th>Tipo</th>													
-													<th>Inicio</th>
-													<th>Fim</th>
+													<th>Título</th>
+													<th>Tipo</th>
+													<th>Responsável</th>
+													<th>Início</th>
+													<th>Término</th>
 													<th>Dia da Semana</th>
 											</thead>
 											<tbody>
@@ -120,6 +121,16 @@
 																}
 																else {
 																	echo "Aluguel do Espaço";
+																}
+															@endphp
+														</td>
+														<td>
+															@php
+																if (isset($evento->professor_id)) {
+																	echo $evento->professor;
+																}
+																else {
+																	echo $evento->socio;
 																}
 															@endphp
 														</td>

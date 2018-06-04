@@ -374,7 +374,8 @@
 
 			$atividade = [];
 			$atividade['espaco_id'] 		= $row->espaco_id;
-			$atividade['titulo']			= $row->titulo;			
+			$atividade['titulo']			= $row->titulo;	
+			$atividade['professor_id'] 		= $row->professor_id;
 			$atividade['atividade_id']		= $id;
 			$atividade['total']				= 0.0;			
 			$atividade['all_day']			= 0;
@@ -418,6 +419,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -456,6 +458,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -494,6 +497,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -531,6 +535,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -569,6 +574,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -607,6 +613,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			
@@ -645,6 +652,7 @@
 													'end_date'			=> $atividade['end'],
 													'titulo'			=> $atividade['titulo'],
 													'atividade_id'		=> $atividade['atividade_id'],
+													'professor_id'		=> $atividade['professor_id'],
 													'total'				=> $atividade['total'],			
 													'all_day'			=> $atividade['all_day'],
 													'espaco_valor'		=> $atividade['espaco_valor'],			

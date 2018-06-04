@@ -121,6 +121,44 @@
 										/>
 									<?php elseif($col['type']=='textarea'): ?>		
 									<textarea id='<?php echo e($name_column); ?>' name='<?php echo e($col["name"]); ?>' class='form-control <?php echo e($col['required']?"required":""); ?>' <?php echo e(($col['readonly']===true)?"readonly":""); ?> ></textarea>
+									<?php elseif($col['type']=='date'): ?>
+                                    <div class="input-group">                                
+                                        <span class="input-group-addon child_open-datetimepicker"><a><i class='fa fa-calendar '></i></a></span>
+                                        <input type='text' title="<?php echo e($col['label']); ?>" class='form-control notfocus child_input_date <?php echo e($col['required']?"required":""); ?>' name="<?php echo e($col["name"]); ?>" id="<?php echo e($name_column); ?>" value='<?php echo e($col["value"]); ?>'/>                       
+                                    </div>
+                                    <?php $__env->startPush('bottom'); ?>
+
+                                    <?php if(App::getLocale() != 'en'): ?>
+                                        <script src="<?php echo e(asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/locales/bootstrap-datepicker.'.App::getLocale().'.js')); ?>" charset="UTF-8"></script>
+                                    <?php endif; ?>
+                                    <script type="text/javascript">
+                                        var lang = '<?php echo e(App::getLocale()); ?>';
+                                        $(function() {
+                                            $('.child_input_date').datepicker({
+                                                format: 'dd/mm/yyyy',
+                                                <?php if(App::getLocale() == 'ar'): ?>
+                                                rtl: true,
+                                                <?php endif; ?>
+                                                language: lang
+                                            });
+                                            
+                                            $('.child_open-datetimepicker').click(function() {
+                                                  $(this).next('.child_input_date').datepicker('show');
+                                            });
+                                            
+                                        });
+
+                                    </script>
+                                    <?php $__env->stopPush(); ?>
+
+	                                <?php elseif($col['type'] =='datetime'): ?>
+	                                <div class="input-group">           
+	                                            
+	                                    <span class="input-group-addon"><a href='javascript:void(0)' onclick='$("#<?php echo e($name_column); ?>").data("daterangepicker").toggle()'><i class='fa fa-calendar'></i></a></span>
+	                                    
+	                                    <input type='text' title="<?php echo e($col['label']); ?>" readonly class='form-control notfocus datetimepicker' name="<?php echo e($col["name"]); ?>" id="<?php echo e($name_column); ?>" value='<?php echo e($col["value"]); ?>'/>                   
+	                                </div>
+									
 									<?php elseif($col['type']=='upload'): ?>
 									<div id='<?php echo e($name_column); ?>' class="input-group">
 									  <input type="hidden" class="input-id">

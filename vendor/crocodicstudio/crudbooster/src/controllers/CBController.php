@@ -789,12 +789,7 @@ class CBController extends Controller {
 			}
 
 			if($ro['type']=='date') {
-				$date = $request_all[$name].split("/");
-				$d = parseInt($date[0], 10);
-        		$m = parseInt($date[1], 10);
-        		$y = parseInt($date[2], 10);
-    			$request_all[$name] = date("Y-m-d",$request_all[$name]);
-    			//$request_all[$name] = new Date($y, $m - 1, $d);
+    			$request_all[$name] = date("Y-d-m",strtotime($request_all[$name]));
 			}	
 
 			if(@$di['validation']) {
@@ -898,11 +893,7 @@ class CBController extends Controller {
 			}
 			
 			if($ro['type']=='date') {
-				$date = $inputdata.split("/");
-				$d = parseInt($date[0], 10);
-        		$m = parseInt($date[1], 10);
-        		$y = parseInt($date[2], 10);
-    			$inputdata = date("Y-m-d",$inputdata);
+    			$inputdata = date("Y-d-m", strtotime($inputdata)); 
 			}			
 
 			if($ro['type']=='child') continue;

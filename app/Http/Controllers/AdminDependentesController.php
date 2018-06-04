@@ -30,30 +30,22 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Nome","name"=>"nome"];
-			$this->col[] = ["label"=>"Sexo","name"=>"sexo"];
-			$this->col[] = ["label"=>"Data Nascimento","name"=>"data_nascimento"];
-			$this->col[] = ["label"=>"Grau","name"=>"grau"];
+			$this->col[] = ["label"=>"Nome","name"=>"dependente_nome"];
+			$this->col[] = ["label"=>"Sexo","name"=>"dependente_sexo"];
+			$this->col[] = ["label"=>"Data Nascimento","name"=>"dependente_dtnasc"];
+			$this->col[] = ["label"=>"Grau","name"=>"dependente_grau"];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
-			$this->form[] = ['label'=>'Data Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Grau','name'=>'grau','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nome','name'=>'dependente_nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
+			$this->form[] = ['label'=>'Data Nascimento','name'=>'dependente_dt_nasc','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
 			# END FORM DO NOT REMOVE THIS LINE
 
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Data Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Grau','name'=>'grau','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
-			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 
