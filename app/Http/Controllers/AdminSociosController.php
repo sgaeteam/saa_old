@@ -51,14 +51,14 @@
 			$this->form[] = ['label'=>'Endereço','name'=>'endereco','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'AC;AL;AP;AM;BA;CE	;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO	;RR;SC;SP;SE;TO'];
+			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO'];
 			$this->form[] = ['label'=>'CEP','name'=>'cep','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'min:1|max:255|email|unique:socios','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
 			$this->form[] = ['label'=>'Ramal','name'=>'ramal','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
-			$this->form[] = ['label'=>'Estado Civil','name'=>'estado_civil','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Solteiro(a);Casado(a);Divorciado(a);Separado(a);Viúvo(a)'];
+			$this->form[] = ['label'=>'Estado Civil','name'=>'estado_civil','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Solteiro(a);Casado(a);União Estável;Divorciado(a);Separado(a);Viúvo(a)'];
 			$this->form[] = ['label'=>'Nacionalidade','name'=>'nacionalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Naturalidade','name'=>'naturalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Lotação','name'=>'lotacao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
@@ -375,7 +375,7 @@
 			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
 			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
 			$data['row'] = DB::table('socios')->where('id',$id)->first();
-			$data['dependentes'] = DB::table('dependentes')->where('socio_id',$id)->get();
+			$data['dependentes'] = DB::table('dependentes')->where('socio_id',$id)->whereNull('deleted_at')->get();
 			$data['command'] = 'detail';
 		    //Please use cbView method instead view method from laravel
 			Session::put('current_row_id',$id);

@@ -18,6 +18,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use CRUDBooster;
 use CB;
 use Schema;
+use DateTime;
 
 class CBController extends Controller {
 
@@ -788,8 +789,13 @@ class CBController extends Controller {
 				$request_all[$name] = preg_replace('/[^\d-.]+/', '', $request_all[$name]);
 			}
 
-			if($ro['type']=='date') {
-    			$request_all[$name] = date("Y-d-m",strtotime($request_all[$name]));
+			if($di['type']=='date') {
+				if ($request_all[$name] <> "") {
+					 $mydate = $request_all[$name];
+				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
+				     $dateFormat=$date->format('Y-m-d');
+				     $request_all[$name] = $dateFormat;
+				}
 			}	
 
 			if(@$di['validation']) {
@@ -893,11 +899,18 @@ class CBController extends Controller {
 			}
 			
 			if($ro['type']=='date') {
-    			$inputdata = date("Y-d-m", strtotime($inputdata)); 
+				if ($inputdata <> "") {
+					 $mydate = $inputdata;
+				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
+				     $dateFormat=$date->format('Y-m-d');
+				     $inputdata = $dateFormat;
+				}
 			}			
 
-			if($ro['type']=='child') continue;
-
+			if($ro['type']=='child') { 
+				continue;
+			}
+			
 			if($name) {
 				if($inputdata!='') {
 					$this->arr[$name] = $inputdata;

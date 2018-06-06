@@ -201,26 +201,27 @@
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
 													<th>Nome</th>
-													<th>Grau de parentesco</th>
-													<th>Sexo</th>
 													<th>Data de Nascimento</th>
+													<th>Sexo</th>
+													<th>Grau de parentesco</th>
 											</thead>
 											<tbody>
 												@foreach($dependentes as $dependente)
 													<tr>
-														<td>{{$dependente->nome}}</td>
-														<td>{{$dependente->grau}}</td>
-														<td>{{$dependente->sexo}}</td>
+														<td>{{$dependente->dependente_nome}}</td>
 														<td>
-															{{Carbon\Carbon::parse($dependente->data_nascimento)->format('d/m/Y')}} 
+															{{ str_replace('30/11/-0001',null,Carbon\Carbon::parse($dependente->dependente_dtnasc)->format('d/m/Y'))}} 
 															@php
-															   echo("(".Carbon\Carbon::parse($dependente->data_nascimento)->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
+															   $dtnascimentoNulo =	Carbon\Carbon::parse($dependente->dependente_dtnasc)->format('d/m/Y');
+															   if ($dtnascimentoNulo <> '30/11/-0001') {
+															   		echo("(".Carbon\Carbon::parse($dependente->dependente_dtnasc)->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
+															   }
 															@endphp
 														</td>
+														<td>{{$dependente->dependente_sexo}}</td>														
+														<td>{{$dependente->dependente_grau}}</td>
 													</tr>	
 												@endforeach
-												
-												
 											</tbody>	
 										</table>
 									</div>
