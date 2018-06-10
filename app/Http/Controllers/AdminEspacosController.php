@@ -347,6 +347,7 @@
 							       ->orderBy('eventos.start_date', 'asc')
 							       ->get();
 			$data['command'] = 'detail';
+			$data['id'] = $id;
 		    //Please use cbView method instead view method from laravel
 			Session::put('current_row_id',$id);
 			$this->cbView('espaco_detail',$data);

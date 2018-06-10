@@ -21,7 +21,9 @@
               $columns_tbody = [];
               $data_child = DB::table($form['table'])
               ->where($form['foreign_key'],$id);
+
               foreach($form['columns'] as $i=>$c) {
+                
                 $data_child->addselect($form['table'].'.'.$c['name']);
 
                 if($c['type'] == 'datamodal') {
@@ -36,11 +38,11 @@
                     $data_child->join($join_table,$join_table.'.id','=',$c['name']);
                     $data_child->addselect($join_table.'.'.$join_field.' as '.$join_table.'_'.$join_field);                   
                   }
-                }               
-                
+                }
               }
-
+		  
               $data_child = $data_child->orderby($form['table'].'.id','desc')->get();
+            
               foreach($data_child as $d):             
             ?>
             <tr>
@@ -77,7 +79,15 @@
                     }else{
                       echo "<a data-label='$filename' href='".asset( $d->{$col['name']} )."'>$filename</a>";
                       echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{ $col['name'] }."'/>";
-                    }                 
+                    }
+                  }elseif ($col['type']=='date') {
+                    echo "<span class='td-label'>";
+                    $data_extenso = str_replace('0000-00-00',null,Carbon\Carbon::parse($d->{$col['name']})->format('d/m/Y')); 
+										if (!is_null($data_extenso)) {
+                      echo($data_extenso." (".Carbon\Carbon::parse($d->{$col['name']})->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
+										}															   
+                    echo "</span>";
+                    echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{$col['name']}."'/>";
                   }else{
                     echo "<span class='td-label'>";
                     echo $d->{$col['name']};

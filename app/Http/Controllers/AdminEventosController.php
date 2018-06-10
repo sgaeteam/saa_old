@@ -47,8 +47,8 @@
 			$this->form[] = ['label'=>'Início','name'=>'start_date','type'=>'datetime','validation'=>'required|after:today','width'=>'col-sm-9','readonly'=>'1'];
 			$this->form[] = ['label'=>'Término','name'=>'end_date','type'=>'datetime','validation'=>'required|after:start_date','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Descrição do Evento','name'=>'titulo','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Valor do Espaço','name'=>'espaco_valor','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Desconto','name'=>'espaco_desconto','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Valor do Espaço','name'=>'espaco_valor','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Desconto','name'=>'espaco_desconto','type'=>'money','validation'=>'min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -59,7 +59,7 @@
 			$columns[] = ['label'=>'Desconto','name'=>'desconto','type'=>'number','required'=>false, 'default'=>0.0];
 			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true];
 			$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','columns'=>$columns,'table'=>'evento__detalhes','foreign_key'=>'evento_id'];
-			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10','readonly'=>true];
+			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','readonly'=>true];
 			# END FORM DO NOT REMOVE THIS LINE
 
 
@@ -447,7 +447,13 @@
 									  $query->where('start_date'	,  '<='	, $fim);
 									  $query->where('end_date'		,  '>='	, $fim);
 									  $query->where('espaco_id'		,  '='	, $espaco);
-									  $query->whereNull('deleted_at');   					
+									  $query->whereNull('deleted_at');   
+							})
+							->orWhere(function ($query) use ($inicio,$fim, $espaco) {
+									  $query->where('start_date'	,  '<='	, $fim);
+									  $query->where('end_date'		,  '>='	, $inicio);
+									  $query->where('espaco_id'		,  '='	, $espaco);
+									  $query->whereNull('deleted_at');   										  
 					  })->first();
 
 	        if(isset($evento)) {

@@ -377,8 +377,9 @@
 			$data['row'] = DB::table('socios')->where('id',$id)->first();
 			$data['dependentes'] = DB::table('dependentes')->where('socio_id',$id)->whereNull('deleted_at')->get();
 			$data['command'] = 'detail';
+			$data['id'] = $id;
 		    //Please use cbView method instead view method from laravel
-			Session::put('current_row_id',$id);
+		    Session::put('current_row_id',$id);
 			$this->cbView('socio_detail',$data);
 		}
 

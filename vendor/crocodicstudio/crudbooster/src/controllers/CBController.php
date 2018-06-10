@@ -1112,9 +1112,24 @@ class CBController extends Controller {
 					$fk = $ro['foreign_key'];
 					$column_data = [];
 					$column_data[$fk] = $id;
+					$column_data['created_at'] = date('Y-m-d H:i:s');
 					foreach($columns as $col) {
 						$colname = $col['name'];
-						$column_data[$colname] = Request::get($name.'-'.$colname)[$i];
+						$coltype = $col['type'];
+						
+						if ($coltype == 'date') {
+							
+							$mydate = Request::get($name.'-'.$colname)[$i];
+							
+							if ($mydate <> null) {	 
+							     $date = DateTime::createFromFormat('d/m/Y', $mydate);
+							     $dateFormat=$date->format('Y-m-d');
+							     $column_data[$colname] = $dateFormat;
+							}
+						}
+						else {
+							$column_data[$colname] = Request::get($name.'-'.$colname)[$i];
+						}
 					}
 					$child_array[] = $column_data;
 				}	

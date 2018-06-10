@@ -28,7 +28,6 @@ foreach($forms as $form) {
 	
 <?php 
 foreach($forms as $index=>$form):
-	
 	$name 		= $form['name'];
 	@$join 		= $form['join'];
 	@$value		= (isset($form['value']))?$form['value']:'';

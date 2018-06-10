@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Socio extends Model
 {
-    public function area_Scompetencia()
+    public function area_competencia()
     {
         return $this->hasOne('App\Area_Competencia');
     }
