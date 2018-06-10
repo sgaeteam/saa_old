@@ -464,7 +464,7 @@
 										currentRow.replaceWith(trRow);
 										currentRow = null;
 									}
-									$('#btn-add-table-<?php echo e($name); ?>').val('Add To Table');
+									$('#btn-add-table-<?php echo e($name); ?>').val('Adicionar dados');
 									$('#btn-reset-form-<?php echo e($name); ?>').click();									
 								}
 							</script>

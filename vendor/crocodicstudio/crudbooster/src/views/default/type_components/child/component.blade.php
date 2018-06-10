@@ -459,7 +459,7 @@
 										currentRow.replaceWith(trRow);
 										currentRow = null;
 									}
-									$('#btn-add-table-{{$name}}').val('Add To Table');
+									$('#btn-add-table-{{$name}}').val('Adicionar dados');
 									$('#btn-reset-form-{{$name}}').click();									
 								}
 							</script>

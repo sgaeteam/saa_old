@@ -22,10 +22,12 @@
 	
 	<!--BOOTSTRAP DATEPICKER-->	
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/locales/bootstrap-datepicker.pt-BR.js') }}"></script>
 	<link rel="stylesheet" href="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/datepicker/datepicker3.css') }}">
 
 	<!--BOOTSTRAP DATERANGEPICKER-->
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/daterangepicker/moment.min.js') }}"></script>
+	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/daterangepicker/moment.pt-br.js') }}"></script>
 	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/daterangepicker/daterangepicker.js') }}"></script>
 	<link rel="stylesheet" href="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/daterangepicker/daterangepicker-bs3.css') }}">
 

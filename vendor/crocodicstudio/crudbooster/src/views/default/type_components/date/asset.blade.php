@@ -9,7 +9,7 @@
             @if (App::getLocale() == 'ar')
             rtl: true,
             @endif
-            language: lang
+            language: 'pt-BR'
         });
         
         $('.open-datetimepicker').click(function() {
