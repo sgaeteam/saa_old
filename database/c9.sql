@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tempo de Geração: 01/06/2018 às 01:15
+-- Tempo de Geração: 11/06/2018 às 16:18
 -- Versão do servidor: 5.5.59-0ubuntu0.14.04.1
--- Versão do PHP: 5.6.34-1+ubuntu14.04.1+deb.sury.org+1
+-- Versão do PHP: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `atividades` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
 -- Fazendo dump de dados para tabela `atividades`
@@ -83,10 +83,12 @@ CREATE TABLE IF NOT EXISTS `atividades` (
 
 INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `data_fim`, `data_cancelamento`, `duracao`, `hora_inicio_seg`, `hora_inicio_ter`, `hora_inicio_qua`, `hora_inicio_qui`, `hora_inicio_sex`, `hora_inicio_sab`, `hora_inicio_dom`, `tipoatividade_id`, `professor_id`, `espaco_id`, `agendado`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Futebol Sênior', 'FUTS', 'Aulas de futebol para melhor idade', '2018-03-30', '2018-10-31', '0000-00-00', '01:00:00', '20:00:00', '00:00:00', '20:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 3, 2, 9, 1, '2018-03-26 11:45:38', '2018-04-25 04:34:29', NULL),
-(2, 'Aula de Dança para Casais', 'ADC', '', '2018-05-14', '2018-05-31', '0000-00-00', '02:00:00', '20:30:00', '00:00:00', '09:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 2, 1, 8, 0, '2018-03-26 11:55:08', '2018-05-15 23:34:08', NULL),
+(2, 'Aula de Dança para Casais', '', '', '2018-05-14', '2018-05-31', '0000-00-00', '02:00:00', '20:30:00', '00:00:00', '09:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 2, 1, 8, 1, '2018-03-26 11:55:08', '2018-05-15 23:34:08', NULL),
 (3, 'Natação Baby', 'NTBY', '', '2018-05-15', '2018-06-30', NULL, '01:00:00', '00:00:00', '08:00:00', '00:00:00', '08:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 3, 11, 1, '2018-05-16 15:53:36', NULL, NULL),
 (4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', NULL, '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 0, '2018-05-16 17:38:53', '2018-05-16 17:46:42', '2018-05-22 13:44:15'),
-(5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', NULL, '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 0, '2018-05-24 08:41:04', NULL, NULL);
+(5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', NULL, '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 1, '2018-05-24 08:41:04', NULL, NULL),
+(6, 'Capoeira do Professor Raimundo', '', '', '2018-06-11', '2018-08-04', NULL, '02:45:00', '10:00:00', '00:00:00', '10:00:00', '00:00:00', '14:00:00', '00:00:00', '00:00:00', 1, 2, 8, 1, '2018-06-05 17:53:20', NULL, NULL),
+(7, 'Natação dos Patos', '', '', '2018-06-07', '2018-06-08', NULL, '05:00:00', '00:00:00', '00:00:00', '00:00:00', '14:00:00', '12:00:00', '12:00:00', '00:00:00', 8, 1, 11, 1, '2018-06-06 18:02:43', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -254,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=562 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=593 ;
 
 --
 -- Fazendo dump de dados para tabela `cms_logs`
@@ -769,61 +771,93 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `i
 (504, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-05-23 22:56:28', NULL),
 (505, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-24 08:37:45', NULL),
 (506, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-crudbooster-stable-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 5 em Agendar Atividades', 1, '2018-05-24 08:41:04', NULL),
-(507, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-05-28 19:31:18', NULL),
-(508, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:37:44', NULL),
-(509, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:40:53', NULL),
-(510, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:41:42', NULL),
-(511, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:44:00', NULL),
-(512, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:45:26', NULL),
-(513, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:46:21', NULL),
-(514, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:54:12', NULL),
-(515, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:54:26', NULL),
-(516, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 19:55:09', NULL),
-(517, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:02:26', NULL),
-(518, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:02:40', NULL),
-(519, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:03:13', NULL),
-(520, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:03:29', NULL),
-(521, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:04:26', NULL),
-(522, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:07:43', NULL),
-(523, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:08:36', NULL),
-(524, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:09:10', NULL),
-(525, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:09:38', NULL),
-(526, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:09:53', NULL),
-(527, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:10:04', NULL),
-(528, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:10:13', NULL),
-(529, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:10:24', NULL),
-(530, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:11:50', NULL),
-(531, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:12:03', NULL),
-(532, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:13:01', NULL),
-(533, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:15:27', NULL),
-(534, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:16:57', NULL),
-(535, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:18:55', NULL),
-(536, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:19:44', NULL),
-(537, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:31:20', NULL),
-(538, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:37:38', NULL),
-(539, '10.240.1.78', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:41:32', NULL),
-(540, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:42:57', NULL),
-(541, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:55:26', NULL),
-(542, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:57:06', NULL),
-(543, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 20:58:50', NULL),
-(544, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 21:04:55', NULL),
-(545, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 21:07:25', NULL),
-(546, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 22:54:55', NULL),
-(547, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 22:57:12', NULL),
-(548, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 23:16:11', NULL),
-(549, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 23:16:59', NULL),
-(550, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-28 23:40:18', NULL),
-(551, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/produtos/edit-save/10', 'Atualizar dados de  em Produtos', 1, '2018-05-28 23:42:20', NULL),
-(552, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-05-29 22:31:07', NULL),
-(553, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-05-31 16:10:31', NULL),
-(554, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-05-31 18:20:03', NULL),
-(555, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/menu_management/add-save', 'Adicionar novo conteúdo de Estatísticas em Menu Management', 1, '2018-05-31 18:24:02', NULL),
-(556, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/statistic_builder/edit-save/1', 'Atualizar dados de Painel de Controle em Statistic Builder', 1, '2018-05-31 20:22:59', NULL),
-(557, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/menu_management/edit-save/24', 'Atualizar dados de Estatísticas em Menu Management', 1, '2018-05-31 22:06:07', NULL),
-(558, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-05-31 22:08:17', NULL),
-(559, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-05-31 22:08:38', NULL),
-(560, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/menu_management/edit-save/24', 'Atualizar dados de Estatísticas em Menu Management', 1, '2018-05-31 22:10:03', NULL),
-(561, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-moacirmn.c9users.io/admin/menu_management/edit-save/24', 'Atualizar dados de Estatísticas em Menu Management', 1, '2018-05-31 22:12:19', NULL);
+(507, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-28 13:09:39', NULL),
+(508, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 380 em Alugar Espaços', 1, '2018-05-28 13:23:30', NULL),
+(509, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 381 em Alugar Espaços', 1, '2018-05-28 17:41:07', NULL),
+(510, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 382 em Alugar Espaços', 1, '2018-05-28 17:51:31', NULL),
+(511, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 383 em Alugar Espaços', 1, '2018-05-28 17:54:05', NULL),
+(512, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0 FirePHP/0.7.4', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-05-28 21:51:25', NULL),
+(513, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0 FirePHP/0.7.4', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 384 em Alugar Espaços', 1, '2018-05-28 21:53:36', NULL),
+(514, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0 FirePHP/0.7.4', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 385 em Alugar Espaços', 1, '2018-05-28 21:59:50', NULL),
+(515, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-05-29 12:52:48', NULL),
+(516, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/edit-save/382', 'Atualizar dados de  em Alugar Espaços', 1, '2018-05-29 12:56:55', NULL),
+(517, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-05-29 20:09:36', NULL),
+(518, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 386 em Alugar Espaços', 1, '2018-05-29 20:41:44', NULL),
+(519, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/2', 'Agendar atividade 2 em Agendar Atividades', 1, '2018-05-29 21:10:25', NULL),
+(520, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.171', 1, '2018-05-29 21:59:41', NULL),
+(521, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.233', 1, '2018-05-30 05:58:38', NULL),
+(522, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-05-30 14:09:17', NULL),
+(523, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 392 em Alugar Espaços', 1, '2018-05-30 14:14:15', NULL),
+(524, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 4 em Socios', 1, '2018-05-30 14:25:55', NULL),
+(525, '10.240.0.171', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/4', 'Atualizar dados de  em Socios', 1, '2018-05-30 14:27:12', NULL),
+(526, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/4', 'Atualizar dados de  em Socios', 1, '2018-05-30 14:29:28', NULL),
+(527, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-06-01 06:33:00', NULL),
+(528, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/menu_management/edit-save/21', 'Atualizar dados de Visão Geral em Menu Management', 1, '2018-06-01 07:03:10', NULL),
+(529, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/menu_management/edit-save/21', 'Atualizar dados de Visão Geral em Menu Management', 1, '2018-06-01 07:08:23', NULL),
+(530, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/statistic_builder/edit-save/1', 'Atualizar dados de Painel de Controle em Statistic Builder', 1, '2018-06-01 07:10:10', NULL),
+(531, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-06-02 10:56:59', NULL),
+(532, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 5 em Socios', 1, '2018-06-02 19:01:54', NULL),
+(533, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 6 em Socios', 1, '2018-06-02 19:15:26', NULL),
+(534, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 7 em Socios', 1, '2018-06-02 19:40:37', NULL),
+(535, '10.240.0.42', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 8 em Socios', 1, '2018-06-02 19:44:03', NULL),
+(536, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/8', 'Atualizar dados de  em Socios', 1, '2018-06-02 19:45:50', NULL),
+(537, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 9 em Socios', 1, '2018-06-02 19:48:36', NULL),
+(538, '10.240.0.42', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.42', 1, '2018-06-03 08:21:45', NULL),
+(539, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/action-selected', 'Excluir o conteúdo de 3,2,1 em Dependentes', 1, '2018-06-03 08:27:58', NULL),
+(540, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 10 em Socios', 1, '2018-06-03 19:59:11', NULL),
+(541, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 11 em Socios', 1, '2018-06-03 20:04:44', NULL),
+(542, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-06-03 21:05:16', NULL),
+(543, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 12 em Socios', 1, '2018-06-03 21:09:23', NULL),
+(544, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-06-04 19:39:10', NULL),
+(545, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/5', 'Agendar atividade 5 em Agendar Atividades', 1, '2018-06-04 20:00:53', NULL),
+(546, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/5', 'Suspender atividade 5 em Agendar Atividades', 1, '2018-06-04 20:06:29', NULL),
+(547, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/5', 'Agendar atividade 5 em Agendar Atividades', 1, '2018-06-04 20:07:23', NULL),
+(548, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/1', 'Suspender atividade 1 em Agendar Atividades', 1, '2018-06-04 20:22:19', NULL),
+(549, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/2', 'Suspender atividade 2 em Agendar Atividades', 1, '2018-06-04 20:22:28', NULL),
+(550, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/3', 'Suspender atividade 3 em Agendar Atividades', 1, '2018-06-04 20:22:51', NULL),
+(551, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/3', 'Agendar atividade 3 em Agendar Atividades', 1, '2018-06-04 20:25:28', NULL),
+(552, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/2', 'Agendar atividade 2 em Agendar Atividades', 1, '2018-06-04 20:25:39', NULL),
+(553, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/1', 'Agendar atividade 1 em Agendar Atividades', 1, '2018-06-04 20:25:50', NULL),
+(554, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 13 em Socios', 1, '2018-06-04 20:37:26', NULL),
+(555, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 16 em Dependentes', 1, '2018-06-04 21:34:42', NULL),
+(556, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-06-04 21:42:27', NULL),
+(557, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 17 em Dependentes', 1, '2018-06-04 21:45:22', NULL),
+(558, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/action-selected', 'Excluir o conteúdo de 16,15,14,13,12,11,10,9,8,7,6,5 em Dependentes', 1, '2018-06-04 21:52:20', NULL),
+(559, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 14 em Socios', 1, '2018-06-04 21:54:54', NULL),
+(560, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-06-05 17:06:05', NULL),
+(561, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 19 em Dependentes', 1, '2018-06-05 17:16:57', NULL),
+(562, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/delete/18', 'Excluir o conteúdo de 18 em Dependentes', 1, '2018-06-05 17:17:08', NULL),
+(563, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 20 em Dependentes', 1, '2018-06-05 17:19:23', NULL),
+(564, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 21 em Dependentes', 1, '2018-06-05 17:29:49', NULL),
+(565, '10.240.1.78', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 22 em Dependentes', 1, '2018-06-05 17:42:18', NULL),
+(566, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 23 em Dependentes', 1, '2018-06-05 17:43:05', NULL),
+(567, '10.240.0.171', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/delete/21', 'Excluir o conteúdo de 21 em Dependentes', 1, '2018-06-05 17:43:19', NULL);
+INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `id_cms_users`, `created_at`, `updated_at`) VALUES
+(568, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 24 em Dependentes', 1, '2018-06-05 17:44:32', NULL),
+(569, '10.240.0.116', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 15 em Socios', 1, '2018-06-05 17:46:49', NULL),
+(570, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 6 em Agendar Atividades', 1, '2018-06-05 17:53:20', NULL),
+(571, '10.240.0.171', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/6', 'Agendar atividade 6 em Agendar Atividades', 1, '2018-06-05 17:54:42', NULL),
+(572, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 26 em Dependentes', 1, '2018-06-05 18:18:18', NULL),
+(573, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.42', 1, '2018-06-06 11:00:26', NULL),
+(574, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 16 em Socios', 1, '2018-06-06 11:30:51', NULL),
+(575, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 7 em Agendar Atividades', 1, '2018-06-06 18:02:43', NULL),
+(576, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/7', 'Agendar atividade 7 em Agendar Atividades', 1, '2018-06-06 18:03:03', NULL),
+(577, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-06-07 16:56:33', NULL),
+(578, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 17 em Socios', 1, '2018-06-07 17:07:25', NULL),
+(579, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 18 em Socios', 1, '2018-06-07 17:13:49', NULL),
+(580, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 26 em Socios', 1, '2018-06-07 18:10:36', NULL),
+(581, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 29 em Socios', 1, '2018-06-07 18:13:51', NULL),
+(582, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 31 em Socios', 1, '2018-06-07 18:17:57', NULL),
+(583, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 38 em Socios', 1, '2018-06-07 18:27:22', NULL),
+(584, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 39 em Socios', 1, '2018-06-07 18:31:27', NULL),
+(585, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/add-save', 'Adicionar novo conteúdo de 40 em Socios', 1, '2018-06-07 18:33:18', NULL),
+(586, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 513 em Alugar Espaços', 1, '2018-06-07 18:35:29', NULL),
+(587, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-06-07 22:52:10', NULL),
+(588, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-06-08 17:26:08', NULL),
+(589, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/action-selected', 'Excluir o conteúdo de 38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21 em Socios', 1, '2018-06-08 18:12:17', NULL),
+(590, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/action-selected', 'Excluir o conteúdo de 20,19,16,14,4 em Socios', 1, '2018-06-08 18:14:56', NULL),
+(591, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-06-09 18:32:16', NULL),
+(592, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-06-09 18:38:06', NULL);
 
 -- --------------------------------------------------------
 
@@ -846,7 +880,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
 -- Fazendo dump de dados para tabela `cms_menus`
@@ -871,8 +905,7 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (18, 'Usuários', 'Route', 'AdminUsuariosControllerGetIndex', 'normal', 'fa fa-child', 5, 1, 0, 1, 11, '2018-03-26 09:46:29', '2018-03-26 10:40:24'),
 (20, 'Matricular Usuários', 'Route', 'AdminMatriculasControllerGetIndex', 'normal', 'fa fa-user-plus', 6, 1, 0, 1, 3, '2018-03-26 10:55:52', '2018-03-26 11:36:16'),
 (23, 'Agendar Atividades', 'Route', 'AdminAtividadesControllerGetIndex', NULL, 'fa fa-calendar-check-o', 6, 1, 0, 1, 2, '2018-04-22 13:12:09', NULL),
-(21, 'Visão Geral', 'Statistic', 'statistic_builder/show/dashboad', 'normal', 'fa fa-sliders', 7, 1, 0, 1, 1, '2018-03-27 11:01:38', '2018-03-31 17:59:29'),
-(24, 'Estatísticas', 'Statistic', 'statistic_builder/show/dashboad', 'normal', 'fa fa-product-hunt', 0, 1, 1, 1, NULL, '2018-05-31 18:24:02', '2018-05-31 22:12:19');
+(21, 'Visão Geral', 'Statistic', 'statistic_builder/show/dashboad-contadores', 'normal', 'fa fa-bar-chart-o', 7, 1, 1, 1, 1, '2018-03-27 11:01:38', '2018-06-01 07:08:23');
 
 -- --------------------------------------------------------
 
@@ -1083,7 +1116,7 @@ CREATE TABLE IF NOT EXISTS `cms_statistics` (
 --
 
 INSERT INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'Painel de Controle', 'dashboad', '2018-03-24 08:19:51', '2018-05-31 20:22:59');
+(1, 'Painel de Controle', 'dashboad-contadores', '2018-03-24 08:19:51', '2018-06-01 07:10:10');
 
 -- --------------------------------------------------------
 
@@ -1110,10 +1143,10 @@ CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
 --
 
 INSERT INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`, `component_name`, `area_name`, `sorting`, `name`, `config`, `created_at`, `updated_at`) VALUES
-(1, 1, 'a968b6bb462e24d3fd98baea26d34ec8', 'smallbox', 'area1', 0, NULL, '{"name":"Total de S\\u00f3cios","icon":"ion-person-stalker","color":"bg-green","link":"socios","sql":"select count(id) from socios where deleted_at IS NULL"}', '2018-03-24 08:22:38', NULL),
-(2, 1, '64045cc1d27e6331448c2df16ed74c00', 'smallbox', 'area2', 0, NULL, '{"name":"Total de eventos no m\\u00eas","icon":"ion-ios-calendar","color":"bg-red","link":"eventos","sql":"SELECT count(id) FROM `eventos` WHERE now() between `start_date` and `end_date` and deleted_at IS NULL"}', '2018-03-24 08:22:47', NULL),
-(3, 1, 'cdcbdce9a3c9f252b8bb1778a1dd958f', 'smallbox', 'area3', 0, NULL, '{"name":"Total de dependentes","icon":"ion-ios-people","color":"bg-aqua","link":"dependentes","sql":"select count(id) from dependentes where deleted_at IS NULL"}', '2018-03-24 08:22:51', NULL),
-(4, 1, '03057bb2ad1c75a8d4832b1b61d71df2', 'smallbox', 'area4', 0, NULL, '{"name":"Total de Professores","icon":"ion-ios-body","color":"bg-yellow","link":"professores","sql":"select count(id) from professores where deleted_at IS NULL"}', '2018-03-30 05:35:28', NULL);
+(1, 1, 'a968b6bb462e24d3fd98baea26d34ec8', 'smallbox', 'area2', 0, NULL, '{"name":"Total de S\\u00f3cios","icon":"ion-person-stalker","color":"bg-green","link":"socios?m=4","sql":"select count(id) from socios where deleted_at is null"}', '2018-03-24 08:22:38', NULL),
+(2, 1, '64045cc1d27e6331448c2df16ed74c00', 'smallbox', 'area1', 0, NULL, '{"name":"Total de eventos no m\\u00eas","icon":"ion-ios-calendar","color":"bg-red","link":"eventos?m=3","sql":"SELECT count(id) FROM `eventos` WHERE DATE_FORMAT(`start_date`, ''%m\\/%Y'') =  DATE_FORMAT(now(),''%m\\/%Y'') and `deleted_at` is null"}', '2018-03-24 08:22:47', NULL),
+(3, 1, 'cdcbdce9a3c9f252b8bb1778a1dd958f', 'smallbox', 'area3', 0, NULL, '{"name":"Total de dependentes","icon":"ion-person-add","color":"bg-aqua","link":"dependentes?m=14","sql":"select count(id) from dependentes where `deleted_at` is null"}', '2018-03-24 08:22:51', NULL),
+(4, 1, '03057bb2ad1c75a8d4832b1b61d71df2', 'smallbox', 'area4', 0, NULL, '{"name":"Total de Professores","icon":"ion-bag","color":"bg-yellow","link":"professores?m=17","sql":"select count(id) from professores where `deleted_at`is null"}', '2018-03-30 05:35:28', NULL);
 
 -- --------------------------------------------------------
 
@@ -1178,23 +1211,54 @@ CREATE TABLE IF NOT EXISTS `dependentes` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  `nome` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `data_nascimento` date DEFAULT NULL,
-  `grau` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `socio_id` int(11) NOT NULL,
+  `dependente_nome` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
+  `dependente_sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dependente_dtnasc` date DEFAULT NULL,
+  `dependente_grau` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=36 ;
 
 --
 -- Fazendo dump de dados para tabela `dependentes`
 --
 
-INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `sexo`, `data_nascimento`, `grau`, `socio_id`) VALUES
-(1, '2018-03-11 05:02:47', '2018-03-11 07:05:23', NULL, 'Pedrita Flintstones', 'Feminino', '2010-01-01', 'Filha', 2),
-(2, '2018-03-11 05:03:43', '2018-03-11 07:05:01', NULL, 'Vilma Flintstones', 'Feminino', '1980-08-19', 'Esposa', 2),
-(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', NULL, 'Bruno teste', 'Feminino', '1997-03-06', 'vizinho', 1),
-(4, '2018-05-23 05:27:40', '2018-05-23 05:28:22', '2018-05-23 05:29:56', 'CLAUDIA MARQUES NOGUEIRA', 'Feminino', '2014-03-15', 'Prima', 3);
+INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `socio_id`, `dependente_nome`, `dependente_sexo`, `dependente_dtnasc`, `dependente_grau`) VALUES
+(1, '2018-03-11 05:02:47', '2018-03-11 07:05:23', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL),
+(2, '2018-03-11 05:03:43', '2018-03-11 07:05:01', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL),
+(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', '2018-06-03 08:27:58', 1, '', NULL, NULL, NULL),
+(4, '2018-05-23 05:27:40', '2018-05-23 05:28:22', '2018-05-23 05:29:56', 3, '', NULL, NULL, NULL),
+(5, NULL, NULL, '2018-06-04 21:52:20', 5, 'Bebe de Rosemary', NULL, NULL, NULL),
+(6, NULL, NULL, '2018-06-04 21:52:20', 6, 'Gigi', NULL, NULL, NULL),
+(7, NULL, NULL, '2018-06-04 21:52:20', 6, 'Nega do Fortal', NULL, NULL, NULL),
+(8, NULL, NULL, '2018-06-04 21:52:20', 6, 'Ereny', NULL, NULL, NULL),
+(9, NULL, NULL, '2018-06-04 21:52:20', 7, 'BobNelson', 'M', '0000-00-00', 'Filho'),
+(10, NULL, NULL, '2018-06-04 21:52:20', 8, 'feiticeira', 'f', '0000-00-00', 'filha'),
+(11, NULL, NULL, '2018-06-04 21:52:20', 9, 'Da Lua', 'M', '0000-00-00', 'MAluco'),
+(12, NULL, NULL, '2018-06-04 21:52:20', 10, 'Vitolinha', 'M', '0000-00-00', 'Papai Smurf'),
+(13, NULL, NULL, '2018-06-04 21:52:20', 11, 'Neymar Jr', 'M', '0000-00-00', 'Filho(a)'),
+(14, NULL, NULL, '2018-06-04 21:52:20', 12, 'Walter Jr', 'Masculino', '0000-00-00', 'Filho(a)'),
+(15, NULL, NULL, '2018-06-04 21:52:20', 13, 'Gandhy', 'Masculino', '0000-00-00', 'Neto(a)'),
+(16, '2018-06-04 21:34:42', NULL, '2018-06-04 21:52:20', 9, 'Teste do Rato', 'Masculino', '0000-00-00', 'Filho(a)'),
+(17, '2018-06-04 21:45:22', NULL, NULL, 7, 'Teste do Rato', 'Feminino', '2018-06-05', 'Cônjuge'),
+(18, NULL, NULL, '2018-06-05 17:17:08', 14, 'Vitolinha', 'Masculino', '0000-00-00', 'Filho(a)'),
+(19, '2018-06-05 17:16:57', NULL, NULL, 13, 'Hoje', 'Feminino', '2018-06-05', 'Filho(a)'),
+(20, '2018-06-05 17:19:23', NULL, NULL, 10, 'Vitolinha', 'Masculino', '1973-07-03', 'Filho(a)'),
+(21, '2018-06-05 17:29:49', NULL, '2018-06-05 17:43:19', 12, 'Victor Roberto', 'Masculino', '0000-00-00', 'Cônjuge'),
+(22, '2018-06-05 17:42:18', NULL, NULL, 9, 'Victor Roberto', 'Masculino', '2018-01-20', 'Cônjuge'),
+(23, '2018-06-05 17:43:05', NULL, NULL, 6, 'Moa Voa Voa', 'Masculino', '1983-04-03', 'Filho(a)'),
+(24, '2018-06-05 17:44:32', NULL, NULL, 2, 'Vilma Flintstones', 'Feminino', '1973-07-19', 'Cônjuge'),
+(25, NULL, NULL, NULL, 15, 'Gohan', 'Masculino', '0000-00-00', 'Filho(a)'),
+(26, '2018-06-05 18:18:18', NULL, NULL, 7, 'Zezé', 'Feminino', '2018-06-26', 'Cônjuge'),
+(27, NULL, NULL, NULL, 16, 'Sem Datinha', 'Masculino', '0000-00-00', 'Filho(a)'),
+(28, NULL, NULL, NULL, 17, 'Pipoca', 'Feminino', '0000-00-00', 'Filho(a)'),
+(29, NULL, NULL, NULL, 18, 'SAIPRO', 'Masculino', '0000-00-00', 'Filho(a)'),
+(30, NULL, NULL, NULL, 26, 'Bernardo', 'Masculino', '0000-00-00', 'Filho(a)'),
+(31, NULL, NULL, NULL, 29, 'Victor Roberto', 'Feminino', '0000-00-00', 'Filho(a)'),
+(32, NULL, NULL, '2018-06-08 18:12:17', 38, 'BIC', 'Feminino', '1983-04-03', 'Filho(a)'),
+(33, '2018-06-07 00:00:00', NULL, NULL, 39, 'Katy Perry', 'Feminino', '1991-04-03', 'Cônjuge'),
+(34, '2018-06-07 18:33:18', NULL, NULL, 40, 'Pedro', 'Masculino', '1995-07-19', 'Filho(a)'),
+(35, '2018-06-07 18:33:18', NULL, NULL, 40, 'Jaqueline', 'Feminino', '1973-07-19', 'Cônjuge');
 
 -- --------------------------------------------------------
 
@@ -1254,7 +1318,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `espaco_valor` double NOT NULL,
   `espaco_desconto` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=380 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=514 ;
 
 --
 -- Fazendo dump de dados para tabela `eventos`
@@ -1300,43 +1364,43 @@ INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, 
 (272, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-23 20:00:00', '2018-04-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (273, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-25 20:00:00', '2018-04-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (274, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-04-30 20:00:00', '2018-04-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(292, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-04 20:00:00', '2018-07-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(287, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-18 20:00:00', '2018-06-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(288, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-20 20:00:00', '2018-06-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(289, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-25 20:00:00', '2018-06-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(290, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-27 20:00:00', '2018-06-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(291, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-02 20:00:00', '2018-07-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(293, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-09 20:00:00', '2018-07-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(292, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-04 20:00:00', '2018-07-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(287, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-18 20:00:00', '2018-06-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(288, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-20 20:00:00', '2018-06-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(289, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-25 20:00:00', '2018-06-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(290, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-27 20:00:00', '2018-06-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(291, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-02 20:00:00', '2018-07-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(293, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-09 20:00:00', '2018-07-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (283, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-04 20:00:00', '2018-06-04 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(284, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-06 20:00:00', '2018-06-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(284, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-06 20:00:00', '2018-06-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (275, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-02 20:00:00', '2018-05-02 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (276, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-09 20:00:00', '2018-05-09 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (277, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-05-14 20:00:00', '2018-05-14 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(286, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-13 20:00:00', '2018-06-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(285, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-06-11 20:00:00', '2018-06-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(313, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-17 20:00:00', '2018-09-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(312, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-12 20:00:00', '2018-09-12 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(311, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-10 20:00:00', '2018-09-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(309, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-03 20:00:00', '2018-09-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(310, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-05 20:00:00', '2018-09-05 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(316, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-26 20:00:00', '2018-09-26 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(315, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-24 20:00:00', '2018-09-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(314, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-09-19 20:00:00', '2018-09-19 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(304, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-15 20:00:00', '2018-08-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(305, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-20 20:00:00', '2018-08-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(306, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-22 20:00:00', '2018-08-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(307, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-27 20:00:00', '2018-08-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(308, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-29 20:00:00', '2018-08-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(303, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-13 20:00:00', '2018-08-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(302, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-08 20:00:00', '2018-08-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(294, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-11 20:00:00', '2018-07-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(295, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-16 20:00:00', '2018-07-16 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(296, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-18 20:00:00', '2018-07-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(297, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-23 20:00:00', '2018-07-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(298, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-25 20:00:00', '2018-07-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(299, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-07-30 20:00:00', '2018-07-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(300, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-01 20:00:00', '2018-08-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(301, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-08-06 20:00:00', '2018-08-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(286, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-13 20:00:00', '2018-06-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(285, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-06-11 20:00:00', '2018-06-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(313, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-17 20:00:00', '2018-09-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(312, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-12 20:00:00', '2018-09-12 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(311, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-10 20:00:00', '2018-09-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(309, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-03 20:00:00', '2018-09-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(310, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-05 20:00:00', '2018-09-05 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(316, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-26 20:00:00', '2018-09-26 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(315, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-24 20:00:00', '2018-09-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(314, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-09-19 20:00:00', '2018-09-19 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(304, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-15 20:00:00', '2018-08-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(305, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-20 20:00:00', '2018-08-20 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(306, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-22 20:00:00', '2018-08-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(307, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-27 20:00:00', '2018-08-27 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(308, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-29 20:00:00', '2018-08-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(303, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-13 20:00:00', '2018-08-13 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(302, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-08 20:00:00', '2018-08-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(294, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-11 20:00:00', '2018-07-11 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(295, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-16 20:00:00', '2018-07-16 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(296, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-18 20:00:00', '2018-07-18 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(297, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-23 20:00:00', '2018-07-23 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(298, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-25 20:00:00', '2018-07-25 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(299, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-07-30 20:00:00', '2018-07-30 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(300, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-01 20:00:00', '2018-08-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(301, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-08-06 20:00:00', '2018-08-06 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (338, '2018-05-16 16:02:56', '2018-05-16 16:02:56', NULL, 0, 'Natação Baby', '2018-05-15 08:00:00', '2018-05-15 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
 (337, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
 (334, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
@@ -1352,18 +1416,18 @@ INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, 
 (331, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
 (332, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
 (333, '2018-05-16 02:07:42', '2018-05-16 02:07:42', '2018-05-16 02:08:56', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
-(325, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-29 20:00:00', '2018-10-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(325, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-29 20:00:00', '2018-10-29 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (326, '2018-05-15 22:16:12', '2018-05-16 01:18:28', '2018-05-16 01:18:28', 9170, 'Volley Scarface', '2018-05-20 08:00:00', '2018-05-20 10:00:00', 0, 1, 8, NULL, NULL, 100000, 20000),
 (327, '2018-05-16 00:29:51', '2018-05-16 00:29:51', NULL, 0, 'Aula de Dança para Casais', '2018-05-14 20:30:00', '2018-05-14 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
 (328, '2018-05-16 00:29:51', '2018-05-16 00:29:51', '2018-05-16 01:48:49', 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
-(323, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-22 20:00:00', '2018-10-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(324, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-24 20:00:00', '2018-10-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(317, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-01 20:00:00', '2018-10-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(318, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-03 20:00:00', '2018-10-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(319, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-08 20:00:00', '2018-10-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(320, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-10 20:00:00', '2018-10-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(321, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-15 20:00:00', '2018-10-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
-(322, '2018-05-11 19:56:47', '2018-05-11 19:56:47', NULL, 0, 'Futebol Sênior', '2018-10-17 20:00:00', '2018-10-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(323, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-22 20:00:00', '2018-10-22 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(324, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-24 20:00:00', '2018-10-24 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(317, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-01 20:00:00', '2018-10-01 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(318, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-03 20:00:00', '2018-10-03 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(319, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-08 20:00:00', '2018-10-08 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(320, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-10 20:00:00', '2018-10-10 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(321, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-15 20:00:00', '2018-10-15 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
+(322, '2018-05-11 19:56:47', '2018-05-11 19:56:47', '2018-06-04 20:22:19', 0, 'Futebol Sênior', '2018-10-17 20:00:00', '2018-10-17 21:00:00', 0, NULL, 9, 1, NULL, 0, 0),
 (344, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
 (345, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
 (346, '2018-05-16 16:02:56', '2018-05-16 16:02:56', '2018-05-16 17:35:21', 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
@@ -1391,15 +1455,149 @@ INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, 
 (368, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-24 08:00:00', '2018-05-24 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
 (369, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-29 08:00:00', '2018-05-29 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
 (370, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-05-31 08:00:00', '2018-05-31 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(371, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(372, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(373, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(374, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(375, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(376, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(377, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(378, '2018-05-19 06:34:44', '2018-05-19 06:34:44', NULL, 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
-(379, '2018-05-22 13:52:13', NULL, NULL, 12245, 'Evento do Rato', '2018-05-25 10:00:00', '2018-05-25 12:00:00', 0, 2, 8, NULL, NULL, 1234500, 10000);
+(371, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(372, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(373, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(374, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(375, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(376, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(377, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(378, '2018-05-19 06:34:44', '2018-05-19 06:34:44', '2018-06-04 20:22:51', 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, NULL, 0, 0),
+(379, '2018-05-22 13:52:13', NULL, NULL, 12245, 'Evento do Rato', '2018-05-25 10:00:00', '2018-05-25 12:00:00', 0, 2, 8, NULL, NULL, 1234500, 10000),
+(380, '2018-05-28 13:23:30', NULL, NULL, 1234578, 'Baba Scarface La Revancha', '2018-05-30 15:00:00', '2018-05-30 17:00:00', 0, 1, 9, NULL, NULL, 1234578, 0),
+(381, '2018-05-28 17:41:07', NULL, NULL, 0, 'Yabadabadoo', '2018-05-29 00:00:00', '2018-05-29 10:00:00', 0, 2, 8, NULL, NULL, 0, 0),
+(382, '2018-05-28 17:51:31', '2018-05-29 12:56:55', NULL, 255.59, 'Yabadabadoo', '2018-06-13 00:00:00', '2018-06-29 00:00:00', 0, 1, 6, NULL, NULL, 255.59, 0),
+(383, '2018-05-28 17:54:05', NULL, NULL, 199, 'Yabadabadoo', '2018-06-01 00:00:00', '2018-06-02 00:00:00', 0, 1, 6, NULL, NULL, 199, 0),
+(384, '2018-05-28 21:53:36', NULL, NULL, 1224, 'Evento', '2018-05-29 12:00:00', '2018-05-29 18:00:00', 0, 2, 6, NULL, NULL, 1224, 0),
+(385, '2018-05-28 21:59:50', NULL, NULL, 12.24, 'Evento', '2018-06-04 14:00:00', '2018-06-04 22:00:00', 0, 1, 6, NULL, NULL, 12.24, 0),
+(386, '2018-05-29 20:41:44', NULL, NULL, 1.5000000000000002, 'Evento Intruso', '2018-06-04 06:00:00', '2018-06-04 09:00:00', 0, 2, 6, NULL, NULL, 2.99, 1.49),
+(387, '2018-05-29 21:10:25', '2018-05-29 21:10:25', NULL, 0, 'Aula de Dança para Casais', '2018-05-16 09:00:00', '2018-05-16 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(388, '2018-05-29 21:10:25', '2018-05-29 21:10:25', NULL, 0, 'Aula de Dança para Casais', '2018-05-21 20:30:00', '2018-05-21 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(389, '2018-05-29 21:10:25', '2018-05-29 21:10:25', NULL, 0, 'Aula de Dança para Casais', '2018-05-23 09:00:00', '2018-05-23 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(390, '2018-05-29 21:10:25', '2018-05-29 21:10:25', NULL, 0, 'Aula de Dança para Casais', '2018-05-28 20:30:00', '2018-05-28 22:30:00', 0, NULL, 8, 2, NULL, 0, 0),
+(391, '2018-05-29 21:10:25', '2018-05-29 21:10:25', NULL, 0, 'Aula de Dança para Casais', '2018-05-30 09:00:00', '2018-05-30 11:00:00', 0, NULL, 8, 2, NULL, 0, 0),
+(392, '2018-05-30 14:14:15', NULL, NULL, 110.99, 'Teste do Rato', '2018-05-30 15:00:00', '2018-05-30 18:00:00', 0, 2, 8, NULL, NULL, 110.99, 0),
+(393, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-05-28 08:00:00', '2018-05-28 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(394, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-05-29 16:00:00', '2018-05-29 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(395, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-05-30 08:00:00', '2018-05-30 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(396, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-05-31 16:00:00', '2018-05-31 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(397, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-06-01 19:00:00', '2018-06-01 20:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(398, '2018-06-04 20:00:52', '2018-06-04 20:00:52', NULL, 0, 'Xmen''s Soccer', '2018-06-04 08:00:00', '2018-06-04 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(399, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-05 16:00:00', '2018-06-05 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(400, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-06 08:00:00', '2018-06-06 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(401, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-07 16:00:00', '2018-06-07 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(402, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-08 19:00:00', '2018-06-08 20:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(403, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-11 08:00:00', '2018-06-11 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(404, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-12 16:00:00', '2018-06-12 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(405, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-13 08:00:00', '2018-06-13 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(406, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-14 16:00:00', '2018-06-14 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(407, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-15 19:00:00', '2018-06-15 20:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(408, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-18 08:00:00', '2018-06-18 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(409, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-19 16:00:00', '2018-06-19 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(410, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-20 08:00:00', '2018-06-20 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(411, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-21 16:00:00', '2018-06-21 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(412, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-22 19:00:00', '2018-06-22 20:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(413, '2018-06-04 20:00:52', '2018-06-04 20:00:52', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-25 08:00:00', '2018-06-25 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(414, '2018-06-04 20:00:53', '2018-06-04 20:00:53', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-26 16:00:00', '2018-06-26 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(415, '2018-06-04 20:00:53', '2018-06-04 20:00:53', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-27 08:00:00', '2018-06-27 09:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(416, '2018-06-04 20:00:53', '2018-06-04 20:00:53', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-28 16:00:00', '2018-06-28 17:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(417, '2018-06-04 20:00:53', '2018-06-04 20:00:53', '2018-06-04 20:06:29', 0, 'Xmen''s Soccer', '2018-06-29 19:00:00', '2018-06-29 20:00:30', 0, NULL, 9, 5, NULL, 0, 0),
+(418, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-05 16:00:00', '2018-06-05 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(419, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-06 08:00:00', '2018-06-06 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(420, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-07 16:00:00', '2018-06-07 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(421, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-08 19:00:00', '2018-06-08 20:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(422, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-11 08:00:00', '2018-06-11 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(423, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-12 16:00:00', '2018-06-12 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(424, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-13 08:00:00', '2018-06-13 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(425, '2018-06-04 20:07:22', '2018-06-04 20:07:22', NULL, 0, 'Xmen''s Soccer', '2018-06-14 16:00:00', '2018-06-14 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(426, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-15 19:00:00', '2018-06-15 20:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(427, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-18 08:00:00', '2018-06-18 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(428, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-19 16:00:00', '2018-06-19 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(429, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-20 08:00:00', '2018-06-20 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(430, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-21 16:00:00', '2018-06-21 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(431, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-22 19:00:00', '2018-06-22 20:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(432, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-25 08:00:00', '2018-06-25 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(433, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-26 16:00:00', '2018-06-26 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(434, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-27 08:00:00', '2018-06-27 09:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(435, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-28 16:00:00', '2018-06-28 17:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(436, '2018-06-04 20:07:23', '2018-06-04 20:07:23', NULL, 0, 'Xmen''s Soccer', '2018-06-29 19:00:00', '2018-06-29 20:00:30', 0, NULL, 9, 5, 3, 0, 0),
+(437, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-05 08:00:00', '2018-06-05 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(438, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-07 08:00:00', '2018-06-07 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(439, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-12 08:00:00', '2018-06-12 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(440, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-14 08:00:00', '2018-06-14 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(441, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-19 08:00:00', '2018-06-19 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(442, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-21 08:00:00', '2018-06-21 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(443, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-26 08:00:00', '2018-06-26 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(444, '2018-06-04 20:25:28', '2018-06-04 20:25:28', NULL, 0, 'Natação Baby', '2018-06-28 08:00:00', '2018-06-28 09:00:00', 0, NULL, 11, 3, 3, 0, 0),
+(445, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-05-07 20:00:00', '2018-05-07 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(446, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-06 20:00:00', '2018-06-06 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(447, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-11 20:00:00', '2018-06-11 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(448, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-13 20:00:00', '2018-06-13 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(449, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-18 20:00:00', '2018-06-18 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(450, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-20 20:00:00', '2018-06-20 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(451, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-25 20:00:00', '2018-06-25 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(452, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-06-27 20:00:00', '2018-06-27 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(453, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-02 20:00:00', '2018-07-02 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(454, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-04 20:00:00', '2018-07-04 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(455, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-09 20:00:00', '2018-07-09 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(456, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-11 20:00:00', '2018-07-11 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(457, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-16 20:00:00', '2018-07-16 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(458, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-18 20:00:00', '2018-07-18 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(459, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-23 20:00:00', '2018-07-23 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(460, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-25 20:00:00', '2018-07-25 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(461, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-07-30 20:00:00', '2018-07-30 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(462, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-01 20:00:00', '2018-08-01 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(463, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-06 20:00:00', '2018-08-06 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(464, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-08 20:00:00', '2018-08-08 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(465, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-13 20:00:00', '2018-08-13 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(466, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-15 20:00:00', '2018-08-15 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(467, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-20 20:00:00', '2018-08-20 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(468, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-22 20:00:00', '2018-08-22 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(469, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-27 20:00:00', '2018-08-27 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(470, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-08-29 20:00:00', '2018-08-29 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(471, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-03 20:00:00', '2018-09-03 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(472, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-05 20:00:00', '2018-09-05 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(473, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-10 20:00:00', '2018-09-10 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(474, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-12 20:00:00', '2018-09-12 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(475, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-17 20:00:00', '2018-09-17 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(476, '2018-06-04 20:25:49', '2018-06-04 20:25:49', NULL, 0, 'Futebol Sênior', '2018-09-19 20:00:00', '2018-09-19 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(477, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-09-24 20:00:00', '2018-09-24 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(478, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-09-26 20:00:00', '2018-09-26 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(479, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-01 20:00:00', '2018-10-01 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(480, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-03 20:00:00', '2018-10-03 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(481, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-08 20:00:00', '2018-10-08 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(482, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-10 20:00:00', '2018-10-10 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(483, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-15 20:00:00', '2018-10-15 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(484, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-17 20:00:00', '2018-10-17 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(485, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-22 20:00:00', '2018-10-22 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(486, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-24 20:00:00', '2018-10-24 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(487, '2018-06-04 20:25:50', '2018-06-04 20:25:50', NULL, 0, 'Futebol Sênior', '2018-10-29 20:00:00', '2018-10-29 21:00:00', 0, NULL, 9, 1, 2, 0, 0),
+(488, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-11 10:00:00', '2018-06-11 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(489, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-13 10:00:00', '2018-06-13 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(490, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-15 14:00:00', '2018-06-15 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(491, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-18 10:00:00', '2018-06-18 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(492, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-20 10:00:00', '2018-06-20 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(493, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-22 14:00:00', '2018-06-22 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(494, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-25 10:00:00', '2018-06-25 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(495, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-27 10:00:00', '2018-06-27 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(496, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-06-29 14:00:00', '2018-06-29 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(497, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-02 10:00:00', '2018-07-02 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(498, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-04 10:00:00', '2018-07-04 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(499, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-06 14:00:00', '2018-07-06 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(500, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-09 10:00:00', '2018-07-09 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(501, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-11 10:00:00', '2018-07-11 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(502, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-13 14:00:00', '2018-07-13 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(503, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-16 10:00:00', '2018-07-16 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(504, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-18 10:00:00', '2018-07-18 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(505, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-20 14:00:00', '2018-07-20 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(506, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-23 10:00:00', '2018-07-23 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(507, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-25 10:00:00', '2018-07-25 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(508, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-27 14:00:00', '2018-07-27 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(509, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-07-30 10:00:00', '2018-07-30 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(510, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-08-01 10:00:00', '2018-08-01 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(511, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-08-03 14:00:00', '2018-08-03 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
+(512, '2018-06-06 18:03:03', '2018-06-06 18:03:03', NULL, 0, 'Natação dos Patos', '2018-06-07 14:00:00', '2018-06-07 19:00:00', 0, NULL, 11, 7, 1, 0, 0),
+(513, '2018-06-07 18:35:29', NULL, NULL, 50092.200000000004, 'Volley Cabral', '2018-06-23 11:00:00', '2018-06-23 14:00:00', 0, 40, 8, NULL, NULL, 100, 10);
 
 -- --------------------------------------------------------
 
@@ -1419,7 +1617,7 @@ CREATE TABLE IF NOT EXISTS `evento__detalhes` (
   `desconto` double NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
 
 --
 -- Fazendo dump de dados para tabela `evento__detalhes`
@@ -1439,7 +1637,8 @@ INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `
 (14, NULL, NULL, 8, 1, 5000, 100, 500000, 0, NULL),
 (17, NULL, NULL, 326, 5, 4545, 2, 9090, 0, NULL),
 (19, NULL, NULL, 22, 5, 4545, 60, 272700, 0, '2018-05-22 14:07:32'),
-(18, NULL, NULL, 22, 10, 50045, 666, 33329970, 0, '2018-05-22 14:07:32');
+(18, NULL, NULL, 22, 10, 50045, 666, 33329970, 0, '2018-05-22 14:07:32'),
+(20, '2018-06-07 18:35:29', NULL, 513, 3, 2500.11, 20, 50002.200000000004, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1513,7 +1712,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=64 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=65 ;
 
 --
 -- Fazendo dump de dados para tabela `migrations`
@@ -1575,7 +1774,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (60, '2018_04_03_210149_alter_table_atividades_add_espacoid', 19),
 (61, '2018_05_15_084259_alter_table_atividades_add_agendado', 20),
 (62, '2018_05_22_135743_add_delete_to_evento_detalhes', 21),
-(63, '2018_05_24_185310_alter_table_eventos_add_professorid', 22);
+(63, '2018_05_24_185310_alter_table_eventos_add_professorid', 22),
+(64, '2018_06_02_184824_alter_table_dependentes_rename_fields', 23);
 
 -- --------------------------------------------------------
 
@@ -1604,7 +1804,7 @@ INSERT INTO `produtos` (`id`, `nome`, `valor`, `fornecedor_id`, `created_at`, `u
 (3, 'Água 1L', 2500.11, 1, '2018-03-06 00:10:32', '2018-03-26 10:23:13', NULL),
 (4, 'Cerveja Skol 350ml', 3500.13, 1, '2018-03-26 10:21:39', NULL, NULL),
 (5, 'Cerveja Heineken Longneck 355ml', 4545.00, 2, '2018-03-26 10:22:40', '2018-04-23 05:09:27', NULL),
-(10, 'moa', 1.00, 1, NULL, '2018-05-28 23:42:20', NULL);
+(10, 'moa', 50045.00, 1, NULL, '2018-04-25 08:30:40', NULL);
 
 -- --------------------------------------------------------
 
@@ -1676,7 +1876,7 @@ CREATE TABLE IF NOT EXISTS `socios` (
   `data_adesao` date DEFAULT NULL,
   `obs` text COLLATE utf8_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
 
 --
 -- Fazendo dump de dados para tabela `socios`
@@ -1685,7 +1885,44 @@ CREATE TABLE IF NOT EXISTS `socios` (
 INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `matricula`, `funcao`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `areacompetencia_id`, `categoria_id`, `cobranca_id`, `outra_matricula`, `data_adesao`, `obs`) VALUES
 (1, '2018-03-11 04:03:53', '2018-03-11 09:39:02', NULL, 'Tony Montana', '1982', 'Administrador', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 11, 1, '', '1960-12-31', ''),
 (2, '2018-03-11 04:11:41', '2018-03-14 07:12:24', NULL, 'Fred Flintstones', 'YabbaDabbaDoo', '', '', '', '1900-12-14', '', '', '', '', '', '', '', '', '', 'M', 'C', '', '', '', '', '', 3, 14, 3, '', '1900-12-21', ''),
-(3, '2018-05-23 05:26:29', NULL, '2018-05-23 05:29:56', 'PALOMA SANTANA DA SILVA MOREIRA', '', '', '', '', '1999-07-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 14, 3, '', '0000-00-00', '');
+(3, '2018-05-23 05:26:29', NULL, '2018-05-23 05:29:56', 'PALOMA SANTANA DA SILVA MOREIRA', '', '', '', '', '1999-07-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 14, 3, '', '0000-00-00', ''),
+(4, '2018-05-30 14:25:55', '2018-05-30 14:29:28', '2018-06-08 18:14:56', 'Vitola Freirinha', '', '', '', '', '0000-00-00', 'Rua da Gratidão', '', 'Salvador', 'BA', '41650-19', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 4, '', '1969-12-31', ''),
+(5, '2018-06-02 19:01:54', NULL, NULL, 'Vitor Alberto Smith Freire', '', '', '', '', '1969-12-31', '', '', '', '', '', '', '', '', '', 'Masculino', 'Casado(a)', '', '', '', '', '', 3, 9, 4, '', '1969-12-31', ''),
+(6, '2018-06-02 19:15:26', NULL, NULL, 'Moa', '', '', '', '', '1983-04-03', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
+(7, '2018-06-02 19:40:37', NULL, NULL, 'Bob Pai', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', 'Masculino', '', '', '', '', '', '', 3, 11, 1, '', '0000-00-00', ''),
+(8, '2018-06-02 19:44:03', '2018-06-02 19:45:50', NULL, 'Mr M', '', '', '', '', '2018-06-02', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 4, '', '0000-00-00', ''),
+(9, '2018-06-02 19:48:36', NULL, NULL, 'Luamar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
+(10, '2018-06-03 19:59:11', NULL, NULL, 'Vitolão', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 5, '', '0000-00-00', ''),
+(11, '2018-06-03 20:04:44', NULL, NULL, 'Neymar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 11, 4, '', '0000-00-00', ''),
+(12, '2018-06-03 21:09:23', NULL, NULL, 'Walter', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 10, 4, '', '0000-00-00', ''),
+(13, '2018-06-04 20:37:26', NULL, NULL, 'Mahatma', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 5, '', '0000-00-00', ''),
+(14, '2018-06-04 21:54:54', NULL, '2018-06-08 18:14:56', 'Vitor Alberto Smith', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
+(15, '2018-06-05 17:46:49', NULL, NULL, 'Goku', '', '', '', '', '1975-11-26', '', '', '', 'BA', '', '', '', '', '', 'Feminino', 'União Estável', '', '', '', '', '', 1, 10, 1, '', '2018-06-05', ''),
+(16, '2018-06-06 11:30:51', NULL, '2018-06-08 18:14:56', 'Sem data', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', ''),
+(17, '2018-06-07 17:07:25', NULL, NULL, 'Joca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 1, '', '0000-00-00', ''),
+(18, '2018-06-07 17:13:49', NULL, NULL, 'Andreca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 19, 4, '', '0000-00-00', ''),
+(19, '2018-06-07 17:19:11', NULL, '2018-06-08 18:14:56', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(20, '2018-06-07 17:20:20', NULL, '2018-06-08 18:14:56', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(21, '2018-06-07 17:51:26', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(22, '2018-06-07 17:56:58', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(23, '2018-06-07 18:03:26', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(24, '2018-06-07 18:04:09', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(25, '2018-06-07 18:04:45', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(26, '2018-06-07 18:10:36', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
+(27, '2018-06-07 18:12:16', NULL, '2018-06-08 18:12:17', 'FABIANO', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
+(28, '2018-06-07 18:12:57', NULL, '2018-06-08 18:12:17', 'FABIANO', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
+(29, '2018-06-07 18:13:51', NULL, '2018-06-08 18:12:17', 'FABIANO', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
+(30, '2018-06-07 18:16:48', NULL, '2018-06-08 18:12:17', 'rbgraga', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 9, 1, '', '0000-00-00', ''),
+(31, '2018-06-07 18:17:57', NULL, '2018-06-08 18:12:17', 'rbgraga', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 9, 1, '', '0000-00-00', ''),
+(32, '2018-06-07 18:18:26', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(33, '2018-06-07 18:20:36', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(34, '2018-06-07 18:21:22', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(35, '2018-06-07 18:22:41', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(36, '2018-06-07 18:24:59', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(37, '2018-06-07 18:26:55', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(38, '2018-06-07 18:27:22', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
+(39, '2018-06-07 18:31:27', NULL, NULL, 'Calvin Harris', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', 'Masculino', '', '', '', '', '', '', 1, 11, 4, '', '0000-00-00', ''),
+(40, '2018-06-07 18:33:18', NULL, NULL, 'Roberto Cabral', '', '', '', '', '1975-11-26', '', '', 'Valença', 'BA', '', '', '', '', '', 'Masculino', 'Casado(a)', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', '');
 
 -- --------------------------------------------------------
 
