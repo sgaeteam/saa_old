@@ -48,13 +48,13 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome'];
+			$this->form[] = ['label'=>'Professor','name'=>'professor_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'professores,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Espaço','name'=>'espaco_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'espacos,nome','datatable_where'=>'`finalidade` in ("Atividades","Atividades & Eventos") and `deleted_at` is null'];
-			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao'];
+			$this->form[] = ['label'=>'Tipo de Atividade','name'=>'tipoatividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'tipo_atividades,descricao','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Descrição da Atividade','name'=>'titulo','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sigla','name'=>'sigla','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Início','name'=>'data_inicio','type'=>'date','validation'=>'required|date|after:yesterday','width'=>'col-sm-10','readonly'=>'1'];
-			$this->form[] = ['label'=>'Data Fim','name'=>'data_fim','type'=>'date','validation'=>'required|date|after:data_inicio','width'=>'col-sm-10','readonly'=>'1'];
+			$this->form[] = ['label'=>'Data Término','name'=>'data_fim','type'=>'date','validation'=>'required|date|after:data_inicio','width'=>'col-sm-10','readonly'=>'1'];
 			$this->form[] = ['label'=>'Duração','name'=>'duracao','type'=>'time','validation'=>'required|date_format:H:i','width'=>'col-sm-10','readonly'=>'1'];
 			$this->form[] = ['label'=>'DOM','name'=>'hora_inicio_dom','type'=>'time','validation'=>'required|date_format:H:i','width'=>'col-sm-10','readonly'=>'1'];
 			$this->form[] = ['label'=>'SEG','name'=>'hora_inicio_seg','type'=>'time','validation'=>'required|date_format:H:i','width'=>'col-sm-10','readonly'=>'1'];
@@ -384,6 +384,7 @@
 
 			$begin = new DateTime($row->data_inicio);
 			$end = new DateTime($row->data_fim);
+			$end->setTime(0,0,1);
 			$interval = DateInterval::createFromDateString('1 day');
 			$period = new DatePeriod($begin, $interval, $end);			
 			
@@ -397,7 +398,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['dom']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['dom']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'.'H'.$atividade['duracao']->format('s').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -436,7 +437,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['seg']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['seg']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -475,7 +476,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['ter']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['ter']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -514,7 +515,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qua']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['qua']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -552,7 +553,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qui']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['qui']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -591,7 +592,7 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sex']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['sex']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
@@ -630,8 +631,8 @@
 							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sab']);			
 							$atividade['duracao'] = new DateTime($row->duracao);
 							$atividade['hora_fim'] = new DateTime($agendaSemanal['sab']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'S'));
-
+							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
+							
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
 							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
 
@@ -692,7 +693,13 @@
 									  $query->where('start_date'	,  '<='	, $fim);
 									  $query->where('end_date'		,  '>='	, $fim);
 									  $query->where('espaco_id'		,  '='	, $espaco);
-									  $query->whereNull('deleted_at');   					
+									  $query->whereNull('deleted_at'); 
+							})
+							->orWhere(function ($query) use ($inicio, $fim, $espaco) {
+									  $query->where('start_date'	,  '<='	, $fim);
+									  $query->where('end_date'		,  '>='	, $inicio);
+									  $query->where('espaco_id'		,  '='	, $espaco);
+									  $query->whereNull('deleted_at');   
 					  })->first();
 
 	        if(isset($evento)) {

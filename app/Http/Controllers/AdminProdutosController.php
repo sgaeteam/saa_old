@@ -31,15 +31,15 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Nome","name"=>"nome"];
-			$this->col[] = ["label"=>"Valor","name"=>"valor"];
+			$this->col[] = ["label"=>"Valor","name"=>"valor","callback_php"=>'"R$ ".number_format([valor],2,",",".")'];
 			$this->col[] = ["label"=>"Fornecedor","name"=>"fornecedor_id","join"=>"fornecedores,nome"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Valor','name'=>'valor','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Fornecedor','name'=>'fornecedor_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'fornecedores,nome'];
+			$this->form[] = ['label'=>'Valor','name'=>'valor','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Fornecedor','name'=>'fornecedor_id','type'=>'select2','validation'=>'required','width'=>'col-sm-9','datatable'=>'fornecedores,nome','datatable_where'=>'`deleted_at` is null'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 

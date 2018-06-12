@@ -64,9 +64,9 @@
 			$this->form[] = ['label'=>'Lotação','name'=>'lotacao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Unidade','name'=>'unidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Profissão','name'=>'profissao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Área de Competência','name'=>'areacompetencia_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'area__competencias,descricao'];
-			$this->form[] = ['label'=>'Categoria','name'=>'categoria_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'categorias,descricao'];
-			$this->form[] = ['label'=>'Cobrança','name'=>'cobranca_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'cobrancas,descricao'];
+			$this->form[] = ['label'=>'Área de Competência','name'=>'areacompetencia_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'area__competencias,descricao','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Categoria','name'=>'categoria_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'categorias,descricao','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Cobrança','name'=>'cobranca_id','type'=>'select2','validation'=>'integer|min:0|required','width'=>'col-sm-10','datatable'=>'cobrancas,descricao','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Outra Matrícula','name'=>'outra_matricula','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Data Adesão','name'=>'data_adesao','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'OBS','name'=>'obs','type'=>'textarea','validation'=>'string|min:5|max:5000','width'=>'col-sm-10'];

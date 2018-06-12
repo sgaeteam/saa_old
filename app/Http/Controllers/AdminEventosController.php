@@ -449,7 +449,7 @@
 									  $query->where('espaco_id'		,  '='	, $espaco);
 									  $query->whereNull('deleted_at');   
 							})
-							->orWhere(function ($query) use ($inicio,$fim, $espaco) {
+							->orWhere(function ($query) use ($inicio, $fim, $espaco) {
 									  $query->where('start_date'	,  '<='	, $fim);
 									  $query->where('end_date'		,  '>='	, $inicio);
 									  $query->where('espaco_id'		,  '='	, $espaco);

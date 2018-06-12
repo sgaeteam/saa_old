@@ -32,28 +32,20 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Atividade","name"=>"atividade_id","join"=>"atividades,titulo"];
 			$this->col[] = ["label"=>"Usuário","name"=>"usuario_id","join"=>"usuarios,nome"];
-			$this->col[] = ["label"=>"Data Matrícula","name"=>"data_matricula"];
-			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade"];
-			$this->col[] = ["label"=>"Desconto","name"=>"desconto"];
+			$this->col[] = ["label"=>"Data Matrícula","name"=>"data_matricula","callback_php"=>'date("d/m/Y",strtotime($row->data_matricula))'];
+			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade","callback_php"=>'"R$ ".number_format([mensalidade],2,",",".")'];
+			$this->col[] = ["label"=>"Desconto","name"=>"desconto","callback_php"=>'"R$ ".number_format([desconto],2,",",".")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','datatable_where'=>'deleted_at is null'];
-			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome'];
+			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo'];
-			//$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome'];
-			//$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			//$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10'];
-			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 

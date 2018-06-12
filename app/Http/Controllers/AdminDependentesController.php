@@ -43,7 +43,7 @@
 			$this->form[] = ['label'=>'Data Nascimento','name'=>'dependente_dtnasc','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
 			$this->form[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Cônjuge;Filho(a)'];
-			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome'];
+			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 
