@@ -34,12 +34,12 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Responsável","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Espaço","name"=>"espaco_id","join"=>"espacos,nome"];
+			$this->col[] = ["label"=>"Descrição do Evento","name"=>"titulo"];
 			$this->col[] = ["label"=>"Início","name"=>"start_date","callback_php"=>'date("d/m/Y | H:i",strtotime($row->start_date))'];
 			$this->col[] = ["label"=>"Término","name"=>"end_date","callback_php"=>'date("d/m/Y | H:i",strtotime($row->end_date))'];	
 			$this->col[] = ["label"=>"Total","name"=>"total","callback_php"=>'"R$ ".number_format([total],2,",",".")'];
-			$this->col[] = ["label"=>"Descrição do Evento","name"=>"titulo"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
-
+			
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Responsável','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
@@ -53,11 +53,11 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$columns = [];
-			$columns[] = ['label'=>'Produto','name'=>'produto_id','type'=>'datamodal','datamodal_table'=>'produtos','datamodal_columns'=>'nome,valor','datamodal_select_to'=>'valor:produto_valor','datamodal_where'=>'','datamodal_size'=>'large'];
+			$columns[] = ['label'=>'Produto','name'=>'produto_id','type'=>'datamodal','datamodal_table'=>'produtos','datamodal_columns'=>'nome,valor','datamodal_select_to'=>'valor:produto_valor','datamodal_where'=>'`deleted_at` is null','datamodal_size'=>'large'];
 			$columns[] = ['label'=>'Valor','name'=>'produto_valor','type'=>'number','readonly'=>true];
 			$columns[] = ['label'=>'Quantidade','name'=>'quantidade','type'=>'number','required'=>true];
 			$columns[] = ['label'=>'Desconto','name'=>'desconto','type'=>'number','required'=>false, 'default'=>0.0];
-			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true];
+			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true,"callback_php"=>'"R$ ".number_format([total],2,",",".")'];
 			$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','columns'=>$columns,'table'=>'evento__detalhes','foreign_key'=>'evento_id'];
 			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','readonly'=>true];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -463,5 +463,29 @@
 	       
 	        return null; // Período DISPONÍVEL para o espaço escolhido!
 		}	
+		
+		public function getDetail($id) {
+			
+			//Create an Auth
 
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
+				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
+				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
+			}
+			
+	  		$this->cbLoader();	
+	  		$row = DB::table($this->table)->where($this->primary_key,$id)->first();
+			
+			$module = CRUDBooster::getCurrentModule();
+			$data = [];
+			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
+			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
+			$data['row'] = $row;
+			$data['id'] = $id;
+			$data['command'] = 'detail';
+
+		    //Please use cbView method instead view method from laravel
+			Session::put('current_row_id',$id);
+			$this->cbView('evento_detail',$data);
+		}	
 	}

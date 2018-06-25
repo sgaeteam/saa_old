@@ -40,6 +40,8 @@ return array(
     'AlterTableEventosAddProfessorid' => $baseDir . '/database/migrations/2018_05_24_185310_alter_table_eventos_add_professorid.php',
     'AlterTableEventosAddValorEspaco' => $baseDir . '/database/migrations/2018_03_28_004018_alter_table_eventos_add_valor_espaco.php',
     'AlterTableEventosRenameDestino' => $baseDir . '/database/migrations/2018_03_28_000211_alter_table_eventos_rename_destino.php',
+    'AlterTableUsuariosAddFields' => $baseDir . '/database/migrations/2018_06_24_094016_alter_table_usuarios_add_fields.php',
+    'AlterTableUsuariosDropFields' => $baseDir . '/database/migrations/2018_06_24_092559_alter_table_usuarios_drop_fields.php',
     'AreaCompetenciasTableSeeder' => $baseDir . '/database/seeds/AreaCompetenciasTableSeeder.php',
     'AtividadesTableSeeder' => $baseDir . '/database/seeds/AtividadesTableSeeder.php',
     'CBSeeder' => $baseDir . '/database/seeds/CBSeeder.php',

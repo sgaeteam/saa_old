@@ -31,23 +31,16 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Descricao","name"=>"descricao"];
-			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade"];
+			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade","callback_php"=>'"R$ ".number_format([mensalidade],2,",",".")'];
 			$this->col[] = ["label"=>"Convites","name"=>"convites"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','decimals'=>'2','dec_point'=>'.'];
 			$this->form[] = ['label'=>'Convites','name'=>'convites','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
-
-			# OLD START FORM
-			//$this->form = [];
-			//$this->form[] = ["label"=>"Descricao","name"=>"descricao","type"=>"text","required"=>TRUE,"validation"=>"required|min:1|max:255"];
-			//$this->form[] = ["label"=>"Mensalidade","name"=>"mensalidade","type"=>"money","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			//$this->form[] = ["label"=>"Convites","name"=>"convites","type"=>"number","required"=>TRUE,"validation"=>"required|integer|min:0"];
-			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 

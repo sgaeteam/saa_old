@@ -618,3 +618,25 @@
 [08-Jun-2018 17:50:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$data_child' (T_VARIABLE) in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 24
 [08-Jun-2018 18:26:22 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
 [12-Jun-2018 00:52:37 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[12-Jun-2018 18:04:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 44
+[12-Jun-2018 18:04:52 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$this' (T_VARIABLE) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 44
+[13-Jun-2018 00:18:08 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 48
+[13-Jun-2018 00:18:18 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 48
+[13-Jun-2018 00:18:20 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 48
+[13-Jun-2018 16:28:03 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 489
+[13-Jun-2018 16:29:00 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 488
+[13-Jun-2018 16:52:26 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[13-Jun-2018 16:52:51 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[13-Jun-2018 16:53:04 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[13-Jun-2018 17:10:22 America/Sao_Paulo] PHP Fatal error:  Cannot access empty property in /home/ubuntu/workspace/app/Http/Controllers/AdminEventosController.php on line 483
+[13-Jun-2018 18:12:13 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 92
+[13-Jun-2018 18:13:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ',' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 93
+[13-Jun-2018 18:14:03 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 97
+[13-Jun-2018 18:16:39 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 101
+[13-Jun-2018 18:17:33 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 101
+[13-Jun-2018 18:17:39 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 101
+[13-Jun-2018 18:19:58 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '}' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 101
+[13-Jun-2018 18:31:37 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'number_format' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 94
+[24-Jun-2018 10:06:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminUsuariosController.php on line 56
+[24-Jun-2018 10:06:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminUsuariosController.php on line 56
+[24-Jun-2018 23:29:49 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home/ubuntu/workspace/storage/framework/views/6946092819923f16dceca97fec3c3e3702e7e717.php on line 7

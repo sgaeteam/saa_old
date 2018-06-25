@@ -31,7 +31,7 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Nome","name"=>"nome"];
-			$this->col[] = ["label"=>"Data Nascimento","name"=>"data_nascimento"];
+			$this->col[] = ["label"=>"Data Nascimento","name"=>"data_nascimento","callback_php"=>'str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->data_nascimento)))'];
 			$this->col[] = ["label"=>"Telefone","name"=>"telefone"];
 			$this->col[] = ["label"=>"Celular","name"=>"celular"];
 			$this->col[] = ["label"=>"Cobrança","name"=>"cobranca_id","join"=>"cobrancas,descricao"];
@@ -45,20 +45,16 @@
 			$this->form[] = ['label'=>'Data Nascimento','name'=>'data_nascimento','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Endereco','name'=>'endereco','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Bairro','name'=>'bairro','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Cidade','name'=>'cidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10','value' => 'Salvador'];
+			$this->form[] = ['label'=>'Estado','name'=>'estado','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'AC;AL;AP;AM;BA;CE;DF;ES;GO;MA;MT;MS;MG;PA;PB;PR;PE;PI;RJ;RN;RS;RO;RR;SC;SP;SE;TO','value' => 'BA'];
 			$this->form[] = ['label'=>'Cep','name'=>'cep','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'min:1|max:255|email|unique:usuarios','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
-			$this->form[] = ['label'=>'Ramal','name'=>'ramal','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Estado Civil','name'=>'estado_civil','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Nacionalidade','name'=>'nacionalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Naturalidade','name'=>'naturalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Lotacao','name'=>'lotacao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Unidade','name'=>'unidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Profissao','name'=>'profissao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
+			$this->form[] = ['label'=>'Estado Civil','name'=>'estado_civil','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Solteiro(a);Casado(a);União Estável;Divorciado(a);Separado(a);Viúvo(a)'];			
+			$this->form[] = ['label'=>'Nacionalidade','name'=>'nacionalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10','value'=>'Brasileira'];
+			$this->form[] = ['label'=>'Grupo Sanguíneo','name'=>'grupo_sanguineo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'AB+;AB-;A+;A-;B+;B-;O+;O-'];			
 			$this->form[] = ['label'=>'Cobrança','name'=>'cobranca_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cobrancas,descricao'];
 			$this->form[] = ['label'=>'Obs','name'=>'obs','type'=>'textarea','validation'=>'string|min:5|max:5000','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE

@@ -1,1 +1,1 @@
-{{number_format($value)}}
+{{'R$ '.number_format($value,2,",",".")}}

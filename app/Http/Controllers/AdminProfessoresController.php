@@ -36,9 +36,9 @@
 			$this->col[] = ["label"=>"Telefone","name"=>"telefone"];
 			$this->col[] = ["label"=>"Celular","name"=>"celular"];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
-
 			$this->col[] = ["label"=>"Hora Aula","name"=>"hora_aula","callback_php"=>'"R$ ".number_format([hora_aula],2,",",".")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
+
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Nome','name'=>'nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
@@ -47,7 +47,7 @@
 			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'min:1|max:255|email|unique:professores','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
-			$this->form[] = ['label'=>'Hora Aula','name'=>'hora_aula','type'=>'money','validation'=>'integer|min:0','width'=>'col-sm-10','decimals'=>'2','dec_point'=>'.'];
+			$this->form[] = ['label'=>'Hora Aula','name'=>'hora_aula','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','decimals'=>'2','dec_point'=>'.'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

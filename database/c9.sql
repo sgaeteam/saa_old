@@ -2,10 +2,10 @@
 -- version 4.0.10deb1
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tempo de Geração: 11/06/2018 às 16:18
--- Versão do servidor: 5.5.59-0ubuntu0.14.04.1
--- Versão do PHP: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
+-- Host: 127.0.0.1
+-- Generation Time: Jun 24, 2018 at 12:53 PM
+-- Server version: 5.5.59-0ubuntu0.14.04.1
+-- PHP Version: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,13 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Banco de dados: `c9`
+-- Database: `c9`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `area__competencias`
+-- Table structure for table `area__competencias`
 --
 
 CREATE TABLE IF NOT EXISTS `area__competencias` (
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `area__competencias` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `area__competencias`
+-- Dumping data for table `area__competencias`
 --
 
 INSERT INTO `area__competencias` (`id`, `sigla`, `descricao`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -48,7 +48,7 @@ INSERT INTO `area__competencias` (`id`, `sigla`, `descricao`, `created_at`, `upd
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `atividades`
+-- Table structure for table `atividades`
 --
 
 CREATE TABLE IF NOT EXISTS `atividades` (
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `atividades` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --
--- Fazendo dump de dados para tabela `atividades`
+-- Dumping data for table `atividades`
 --
 
 INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `data_fim`, `data_cancelamento`, `duracao`, `hora_inicio_seg`, `hora_inicio_ter`, `hora_inicio_qua`, `hora_inicio_qui`, `hora_inicio_sex`, `hora_inicio_sab`, `hora_inicio_dom`, `tipoatividade_id`, `professor_id`, `espaco_id`, `agendado`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -88,12 +88,12 @@ INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `
 (4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', NULL, '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 0, '2018-05-16 17:38:53', '2018-05-16 17:46:42', '2018-05-22 13:44:15'),
 (5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', NULL, '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 1, '2018-05-24 08:41:04', NULL, NULL),
 (6, 'Capoeira do Professor Raimundo', '', '', '2018-06-11', '2018-08-04', NULL, '02:45:00', '10:00:00', '00:00:00', '10:00:00', '00:00:00', '14:00:00', '00:00:00', '00:00:00', 1, 2, 8, 1, '2018-06-05 17:53:20', NULL, NULL),
-(7, 'Natação dos Patos', '', '', '2018-06-07', '2018-06-08', NULL, '05:00:00', '00:00:00', '00:00:00', '00:00:00', '14:00:00', '12:00:00', '12:00:00', '00:00:00', 8, 1, 11, 1, '2018-06-06 18:02:43', NULL, NULL);
+(7, 'Natação dos Patos', '', '', '2018-06-14', '2018-06-23', NULL, '05:15:00', '00:00:00', '00:00:00', '00:00:00', '14:00:00', '12:00:00', '13:00:00', '00:00:00', 8, 1, 11, 1, '2018-06-06 18:02:43', '2018-06-12 01:33:04', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `categorias`
+-- Table structure for table `categorias`
 --
 
 CREATE TABLE IF NOT EXISTS `categorias` (
@@ -108,7 +108,7 @@ CREATE TABLE IF NOT EXISTS `categorias` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=20 ;
 
 --
--- Fazendo dump de dados para tabela `categorias`
+-- Dumping data for table `categorias`
 --
 
 INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descricao`, `mensalidade`, `convites`) VALUES
@@ -125,7 +125,7 @@ INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descr
 (11, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'COMAB', 20, 4),
 (12, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'SINDPREV/BA', 6.1, 4),
 (13, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'ELEQUEIROZ', 5.13, 4),
-(14, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'BR Distribuidoras S.A.', 40.13, 4),
+(14, '2018-02-27 03:44:26', '2018-06-21 17:39:16', NULL, 'BR Distribuidoras S.A.', 99.99, 5),
 (15, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'Unificado', 5.13, 4),
 (16, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'Sócio Atleta', 40, 4),
 (17, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'SINDI-SAUDE', 6.1, 4),
@@ -135,7 +135,7 @@ INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descr
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_apicustom`
+-- Table structure for table `cms_apicustom`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_apicustom` (
@@ -161,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `cms_apicustom` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_apikey`
+-- Table structure for table `cms_apikey`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_apikey` (
@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `cms_apikey` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_dashboard`
+-- Table structure for table `cms_dashboard`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_dashboard` (
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `cms_dashboard` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_email_queues`
+-- Table structure for table `cms_email_queues`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_email_queues` (
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `cms_email_queues` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_email_templates`
+-- Table structure for table `cms_email_templates`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_email_templates` (
@@ -234,7 +234,7 @@ CREATE TABLE IF NOT EXISTS `cms_email_templates` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_email_templates`
+-- Dumping data for table `cms_email_templates`
 --
 
 INSERT INTO `cms_email_templates` (`id`, `name`, `slug`, `subject`, `content`, `description`, `from_name`, `from_email`, `cc_email`, `created_at`, `updated_at`) VALUES
@@ -243,7 +243,7 @@ INSERT INTO `cms_email_templates` (`id`, `name`, `slug`, `subject`, `content`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_logs`
+-- Table structure for table `cms_logs`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_logs` (
@@ -256,10 +256,10 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=593 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=646 ;
 
 --
--- Fazendo dump de dados para tabela `cms_logs`
+-- Dumping data for table `cms_logs`
 --
 
 INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `id_cms_users`, `created_at`, `updated_at`) VALUES
@@ -857,12 +857,65 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `i
 (589, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/action-selected', 'Excluir o conteúdo de 38,37,36,35,34,33,32,31,30,29,28,27,26,25,24,23,22,21 em Socios', 1, '2018-06-08 18:12:17', NULL),
 (590, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/action-selected', 'Excluir o conteúdo de 20,19,16,14,4 em Socios', 1, '2018-06-08 18:14:56', NULL),
 (591, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-06-09 18:32:16', NULL),
-(592, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-06-09 18:38:06', NULL);
+(592, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-06-09 18:38:06', NULL),
+(593, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-06-11 13:18:55', NULL),
+(594, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-06-11 23:55:30', NULL),
+(595, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/delete/16', 'Excluir o conteúdo de 16 em Socios', 1, '2018-06-12 00:08:30', NULL),
+(596, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/7', 'Suspender atividade 7 em Agendar Atividades', 1, '2018-06-12 00:46:28', NULL),
+(597, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/7', 'Atualizar dados de  em Agendar Atividades', 1, '2018-06-12 00:48:28', NULL),
+(598, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/7', 'Atualizar dados de  em Agendar Atividades', 1, '2018-06-12 00:55:41', NULL),
+(599, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/7', 'Agendar atividade 7 em Agendar Atividades', 1, '2018-06-12 00:55:54', NULL),
+(600, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/7', 'Atualizar dados de  em Agendar Atividades', 1, '2018-06-12 01:08:56', NULL),
+(601, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/7', 'Suspender atividade 7 em Agendar Atividades', 1, '2018-06-12 01:09:11', NULL),
+(602, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/7', 'Agendar atividade 7 em Agendar Atividades', 1, '2018-06-12 01:13:45', NULL),
+(603, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/7', 'Suspender atividade 7 em Agendar Atividades', 1, '2018-06-12 01:16:39', NULL),
+(604, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/7', 'Agendar atividade 7 em Agendar Atividades', 1, '2018-06-12 01:17:09', NULL),
+(605, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/7', 'Atualizar dados de  em Agendar Atividades', 1, '2018-06-12 01:33:04', NULL),
+(606, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/7', 'Suspender atividade 7 em Agendar Atividades', 1, '2018-06-12 01:33:18', NULL),
+(607, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/7', 'Agendar atividade 7 em Agendar Atividades', 1, '2018-06-12 01:33:30', NULL),
+(608, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/5', 'Atualizar dados de  em Produtos', 1, '2018-06-12 01:55:48', NULL),
+(609, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 528 em Alugar Espaços', 1, '2018-06-12 02:05:14', NULL),
+(610, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/5', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:11:05', NULL),
+(611, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/4', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:12:25', NULL),
+(612, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/4', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:12:55', NULL),
+(613, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/3', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:15:07', NULL),
+(614, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/3', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:15:35', NULL),
+(615, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/2', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:16:33', NULL),
+(616, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/2', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:17:03', NULL),
+(617, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/1', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:18:23', NULL),
+(618, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/1', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:18:49', NULL),
+(619, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/delete/10', 'Excluir o conteúdo de 10 em Produtos', 1, '2018-06-12 02:19:05', NULL),
+(620, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/2', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:19:40', NULL),
+(621, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/3', 'Atualizar dados de  em Produtos', 1, '2018-06-12 02:20:54', NULL),
+(622, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.233', 1, '2018-06-12 13:58:51', NULL),
+(623, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-06-12 17:03:10', NULL),
+(624, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-06-12 23:39:28', NULL),
+(625, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-06-13 16:29:33', NULL),
+(626, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-06-17 22:05:39', NULL),
+(627, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/1', 'Atualizar dados de  em Espaços', 1, '2018-06-17 22:22:12', NULL),
+(628, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/10', 'Atualizar dados de  em Espaços', 1, '2018-06-17 22:23:22', NULL),
+(629, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/7', 'Atualizar dados de  em Espaços', 1, '2018-06-17 22:24:32', NULL),
+(630, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/5', 'Atualizar dados de  em Espaços', 1, '2018-06-17 22:25:37', NULL),
+(631, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/2', 'Atualizar dados de  em Espaços', 1, '2018-06-17 22:34:49', NULL),
+(632, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/3', 'Atualizar dados de  em Professores', 1, '2018-06-17 22:43:54', NULL),
+(633, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/2', 'Atualizar dados de  em Professores', 1, '2018-06-17 22:44:23', NULL),
+(634, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/1', 'Atualizar dados de  em Professores', 1, '2018-06-17 22:44:54', NULL),
+(635, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/40', 'Atualizar dados de  em Socios', 1, '2018-06-17 22:56:44', NULL),
+(636, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-06-19 22:45:49', NULL),
+(637, '10.240.1.78', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-06-21 16:23:13', NULL),
+(638, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/categorias/edit-save/14', 'Atualizar dados de  em Categorias', 1, '2018-06-21 17:39:04', NULL),
+(639, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/categorias/edit-save/14', 'Atualizar dados de  em Categorias', 1, '2018-06-21 17:39:16', NULL),
+(640, '10.240.0.171', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/2', 'Atualizar dados de  em Produtos', 1, '2018-06-21 17:41:27', NULL),
+(641, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/produtos/edit-save/2', 'Atualizar dados de  em Produtos', 1, '2018-06-21 17:41:40', NULL),
+(642, '10.240.0.116', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/1', 'Atualizar dados de  em Professores', 1, '2018-06-21 17:46:21', NULL),
+(643, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/edit-save/5', 'Atualizar dados de  em Usuários', 1, '2018-06-21 18:11:24', NULL),
+(644, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/edit-save/6', 'Atualizar dados de  em Matricular Usuários', 1, '2018-06-21 18:14:06', NULL),
+(645, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-06-24 08:28:21', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_menus`
+-- Table structure for table `cms_menus`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_menus` (
@@ -883,7 +936,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
 
 --
--- Fazendo dump de dados para tabela `cms_menus`
+-- Dumping data for table `cms_menus`
 --
 
 INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_id`, `is_active`, `is_dashboard`, `id_cms_privileges`, `sorting`, `created_at`, `updated_at`) VALUES
@@ -910,7 +963,7 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_moduls`
+-- Table structure for table `cms_moduls`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_moduls` (
@@ -928,7 +981,7 @@ CREATE TABLE IF NOT EXISTS `cms_moduls` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 --
--- Fazendo dump de dados para tabela `cms_moduls`
+-- Dumping data for table `cms_moduls`
 --
 
 INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controller`, `is_protected`, `is_active`, `created_at`, `updated_at`) VALUES
@@ -961,7 +1014,7 @@ INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controlle
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_notifications`
+-- Table structure for table `cms_notifications`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_notifications` (
@@ -978,7 +1031,7 @@ CREATE TABLE IF NOT EXISTS `cms_notifications` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_privileges`
+-- Table structure for table `cms_privileges`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_privileges` (
@@ -992,7 +1045,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_privileges`
+-- Dumping data for table `cms_privileges`
 --
 
 INSERT INTO `cms_privileges` (`id`, `name`, `is_superadmin`, `theme_color`, `created_at`, `updated_at`) VALUES
@@ -1001,7 +1054,7 @@ INSERT INTO `cms_privileges` (`id`, `name`, `is_superadmin`, `theme_color`, `cre
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_privileges_roles`
+-- Table structure for table `cms_privileges_roles`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
@@ -1019,7 +1072,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
 
 --
--- Fazendo dump de dados para tabela `cms_privileges_roles`
+-- Dumping data for table `cms_privileges_roles`
 --
 
 INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, `is_edit`, `is_delete`, `id_cms_privileges`, `id_cms_moduls`, `created_at`, `updated_at`) VALUES
@@ -1057,7 +1110,7 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_settings`
+-- Table structure for table `cms_settings`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_settings` (
@@ -1075,7 +1128,7 @@ CREATE TABLE IF NOT EXISTS `cms_settings` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
--- Fazendo dump de dados para tabela `cms_settings`
+-- Dumping data for table `cms_settings`
 --
 
 INSERT INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `dataenum`, `helper`, `created_at`, `updated_at`, `group_setting`, `label`) VALUES
@@ -1099,7 +1152,7 @@ INSERT INTO `cms_settings` (`id`, `name`, `content`, `content_input_type`, `data
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_statistics`
+-- Table structure for table `cms_statistics`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_statistics` (
@@ -1112,7 +1165,7 @@ CREATE TABLE IF NOT EXISTS `cms_statistics` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_statistics`
+-- Dumping data for table `cms_statistics`
 --
 
 INSERT INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
@@ -1121,7 +1174,7 @@ INSERT INTO `cms_statistics` (`id`, `name`, `slug`, `created_at`, `updated_at`) 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_statistic_components`
+-- Table structure for table `cms_statistic_components`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
@@ -1139,7 +1192,7 @@ CREATE TABLE IF NOT EXISTS `cms_statistic_components` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=17 ;
 
 --
--- Fazendo dump de dados para tabela `cms_statistic_components`
+-- Dumping data for table `cms_statistic_components`
 --
 
 INSERT INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`, `component_name`, `area_name`, `sorting`, `name`, `config`, `created_at`, `updated_at`) VALUES
@@ -1151,7 +1204,7 @@ INSERT INTO `cms_statistic_components` (`id`, `id_cms_statistics`, `componentID`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cms_users`
+-- Table structure for table `cms_users`
 --
 
 CREATE TABLE IF NOT EXISTS `cms_users` (
@@ -1168,7 +1221,7 @@ CREATE TABLE IF NOT EXISTS `cms_users` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
--- Fazendo dump de dados para tabela `cms_users`
+-- Dumping data for table `cms_users`
 --
 
 INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `created_at`, `updated_at`, `status`) VALUES
@@ -1177,7 +1230,7 @@ INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_pri
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cobrancas`
+-- Table structure for table `cobrancas`
 --
 
 CREATE TABLE IF NOT EXISTS `cobrancas` (
@@ -1190,7 +1243,7 @@ CREATE TABLE IF NOT EXISTS `cobrancas` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Fazendo dump de dados para tabela `cobrancas`
+-- Dumping data for table `cobrancas`
 --
 
 INSERT INTO `cobrancas` (`id`, `created_at`, `updated_at`, `deleted_at`, `descricao`) VALUES
@@ -1203,7 +1256,7 @@ INSERT INTO `cobrancas` (`id`, `created_at`, `updated_at`, `deleted_at`, `descri
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dependentes`
+-- Table structure for table `dependentes`
 --
 
 CREATE TABLE IF NOT EXISTS `dependentes` (
@@ -1220,7 +1273,7 @@ CREATE TABLE IF NOT EXISTS `dependentes` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=36 ;
 
 --
--- Fazendo dump de dados para tabela `dependentes`
+-- Dumping data for table `dependentes`
 --
 
 INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `socio_id`, `dependente_nome`, `dependente_sexo`, `dependente_dtnasc`, `dependente_grau`) VALUES
@@ -1250,20 +1303,18 @@ INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `soci
 (24, '2018-06-05 17:44:32', NULL, NULL, 2, 'Vilma Flintstones', 'Feminino', '1973-07-19', 'Cônjuge'),
 (25, NULL, NULL, NULL, 15, 'Gohan', 'Masculino', '0000-00-00', 'Filho(a)'),
 (26, '2018-06-05 18:18:18', NULL, NULL, 7, 'Zezé', 'Feminino', '2018-06-26', 'Cônjuge'),
-(27, NULL, NULL, NULL, 16, 'Sem Datinha', 'Masculino', '0000-00-00', 'Filho(a)'),
+(27, NULL, NULL, '2018-06-12 00:08:30', 16, 'Sem Datinha', 'Masculino', '0000-00-00', 'Filho(a)'),
 (28, NULL, NULL, NULL, 17, 'Pipoca', 'Feminino', '0000-00-00', 'Filho(a)'),
 (29, NULL, NULL, NULL, 18, 'SAIPRO', 'Masculino', '0000-00-00', 'Filho(a)'),
-(30, NULL, NULL, NULL, 26, 'Bernardo', 'Masculino', '0000-00-00', 'Filho(a)'),
-(31, NULL, NULL, NULL, 29, 'Victor Roberto', 'Feminino', '0000-00-00', 'Filho(a)'),
 (32, NULL, NULL, '2018-06-08 18:12:17', 38, 'BIC', 'Feminino', '1983-04-03', 'Filho(a)'),
 (33, '2018-06-07 00:00:00', NULL, NULL, 39, 'Katy Perry', 'Feminino', '1991-04-03', 'Cônjuge'),
-(34, '2018-06-07 18:33:18', NULL, NULL, 40, 'Pedro', 'Masculino', '1995-07-19', 'Filho(a)'),
-(35, '2018-06-07 18:33:18', NULL, NULL, 40, 'Jaqueline', 'Feminino', '1973-07-19', 'Cônjuge');
+(34, NULL, NULL, NULL, 40, 'Jaqueline', 'Feminino', '1973-07-19', 'Cônjuge'),
+(35, NULL, NULL, NULL, 40, 'Pedro', 'Masculino', '1995-07-19', 'Filho(a)');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `espacos`
+-- Table structure for table `espacos`
 --
 
 CREATE TABLE IF NOT EXISTS `espacos` (
@@ -1279,26 +1330,26 @@ CREATE TABLE IF NOT EXISTS `espacos` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=12 ;
 
 --
--- Fazendo dump de dados para tabela `espacos`
+-- Dumping data for table `espacos`
 --
 
 INSERT INTO `espacos` (`id`, `nome`, `descricao`, `capacidade`, `finalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Recanto Familiar', 'Um espaço familiar, voltado para a descontração dos sócios e não sócios com seus amigos e parentes. Aonde pode ser feito um churrasco e também assar uma pizza, comportando 40 pessoas, onde são fornecidas cadeiras, mesas, grelha e pá de pizza.', 40, '', '2018-03-09 09:55:41', '2018-03-09 09:55:41', NULL),
-(2, 'Salão Verde', 'O espaço é voltado a realização de festas de aniversário, casamentos, bodas, confraternizações, chás beneficientes, coquetéis e convenções. Coberto, o ambiente possui ar condicionado e é equipado com freezer, cozinha com fogão, geladeira, mesas pranchões (3m x 60 cm)ou mesas redondas (1,50 diâmetro) e cadeiras de plástico. Para 250 pessoas.', 250, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
-(3, 'Salão Amarelo', 'Outro espaço destinado a eventos sociais é o Salão Amarelo. Com ar condicionado, cozinha com fogão e freezer, o espaço tem capacidade para 150 pessoas e é ideal para a celebração de aniversário, casamentos, bodas, confraternizações, chás beneficentes, coquetéis e convenções. Juntamente com o aluguel do salão, estão inclusas mesas pranchões (3m x 60 cm)ou mesas redondas (1,50 diâmetro) e cadeiras de plástico.', 150, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
-(4, 'Churrasqueira VIP', 'Trata-se de um espaço social, onde podem ser realizados aniversários confraternizações, entre outros, inclusive sendo anexa ao Salão Verde (que possui capacidade para 250 pessoas). Sua estrutura conta com ar condicionado, ventilador e freezer, com cadeiras de plástico e mesas pranchões (3m x 60 cm)ou mesas redondas ( 1,50 diâmetro)todos estes utensílios em um espaço totalmente coberto, com capacidade para 60 pessoas. \n                 Por ser anexa ao Salão Verde, a churrasqueira vip pode ser alugada juntamente com o salão, desta maneira, se alugados juntos, passa para uma capacidade total de 310 pessoas ( 60 pessoas na churrasqueira e 250 pessoas no salão).', 310, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
-(5, 'Churrasqueira Social', '', 0, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
+(1, 'Recanto Familiar', 'Um espaço familiar, voltado para a descontração dos sócios e não sócios com seus amigos e parentes. Aonde pode ser feito um churrasco e também assar uma pizza, comportando 40 pessoas, onde são fornecidas cadeiras, mesas, grelha e pá de pizza.', 40, 'Eventos', '2018-03-09 09:55:41', '2018-06-17 22:22:12', NULL),
+(2, 'Salão Verde', 'O espaço é voltado a realização de festas de aniversário, casamentos, bodas, confraternizações, chás beneficientes, coquetéis e convenções.', 250, 'Eventos', '2018-03-09 09:55:42', '2018-06-17 22:34:49', NULL),
+(3, 'Salão Amarelo', 'Outro espaço destinado a eventos sociais é o Salão Amarelo. Com ar condicionado, cozinha com fogão e freezer, o espaço tem capacidade para 150 pessoas e é ideal para a celebração de aniversário, casamentos, bodas, confraternizações, chás beneficentes, coquetéis e convenções. Juntamente com o aluguel do salão, estão inclusas mesas pranchões (3m x 60 cm)ou mesas redondas (1,50 diâmetro) e cadeiras de plástico.', 150, 'Eventos', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
+(4, 'Churrasqueira VIP', 'Trata-se de um espaço social, onde podem ser realizados aniversários confraternizações, entre outros, inclusive sendo anexa ao Salão Verde (que possui capacidade para 250 pessoas). Sua estrutura conta com ar condicionado, ventilador e freezer, com cadeiras de plástico e mesas pranchões (3m x 60 cm)ou mesas redondas ( 1,50 diâmetro)todos estes utensílios em um espaço totalmente coberto, com capacidade para 60 pessoas. \n                 Por ser anexa ao Salão Verde, a churrasqueira vip pode ser alugada juntamente com o salão, desta maneira, se alugados juntos, passa para uma capacidade total de 310 pessoas ( 60 pessoas na churrasqueira e 250 pessoas no salão).', 310, 'Eventos', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
+(5, 'Churrasqueira Social', '', 15, 'Eventos', '2018-03-09 09:55:42', '2018-06-17 22:25:37', NULL),
 (6, 'Churrasqueira Familiar', '', 50, 'Eventos', '2018-03-09 09:55:42', '2018-03-29 14:52:49', NULL),
-(7, 'Campo de Futebol Society', '', 0, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
+(7, 'Campo de Futebol Society', '', 16, 'Atividades', '2018-03-09 09:55:42', '2018-06-17 22:24:32', NULL),
 (8, 'Quadra Poliesportiva', '', 22, 'Atividades & Eventos', '2018-03-09 09:55:42', '2018-04-08 13:18:18', NULL),
 (9, 'Campo de Futebol (Gramado)', 'Gramado para futebol com 11 de linha.', 45, 'Atividades & Eventos', '2018-03-09 09:55:42', '2018-03-28 07:33:10', NULL),
-(10, 'Piscina Adulto', '', 0, '', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
+(10, 'Piscina Adulto', '', 10, 'Atividades', '2018-03-09 09:55:42', '2018-06-17 22:23:22', NULL),
 (11, 'Piscina Infantil', '', 0, 'Atividades', '2018-03-09 09:55:42', '2018-03-28 07:58:18', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `eventos`
+-- Table structure for table `eventos`
 --
 
 CREATE TABLE IF NOT EXISTS `eventos` (
@@ -1318,10 +1369,10 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `espaco_valor` double NOT NULL,
   `espaco_desconto` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=514 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=529 ;
 
 --
--- Fazendo dump de dados para tabela `eventos`
+-- Dumping data for table `eventos`
 --
 
 INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, `titulo`, `start_date`, `end_date`, `all_day`, `socio_id`, `espaco_id`, `atividade_id`, `professor_id`, `espaco_valor`, `espaco_desconto`) VALUES
@@ -1597,12 +1648,27 @@ INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, 
 (510, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-08-01 10:00:00', '2018-08-01 12:00:45', 0, NULL, 8, 6, 2, 0, 0),
 (511, '2018-06-05 17:54:42', '2018-06-05 17:54:42', NULL, 0, 'Capoeira do Professor Raimundo', '2018-08-03 14:00:00', '2018-08-03 16:00:45', 0, NULL, 8, 6, 2, 0, 0),
 (512, '2018-06-06 18:03:03', '2018-06-06 18:03:03', NULL, 0, 'Natação dos Patos', '2018-06-07 14:00:00', '2018-06-07 19:00:00', 0, NULL, 11, 7, 1, 0, 0),
-(513, '2018-06-07 18:35:29', NULL, NULL, 50092.200000000004, 'Volley Cabral', '2018-06-23 11:00:00', '2018-06-23 14:00:00', 0, 40, 8, NULL, NULL, 100, 10);
+(513, '2018-06-07 18:35:29', NULL, NULL, 50092.200000000004, 'Volley Cabral', '2018-06-23 11:00:00', '2018-06-23 14:00:00', 0, 40, 8, NULL, NULL, 100, 10),
+(514, '2018-06-12 00:55:54', '2018-06-12 00:55:54', '2018-06-12 01:09:11', 0, 'Natação dos Patos', '2018-06-14 14:00:00', '2018-06-14 19:00:15', 0, NULL, 11, 7, 1, 0, 0),
+(515, '2018-06-12 00:55:54', '2018-06-12 00:55:54', '2018-06-12 01:09:11', 0, 'Natação dos Patos', '2018-06-15 12:00:00', '2018-06-15 17:00:15', 0, NULL, 11, 7, 1, 0, 0),
+(516, '2018-06-12 01:09:27', '2018-06-12 01:09:27', '2018-06-12 01:16:39', 0, 'Natação dos Patos', '2018-06-14 14:00:00', '2018-06-14 19:00:15', 0, NULL, 11, 7, 1, 0, 0),
+(517, '2018-06-12 01:09:27', '2018-06-12 01:09:27', '2018-06-12 01:16:39', 0, 'Natação dos Patos', '2018-06-15 12:00:00', '2018-06-15 17:00:15', 0, NULL, 11, 7, 1, 0, 0),
+(518, '2018-06-12 01:13:45', '2018-06-12 01:13:45', '2018-06-12 01:16:39', 0, 'Natação dos Patos', '2018-06-16 13:00:00', '2018-06-16 18:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(519, '2018-06-12 01:17:09', '2018-06-12 01:17:09', '2018-06-12 01:33:18', 0, 'Natação dos Patos', '2018-06-14 14:00:00', '2018-06-14 19:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(520, '2018-06-12 01:17:09', '2018-06-12 01:17:09', '2018-06-12 01:33:18', 0, 'Natação dos Patos', '2018-06-15 12:00:00', '2018-06-15 17:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(521, '2018-06-12 01:17:09', '2018-06-12 01:17:09', '2018-06-12 01:33:18', 0, 'Natação dos Patos', '2018-06-16 13:00:00', '2018-06-16 18:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(522, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-14 14:00:00', '2018-06-14 19:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(523, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-15 12:00:00', '2018-06-15 17:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(524, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-16 13:00:00', '2018-06-16 18:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(525, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-21 14:00:00', '2018-06-21 19:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(526, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-22 12:00:00', '2018-06-22 17:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(527, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-23 13:00:00', '2018-06-23 18:15:00', 0, NULL, 11, 7, 1, 0, 0),
+(528, '2018-06-12 02:05:14', NULL, NULL, 176.5, 'DJ Ramgo', '2018-06-13 10:00:00', '2018-06-13 16:00:00', 0, 39, 9, NULL, NULL, 145, 0);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `evento__detalhes`
+-- Table structure for table `evento__detalhes`
 --
 
 CREATE TABLE IF NOT EXISTS `evento__detalhes` (
@@ -1617,10 +1683,10 @@ CREATE TABLE IF NOT EXISTS `evento__detalhes` (
   `desconto` double NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
 
 --
--- Fazendo dump de dados para tabela `evento__detalhes`
+-- Dumping data for table `evento__detalhes`
 --
 
 INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `produto_id`, `produto_valor`, `quantidade`, `sub_total`, `desconto`, `deleted_at`) VALUES
@@ -1638,12 +1704,13 @@ INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `
 (17, NULL, NULL, 326, 5, 4545, 2, 9090, 0, NULL),
 (19, NULL, NULL, 22, 5, 4545, 60, 272700, 0, '2018-05-22 14:07:32'),
 (18, NULL, NULL, 22, 10, 50045, 666, 33329970, 0, '2018-05-22 14:07:32'),
-(20, '2018-06-07 18:35:29', NULL, 513, 3, 2500.11, 20, 50002.200000000004, 0, NULL);
+(20, '2018-06-07 18:35:29', NULL, 513, 3, 2500.11, 20, 50002.200000000004, 0, NULL),
+(21, '2018-06-12 02:05:14', NULL, 528, 5, 4.5, 7, 31.5, 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `fornecedores`
+-- Table structure for table `fornecedores`
 --
 
 CREATE TABLE IF NOT EXISTS `fornecedores` (
@@ -1662,7 +1729,7 @@ CREATE TABLE IF NOT EXISTS `fornecedores` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `fornecedores`
+-- Dumping data for table `fornecedores`
 --
 
 INSERT INTO `fornecedores` (`id`, `nome`, `documento`, `tipo_documento`, `nome_contato`, `telefone`, `celular`, `email`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1673,7 +1740,7 @@ INSERT INTO `fornecedores` (`id`, `nome`, `documento`, `tipo_documento`, `nome_c
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `matriculas`
+-- Table structure for table `matriculas`
 --
 
 CREATE TABLE IF NOT EXISTS `matriculas` (
@@ -1690,7 +1757,7 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
 
 --
--- Fazendo dump de dados para tabela `matriculas`
+-- Dumping data for table `matriculas`
 --
 
 INSERT INTO `matriculas` (`id`, `atividade_id`, `usuario_id`, `data_matricula`, `mensalidade`, `desconto`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1699,12 +1766,12 @@ INSERT INTO `matriculas` (`id`, `atividade_id`, `usuario_id`, `data_matricula`, 
 (3, 2, 2, '2018-03-26', 50000, 30000, '2018-03-26 11:57:21', NULL, NULL),
 (4, 2, 4, '2018-03-26', 20000, 0, '2018-03-26 11:57:51', NULL, NULL),
 (5, 1, 3, '2018-03-26', 100000, 0, '2018-03-26 12:00:17', NULL, NULL),
-(6, 1, 4, '2018-05-17', 130000, 0, '2018-05-17 09:29:36', NULL, NULL);
+(6, 1, 4, '2018-06-21', 123, 3, '2018-05-17 09:29:36', '2018-06-21 18:14:06', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `migrations`
+-- Table structure for table `migrations`
 --
 
 CREATE TABLE IF NOT EXISTS `migrations` (
@@ -1712,10 +1779,10 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=65 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
 
 --
--- Fazendo dump de dados para tabela `migrations`
+-- Dumping data for table `migrations`
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
@@ -1775,12 +1842,14 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (61, '2018_05_15_084259_alter_table_atividades_add_agendado', 20),
 (62, '2018_05_22_135743_add_delete_to_evento_detalhes', 21),
 (63, '2018_05_24_185310_alter_table_eventos_add_professorid', 22),
-(64, '2018_06_02_184824_alter_table_dependentes_rename_fields', 23);
+(64, '2018_06_02_184824_alter_table_dependentes_rename_fields', 23),
+(65, '2018_06_24_092559_alter_table_usuarios_drop_fields', 24),
+(66, '2018_06_24_094016_alter_table_usuarios_add_fields', 25);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `produtos`
+-- Table structure for table `produtos`
 --
 
 CREATE TABLE IF NOT EXISTS `produtos` (
@@ -1795,21 +1864,21 @@ CREATE TABLE IF NOT EXISTS `produtos` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
 
 --
--- Fazendo dump de dados para tabela `produtos`
+-- Dumping data for table `produtos`
 --
 
 INSERT INTO `produtos` (`id`, `nome`, `valor`, `fornecedor_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Cerveja Itaipava 493ml', 500000.45, 2, '2018-03-06 00:09:46', '2018-03-26 10:23:43', NULL),
-(2, 'Coca-cola 1L', 3000.12, 1, '2018-03-06 00:10:11', '2018-03-26 10:24:13', NULL),
-(3, 'Água 1L', 2500.11, 1, '2018-03-06 00:10:32', '2018-03-26 10:23:13', NULL),
-(4, 'Cerveja Skol 350ml', 3500.13, 1, '2018-03-26 10:21:39', NULL, NULL),
-(5, 'Cerveja Heineken Longneck 355ml', 4545.00, 2, '2018-03-26 10:22:40', '2018-04-23 05:09:27', NULL),
-(10, 'moa', 50045.00, 1, NULL, '2018-04-25 08:30:40', NULL);
+(1, 'Cerveja Itaipava Latão 493ml', 3.50, 2, '2018-03-06 00:09:46', '2018-06-12 02:18:49', NULL),
+(2, 'Coca-Cola Garrafa 1L', 3.25, 1, '2018-03-06 00:10:11', '2018-06-21 17:41:40', NULL),
+(3, 'Água Mineral Garrafa 1L', 3.00, 1, '2018-03-06 00:10:32', '2018-06-12 02:20:54', NULL),
+(4, 'Cerveja Skol Lata 350ml', 2.70, 1, '2018-03-26 10:21:39', '2018-06-12 02:12:55', NULL),
+(5, 'Cerveja Heineken Longneck 355ml', 3.99, 2, '2018-03-26 10:22:40', '2018-06-12 02:11:05', NULL),
+(10, 'moa', 50045.00, 1, NULL, '2018-04-25 08:30:40', '2018-06-12 02:19:05');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professores`
+-- Table structure for table `professores`
 --
 
 CREATE TABLE IF NOT EXISTS `professores` (
@@ -1828,18 +1897,18 @@ CREATE TABLE IF NOT EXISTS `professores` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
 
 --
--- Fazendo dump de dados para tabela `professores`
+-- Dumping data for table `professores`
 --
 
 INSERT INTO `professores` (`id`, `nome`, `documento`, `tipo_documento`, `telefone`, `celular`, `email`, `hora_aula`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Pardal', '001.002.004-55', 'CPF', '', '', '', 120000, '2018-03-26 10:30:11', NULL, NULL),
-(2, 'Raimundo Nonato', '123456-97', 'RG', '', '', '', 50000, '2018-03-26 10:30:51', NULL, NULL),
-(3, 'Xavier', '123.321.222-01', 'CPF', '', '', '', 7050, '2018-03-29 16:17:06', NULL, NULL);
+(1, 'Pardal', '001.002.004-55', 'CPF', '', '', '', 74.9, '2018-03-26 10:30:11', '2018-06-21 17:46:21', NULL),
+(2, 'Raimundo Nonato', '123456-97', 'RG', '', '', '', 100, '2018-03-26 10:30:51', '2018-06-17 22:44:23', NULL),
+(3, 'Xavier', '123.321.222-01', 'CPF', '', '', '', 70.5, '2018-03-29 16:17:06', '2018-06-17 22:43:54', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `socios`
+-- Table structure for table `socios`
 --
 
 CREATE TABLE IF NOT EXISTS `socios` (
@@ -1879,7 +1948,7 @@ CREATE TABLE IF NOT EXISTS `socios` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=41 ;
 
 --
--- Fazendo dump de dados para tabela `socios`
+-- Dumping data for table `socios`
 --
 
 INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `matricula`, `funcao`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `areacompetencia_id`, `categoria_id`, `cobranca_id`, `outra_matricula`, `data_adesao`, `obs`) VALUES
@@ -1898,7 +1967,7 @@ INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `m
 (13, '2018-06-04 20:37:26', NULL, NULL, 'Mahatma', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 5, '', '0000-00-00', ''),
 (14, '2018-06-04 21:54:54', NULL, '2018-06-08 18:14:56', 'Vitor Alberto Smith', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
 (15, '2018-06-05 17:46:49', NULL, NULL, 'Goku', '', '', '', '', '1975-11-26', '', '', '', 'BA', '', '', '', '', '', 'Feminino', 'União Estável', '', '', '', '', '', 1, 10, 1, '', '2018-06-05', ''),
-(16, '2018-06-06 11:30:51', NULL, '2018-06-08 18:14:56', 'Sem data', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', ''),
+(16, '2018-06-06 11:30:51', NULL, '2018-06-12 00:08:30', 'Sem data', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', ''),
 (17, '2018-06-07 17:07:25', NULL, NULL, 'Joca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 1, '', '0000-00-00', ''),
 (18, '2018-06-07 17:13:49', NULL, NULL, 'Andreca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 19, 4, '', '0000-00-00', ''),
 (19, '2018-06-07 17:19:11', NULL, '2018-06-08 18:14:56', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
@@ -1922,12 +1991,12 @@ INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `m
 (37, '2018-06-07 18:26:55', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
 (38, '2018-06-07 18:27:22', NULL, '2018-06-08 18:12:17', 'BLIC CONDOMINIOS LTDA', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 3, '', '0000-00-00', ''),
 (39, '2018-06-07 18:31:27', NULL, NULL, 'Calvin Harris', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', 'Masculino', '', '', '', '', '', '', 1, 11, 4, '', '0000-00-00', ''),
-(40, '2018-06-07 18:33:18', NULL, NULL, 'Roberto Cabral', '', '', '', '', '1975-11-26', '', '', 'Valença', 'BA', '', '', '', '', '', 'Masculino', 'Casado(a)', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', '');
+(40, '2018-06-07 18:33:18', '2018-06-17 22:56:44', NULL, 'Roberto Cabral', '', '', '', '', '1975-11-26', '', '', 'Valença', 'BA', '', '', '', '', '', 'Masculino', 'Casado(a)', '', '', '', '', '', 1, 11, 1, '', '1998-10-28', '');
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `tipo_atividades`
+-- Table structure for table `tipo_atividades`
 --
 
 CREATE TABLE IF NOT EXISTS `tipo_atividades` (
@@ -1941,7 +2010,7 @@ CREATE TABLE IF NOT EXISTS `tipo_atividades` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
 
 --
--- Fazendo dump de dados para tabela `tipo_atividades`
+-- Dumping data for table `tipo_atividades`
 --
 
 INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
@@ -1962,7 +2031,7 @@ INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `usuarios`
+-- Table structure for table `usuarios`
 --
 
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -1979,14 +2048,10 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `telefone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `celular` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ramal` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `sexo` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `estado_civil` varchar(1) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estado_civil` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `grupo_sanguineo` varchar(3) COLLATE utf8_unicode_ci DEFAULT NULL,
   `nacionalidade` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `naturalidade` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lotacao` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `unidade` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `profissao` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cobranca_id` int(11) DEFAULT NULL,
   `obs` text COLLATE utf8_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -1996,15 +2061,15 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 --
--- Fazendo dump de dados para tabela `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `cobranca_id`, `obs`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Paulo Cintura', '', '', '1972-07-13', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '2018-03-26 10:34:58', NULL, NULL),
-(2, 'Pato Donald', '', '', '1931-12-24', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 4, '', '2018-03-26 10:35:52', NULL, NULL),
-(3, 'Seu Boneco', '', '', '1984-10-30', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 4, '', '2018-03-26 10:36:36', NULL, NULL),
-(4, 'Margarida', '', '', '1945-05-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, '', '2018-03-26 10:37:09', NULL, NULL),
-(5, 'Bolsonaro 2018', '12314312343', '3214234234', '2018-05-31', 'rua do ai quem quer', 'ogro gogo', 'melao', 'do', '54665464', '5450000045454', '4546405450', 'chota12@genitallia.c', '4546464', 'd', 'e', '', '', '', '', '', 1, '', '2018-05-17 09:59:57', NULL, NULL);
+INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `sexo`, `estado_civil`, `grupo_sanguineo`, `nacionalidade`, `cobranca_id`, `obs`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Paulo Cintura', '', '', '1972-07-13', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 1, '', '2018-03-26 10:34:58', NULL, NULL),
+(2, 'Pato Donald', '', '', '1931-12-24', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 4, '', '2018-03-26 10:35:52', NULL, NULL),
+(3, 'Seu Boneco', '', '', '1984-10-30', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 4, '', '2018-03-26 10:36:36', NULL, NULL),
+(4, 'Margarida', '', '', '1945-05-21', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 1, '', '2018-03-26 10:37:09', NULL, NULL),
+(5, 'Bolsonaro 2018', '12314312343', '3214234234', '2001-05-31', 'rua do ai quem quer', 'ogro gogo', 'melao', 'do', '54665464', '5450000045454', '4546405450', 'chota12@genitallia.c', NULL, NULL, NULL, '', 3, '', '2018-05-17 09:59:57', '2018-06-21 18:11:24', NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

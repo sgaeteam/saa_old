@@ -88,6 +88,16 @@
 										}															   
                     echo "</span>";
                     echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{$col['name']}."'/>";
+                  }elseif ($col['type']=='number') {
+                    echo "<span class='td-label'>";
+                    if (!is_int($d->{$col['name']})){
+                      echo "R$ ".number_format($d->{$col['name']},2,",","."); 
+                    }
+                    else {
+                      echo $d->{$col['name']};
+                    }
+                    echo "</span>";
+                    echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{$col['name']}."'/>";
                   }else{
                     echo "<span class='td-label'>";
                     echo $d->{$col['name']};

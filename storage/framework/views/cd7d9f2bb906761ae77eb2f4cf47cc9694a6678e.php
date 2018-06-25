@@ -1,1 +1,1 @@
-<?php echo e(number_format($value)); ?>
+<?php echo e('R$ '.number_format($value,2,",",".")); ?>
