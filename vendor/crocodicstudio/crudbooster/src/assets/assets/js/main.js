@@ -140,3 +140,23 @@
           loader_notification();
       },10000);
     });	
+    
+    $(document).ready(function(){
+  		$("#cpf").inputmask("999.999.999-99",{ "clearIncomplete": true });
+		});
+		
+		$(document).ready(function(){
+  		$("#cnpj").inputmask("999.999.999-99",{ "clearIncomplete": true });
+		});
+		
+		$(document).ready(function(){
+  		$("#telefone").inputmask("(99) 9999-9999",{ "clearIncomplete": true });
+		});
+		
+		$(document).ready(function(){
+  		$("#celular").inputmask("(99) 99999-9999",{ "clearIncomplete": true });
+		});
+		
+		$(document).ready(function(){
+  		$("#cep").inputmask("99999-999",{ "clearIncomplete": true });
+		});

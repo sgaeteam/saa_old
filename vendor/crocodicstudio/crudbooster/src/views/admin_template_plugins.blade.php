@@ -67,5 +67,5 @@
 	</script>
 	<script src="{{asset('vendor/crudbooster/assets/js/main.js').'?r='.time()}}"></script>
 	<link rel='stylesheet' href='{{asset("vendor/crudbooster/assets/css/main.css").'?r='.time()}}'/>
-
 	
+	<script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/input-mask/jquery.inputmask.js') }}"></script>
