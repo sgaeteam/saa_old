@@ -67,5 +67,5 @@
 	</script>
 	<script src="<?php echo e(asset('vendor/crudbooster/assets/js/main.js').'?r='.time()); ?>"></script>
 	<link rel='stylesheet' href='<?php echo e(asset("vendor/crudbooster/assets/css/main.css").'?r='.time()); ?>'/>
-
 	
+	<script src="<?php echo e(asset ('vendor/crudbooster/assets/adminlte/plugins/input-mask/jquery.inputmask.js')); ?>"></script>
