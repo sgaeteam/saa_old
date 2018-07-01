@@ -370,7 +370,7 @@
 									var p = $(t).parent().parent(); //parentTR 
 									currentRow = p;
 									p.addClass('warning');
-									$('#btn-add-table-{{$name}}').val('Save changes');
+									$('#btn-add-table-{{$name}}').val('Salvar alterações');
 									@foreach($form['columns'] as $c)
 										@if($c['type']=='select')
 											$('#{{$name.$c["name"]}}').val( p.find(".{{$c['name']}} input").val() ).trigger("change");
