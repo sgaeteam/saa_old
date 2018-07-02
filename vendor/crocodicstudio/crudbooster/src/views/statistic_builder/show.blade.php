@@ -1,15 +1,11 @@
 @extends('crudbooster::admin_template')
 @section('content') 
 <!doctype html>
-<html lang="en">
+<html>
 <head>
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.js"></script>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.2.7/fullcalendar.min.css"/>
-    <style>
-        /* ... */
-    </style>
+    <script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/fullcalendar/fullcalendar.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/fullcalendar/fullcalendar.min.css') }}">
+    <script src="{{ asset ('vendor/crudbooster/assets/adminlte/plugins/fullcalendar/locale/pt-br.js') }}"></script>
 </head>
 <body>
     <div class="container-fluid">

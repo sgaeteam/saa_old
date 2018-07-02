@@ -46,7 +46,8 @@
 	        );
 	        
 	        $databaseEvents = $this->calendarEvento->whereNull('deleted_at')->get();
-	        $calendar = \Calendar::addEvent($staticEvent)->addEvents($databaseEvents);
+	        $calendar = \Calendar::addEvent($staticEvent)->addEvents($databaseEvents)->setOptions(['first_day' => 1, 
+    		'lang' => 'pt-br', 'buttonText' => ['today'=>'Hoje','month'=>'Mês','week'=>'Semana','day'=>'Dia']])->setCallbacks([]);
 	        return $calendar;
 	        
 	    }
