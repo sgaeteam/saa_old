@@ -39,10 +39,11 @@
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Tipo de Atividade','type'=>'select','name'=>'tipoatividade_id','datatable'=>'tipo_atividades,descricao','datatable_where'=>'`deleted_at` is null'];			
+			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','datatable_where'=>'`deleted_at` is null','parent_select'=>'tipoatividade_id'];
 			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','readonly'=>'true','value' =>100];
 			$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -323,4 +324,29 @@
 	    //By the way, you can still create your own method in here... :) 
 
 
+		public function getDetail($id) {
+			
+			//Create an Auth
+
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
+				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
+				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
+			}
+			
+	  		$this->cbLoader();	
+	  		$row = DB::table($this->table)->where($this->primary_key,$id)->first();
+			
+			$module = CRUDBooster::getCurrentModule();
+			$data = [];
+			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
+			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
+			$data['row'] = $row;
+			$data['id'] = $id;
+			$row->mensalidade = '666';
+			$data['command'] = 'detail';
+
+		    //Please use cbView method instead view method from laravel
+			Session::put('current_row_id',$id);
+			$this->cbView('matricula_add',$data);
+		}	
 	}

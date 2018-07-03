@@ -57,7 +57,7 @@
 			$columns[] = ['label'=>'Valor','name'=>'produto_valor','type'=>'number','readonly'=>true];
 			$columns[] = ['label'=>'Quantidade','name'=>'quantidade','type'=>'number','required'=>true];
 			$columns[] = ['label'=>'Desconto','name'=>'desconto','type'=>'number','required'=>false, 'default'=>0.0];
-			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true,"callback_php"=>'"R$ ".number_format([total],2,",",".")'];
+			$columns[] = ['label'=>'Sub Total','name'=>'sub_total','type'=>'number','formula'=>"[quantidade] * [produto_valor] - [desconto]",'readonly'=>true,'required'=>true,"callback_php"=>'"R$ ".number_format([formula],2,",",".")'];
 			$this->form[] = ['label'=>'Consumo','name'=>'evento__detalhes','type'=>'child','columns'=>$columns,'table'=>'evento__detalhes','foreign_key'=>'evento_id'];
 			$this->form[] = ['label'=>'Total','name'=>'total','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','readonly'=>true];
 			# END FORM DO NOT REMOVE THIS LINE
