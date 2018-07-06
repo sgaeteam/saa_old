@@ -747,7 +747,12 @@
 			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
 			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
 			$data['row'] = $row;
-			$data['eventos'] = DB::table('eventos')->where('atividade_id',$id)->whereNull('deleted_at')->orderBy('start_date', 'asc')->get();
+			$data['eventos'] = DB::table('eventos')->leftJoin('professores', 'eventos.professor_id', '=', 'professores.id')
+											       ->select('eventos.*','professores.nome as professor')
+											       ->where('eventos.atividade_id',$id)
+											       ->whereNull('eventos.deleted_at')
+											       ->orderBy('eventos.start_date', 'asc')
+											       ->get();
 			$data['command'] = 'detail';
 		    //Please use cbView method instead view method from laravel
 			Session::put('current_row_id',$id);

@@ -104,7 +104,7 @@
 									<div class='table-responsive'>
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
-													<th>Titulo</th>
+													<th>Responsável</th>
 													<th>Início</th>
 													<th>Fim</th>
 													<th>Dia da Semana</th>
@@ -112,7 +112,7 @@
 											<tbody>
 												@foreach($eventos as $evento)
 													<tr>
-														<td>{{$evento->titulo}}</td>
+														<td>{{$evento->professor}}</td>
 														<td>{{Carbon\Carbon::parse($evento->start_date)->format('d/m/Y | H:i')}}</td>
 														<td>{{Carbon\Carbon::parse($evento->end_date)->format('d/m/Y | H:i')}}</td>
 														<td>

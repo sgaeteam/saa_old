@@ -463,29 +463,4 @@
 	       
 	        return null; // Período DISPONÍVEL para o espaço escolhido!
 		}	
-		
-		public function getDetail($id) {
-			
-			//Create an Auth
-
-			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
-				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
-				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
-			}
-			
-	  		$this->cbLoader();	
-	  		$row = DB::table($this->table)->where($this->primary_key,$id)->first();
-			
-			$module = CRUDBooster::getCurrentModule();
-			$data = [];
-			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
-			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
-			$data['row'] = $row;
-			$data['id'] = $id;
-			$data['command'] = 'detail';
-
-		    //Please use cbView method instead view method from laravel
-			Session::put('current_row_id',$id);
-			$this->cbView('evento_detail',$data);
-		}	
 	}

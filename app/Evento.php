@@ -86,7 +86,7 @@ class Evento extends Model implements IdentifiableEvent
         else {
             return [
                 'color' => $this->background_color,
-                'url'   => CRUDBooster::adminPath().'/eventos/detail/'.$this->getId().'?return_url='.CRUDBooster::adminPath().'/eventos?m=3',
+                'url'   => CRUDBooster::adminPath().'/atividades/detail/'.$this->getAtividadeId().'?return_url='.CRUDBooster::adminPath().'/atividades?m=23',
             ];        
         }
     }

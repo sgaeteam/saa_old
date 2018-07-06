@@ -375,7 +375,7 @@
 									var p = $(t).parent().parent(); //parentTR 
 									currentRow = p;
 									p.addClass('warning');
-									$('#btn-add-table-<?php echo e($name); ?>').val('Save changes');
+									$('#btn-add-table-<?php echo e($name); ?>').val('Salvar alterações');
 									<?php $__currentLoopData = $form['columns']; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getFirstLoop(); ?>
 										<?php if($c['type']=='select'): ?>
 											$('#<?php echo e($name.$c["name"]); ?>').val( p.find(".<?php echo e($c['name']); ?> input").val() ).trigger("change");
