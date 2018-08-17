@@ -56,6 +56,7 @@ return [
     'alert_add_data_failed'          => 'Falha ao salvar os dados!',
     'alert_add_event_data_failed'    => 'Falha ao salvar os dados! O espaço escolhido já possui reserva no período indicado: ',
     'alert_agendamento_failed'       => 'Falha ao salvar os dados! A atividade escolhida não possui horário de início definido!',  
+    'alert_matricula_failed'         => 'Falha ao salvar os dados! O usuário já possui matrícula para a atividade escolhida!',  
     'alert_agendamento_ok'           => 'A atividade foi agendada com sucesso!',  
     'alert_agendamento_susp'         => 'A atividade foi suspensa!',  
     'alert_update_data_success'      => 'Os dados foram atualizados!',

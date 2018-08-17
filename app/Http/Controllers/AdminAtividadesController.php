@@ -389,15 +389,25 @@
 			$period = new DatePeriod($begin, $interval, $end);			
 			
 			foreach ($period as $dt) {
+
+				$data = $dt->format("w");
 				
-				switch ($dt->format("w")) {
-					
-				    case "0":
-				    	if (isset($agendaSemanal['dom'])) {
+				$semana = array('0' => 'dom', 
+			        			'1' => 'seg',
+						        '2' => 'ter',
+						        '3' => 'qua',
+						        '4' => 'qui',
+						        '5' => 'sex',
+						        '6' => 'sab'
+			    );
+			    
+			    $dia = $semana[$data];
+			    
+				if (isset($agendaSemanal[$dia])) {
 				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['dom']);			
+							$atividade['hora_inicio'] = new DateTime($agendaSemanal[$dia]);			
 							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['dom']);	
+							$atividade['hora_fim'] = new DateTime($agendaSemanal[$dia]);	
 							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
 
 							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
@@ -427,250 +437,14 @@
 													'espaco_desconto'	=> $atividade['espaco_desconto']);
 								Evento::create($eventoNovo);	
 							}
-				    		
-				    	}
-				        break;
-				        
-				    case "1":
-				    	if (isset($agendaSemanal['seg'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['seg']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['seg']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							    
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);	
-							}
-				    		
-				    	}
-				        break;
-				        
-				    case "2":
-				    	if (isset($agendaSemanal['ter'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['ter']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['ter']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							    
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);	
-							}
-				    		
-				    	}
-				        break;
-				        
-				    case "3":
-				    	if (isset($agendaSemanal['qua'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qua']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['qua']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);								    
-							}
-				    	
-				    	}
-				        break;
-				        
-				    case "4":
-				    	if (isset($agendaSemanal['qui'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['qui']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['qui']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							    
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);	
-							}
-				    		
-				    	}
-				        break;
-				        
-				    case "5":
-				    	if (isset($agendaSemanal['sex'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sex']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['sex']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							    
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);	
-							}
-				    		
-				    	}
-				        break;
-				        
-				    case "6":
-				    	if (isset($agendaSemanal['sab'])) {
-				    		
-							$atividade['hora_inicio'] = new DateTime($agendaSemanal['sab']);			
-							$atividade['duracao'] = new DateTime($row->duracao);
-							$atividade['hora_fim'] = new DateTime($agendaSemanal['sab']);	
-							$atividade['hora_fim']->add(new DateInterval('PT'.$atividade['duracao']->format('H').'H'.$atividade['duracao']->format('i').'M'));
-							
-							$atividade['start'] = date($dt->format("Y-m-d") . ' ' . $atividade['hora_inicio']->format("H:i:s"));
-							$atividade['end']   = date($dt->format("Y-m-d") . ' ' . $atividade['hora_fim']->format("H:i:s"));
-
-							$eventoAgendado = $this->checkDisponibilidade($atividade);
-				
-							if (isset($eventoAgendado)) {
-								printf("Atividade NÃO agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							}
-							else {
-								printf("Atividade agendada: ");
-							    printf("dia ".$dt->format("d/m/Y")." das ".$atividade['hora_inicio']->format("H:i:s")." às ".$atividade['hora_fim']->format("H:i:s"));
-							    printf ("\n");
-							    
-								$eventoNovo = array('espaco_id' 		=> $atividade['espaco_id'],
-													'start_date'		=> $atividade['start'],
-													'end_date'			=> $atividade['end'],
-													'titulo'			=> $atividade['titulo'],
-													'atividade_id'		=> $atividade['atividade_id'],
-													'professor_id'		=> $atividade['professor_id'],
-													'total'				=> $atividade['total'],			
-													'all_day'			=> $atividade['all_day'],
-													'espaco_valor'		=> $atividade['espaco_valor'],			
-													'espaco_desconto'	=> $atividade['espaco_desconto']);
-								Evento::create($eventoNovo);	
-							}
-				    		
-				    	}
-				        break;				        
 				}
-			}
-			
+			}			    
+		
 			DB::table($this->table)
 	        ->where($this->primary_key,$atividade['atividade_id'])
 	        ->where('agendado', 0)
 	        ->whereNull('deleted_at')
-	        ->update(array('agendado'=>'1'));
+	        ->update(array('agendado'=>'1','data_suspensao'=>null));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_agendar",['name'=>$atividade['atividade_id'],'module'=>CRUDBooster::getCurrentModule()->name]));
 			
@@ -724,7 +498,7 @@
 	        ->whereNull('deleted_at')
 	        ->where($this->primary_key,$id)
 	        ->where('agendado','1')
-	        ->update(array('agendado'=>'0'));
+	        ->update(array('agendado'=>'0','data_suspensao'=>$hoje));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_suspender",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			

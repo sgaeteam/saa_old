@@ -4,10 +4,8 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
-	use App\Matricula;
 
-
-	class AdminMatriculasController extends \crocodicstudio\crudbooster\controllers\CBController {
+	class AdminConvitesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
 	    public function cbInit() {
 
@@ -27,29 +25,24 @@
 			$this->button_filter = true;
 			$this->button_import = false;
 			$this->button_export = false;
-			$this->table = "matriculas";
+			$this->table = "convites";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Tipo de Atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
-			$this->col[] = ["label"=>"Atividade","name"=>"atividade_id","join"=>"atividades,titulo"];
-			$this->col[] = ["label"=>"Usuário","name"=>"usuario_id","join"=>"usuarios,nome"];
-			$this->col[] = ["label"=>"Data Matrícula","name"=>"data_matricula","callback_php"=>'date("d/m/Y",strtotime($row->data_matricula))'];
-			$this->col[] = ["label"=>"Mensalidade","name"=>"mensalidade","callback_php"=>'"R$ ".number_format($row->mensalidade,2,",",".")'];
-			$this->col[] = ["label"=>"Desconto","name"=>"desconto","callback_php"=>'"R$ ".number_format($row->desconto,2,",",".")'];
-			$this->col[] = ["label"=>"Total","name"=>"(select mensalidade-desconto from matriculas where matriculas.tipoatividade_id = tipo_atividades.id and matriculas.atividade_id = atividades.id and matriculas.usuario_id = usuarios.id and matriculas.deleted_at is null) as total","callback_php"=>'"R$ ".number_format(($row->mensalidade-$row->desconto),2,",",".")'];
+			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
+			$this->col[] = ["label"=>"Saldo Mensal","name"=>"saldo_mensal"];
+			$this->col[] = ["label"=>"Retirados","name"=>"retirados"];
+			$this->col[] = ["label"=>"Última Retirada","name"=>"ultima_retirada","callback_php"=>'date("d/m/Y",strtotime($row->ultima_retirada))'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Tipo de Atividade','type'=>'select','name'=>'tipoatividade_id','datatable'=>'tipo_atividades,descricao','datatable_where'=>'`deleted_at` is null','datatable_format'=>"descricao,' (R$ ',mensalidade,')'"];			
-			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','parent_select'=>'tipoatividade_id','datatable_where'=>'`deleted_at` is null'];
-			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome','datatable_where'=>'`deleted_at` is null'];
-			$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10', 'value' => date("m/d/Y")];
-			$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','value' => 0.0];
+			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Saldo Mensal','name'=>'saldo_mensal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','value'=>'4'];
+			$this->form[] = ['label'=>'Retirados','name'=>'retirados','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Última Retirada','name'=>'ultima_retirada','type'=>'date','validation'=>'required|date','width'=>'col-sm-10', 'value' => date("m/d/Y")];
 			# END FORM DO NOT REMOVE THIS LINE
-
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -256,28 +249,10 @@
 	    | @arr
 	    |
 	    */
-	    public function hook_before_add(&$postdata) {      
-	    	
-	        // Verifica se o espaço já está reservado para o período escolhido
-	        $matriculaExistente = $this->checkMatricula($postdata);
+	    public function hook_before_add(&$postdata) {        
+	        //Your code here
 
-    	    if (isset($matriculaExistente)) {
-
-				if(Request::ajax()) {
-					$res = response()->json(['message'=>trans('crudbooster.alert_matricula_failed'),'message_type'=>'danger'])->send();
-					exit;
-				}
-				else{
-					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_matricula_failed'),'message_type'=>'danger'])->withInput();
-					\Session::driver()->save();
-					$res->send();
-		        	exit;
-				}
-      	    }
-      	    
-      	    $postdata['mensalidade'] = DB::table('tipo_atividades')->where('id',$postdata['tipoatividade_id'])->value('mensalidade');
-
-		}
+	    }
 
 	    /* 
 	    | ---------------------------------------------------------------------- 
@@ -288,6 +263,7 @@
 	    */
 	    public function hook_after_add($id) {        
 	        //Your code here
+
 	    }
 
 	    /* 
@@ -299,25 +275,7 @@
 	    | 
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
-	        
-	        // Verifica se ja existe matricula para a atividade escolhida
-	        $matriculaExistente = $this->checkMatricula($postdata);
-
-    	    if (isset($matriculaExistente)) {
-
-				if(Request::ajax()) {
-					$res = response()->json(['message'=>trans('crudbooster.alert_matricula_failed'),'message_type'=>'danger'])->send();
-					exit;
-				}
-				else{
-					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_matricula_failed'),'message_type'=>'danger'])->withInput();
-					\Session::driver()->save();
-					$res->send();
-		        	exit;
-				}
-      	    }
-      	    
-      	    $postdata['mensalidade'] = DB::table('tipo_atividades')->where('id',$postdata['tipoatividade_id'])->value('mensalidade');
+	        //Your code here
 
 	    }
 
@@ -362,49 +320,4 @@
 	    //By the way, you can still create your own method in here... :) 
 
 
-		public function getDetail($id) {
-			
-			//Create an Auth
-
-			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_detail==FALSE) {
-				CRUDBooster::insertLog(trans("crudbooster.log_try_view",['name'=>$row->{$this->title_field},'module'=>CRUDBooster::getCurrentModule()->name]));
-				CRUDBooster::redirect(CRUDBooster::adminPath(),trans('crudbooster.denied_access'));
-			}
-			
-	  		$this->cbLoader();	
-	  		$row = DB::table($this->table)->where($this->primary_key,$id)->first();
-			$module = CRUDBooster::getCurrentModule();
-			$data = [];
-			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
-			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
-			$data['row'] = $row;
-			$data['id'] = $id;
-			$data['command'] = 'detail';
-
-		    //Please use cbView method instead view method from laravel
-			Session::put('current_row_id',$id);
-			$this->cbView('matricula_add',$data);
-		}	
-		
-		public function checkMatricula(array $request) {
-
-			$usuario 		= $request['usuario_id'];
-			$tipoatividade 	= $request['tipoatividade_id'];
-			$atividade 		= $request['atividade_id'];
-
-			$matricula = Matricula::where(function ($query) use ($usuario, $tipoatividade, $atividade) {
-								   $query->where('usuario_id'	  , '=', $usuario);
-								   $query->where('tipoatividade_id', '=', $tipoatividade);
-								   $query->where('atividade_id'	  , '=', $atividade);
-								   $query->whereNull('deleted_at');
-					     })->first();
-
-	        if(isset($matricula)) {
-	        	
-	        	return $matricula; // Usuário já matriculado para a atividade escolhida!
-	        }
-	       
-	        return null; // Nova matricula!
-		}	
-		
 	}

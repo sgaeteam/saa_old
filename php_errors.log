@@ -653,3 +653,47 @@
 [29-Jun-2018 13:00:54 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''readonly'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 45
 [29-Jun-2018 13:00:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''readonly'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 45
 [03-Jul-2018 13:38:54 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[08-Jul-2018 20:10:37 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 344
+[08-Jul-2018 20:10:47 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 344
+[29-Jul-2018 16:27:39 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 344
+[08-Aug-2018 00:31:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:31:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:03 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:13 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:23 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:24 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:33 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:34 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:44 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:32:54 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:03 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:13 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:23 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:24 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:33 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:34 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[08-Aug-2018 00:33:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminAtividadesController.php on line 453
+[13-Aug-2018 17:04:50 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 287
+[13-Aug-2018 17:06:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 287
+[13-Aug-2018 18:33:18 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Matricula' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 387
+[13-Aug-2018 18:34:09 America/Sao_Paulo] PHP Fatal error:  Class 'App\Matricula' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 389
+[13-Aug-2018 22:07:19 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'Y' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 48
+[13-Aug-2018 22:07:23 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'Y' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 48
+[13-Aug-2018 22:42:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 398
+[14-Aug-2018 05:26:38 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'label' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 47
+[14-Aug-2018 06:03:31 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'label' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 48
+[14-Aug-2018 06:03:31 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'label' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 48
+[16-Aug-2018 00:06:00 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 00:06:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 00:06:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 00:06:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 00:06:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 00:06:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
+[16-Aug-2018 17:25:53 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796

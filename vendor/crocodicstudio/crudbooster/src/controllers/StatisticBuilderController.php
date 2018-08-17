@@ -34,14 +34,14 @@
     	public function loadCalendar()
 	    {
 	        $staticEvent = \Calendar::event(
-	            'Hoje: DIA DA MALDADE!',
+	            'Hoje: Apresentação do Sistema SGC',
 	            true,
 	            Carbon::today()->setTime(0, 0),
 	            Carbon::today()->setTime(23, 59),
 	            null,
 	            [
 	                'color' => '#F00000',
-	                'url' => 'http://google.com/search?q=dia+da+maldade',
+	                'url' => 'http://sgc-sgaeteam.c9users.io/admin',
 	            ]
 	        );
 	        
