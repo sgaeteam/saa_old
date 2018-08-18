@@ -15,7 +15,7 @@
             <ul class="nav navbar-nav">      
 
             <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title='Notifications' aria-expanded="false">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" title='Notifica&ccedil;&otilde;es' aria-expanded="false">
                   <i id='icon_notification' class="fa fa-bell-o"></i>
                   <span id='notification_count' class="label label-danger" style="display:none">0</span>
                 </a>
@@ -43,19 +43,19 @@
                     <!-- Menu Toggle Button -->
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                         <!-- The user image in the navbar-->
-                        <img src="<?php echo e(CRUDBooster::myPhoto()); ?>" class="user-image" alt="User Image"/>
+                        <img src="<?php echo e(CRUDBooster::myPhoto()); ?>" class="user-image" alt="Imagem do Usu&aacute;rio"/>
                         <!-- hidden-xs hides the username on small devices so only the image appears. -->
                         <span class="hidden-xs"><?php echo e(CRUDBooster::myName()); ?></span>
                     </a>
                     <ul class="dropdown-menu">
                         <!-- The user image in the menu -->
                         <li class="user-header">
-                            <img src="<?php echo e(CRUDBooster::myPhoto()); ?>" class="img-circle" alt="User Image" />
+                            <img src="<?php echo e(CRUDBooster::myPhoto()); ?>" class="img-circle" alt="Imagem do Usu&aacute;rio" />
                             <p>
                                 <?php echo e(CRUDBooster::myName()); ?>
 
                                 <small><?php echo e(CRUDBooster::myPrivilegeName()); ?></small>
-                                <small><em><?php echo date('d F Y')?></em> </small>                                
+                                <small><em><?php echo e(CRUDBooster::dataPorExtenso()); ?></em> </small>                                
                             </p>
                         </li>
 
@@ -65,7 +65,7 @@
                                 <a href="<?php echo e(route('AdminCmsUsersControllerGetProfile')); ?>?m=0" class="btn btn-default btn-flat"><i class='fa fa-user'></i> <?php echo e(trans("crudbooster.label_button_profile")); ?></a>
                             </div>
                             <div class="pull-<?php echo e(trans('crudbooster.right')); ?>">
-                                <a title='Lock Screen' href="<?php echo e(route('getLockScreen')); ?>" class='btn btn-default btn-flat'><i class='fa fa-key'></i></a> 
+                                <a title='Tela de bloqueio' href="<?php echo e(route('getLockScreen')); ?>" class='btn btn-default btn-flat'><i class='fa fa-key'></i></a> 
                                 <a href="javascript:void(0)" onclick="swal({   
                                     title: '<?php echo e(trans('crudbooster.alert_want_to_logout')); ?>',                                       
                                     type:'info',   
