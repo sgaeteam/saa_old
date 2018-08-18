@@ -1628,4 +1628,18 @@ class CRUDBooster  {
 
 	        
 	    }
+	    
+	    public static function dataPorExtenso() {
+	        
+	        $data = date('D');
+		    $mes = date('M');
+		    $dia = date('d');
+		    $ano = date('Y');
+    
+		    $semana = array('Sun' => 'Domingo', 'Mon' => 'Segunda-Feira', 'Tue' => 'Ter&ccedil;a-Feira', 'Wed' => 'Quarta-Feira', 'Thu' => 'Quinta-Feira', 'Fri' => 'Sexta-Feira', 'Sat' => 'S&aacute;bado');
+    		
+    		$mes_extenso = array('Jan' => 'Janeiro', 'Feb' => 'Fevereiro', 'Mar' => 'Mar&ccedil;o', 'Apr' => 'Abril', 'May' => 'Maio', 'Jun' => 'Junho',
+        						 'Jul' => 'Julho', 'Aug' => 'Agosto', 'Nov' => 'Novembro', 'Sep' => 'Setembro', 'Oct' => 'Outubro', 'Dec' => 'Dezembro');
+	        return $semana["$data"] .", {$dia} de " .$mes_extenso["$mes"] . " de {$ano}";
+	    }
 }

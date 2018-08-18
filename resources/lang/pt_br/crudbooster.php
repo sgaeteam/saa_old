@@ -77,7 +77,7 @@ return [
     'edit_data_page_title'           => 'Editar :module',
     'detail_data_page_title'         => 'Detalhar :module',
     'default_module_description'     => 'Lista de dados',
-    'delete_description_confirm'     => "Você não será capaz de recuperar esses dados de registro! You will not be able to recover this record data!",
+    'delete_description_confirm'     => "Você não será capaz de recuperar esses dados de registro!",
     'delete_title_confirm'           => "Você tem certeza?",
     'action_show_data'               => 'Mostrar dados',
     'action_add_data'                => 'Adicionar dados',

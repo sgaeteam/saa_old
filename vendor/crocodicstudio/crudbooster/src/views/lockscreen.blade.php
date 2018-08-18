@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>::LOCKSCREEN::</title>
+    <title>::TELA DE BLOQUEIO::</title>
     <meta name='generator' content='CRUDBooster'/>
     <meta name='robots' content='noindex,nofollow'/>
     <link rel="shortcut icon" href="{{ CRUDBooster::getSetting('favicon')?asset(CRUDBooster::getSetting('favicon')):asset('vendor/crudbooster/assets/logo_crudbooster.png') }}">
@@ -48,7 +48,7 @@
       <div class="lockscreen-item">
         <!-- lockscreen image -->
         <div class="lockscreen-image">
-          <img src="{{ (Session::get('admin_photo'))?:asset("assets/adminlte/dist/img/user2-160x160.jpg") }}" alt="user image"/>
+          <img src="{{ (Session::get('admin_photo'))?:asset("assets/adminlte/dist/img/user2-160x160.jpg") }}" alt="Imagem do Usu&aacute;rio"/>
         </div>
         <!-- /.lockscreen-image -->
 
@@ -72,7 +72,7 @@
       </div>
       <div class='lockscreen-footer text-center'>
         Copyright &copy; {{date("Y")}}<br>
-        All rights reserved
+        Todos os Direitos Reservados
       </div>
     </div><!-- /.center -->
 
