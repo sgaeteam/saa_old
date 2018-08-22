@@ -193,7 +193,7 @@
 								<div class="box-body" id="parent-form-area">
 									<style type="text/css">
 										#table-detail tr td:first-child {
-											font-weight: bold;
+											font-weight: normal;
 											width: 25%;
 										}
 									</style>

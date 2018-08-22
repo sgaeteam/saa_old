@@ -12,7 +12,7 @@
     
 	<ul data-toggle="ajax-tab" class="nav nav-tabs profile" role="tablist">
 		<li class="active"><a role="tab" data-toggle="tab" class="active" href="#tab-general-info" data-target="#tab-info"><i class="fa fa-bars"></i> Informa&ccedil;&otilde;es Gerais</a></li>
-		<li class=""><a role="tab" data-toggle="tab" href="#tab-eventos" data-target="#tab-eventos"><i class="fa fa-calendar-check-o"></i> Atividades Associadas</a></li>
+		<li class=""><a role="tab" data-toggle="tab" href="#tab-atividades" data-target="#tab-atividades"><i class="fa fa-calendar-check-o"></i> Atividades Associadas</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -82,7 +82,7 @@
 			</div>
 		</div>
 		
-		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-eventos">
+		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-atividades">
 			<div class="tab-content">
 				<div class="panel infolist">
 					<div class="panel-body">
@@ -104,8 +104,8 @@
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
 													<th>Descrição</th>
+													<th>Tipo</th>												
 													<th>Espaço</th>
-													<th>Professor</th>													
 													<th>Agendado</th>
 													<th>Início</th>
 													<th>Fim</th>
@@ -116,8 +116,8 @@
 												@foreach($atividades as $atividade)
 													<tr>
 														<td>{{$atividade->titulo}}</td>
+														<td>{{$atividade->tipo}}</td>														
 														<td>{{$atividade->espaco}}</td>
-														<td>{{$atividade->professor}}</td>														
 														<td>
 															@php
 															    echo ($atividade->agendado ? "Sim" : "Não");

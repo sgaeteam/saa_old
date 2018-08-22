@@ -20,12 +20,13 @@
                         var title = $(this).attr('title');
 
                         swal({
-                          title: "<?php echo e(trans("crudbooster.confirmation_title")); ?>",
-                          text: "<?php echo e(trans("crudbooster.alert_bulk_action_button")); ?> "+title+" ?",
+                          title: "<?php echo e(trans('crudbooster.confirmation_title')); ?>",
+                          text: "Você tem certeza que deseja "+title+" ?",
                           type: "warning",
                           showCancelButton: true,
                           confirmButtonColor: "#008D4C",
                           confirmButtonText: "<?php echo e(trans('crudbooster.confirmation_yes')); ?>",
+                          cancelButtonText: "<?php echo e(trans('crudbooster.button_cancel')); ?>",
                           closeOnConfirm: false,
                           showLoaderOnConfirm:true
                         },
@@ -69,20 +70,20 @@
                               switch($sort_column[$field]['sorting']) {                                
                                 case 'asc': 
                                   $url = CRUDBooster::urlFilterColumn($field,'sorting','desc');
-                                  echo "<a href='$url' title='Click to sort descending'>$colname &nbsp; <i class='fa fa-sort-desc'></i></a>";
+                                  echo "<a href='$url' title='Clique para classificar em ordem decrescente'>$colname &nbsp; <i class='fa fa-sort-desc'></i></a>";
                                   break;
                                 case 'desc':
                                   $url = CRUDBooster::urlFilterColumn($field,'sorting','asc');
-                                  echo "<a href='$url' title='Click to sort ascending'>$colname &nbsp; <i class='fa fa-sort-asc'></i></a>";
+                                  echo "<a href='$url' title='Clique para classificar em ordem crescente'>$colname &nbsp; <i class='fa fa-sort-asc'></i></a>";
                                   break;
                                 default:
                                   $url = CRUDBooster::urlFilterColumn($field,'sorting','asc');
-                                  echo "<a href='$url' title='Click to sort ascending'>$colname &nbsp; <i class='fa fa-sort'></i></a>";
+                                  echo "<a href='$url' title='Clique para classificar em ordem crescente'>$colname &nbsp; <i class='fa fa-sort'></i></a>";
                                   break;      
                               }
                             }else{     
                                   $url = CRUDBooster::urlFilterColumn($field,'sorting','asc');                         
-                                  echo "<a href='$url' title='Click to sort ascending'>$colname &nbsp; <i class='fa fa-sort'></i></a>";                                  
+                                  echo "<a href='$url' title='Clique para classificar em ordem crescente'>$colname &nbsp; <i class='fa fa-sort'></i></a>";                                  
                             }
                             
                             

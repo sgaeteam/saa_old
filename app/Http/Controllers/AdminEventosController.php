@@ -182,7 +182,7 @@
 		        		var total_espaco = 0.0;
 		        		total_espaco = (parseFloat($('#espaco_valor').val()) || 0) - (parseFloat($('#espaco_desconto').val()) || 0);
 		        		
-		        		$('#total').val(total_consumo+total_espaco);
+		        		$('#total').val(total_consumo+total_espaco||0);
       		
 	        		},500);
 	        		

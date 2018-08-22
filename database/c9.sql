@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 24, 2018 at 12:53 PM
+-- Generation Time: Aug 22, 2018 at 02:49 PM
 -- Server version: 5.5.59-0ubuntu0.14.04.1
 -- PHP Version: 5.6.33-3+ubuntu14.04.1+deb.sury.org+1
 
@@ -58,7 +58,6 @@ CREATE TABLE IF NOT EXISTS `atividades` (
   `descricao` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `data_inicio` date NOT NULL,
   `data_fim` date NOT NULL,
-  `data_cancelamento` date DEFAULT NULL,
   `duracao` time NOT NULL,
   `hora_inicio_seg` time DEFAULT NULL,
   `hora_inicio_ter` time DEFAULT NULL,
@@ -71,24 +70,30 @@ CREATE TABLE IF NOT EXISTS `atividades` (
   `professor_id` int(11) NOT NULL,
   `espaco_id` int(11) NOT NULL,
   `agendado` int(11) NOT NULL DEFAULT '0',
+  `data_suspensao` date DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `atividades`
 --
 
-INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `data_fim`, `data_cancelamento`, `duracao`, `hora_inicio_seg`, `hora_inicio_ter`, `hora_inicio_qua`, `hora_inicio_qui`, `hora_inicio_sex`, `hora_inicio_sab`, `hora_inicio_dom`, `tipoatividade_id`, `professor_id`, `espaco_id`, `agendado`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Futebol Sênior', 'FUTS', 'Aulas de futebol para melhor idade', '2018-03-30', '2018-10-31', '0000-00-00', '01:00:00', '20:00:00', '00:00:00', '20:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 3, 2, 9, 1, '2018-03-26 11:45:38', '2018-04-25 04:34:29', NULL),
-(2, 'Aula de Dança para Casais', '', '', '2018-05-14', '2018-05-31', '0000-00-00', '02:00:00', '20:30:00', '00:00:00', '09:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 2, 1, 8, 1, '2018-03-26 11:55:08', '2018-05-15 23:34:08', NULL),
-(3, 'Natação Baby', 'NTBY', '', '2018-05-15', '2018-06-30', NULL, '01:00:00', '00:00:00', '08:00:00', '00:00:00', '08:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 3, 11, 1, '2018-05-16 15:53:36', NULL, NULL),
-(4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', NULL, '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 0, '2018-05-16 17:38:53', '2018-05-16 17:46:42', '2018-05-22 13:44:15'),
-(5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', NULL, '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 1, '2018-05-24 08:41:04', NULL, NULL),
-(6, 'Capoeira do Professor Raimundo', '', '', '2018-06-11', '2018-08-04', NULL, '02:45:00', '10:00:00', '00:00:00', '10:00:00', '00:00:00', '14:00:00', '00:00:00', '00:00:00', 1, 2, 8, 1, '2018-06-05 17:53:20', NULL, NULL),
-(7, 'Natação dos Patos', '', '', '2018-06-14', '2018-06-23', NULL, '05:15:00', '00:00:00', '00:00:00', '00:00:00', '14:00:00', '12:00:00', '13:00:00', '00:00:00', 8, 1, 11, 1, '2018-06-06 18:02:43', '2018-06-12 01:33:04', NULL);
+INSERT INTO `atividades` (`id`, `titulo`, `sigla`, `descricao`, `data_inicio`, `data_fim`, `duracao`, `hora_inicio_seg`, `hora_inicio_ter`, `hora_inicio_qua`, `hora_inicio_qui`, `hora_inicio_sex`, `hora_inicio_sab`, `hora_inicio_dom`, `tipoatividade_id`, `professor_id`, `espaco_id`, `agendado`, `data_suspensao`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Futebol Sênior', 'FUTS', 'Aulas de futebol para melhor idade', '2018-03-30', '2018-10-31', '01:00:00', '20:00:00', '00:00:00', '20:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 3, 2, 9, 1, NULL, '2018-03-26 11:45:38', '2018-04-25 04:34:29', NULL),
+(2, 'Aula de Dança para Casais', '', '', '2018-05-14', '2018-05-31', '02:00:00', '20:30:00', '00:00:00', '09:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', 2, 1, 8, 1, NULL, '2018-03-26 11:55:08', '2018-05-15 23:34:08', NULL),
+(3, 'Natação Baby', 'NTBY', '', '2018-05-15', '2018-06-30', '01:00:00', '00:00:00', '08:00:00', '00:00:00', '08:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 3, 11, 1, NULL, '2018-05-16 15:53:36', NULL, NULL),
+(4, 'Baby Swimming', 'BYSW', '', '2018-05-16', '2018-07-06', '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '07:00:00', '00:00:00', '00:00:00', 8, 1, 11, 0, NULL, '2018-05-16 17:38:53', '2018-05-16 17:46:42', '2018-05-22 13:44:15'),
+(5, 'Xmen''s Soccer', 'XS', '', '2018-05-28', '2018-06-30', '01:30:00', '08:00:00', '16:00:00', '08:00:00', '16:00:00', '19:00:00', '00:00:00', '00:00:00', 3, 3, 9, 1, NULL, '2018-05-24 08:41:04', NULL, NULL),
+(6, 'Capoeira do Professor Raimundo', '', '', '2018-06-11', '2018-08-04', '02:45:00', '10:00:00', '00:00:00', '10:00:00', '00:00:00', '14:00:00', '00:00:00', '00:00:00', 1, 2, 8, 1, NULL, '2018-06-05 17:53:20', NULL, NULL),
+(7, 'Natação dos Patos', '', '', '2018-06-14', '2018-06-23', '05:15:00', '00:00:00', '00:00:00', '00:00:00', '14:00:00', '12:00:00', '13:00:00', '00:00:00', 8, 1, 11, 1, NULL, '2018-06-06 18:02:43', '2018-06-12 01:33:04', NULL),
+(8, 'X Swimm', 'XS', '', '2018-07-02', '2018-12-31', '00:45:00', '00:00:00', '09:00:00', '00:00:00', '09:00:00', '00:00:00', '10:00:00', '00:00:00', 8, 3, 11, 1, NULL, '2018-06-26 10:45:13', '2018-06-26 10:45:58', NULL),
+(9, 'Baba da Aldeia', 'BA', '', '2018-08-04', '2018-12-15', '02:30:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '00:00:00', '15:30:00', '00:00:00', 3, 3, 9, 1, NULL, '2018-07-29 16:26:09', '2018-07-29 16:29:44', NULL),
+(10, 'Aula de Futebol para Juvenil', 'PARDUT', '', '2018-08-06', '2018-10-05', '01:30:00', '00:00:00', '16:00:00', '00:00:00', '17:00:00', '14:30:00', '00:00:00', '00:00:00', 3, 1, 9, 1, NULL, '2018-08-01 13:17:10', NULL, NULL),
+(11, 'yoga', '', '', '2018-08-18', '2018-11-17', '01:20:00', '00:00:00', '07:40:00', '00:00:00', '00:00:00', '00:00:00', '08:00:00', '00:00:00', 14, 4, 1, 1, NULL, '2018-08-15 22:13:19', NULL, NULL),
+(12, 'Natação Ter/Qui', '', '', '2018-08-20', '2018-12-31', '01:00:00', '00:00:00', '16:00:00', '00:00:00', '16:00:00', '00:00:00', '00:00:00', '00:00:00', 8, 4, 10, 0, '2018-08-21', '2018-08-16 18:27:20', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -124,13 +129,13 @@ INSERT INTO `categorias` (`id`, `created_at`, `updated_at`, `deleted_at`, `descr
 (10, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'CEPE(S)', 35.11, 4),
 (11, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'COMAB', 20, 4),
 (12, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'SINDPREV/BA', 6.1, 4),
-(13, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'ELEQUEIROZ', 5.13, 4),
+(13, '2018-02-27 03:44:26', '2018-02-27 03:44:26', '2018-08-15 21:45:46', 'ELEQUEIROZ', 5.13, 4),
 (14, '2018-02-27 03:44:26', '2018-06-21 17:39:16', NULL, 'BR Distribuidoras S.A.', 99.99, 5),
 (15, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'Unificado', 5.13, 4),
 (16, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'Sócio Atleta', 40, 4),
 (17, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'SINDI-SAUDE', 6.1, 4),
 (18, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'DESENBAHIA', 20, 4),
-(19, '2018-02-27 03:44:26', '2018-02-27 03:44:26', NULL, 'AMIRFA', 40, 4);
+(19, '2018-02-27 03:44:26', '2018-08-16 17:36:01', NULL, 'AMIRFA', 51.5, 5);
 
 -- --------------------------------------------------------
 
@@ -256,7 +261,7 @@ CREATE TABLE IF NOT EXISTS `cms_logs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=646 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=751 ;
 
 --
 -- Dumping data for table `cms_logs`
@@ -910,7 +915,112 @@ INSERT INTO `cms_logs` (`id`, `ipaddress`, `useragent`, `url`, `description`, `i
 (642, '10.240.0.116', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/1', 'Atualizar dados de  em Professores', 1, '2018-06-21 17:46:21', NULL),
 (643, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/edit-save/5', 'Atualizar dados de  em Usuários', 1, '2018-06-21 18:11:24', NULL),
 (644, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/edit-save/6', 'Atualizar dados de  em Matricular Usuários', 1, '2018-06-21 18:14:06', NULL),
-(645, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-06-24 08:28:21', NULL);
+(645, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-06-24 08:28:21', NULL),
+(646, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/add-save', 'Adicionar novo conteúdo de 6 em Usuários', 1, '2018-06-24 10:11:07', NULL),
+(647, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-06-24 22:51:17', NULL),
+(648, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/add-save', 'Adicionar novo conteúdo de 7 em Usuários', 1, '2018-06-24 22:58:18', NULL),
+(649, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/add-save', 'Adicionar novo conteúdo de 8 em Usuários', 1, '2018-06-24 23:33:56', NULL),
+(650, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/delete/15', 'Excluir o conteúdo de 15 em Socios', 1, '2018-06-25 00:00:14', NULL),
+(651, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 529 em Alugar Espaços', 1, '2018-06-25 00:29:11', NULL),
+(652, '10.240.1.21', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-06-25 11:53:06', NULL),
+(653, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 530 em Alugar Espaços', 1, '2018-06-25 11:54:58', NULL),
+(654, '10.240.0.207', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 531 em Alugar Espaços', 1, '2018-06-25 12:24:27', NULL),
+(655, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-06-26 10:36:34', NULL),
+(656, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 8 em Agendar Atividades', 1, '2018-06-26 10:45:13', NULL),
+(657, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/8', 'Atualizar dados de  em Agendar Atividades', 1, '2018-06-26 10:45:58', NULL),
+(658, '10.240.0.116', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/8', 'Agendar atividade 8 em Agendar Atividades', 1, '2018-06-26 10:47:02', NULL),
+(659, '10.240.1.60', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/8', 'Suspender atividade 8 em Agendar Atividades', 1, '2018-06-26 10:48:14', NULL),
+(660, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-06-29 12:54:51', NULL),
+(661, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-06-29 22:09:41', NULL),
+(662, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-07-02 22:50:07', NULL),
+(663, '10.240.0.231', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-07-03 13:19:11', NULL),
+(664, '10.240.0.42', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/7', 'Atualizar dados de  em Socios', 1, '2018-07-03 13:39:14', NULL),
+(665, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-07-03 13:55:26', NULL),
+(666, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-07-05 22:07:03', NULL),
+(667, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-07-08 15:21:37', NULL),
+(668, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/edit-save/8', 'Atualizar dados de  em Tipos de Atividade', 1, '2018-07-08 19:59:51', NULL),
+(669, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/edit-save/3', 'Atualizar dados de  em Tipos de Atividade', 1, '2018-07-08 20:00:11', NULL),
+(670, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/edit-save/3', 'Atualizar dados de  em Tipos de Atividade', 1, '2018-07-08 20:00:32', NULL),
+(671, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 7 em Matricular Usuários', 1, '2018-07-08 20:03:34', NULL),
+(672, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 8 em Matricular Usuários', 1, '2018-07-08 20:10:29', NULL),
+(673, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 9 em Matricular Usuários', 1, '2018-07-08 20:20:27', NULL),
+(674, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.42', 1, '2018-07-24 22:04:31', NULL),
+(675, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-07-29 16:17:51', NULL),
+(676, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 610 em Alugar Espaços', 1, '2018-07-29 16:21:25', NULL),
+(677, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 9 em Agendar Atividades', 1, '2018-07-29 16:26:09', NULL),
+(678, '10.240.0.42', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/9', 'Agendar atividade 9 em Agendar Atividades', 1, '2018-07-29 16:26:20', NULL),
+(679, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/edit-save/9', 'Atualizar dados de  em Agendar Atividades', 1, '2018-07-29 16:29:44', NULL),
+(680, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/9', 'Suspender atividade 9 em Agendar Atividades', 1, '2018-07-29 16:30:50', NULL),
+(681, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/9', 'Agendar atividade 9 em Agendar Atividades', 1, '2018-07-29 16:30:57', NULL),
+(682, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 10 em Matricular Usuários', 1, '2018-07-29 16:54:35', NULL),
+(683, '10.240.0.68', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.68', 1, '2018-08-01 12:39:31', NULL),
+(684, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 649 em Alugar Espaços', 1, '2018-08-01 12:46:47', NULL),
+(685, '10.240.0.233', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 650 em Alugar Espaços', 1, '2018-08-01 12:50:44', NULL),
+(686, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/edit-save/3', 'Atualizar dados de  em Tipos de Atividade', 1, '2018-08-01 13:06:59', NULL),
+(687, '10.240.1.78', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 11 em Matricular Usuários', 1, '2018-08-01 13:10:38', NULL),
+(688, '10.240.2.147', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 10 em Agendar Atividades', 1, '2018-08-01 13:17:10', NULL),
+(689, '10.240.0.118', 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/10', 'Agendar atividade 10 em Agendar Atividades', 1, '2018-08-01 13:17:45', NULL),
+(690, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-08-05 16:41:56', NULL),
+(691, '10.240.0.118', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.118', 1, '2018-08-07 23:32:05', NULL),
+(692, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/8', 'Agendar atividade 8 em Agendar Atividades', 1, '2018-08-08 00:19:38', NULL),
+(693, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/10', 'Suspender atividade 10 em Agendar Atividades', 1, '2018-08-08 00:34:12', NULL),
+(694, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/10', 'Agendar atividade 10 em Agendar Atividades', 1, '2018-08-08 00:34:20', NULL),
+(695, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-08-13 17:09:34', NULL),
+(696, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/10', 'Suspender atividade 10 em Agendar Atividades', 1, '2018-08-13 17:46:07', NULL),
+(697, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/10', 'Agendar atividade 10 em Agendar Atividades', 1, '2018-08-13 17:47:54', NULL),
+(698, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.78', 1, '2018-08-13 21:38:45', NULL),
+(699, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 12 em Matricular Usuários', 1, '2018-08-13 21:39:38', NULL),
+(700, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/delete/9', 'Excluir o conteúdo de 9 em Tipos de Atividade', 1, '2018-08-14 05:16:36', NULL),
+(701, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/edit-save/11', 'Atualizar dados de  em Matricular Usuários', 1, '2018-08-14 06:00:38', NULL),
+(702, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-08-15 21:11:08', NULL),
+(703, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/categorias/edit-save/19', 'Atualizar dados de  em Categorias', 1, '2018-08-15 21:45:08', NULL),
+(704, '10.240.0.68', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/categorias/delete/13', 'Excluir o conteúdo de 13 em Categorias', 1, '2018-08-15 21:45:46', NULL),
+(705, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/add-save', 'Adicionar novo conteúdo de 39 em Dependentes', 1, '2018-08-15 21:51:59', NULL),
+(706, '10.240.1.60', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/tipo_atividades/add-save', 'Adicionar novo conteúdo de 14 em Tipos de Atividade', 1, '2018-08-15 21:57:56', NULL),
+(707, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/add-save', 'Adicionar novo conteúdo de 4 em Professores', 1, '2018-08-15 22:00:49', NULL),
+(708, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/4', 'Atualizar dados de  em Professores', 1, '2018-08-15 22:04:34', NULL),
+(709, '10.240.0.171', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/espacos/edit-save/1', 'Atualizar dados de  em Espaços', 1, '2018-08-15 22:07:08', NULL),
+(710, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 11 em Agendar Atividades', 1, '2018-08-15 22:13:19', NULL),
+(711, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 13 em Matricular Usuários', 1, '2018-08-15 22:15:58', NULL),
+(712, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/11', 'Agendar atividade 11 em Agendar Atividades', 1, '2018-08-15 22:17:44', NULL),
+(713, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 14 em Matricular Usuários', 1, '2018-08-15 23:59:14', NULL),
+(714, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 15 em Matricular Usuários', 1, '2018-08-15 23:59:48', NULL),
+(715, '10.240.1.78', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 16 em Matricular Usuários', 1, '2018-08-16 00:07:37', NULL),
+(716, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 17 em Matricular Usuários', 1, '2018-08-16 00:13:58', NULL),
+(717, '10.240.1.21', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/usuarios/delete/5', 'Excluir o conteúdo de 5 em Usuários', 1, '2018-08-16 00:17:03', NULL),
+(718, '10.240.0.231', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/action-selected', 'Excluir o conteúdo de 12,11,8 em Matricular Usuários', 1, '2018-08-16 00:18:19', NULL),
+(719, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/action-selected', 'Excluir o conteúdo de 16,15,14,13,7 em Matricular Usuários', 1, '2018-08-16 00:20:39', NULL),
+(720, '10.240.0.116', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/menu_management/edit-save/24', 'Atualizar dados de Gerenciador de Convites em Menu Management', 1, '2018-08-16 00:51:38', NULL),
+(721, '10.240.0.118', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/menu_management/edit-save/24', 'Atualizar dados de Gerenciador de Convites em Menu Management', 1, '2018-08-16 00:52:31', NULL),
+(722, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.233', 1, '2018-08-16 14:29:47', NULL),
+(723, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/professores/edit-save/4', 'Atualizar dados de  em Professores', 1, '2018-08-16 14:34:29', NULL),
+(724, '10.240.0.233', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/action-selected', 'Excluir o conteúdo de 18,17,13,11,10,9,8,7,6,2 em Socios', 1, '2018-08-16 14:35:33', NULL),
+(725, '10.240.0.207', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/socios/edit-save/12', 'Atualizar dados de  em Socios', 1, '2018-08-16 14:37:24', NULL),
+(726, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.207', 1, '2018-08-16 17:22:34', NULL),
+(727, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/convites/add-save', 'Adicionar novo conteúdo de 1 em Gerenciador de Convites', 1, '2018-08-16 17:23:42', NULL),
+(728, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-08-16 17:27:06', NULL),
+(729, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.231', 1, '2018-08-16 17:30:18', NULL),
+(730, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/categorias/edit-save/19', 'Atualizar dados de  em Categorias', 1, '2018-08-16 17:36:01', NULL),
+(731, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/add-save', 'Adicionar novo conteúdo de 832 em Alugar Espaços', 1, '2018-08-16 18:20:23', NULL),
+(732, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/add-save', 'Adicionar novo conteúdo de 12 em Agendar Atividades', 1, '2018-08-16 18:27:20', NULL),
+(733, '10.240.0.68', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/matriculas/add-save', 'Adicionar novo conteúdo de 18 em Matricular Usuários', 1, '2018-08-16 18:28:45', NULL),
+(734, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/agendar/12', 'Agendar atividade 12 em Agendar Atividades', 1, '2018-08-16 18:29:09', NULL),
+(735, '10.240.1.21', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.21', 1, '2018-08-16 22:47:10', NULL),
+(736, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/users/edit-save/1', 'Atualizar dados de Super Admin em Users', 1, '2018-08-16 23:00:43', NULL),
+(737, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/logout', 'admin@crudbooster.com sair', 1, '2018-08-16 23:01:06', NULL),
+(738, '10.240.0.171', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.171', 1, '2018-08-16 23:01:13', NULL),
+(739, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/delete/38', 'Excluir o conteúdo de 38 em Dependentes', 1, '2018-08-16 23:09:53', NULL),
+(740, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/edit-save/41', 'Atualizar dados de  em Dependentes', 1, '2018-08-16 23:11:09', NULL),
+(741, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/edit-save/40', 'Atualizar dados de  em Dependentes', 1, '2018-08-16 23:12:08', NULL),
+(742, '10.240.2.147', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/edit-save/40', 'Atualizar dados de  em Dependentes', 1, '2018-08-16 23:12:36', NULL),
+(743, '10.240.2.147', 'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:52.0) Gecko/20100101 Firefox/52.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.2.147', 1, '2018-08-17 19:40:23', NULL),
+(744, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.233', 1, '2018-08-21 14:15:01', NULL),
+(745, '10.240.0.231', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/eventos/edit-save/832', 'Atualizar dados de  em Alugar Espaços', 1, '2018-08-21 14:21:40', NULL),
+(746, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/atividades/suspender/12', 'Suspender atividade 12 em Agendar Atividades', 1, '2018-08-21 15:45:55', NULL),
+(747, '10.240.1.60', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.1.60', 1, '2018-08-21 17:48:01', NULL),
+(748, '10.240.0.233', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/edit-save/35', 'Atualizar dados de  em Dependentes', 1, '2018-08-21 23:59:58', NULL),
+(749, '10.240.0.207', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/dependentes/edit-save/35', 'Atualizar dados de  em Dependentes', 1, '2018-08-22 00:00:35', NULL),
+(750, '10.240.0.116', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:61.0) Gecko/20100101 Firefox/61.0', 'http://sgc-sgaeteam.c9users.io/admin/login', 'admin@crudbooster.com se logou com o endereo de IP 10.240.0.116', 1, '2018-08-22 11:47:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -933,7 +1043,7 @@ CREATE TABLE IF NOT EXISTS `cms_menus` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `cms_menus`
@@ -944,13 +1054,13 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (15, 'Fornecedores', 'Route', 'AdminFornecedoresControllerGetIndex', 'normal', 'fa fa-database', 5, 1, 0, 1, 6, '2018-03-22 23:08:43', '2018-03-26 10:43:51'),
 (3, 'Alugar Espaços', 'Route', 'AdminEventosControllerGetIndex', 'normal', 'fa fa-calendar-plus-o', 6, 1, 0, 1, 1, '2018-02-24 11:42:29', '2018-03-26 11:26:47'),
 (4, 'Sócios', 'Module', 'socios', 'normal', 'fa fa-group', 5, 1, 0, 1, 9, '2018-02-27 01:13:14', '2018-03-11 01:56:09'),
-(5, 'Cadastros', 'URL', '#', 'green', 'fa fa-book', 0, 1, 0, 1, 2, '2018-02-27 02:28:08', '2018-02-27 03:20:06'),
-(6, 'Administração', 'URL', '#', 'aqua', 'fa fa-gears', 0, 1, 0, 1, 3, '2018-02-27 02:28:48', '2018-02-27 03:14:44'),
-(7, 'Relatórios', 'URL', '#', 'yellow', 'fa fa-newspaper-o', 0, 1, 0, 1, 4, '2018-02-27 03:17:44', '2018-02-27 03:20:54'),
+(5, 'Cadastros', 'URL', '#', 'green', 'fa fa-book', 0, 1, 0, 1, 1, '2018-02-27 02:28:08', '2018-02-27 03:20:06'),
+(6, 'Administração', 'URL', '#', 'aqua', 'fa fa-gears', 0, 1, 0, 1, 2, '2018-02-27 02:28:48', '2018-02-27 03:14:44'),
+(7, 'Relatórios', 'URL', '#', 'yellow', 'fa fa-newspaper-o', 0, 1, 0, 1, 3, '2018-02-27 03:17:44', '2018-02-27 03:20:54'),
 (8, 'Categorias', 'Route', 'AdminCategoriasControllerGetIndex', NULL, 'fa fa-flag-checkered', 5, 1, 0, 1, 2, '2018-02-27 03:46:08', NULL),
 (9, 'Cobranças', 'Route', 'AdminCobrancasControllerGetIndex', 'normal', 'fa fa-thumbs-o-up', 5, 1, 0, 1, 3, '2018-02-27 23:52:01', '2018-02-27 23:56:02'),
 (16, 'Tipos de Atividade', 'Route', 'AdminTipoAtividadesControllerGetIndex', 'normal', 'fa fa-bicycle', 5, 1, 0, 1, 10, '2018-03-26 07:35:11', '2018-03-26 07:42:00'),
-(11, 'Users', 'Route', 'AdminCmsUsersControllerGetIndex', 'normal', 'fa fa-users', 0, 1, 0, 1, 5, '2018-03-08 00:54:59', NULL),
+(11, 'Users', 'Route', 'AdminCmsUsersControllerGetIndex', 'normal', 'fa fa-users', 0, 1, 0, 1, 4, '2018-03-08 00:54:59', NULL),
 (12, 'Área de Competências', 'Route', 'AdminAreaCompetenciasControllerGetIndex', 'normal', 'fa fa-gears', 5, 1, 0, 1, 1, '2018-03-08 11:30:33', '2018-03-11 07:12:08'),
 (13, 'Espaços', 'Route', 'AdminEspacosControllerGetIndex', NULL, 'fa fa-sitemap', 5, 1, 0, 1, 5, '2018-03-09 09:59:50', NULL),
 (14, 'Dependentes', 'Route', 'AdminDependentesControllerGetIndex', 'normal', 'fa fa-smile-o', 5, 1, 0, 1, 4, '2018-03-11 04:48:48', '2018-03-11 04:58:11'),
@@ -958,7 +1068,8 @@ INSERT INTO `cms_menus` (`id`, `name`, `type`, `path`, `color`, `icon`, `parent_
 (18, 'Usuários', 'Route', 'AdminUsuariosControllerGetIndex', 'normal', 'fa fa-child', 5, 1, 0, 1, 11, '2018-03-26 09:46:29', '2018-03-26 10:40:24'),
 (20, 'Matricular Usuários', 'Route', 'AdminMatriculasControllerGetIndex', 'normal', 'fa fa-user-plus', 6, 1, 0, 1, 3, '2018-03-26 10:55:52', '2018-03-26 11:36:16'),
 (23, 'Agendar Atividades', 'Route', 'AdminAtividadesControllerGetIndex', NULL, 'fa fa-calendar-check-o', 6, 1, 0, 1, 2, '2018-04-22 13:12:09', NULL),
-(21, 'Visão Geral', 'Statistic', 'statistic_builder/show/dashboad-contadores', 'normal', 'fa fa-bar-chart-o', 7, 1, 1, 1, 1, '2018-03-27 11:01:38', '2018-06-01 07:08:23');
+(21, 'Visão Geral', 'Statistic', 'statistic_builder/show/dashboad-contadores', 'normal', 'fa fa-bar-chart-o', 7, 1, 1, 1, 1, '2018-03-27 11:01:38', '2018-06-01 07:08:23'),
+(24, 'Gerenciador de Convites', 'Route', 'AdminConvitesControllerGetIndex', 'normal', 'fa fa-envelope-o', 6, 1, 0, 1, 4, '2018-08-16 00:48:24', '2018-08-16 00:52:31');
 
 -- --------------------------------------------------------
 
@@ -978,7 +1089,7 @@ CREATE TABLE IF NOT EXISTS `cms_moduls` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `cms_moduls`
@@ -1009,7 +1120,8 @@ INSERT INTO `cms_moduls` (`id`, `name`, `icon`, `path`, `table_name`, `controlle
 (22, 'Fornecedores', 'fa fa-database', 'fornecedores', 'fornecedores', 'AdminFornecedoresController', 0, 0, '2018-03-22 23:08:30', NULL),
 (23, 'Tipos de Atividade', 'fa fa-bicycle', 'tipo_atividades', 'tipo_atividades', 'AdminTipoAtividadesController', 0, 0, '2018-03-26 07:35:06', NULL),
 (28, 'Agendar Atividades', 'fa fa-calendar-check-o', 'atividades', 'atividades', 'AdminAtividadesController', 0, 0, '2018-03-26 07:35:06', NULL),
-(27, 'Matricular Usuários', 'fa fa-user-plus', 'matriculas', 'matriculas', 'AdminMatriculasController', 0, 0, '2018-03-26 10:55:43', NULL);
+(27, 'Matricular Usuários', 'fa fa-user-plus', 'matriculas', 'matriculas', 'AdminMatriculasController', 0, 0, '2018-03-26 10:55:43', NULL),
+(29, 'Gerenciador de Convites', 'fa fa-envelope-o', 'convites', 'convites', 'AdminConvitesController', 0, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1069,7 +1181,7 @@ CREATE TABLE IF NOT EXISTS `cms_privileges_roles` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=31 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `cms_privileges_roles`
@@ -1105,7 +1217,8 @@ INSERT INTO `cms_privileges_roles` (`id`, `is_visible`, `is_create`, `is_read`, 
 (27, 1, 1, 1, 1, 1, 1, 25, NULL, NULL),
 (28, 1, 1, 1, 1, 1, 1, 26, NULL, NULL),
 (29, 1, 1, 1, 1, 1, 1, 27, NULL, NULL),
-(30, 1, 1, 1, 1, 1, 1, 28, NULL, NULL);
+(30, 1, 1, 1, 1, 1, 1, 28, NULL, NULL),
+(31, 1, 1, 1, 1, 1, 1, 29, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1214,9 +1327,10 @@ CREATE TABLE IF NOT EXISTS `cms_users` (
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_cms_privileges` int(11) DEFAULT NULL,
+  `status` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `status` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
@@ -1224,8 +1338,8 @@ CREATE TABLE IF NOT EXISTS `cms_users` (
 -- Dumping data for table `cms_users`
 --
 
-INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `created_at`, `updated_at`, `status`) VALUES
-(1, 'Super Admin', NULL, 'admin@crudbooster.com', '$2y$10$L.s6zuKEs4C/jR/Qyc6Q/.AdjjJhn61c63bSdL/GLhv5OFUIzjY26', 1, '2018-02-22 18:58:51', NULL, 'Active');
+INSERT INTO `cms_users` (`id`, `name`, `photo`, `email`, `password`, `id_cms_privileges`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Super Admin', 'uploads/2018-08/securityguard-person-man-avatar-segurida-2844.png', 'admin@crudbooster.com', '$2y$10$L.s6zuKEs4C/jR/Qyc6Q/.AdjjJhn61c63bSdL/GLhv5OFUIzjY26', 1, 'Active', '2018-02-22 18:58:51', '2018-08-16 23:00:43', NULL);
 
 -- --------------------------------------------------------
 
@@ -1256,6 +1370,31 @@ INSERT INTO `cobrancas` (`id`, `created_at`, `updated_at`, `deleted_at`, `descri
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `convites`
+--
+
+CREATE TABLE IF NOT EXISTS `convites` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `socio_id` int(11) NOT NULL,
+  `saldo_mensal` int(11) NOT NULL,
+  `retirados` int(11) NOT NULL,
+  `ultima_retirada` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `convites`
+--
+
+INSERT INTO `convites` (`id`, `created_at`, `updated_at`, `deleted_at`, `socio_id`, `saldo_mensal`, `retirados`, `ultima_retirada`) VALUES
+(1, '2018-08-16 17:23:42', NULL, NULL, 5, 4, 1, '2018-08-16');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dependentes`
 --
 
@@ -1269,47 +1408,50 @@ CREATE TABLE IF NOT EXISTS `dependentes` (
   `dependente_sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `dependente_dtnasc` date DEFAULT NULL,
   `dependente_grau` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `matricula` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `data_comprovante` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=36 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=42 ;
 
 --
 -- Dumping data for table `dependentes`
 --
 
-INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `socio_id`, `dependente_nome`, `dependente_sexo`, `dependente_dtnasc`, `dependente_grau`) VALUES
-(1, '2018-03-11 05:02:47', '2018-03-11 07:05:23', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL),
-(2, '2018-03-11 05:03:43', '2018-03-11 07:05:01', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL),
-(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', '2018-06-03 08:27:58', 1, '', NULL, NULL, NULL),
-(4, '2018-05-23 05:27:40', '2018-05-23 05:28:22', '2018-05-23 05:29:56', 3, '', NULL, NULL, NULL),
-(5, NULL, NULL, '2018-06-04 21:52:20', 5, 'Bebe de Rosemary', NULL, NULL, NULL),
-(6, NULL, NULL, '2018-06-04 21:52:20', 6, 'Gigi', NULL, NULL, NULL),
-(7, NULL, NULL, '2018-06-04 21:52:20', 6, 'Nega do Fortal', NULL, NULL, NULL),
-(8, NULL, NULL, '2018-06-04 21:52:20', 6, 'Ereny', NULL, NULL, NULL),
-(9, NULL, NULL, '2018-06-04 21:52:20', 7, 'BobNelson', 'M', '0000-00-00', 'Filho'),
-(10, NULL, NULL, '2018-06-04 21:52:20', 8, 'feiticeira', 'f', '0000-00-00', 'filha'),
-(11, NULL, NULL, '2018-06-04 21:52:20', 9, 'Da Lua', 'M', '0000-00-00', 'MAluco'),
-(12, NULL, NULL, '2018-06-04 21:52:20', 10, 'Vitolinha', 'M', '0000-00-00', 'Papai Smurf'),
-(13, NULL, NULL, '2018-06-04 21:52:20', 11, 'Neymar Jr', 'M', '0000-00-00', 'Filho(a)'),
-(14, NULL, NULL, '2018-06-04 21:52:20', 12, 'Walter Jr', 'Masculino', '0000-00-00', 'Filho(a)'),
-(15, NULL, NULL, '2018-06-04 21:52:20', 13, 'Gandhy', 'Masculino', '0000-00-00', 'Neto(a)'),
-(16, '2018-06-04 21:34:42', NULL, '2018-06-04 21:52:20', 9, 'Teste do Rato', 'Masculino', '0000-00-00', 'Filho(a)'),
-(17, '2018-06-04 21:45:22', NULL, NULL, 7, 'Teste do Rato', 'Feminino', '2018-06-05', 'Cônjuge'),
-(18, NULL, NULL, '2018-06-05 17:17:08', 14, 'Vitolinha', 'Masculino', '0000-00-00', 'Filho(a)'),
-(19, '2018-06-05 17:16:57', NULL, NULL, 13, 'Hoje', 'Feminino', '2018-06-05', 'Filho(a)'),
-(20, '2018-06-05 17:19:23', NULL, NULL, 10, 'Vitolinha', 'Masculino', '1973-07-03', 'Filho(a)'),
-(21, '2018-06-05 17:29:49', NULL, '2018-06-05 17:43:19', 12, 'Victor Roberto', 'Masculino', '0000-00-00', 'Cônjuge'),
-(22, '2018-06-05 17:42:18', NULL, NULL, 9, 'Victor Roberto', 'Masculino', '2018-01-20', 'Cônjuge'),
-(23, '2018-06-05 17:43:05', NULL, NULL, 6, 'Moa Voa Voa', 'Masculino', '1983-04-03', 'Filho(a)'),
-(24, '2018-06-05 17:44:32', NULL, NULL, 2, 'Vilma Flintstones', 'Feminino', '1973-07-19', 'Cônjuge'),
-(25, NULL, NULL, NULL, 15, 'Gohan', 'Masculino', '0000-00-00', 'Filho(a)'),
-(26, '2018-06-05 18:18:18', NULL, NULL, 7, 'Zezé', 'Feminino', '2018-06-26', 'Cônjuge'),
-(27, NULL, NULL, '2018-06-12 00:08:30', 16, 'Sem Datinha', 'Masculino', '0000-00-00', 'Filho(a)'),
-(28, NULL, NULL, NULL, 17, 'Pipoca', 'Feminino', '0000-00-00', 'Filho(a)'),
-(29, NULL, NULL, NULL, 18, 'SAIPRO', 'Masculino', '0000-00-00', 'Filho(a)'),
-(32, NULL, NULL, '2018-06-08 18:12:17', 38, 'BIC', 'Feminino', '1983-04-03', 'Filho(a)'),
-(33, '2018-06-07 00:00:00', NULL, NULL, 39, 'Katy Perry', 'Feminino', '1991-04-03', 'Cônjuge'),
-(34, NULL, NULL, NULL, 40, 'Jaqueline', 'Feminino', '1973-07-19', 'Cônjuge'),
-(35, NULL, NULL, NULL, 40, 'Pedro', 'Masculino', '1995-07-19', 'Filho(a)');
+INSERT INTO `dependentes` (`id`, `created_at`, `updated_at`, `deleted_at`, `socio_id`, `dependente_nome`, `dependente_sexo`, `dependente_dtnasc`, `dependente_grau`, `matricula`, `data_comprovante`) VALUES
+(1, '2018-03-11 05:02:47', '2018-03-11 07:05:23', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL, NULL, NULL),
+(2, '2018-03-11 05:03:43', '2018-03-11 07:05:01', '2018-06-03 08:27:58', 2, '', NULL, NULL, NULL, NULL, NULL),
+(3, '2018-03-26 20:12:50', '2018-03-26 20:13:36', '2018-06-03 08:27:58', 1, '', NULL, NULL, NULL, NULL, NULL),
+(4, '2018-05-23 05:27:40', '2018-05-23 05:28:22', '2018-05-23 05:29:56', 3, '', NULL, NULL, NULL, NULL, NULL),
+(5, NULL, NULL, '2018-06-04 21:52:20', 5, 'Bebe de Rosemary', NULL, NULL, NULL, NULL, NULL),
+(6, NULL, NULL, '2018-06-04 21:52:20', 6, 'Gigi', NULL, NULL, NULL, NULL, NULL),
+(7, NULL, NULL, '2018-06-04 21:52:20', 6, 'Nega do Fortal', NULL, NULL, NULL, NULL, NULL),
+(8, NULL, NULL, '2018-06-04 21:52:20', 6, 'Ereny', NULL, NULL, NULL, NULL, NULL),
+(36, NULL, NULL, NULL, 7, 'Zezé', 'Feminino', '2018-06-26', 'Cônjuge', NULL, NULL),
+(10, NULL, NULL, '2018-06-04 21:52:20', 8, 'feiticeira', 'f', '0000-00-00', 'filha', NULL, NULL),
+(11, NULL, NULL, '2018-06-04 21:52:20', 9, 'Da Lua', 'M', '0000-00-00', 'MAluco', NULL, NULL),
+(12, NULL, NULL, '2018-06-04 21:52:20', 10, 'Vitolinha', 'M', '0000-00-00', 'Papai Smurf', NULL, NULL),
+(13, NULL, NULL, '2018-06-04 21:52:20', 11, 'Neymar Jr', 'M', '0000-00-00', 'Filho(a)', NULL, NULL),
+(40, NULL, '2018-08-16 23:12:36', NULL, 12, 'Victor Roberto', 'Masculino', '1985-02-01', 'Filho(a)', NULL, NULL),
+(15, NULL, NULL, '2018-06-04 21:52:20', 13, 'Gandhy', 'Masculino', '0000-00-00', 'Neto(a)', NULL, NULL),
+(16, '2018-06-04 21:34:42', NULL, '2018-06-04 21:52:20', 9, 'Teste do Rato', 'Masculino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(37, NULL, NULL, NULL, 7, 'Teste do Rato', 'Feminino', '2018-06-05', 'Cônjuge', NULL, NULL),
+(18, NULL, NULL, '2018-06-05 17:17:08', 14, 'Vitolinha', 'Masculino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(19, '2018-06-05 17:16:57', NULL, NULL, 13, 'Hoje', 'Feminino', '2018-06-05', 'Filho(a)', NULL, NULL),
+(20, '2018-06-05 17:19:23', NULL, NULL, 10, 'Vitolinha', 'Masculino', '1973-07-03', 'Filho(a)', NULL, NULL),
+(41, NULL, '2018-08-16 23:11:09', NULL, 12, 'Walter Jr', 'Masculino', '1990-12-19', 'Filho(a)', NULL, NULL),
+(22, '2018-06-05 17:42:18', NULL, NULL, 9, 'Victor Roberto', 'Masculino', '2018-01-20', 'Cônjuge', NULL, NULL),
+(23, '2018-06-05 17:43:05', NULL, NULL, 6, 'Moa Voa Voa', 'Masculino', '1983-04-03', 'Filho(a)', NULL, NULL),
+(24, '2018-06-05 17:44:32', NULL, NULL, 2, 'Vilma Flintstones', 'Feminino', '1973-07-19', 'Cônjuge', NULL, NULL),
+(25, NULL, NULL, '2018-06-25 00:00:14', 15, 'Gohan', 'Masculino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(38, NULL, NULL, '2018-08-16 23:09:53', 7, 'BobNelson', 'M', '0000-00-00', 'Filho', NULL, NULL),
+(27, NULL, NULL, '2018-06-12 00:08:30', 16, 'Sem Datinha', 'Masculino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(28, NULL, NULL, NULL, 17, 'Pipoca', 'Feminino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(29, NULL, NULL, '2018-08-16 14:35:33', 18, 'SAIPRO', 'Masculino', '0000-00-00', 'Filho(a)', NULL, NULL),
+(39, '2018-08-15 21:51:59', NULL, NULL, 5, 'Vitinho Freire', 'Masculino', '2007-06-01', 'Filho(a)', NULL, NULL),
+(32, NULL, NULL, '2018-06-08 18:12:17', 38, 'BIC', 'Feminino', '1983-04-03', 'Filho(a)', NULL, NULL),
+(33, '2018-06-07 00:00:00', NULL, NULL, 39, 'Katy Perry', 'Feminino', '1991-04-03', 'Cônjuge', NULL, NULL),
+(34, NULL, NULL, NULL, 40, 'Jaqueline', 'Feminino', '1973-07-19', 'Cônjuge', NULL, NULL),
+(35, NULL, '2018-08-22 00:00:35', NULL, 40, 'Pedro', 'Masculino', '2000-01-24', 'Filho(a)', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1334,7 +1476,7 @@ CREATE TABLE IF NOT EXISTS `espacos` (
 --
 
 INSERT INTO `espacos` (`id`, `nome`, `descricao`, `capacidade`, `finalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Recanto Familiar', 'Um espaço familiar, voltado para a descontração dos sócios e não sócios com seus amigos e parentes. Aonde pode ser feito um churrasco e também assar uma pizza, comportando 40 pessoas, onde são fornecidas cadeiras, mesas, grelha e pá de pizza.', 40, 'Eventos', '2018-03-09 09:55:41', '2018-06-17 22:22:12', NULL),
+(1, 'Recanto Familiar', 'Um espaço familiar, voltado para a descontração dos sócios e não sócios com seus amigos e parentes. Aonde pode ser feito um churrasco e também assar uma pizza, comportando 40 pessoas, onde são fornecidas cadeiras, mesas, grelha e pá de pizza.', 40, 'Atividades & Eventos', '2018-03-09 09:55:41', '2018-08-15 22:07:08', NULL),
 (2, 'Salão Verde', 'O espaço é voltado a realização de festas de aniversário, casamentos, bodas, confraternizações, chás beneficientes, coquetéis e convenções.', 250, 'Eventos', '2018-03-09 09:55:42', '2018-06-17 22:34:49', NULL),
 (3, 'Salão Amarelo', 'Outro espaço destinado a eventos sociais é o Salão Amarelo. Com ar condicionado, cozinha com fogão e freezer, o espaço tem capacidade para 150 pessoas e é ideal para a celebração de aniversário, casamentos, bodas, confraternizações, chás beneficentes, coquetéis e convenções. Juntamente com o aluguel do salão, estão inclusas mesas pranchões (3m x 60 cm)ou mesas redondas (1,50 diâmetro) e cadeiras de plástico.', 150, 'Eventos', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
 (4, 'Churrasqueira VIP', 'Trata-se de um espaço social, onde podem ser realizados aniversários confraternizações, entre outros, inclusive sendo anexa ao Salão Verde (que possui capacidade para 250 pessoas). Sua estrutura conta com ar condicionado, ventilador e freezer, com cadeiras de plástico e mesas pranchões (3m x 60 cm)ou mesas redondas ( 1,50 diâmetro)todos estes utensílios em um espaço totalmente coberto, com capacidade para 60 pessoas. \n                 Por ser anexa ao Salão Verde, a churrasqueira vip pode ser alugada juntamente com o salão, desta maneira, se alugados juntos, passa para uma capacidade total de 310 pessoas ( 60 pessoas na churrasqueira e 250 pessoas no salão).', 310, 'Eventos', '2018-03-09 09:55:42', '2018-03-09 09:55:42', NULL),
@@ -1369,7 +1511,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
   `espaco_valor` double NOT NULL,
   `espaco_desconto` double NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=529 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=871 ;
 
 --
 -- Dumping data for table `eventos`
@@ -1663,7 +1805,351 @@ INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, 
 (525, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-21 14:00:00', '2018-06-21 19:15:00', 0, NULL, 11, 7, 1, 0, 0),
 (526, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-22 12:00:00', '2018-06-22 17:15:00', 0, NULL, 11, 7, 1, 0, 0),
 (527, '2018-06-12 01:33:30', '2018-06-12 01:33:30', NULL, 0, 'Natação dos Patos', '2018-06-23 13:00:00', '2018-06-23 18:15:00', 0, NULL, 11, 7, 1, 0, 0),
-(528, '2018-06-12 02:05:14', NULL, NULL, 176.5, 'DJ Ramgo', '2018-06-13 10:00:00', '2018-06-13 16:00:00', 0, 39, 9, NULL, NULL, 145, 0);
+(528, '2018-06-12 02:05:14', NULL, NULL, 176.5, 'DJ Ramgo', '2018-06-13 10:00:00', '2018-06-13 16:00:00', 0, 39, 9, NULL, NULL, 145, 0),
+(529, '2018-06-25 00:29:11', NULL, NULL, 244.95, 'Baba SETIM', '2018-06-30 11:00:00', '2018-06-30 15:00:00', 0, 18, 4, NULL, NULL, 250, 25),
+(530, '2018-06-25 11:54:58', NULL, NULL, 50, 'Jogo do Brasil', '2018-06-27 14:00:00', '2018-06-27 18:00:00', 0, 10, 2, NULL, NULL, 55, 5),
+(531, '2018-06-25 12:24:27', NULL, NULL, 39.95, 'Evento da Pipoca', '2018-06-26 00:00:00', '2018-06-26 17:00:00', 0, 17, 4, NULL, NULL, 20, 0),
+(532, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-03 09:00:00', '2018-07-03 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(533, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-05 09:00:00', '2018-07-05 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(534, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-07 10:00:00', '2018-07-07 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(535, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-10 09:00:00', '2018-07-10 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(536, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-12 09:00:00', '2018-07-12 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(537, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-14 10:00:00', '2018-07-14 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(538, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-17 09:00:00', '2018-07-17 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(539, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-19 09:00:00', '2018-07-19 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(540, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-21 10:00:00', '2018-07-21 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(541, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-24 09:00:00', '2018-07-24 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(542, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-26 09:00:00', '2018-07-26 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(543, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-28 10:00:00', '2018-07-28 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(544, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-07-31 09:00:00', '2018-07-31 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(545, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-02 09:00:00', '2018-08-02 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(546, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-04 10:00:00', '2018-08-04 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(547, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-07 09:00:00', '2018-08-07 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(548, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-09 09:00:00', '2018-08-09 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(549, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-11 10:00:00', '2018-08-11 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(550, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-14 09:00:00', '2018-08-14 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(551, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-16 09:00:00', '2018-08-16 09:45:00', 0, NULL, 11, 8, 3, 0, 0);
+INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, `titulo`, `start_date`, `end_date`, `all_day`, `socio_id`, `espaco_id`, `atividade_id`, `professor_id`, `espaco_valor`, `espaco_desconto`) VALUES
+(552, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-18 10:00:00', '2018-08-18 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(553, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-21 09:00:00', '2018-08-21 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(554, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-23 09:00:00', '2018-08-23 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(555, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-25 10:00:00', '2018-08-25 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(556, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-28 09:00:00', '2018-08-28 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(557, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-08-30 09:00:00', '2018-08-30 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(558, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-01 10:00:00', '2018-09-01 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(559, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-04 09:00:00', '2018-09-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(560, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-06 09:00:00', '2018-09-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(561, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-08 10:00:00', '2018-09-08 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(562, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-11 09:00:00', '2018-09-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(563, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-13 09:00:00', '2018-09-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(564, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-15 10:00:00', '2018-09-15 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(565, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-18 09:00:00', '2018-09-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(566, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-20 09:00:00', '2018-09-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(567, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-22 10:00:00', '2018-09-22 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(568, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-25 09:00:00', '2018-09-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(569, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-27 09:00:00', '2018-09-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(570, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-09-29 10:00:00', '2018-09-29 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(571, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-02 09:00:00', '2018-10-02 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(572, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-04 09:00:00', '2018-10-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(573, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-06 10:00:00', '2018-10-06 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(574, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-09 09:00:00', '2018-10-09 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(575, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-11 09:00:00', '2018-10-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(576, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-13 10:00:00', '2018-10-13 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(577, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-16 09:00:00', '2018-10-16 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(578, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-18 09:00:00', '2018-10-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(579, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-20 10:00:00', '2018-10-20 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(580, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-23 09:00:00', '2018-10-23 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(581, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-25 09:00:00', '2018-10-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(582, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-27 10:00:00', '2018-10-27 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(583, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-10-30 09:00:00', '2018-10-30 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(584, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-01 09:00:00', '2018-11-01 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(585, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-03 10:00:00', '2018-11-03 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(586, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-06 09:00:00', '2018-11-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(587, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-08 09:00:00', '2018-11-08 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(588, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-10 10:00:00', '2018-11-10 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(589, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-13 09:00:00', '2018-11-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(590, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-15 09:00:00', '2018-11-15 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(591, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-17 10:00:00', '2018-11-17 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(592, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-20 09:00:00', '2018-11-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(593, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-22 09:00:00', '2018-11-22 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(594, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-24 10:00:00', '2018-11-24 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(595, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-27 09:00:00', '2018-11-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(596, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-11-29 09:00:00', '2018-11-29 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(597, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-01 10:00:00', '2018-12-01 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(598, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-04 09:00:00', '2018-12-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(599, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-06 09:00:00', '2018-12-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(600, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-08 10:00:00', '2018-12-08 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(601, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-11 09:00:00', '2018-12-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(602, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-13 09:00:00', '2018-12-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(603, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-15 10:00:00', '2018-12-15 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(604, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-18 09:00:00', '2018-12-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(605, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-20 09:00:00', '2018-12-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(606, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-22 10:00:00', '2018-12-22 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(607, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-25 09:00:00', '2018-12-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(608, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-27 09:00:00', '2018-12-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(609, '2018-06-26 10:47:02', '2018-06-26 10:47:02', '2018-06-26 10:48:13', 0, 'X Swimm', '2018-12-29 10:00:00', '2018-12-29 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(610, '2018-07-29 16:21:25', NULL, NULL, 230, 'Dj Xurras', '2018-07-29 18:00:00', '2018-07-29 20:00:00', 0, 39, 4, NULL, NULL, 250, 50),
+(611, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-08-04 15:30:00', '2018-08-04 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(612, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-08-11 15:30:00', '2018-08-11 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(613, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-08-18 15:30:00', '2018-08-18 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(614, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-08-25 15:30:00', '2018-08-25 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(615, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-09-01 15:30:00', '2018-09-01 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(616, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-09-08 15:30:00', '2018-09-08 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(617, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-09-15 15:30:00', '2018-09-15 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(618, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-09-22 15:30:00', '2018-09-22 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(619, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-09-29 15:30:00', '2018-09-29 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(620, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-10-06 15:30:00', '2018-10-06 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(621, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-10-13 15:30:00', '2018-10-13 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(622, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-10-20 15:30:00', '2018-10-20 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(623, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-10-27 15:30:00', '2018-10-27 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(624, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-11-03 15:30:00', '2018-11-03 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(625, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-11-10 15:30:00', '2018-11-10 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(626, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-11-17 15:30:00', '2018-11-17 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(627, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-11-24 15:30:00', '2018-11-24 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(628, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-12-01 15:30:00', '2018-12-01 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(629, '2018-07-29 16:26:20', '2018-07-29 16:26:20', '2018-07-29 16:30:50', 0, 'Baba da Aldeira', '2018-12-08 15:30:00', '2018-12-08 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(630, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-08-04 15:30:00', '2018-08-04 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(631, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-08-11 15:30:00', '2018-08-11 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(632, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-08-18 15:30:00', '2018-08-18 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(633, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-08-25 15:30:00', '2018-08-25 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(634, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-09-01 15:30:00', '2018-09-01 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(635, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-09-08 15:30:00', '2018-09-08 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(636, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-09-15 15:30:00', '2018-09-15 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(637, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-09-22 15:30:00', '2018-09-22 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(638, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-09-29 15:30:00', '2018-09-29 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(639, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-10-06 15:30:00', '2018-10-06 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(640, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-10-13 15:30:00', '2018-10-13 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(641, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-10-20 15:30:00', '2018-10-20 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(642, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-10-27 15:30:00', '2018-10-27 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(643, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-11-03 15:30:00', '2018-11-03 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(644, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-11-10 15:30:00', '2018-11-10 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(645, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-11-17 15:30:00', '2018-11-17 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(646, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-11-24 15:30:00', '2018-11-24 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(647, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-12-01 15:30:00', '2018-12-01 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(648, '2018-07-29 16:30:57', '2018-07-29 16:30:57', NULL, 0, 'Baba da Aldeia', '2018-12-08 15:30:00', '2018-12-08 18:00:00', 0, NULL, 9, 9, 3, 0, 0),
+(649, '2018-08-01 12:46:47', NULL, NULL, 1648.5, 'Churrasco da galera', '2018-09-01 19:00:00', '2018-09-01 23:30:00', 0, 10, 4, NULL, NULL, 500, 0),
+(650, '2018-08-01 12:50:44', NULL, NULL, 532.5, 'Festa de Arromba da Juju', '2018-09-01 17:00:00', '2018-09-01 18:55:00', 0, 7, 4, NULL, NULL, 500, 0),
+(651, '2018-08-01 13:17:44', '2018-08-01 13:17:44', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-07 16:00:00', '2018-08-07 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(652, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-09 17:00:00', '2018-08-09 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(653, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-10 14:30:00', '2018-08-10 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(654, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-14 16:00:00', '2018-08-14 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(655, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-16 17:00:00', '2018-08-16 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(656, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-17 14:30:00', '2018-08-17 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(657, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-21 16:00:00', '2018-08-21 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(658, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-23 17:00:00', '2018-08-23 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(659, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-24 14:30:00', '2018-08-24 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(660, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-28 16:00:00', '2018-08-28 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(661, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-30 17:00:00', '2018-08-30 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(662, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-08-31 14:30:00', '2018-08-31 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(663, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-04 16:00:00', '2018-09-04 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(664, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-06 17:00:00', '2018-09-06 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(665, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-07 14:30:00', '2018-09-07 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(666, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-11 16:00:00', '2018-09-11 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(667, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-13 17:00:00', '2018-09-13 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(668, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-14 14:30:00', '2018-09-14 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(669, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-18 16:00:00', '2018-09-18 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(670, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-20 17:00:00', '2018-09-20 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(671, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-21 14:30:00', '2018-09-21 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(672, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-25 16:00:00', '2018-09-25 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(673, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-27 17:00:00', '2018-09-27 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(674, '2018-08-01 13:17:44', '2018-08-01 13:17:44', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-09-28 14:30:00', '2018-09-28 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(675, '2018-08-01 13:17:45', '2018-08-01 13:17:45', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-10-02 16:00:00', '2018-10-02 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(676, '2018-08-01 13:17:45', '2018-08-01 13:17:45', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-10-04 17:00:00', '2018-10-04 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(677, '2018-08-01 13:17:45', '2018-08-01 13:17:45', '2018-08-08 00:34:12', 0, 'Aula de Futebol para Juvenil', '2018-10-05 14:30:00', '2018-10-05 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(678, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-03 09:00:00', '2018-07-03 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(679, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-05 09:00:00', '2018-07-05 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(680, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-07 10:00:00', '2018-07-07 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(681, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-10 09:00:00', '2018-07-10 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(682, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-12 09:00:00', '2018-07-12 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(683, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-14 10:00:00', '2018-07-14 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(684, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-17 09:00:00', '2018-07-17 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(685, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-19 09:00:00', '2018-07-19 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(686, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-21 10:00:00', '2018-07-21 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(687, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-24 09:00:00', '2018-07-24 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(688, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-26 09:00:00', '2018-07-26 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(689, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-28 10:00:00', '2018-07-28 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(690, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-07-31 09:00:00', '2018-07-31 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(691, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-02 09:00:00', '2018-08-02 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(692, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-04 10:00:00', '2018-08-04 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(693, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-07 09:00:00', '2018-08-07 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(694, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-09 09:00:00', '2018-08-09 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(695, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-11 10:00:00', '2018-08-11 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(696, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-14 09:00:00', '2018-08-14 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(697, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-16 09:00:00', '2018-08-16 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(698, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-18 10:00:00', '2018-08-18 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(699, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-21 09:00:00', '2018-08-21 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(700, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-23 09:00:00', '2018-08-23 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(701, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-25 10:00:00', '2018-08-25 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(702, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-28 09:00:00', '2018-08-28 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(703, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-08-30 09:00:00', '2018-08-30 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(704, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-01 10:00:00', '2018-09-01 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(705, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-04 09:00:00', '2018-09-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(706, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-06 09:00:00', '2018-09-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(707, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-08 10:00:00', '2018-09-08 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(708, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-11 09:00:00', '2018-09-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(709, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-13 09:00:00', '2018-09-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(710, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-15 10:00:00', '2018-09-15 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(711, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-18 09:00:00', '2018-09-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(712, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-20 09:00:00', '2018-09-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(713, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-22 10:00:00', '2018-09-22 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(714, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-25 09:00:00', '2018-09-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(715, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-27 09:00:00', '2018-09-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(716, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-09-29 10:00:00', '2018-09-29 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(717, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-02 09:00:00', '2018-10-02 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(718, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-04 09:00:00', '2018-10-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(719, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-06 10:00:00', '2018-10-06 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(720, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-09 09:00:00', '2018-10-09 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(721, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-11 09:00:00', '2018-10-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(722, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-13 10:00:00', '2018-10-13 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(723, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-16 09:00:00', '2018-10-16 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(724, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-18 09:00:00', '2018-10-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(725, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-20 10:00:00', '2018-10-20 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(726, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-23 09:00:00', '2018-10-23 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(727, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-25 09:00:00', '2018-10-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(728, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-27 10:00:00', '2018-10-27 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(729, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-10-30 09:00:00', '2018-10-30 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(730, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-01 09:00:00', '2018-11-01 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(731, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-03 10:00:00', '2018-11-03 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(732, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-06 09:00:00', '2018-11-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(733, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-08 09:00:00', '2018-11-08 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(734, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-10 10:00:00', '2018-11-10 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(735, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-13 09:00:00', '2018-11-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(736, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-15 09:00:00', '2018-11-15 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(737, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-17 10:00:00', '2018-11-17 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(738, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-20 09:00:00', '2018-11-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(739, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-22 09:00:00', '2018-11-22 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(740, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-24 10:00:00', '2018-11-24 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(741, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-27 09:00:00', '2018-11-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(742, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-11-29 09:00:00', '2018-11-29 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(743, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-01 10:00:00', '2018-12-01 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(744, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-04 09:00:00', '2018-12-04 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(745, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-06 09:00:00', '2018-12-06 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(746, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-08 10:00:00', '2018-12-08 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(747, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-11 09:00:00', '2018-12-11 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(748, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-13 09:00:00', '2018-12-13 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(749, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-15 10:00:00', '2018-12-15 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(750, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-18 09:00:00', '2018-12-18 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(751, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-20 09:00:00', '2018-12-20 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(752, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-22 10:00:00', '2018-12-22 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(753, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-25 09:00:00', '2018-12-25 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(754, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-27 09:00:00', '2018-12-27 09:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(755, '2018-08-08 00:19:38', '2018-08-08 00:19:38', NULL, 0, 'X Swimm', '2018-12-29 10:00:00', '2018-12-29 10:45:00', 0, NULL, 11, 8, 3, 0, 0),
+(756, '2018-08-08 00:34:20', '2018-08-08 00:34:20', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-09 17:00:00', '2018-08-09 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(757, '2018-08-08 00:34:20', '2018-08-08 00:34:20', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-10 14:30:00', '2018-08-10 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(758, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-14 16:00:00', '2018-08-14 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(759, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-16 17:00:00', '2018-08-16 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(760, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-17 14:30:00', '2018-08-17 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(761, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-21 16:00:00', '2018-08-21 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(762, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-23 17:00:00', '2018-08-23 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(763, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-24 14:30:00', '2018-08-24 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(764, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-28 16:00:00', '2018-08-28 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(765, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-30 17:00:00', '2018-08-30 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(766, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-08-31 14:30:00', '2018-08-31 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(767, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-04 16:00:00', '2018-09-04 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(768, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-06 17:00:00', '2018-09-06 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(769, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-07 14:30:00', '2018-09-07 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(770, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-11 16:00:00', '2018-09-11 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(771, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-13 17:00:00', '2018-09-13 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(772, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-14 14:30:00', '2018-09-14 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(773, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-18 16:00:00', '2018-09-18 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(774, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-20 17:00:00', '2018-09-20 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(775, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-21 14:30:00', '2018-09-21 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(776, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-25 16:00:00', '2018-09-25 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(777, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-27 17:00:00', '2018-09-27 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(778, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-09-28 14:30:00', '2018-09-28 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(779, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-10-02 16:00:00', '2018-10-02 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(780, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-10-04 17:00:00', '2018-10-04 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(781, '2018-08-08 00:34:20', '2018-08-08 00:34:20', '2018-08-13 17:36:59', 0, 'Aula de Futebol para Juvenil', '2018-10-05 14:30:00', '2018-10-05 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(782, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-14 16:00:00', '2018-08-14 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(783, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-16 17:00:00', '2018-08-16 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(784, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-17 14:30:00', '2018-08-17 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(785, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-21 16:00:00', '2018-08-21 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(786, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-23 17:00:00', '2018-08-23 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(787, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-24 14:30:00', '2018-08-24 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(788, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-28 16:00:00', '2018-08-28 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(789, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-30 17:00:00', '2018-08-30 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(790, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-08-31 14:30:00', '2018-08-31 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(791, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-04 16:00:00', '2018-09-04 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(792, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-06 17:00:00', '2018-09-06 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(793, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-07 14:30:00', '2018-09-07 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(794, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-11 16:00:00', '2018-09-11 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(795, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-13 17:00:00', '2018-09-13 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(796, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-14 14:30:00', '2018-09-14 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(797, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-18 16:00:00', '2018-09-18 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(798, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-20 17:00:00', '2018-09-20 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(799, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-21 14:30:00', '2018-09-21 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(800, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-25 16:00:00', '2018-09-25 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(801, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-27 17:00:00', '2018-09-27 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(802, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-09-28 14:30:00', '2018-09-28 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(803, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-10-02 16:00:00', '2018-10-02 17:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(804, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-10-04 17:00:00', '2018-10-04 18:30:00', 0, NULL, 9, 10, 1, 0, 0),
+(805, '2018-08-13 17:47:54', '2018-08-13 17:47:54', NULL, 0, 'Aula de Futebol para Juvenil', '2018-10-05 14:30:00', '2018-10-05 16:00:00', 0, NULL, 9, 10, 1, 0, 0),
+(806, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-08-18 08:00:00', '2018-08-18 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(807, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-08-21 07:40:00', '2018-08-21 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(808, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-08-25 08:00:00', '2018-08-25 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(809, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-08-28 07:40:00', '2018-08-28 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(810, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-01 08:00:00', '2018-09-01 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(811, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-04 07:40:00', '2018-09-04 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(812, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-08 08:00:00', '2018-09-08 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(813, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-11 07:40:00', '2018-09-11 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(814, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-15 08:00:00', '2018-09-15 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(815, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-18 07:40:00', '2018-09-18 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(816, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-22 08:00:00', '2018-09-22 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(817, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-25 07:40:00', '2018-09-25 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(818, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-09-29 08:00:00', '2018-09-29 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(819, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-10-02 07:40:00', '2018-10-02 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(820, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-10-06 08:00:00', '2018-10-06 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(821, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-10-09 07:40:00', '2018-10-09 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(822, '2018-08-15 22:17:43', '2018-08-15 22:17:43', NULL, 0, 'yoga', '2018-10-13 08:00:00', '2018-10-13 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(823, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-10-16 07:40:00', '2018-10-16 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(824, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-10-20 08:00:00', '2018-10-20 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(825, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-10-23 07:40:00', '2018-10-23 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(826, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-10-27 08:00:00', '2018-10-27 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(827, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-10-30 07:40:00', '2018-10-30 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(828, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-11-03 08:00:00', '2018-11-03 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(829, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-11-06 07:40:00', '2018-11-06 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(830, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-11-10 08:00:00', '2018-11-10 09:20:00', 0, NULL, 1, 11, 4, 0, 0),
+(831, '2018-08-15 22:17:44', '2018-08-15 22:17:44', NULL, 0, 'yoga', '2018-11-13 07:40:00', '2018-11-13 09:00:00', 0, NULL, 1, 11, 4, 0, 0),
+(832, '2018-08-16 18:20:23', '2018-08-21 14:21:40', NULL, 200, 'Teste', '2018-09-20 14:00:00', '2018-09-20 16:00:00', 0, 5, 9, NULL, NULL, 250, 50),
+(833, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-08-21 16:00:00', '2018-08-21 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(834, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-08-23 16:00:00', '2018-08-23 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(835, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-08-28 16:00:00', '2018-08-28 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(836, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-08-30 16:00:00', '2018-08-30 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(837, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-04 16:00:00', '2018-09-04 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(838, '2018-08-16 18:29:08', '2018-08-16 18:29:08', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-06 16:00:00', '2018-09-06 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(839, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-11 16:00:00', '2018-09-11 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(840, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-13 16:00:00', '2018-09-13 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(841, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-18 16:00:00', '2018-09-18 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(842, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-20 16:00:00', '2018-09-20 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(843, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-25 16:00:00', '2018-09-25 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(844, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-09-27 16:00:00', '2018-09-27 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(845, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-02 16:00:00', '2018-10-02 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(846, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-04 16:00:00', '2018-10-04 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(847, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-09 16:00:00', '2018-10-09 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(848, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-11 16:00:00', '2018-10-11 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(849, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-16 16:00:00', '2018-10-16 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(850, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-18 16:00:00', '2018-10-18 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(851, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-23 16:00:00', '2018-10-23 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(852, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-25 16:00:00', '2018-10-25 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(853, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-10-30 16:00:00', '2018-10-30 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(854, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-01 16:00:00', '2018-11-01 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(855, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-06 16:00:00', '2018-11-06 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(856, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-08 16:00:00', '2018-11-08 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(857, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-13 16:00:00', '2018-11-13 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(858, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-15 16:00:00', '2018-11-15 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(859, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-20 16:00:00', '2018-11-20 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(860, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-22 16:00:00', '2018-11-22 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(861, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-27 16:00:00', '2018-11-27 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(862, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-11-29 16:00:00', '2018-11-29 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(863, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-04 16:00:00', '2018-12-04 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(864, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-06 16:00:00', '2018-12-06 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(865, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-11 16:00:00', '2018-12-11 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(866, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-13 16:00:00', '2018-12-13 17:00:00', 0, NULL, 10, 12, 4, 0, 0);
+INSERT INTO `eventos` (`id`, `created_at`, `updated_at`, `deleted_at`, `total`, `titulo`, `start_date`, `end_date`, `all_day`, `socio_id`, `espaco_id`, `atividade_id`, `professor_id`, `espaco_valor`, `espaco_desconto`) VALUES
+(867, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-18 16:00:00', '2018-12-18 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(868, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-20 16:00:00', '2018-12-20 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(869, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-25 16:00:00', '2018-12-25 17:00:00', 0, NULL, 10, 12, 4, 0, 0),
+(870, '2018-08-16 18:29:09', '2018-08-16 18:29:09', '2018-08-21 15:45:55', 0, 'Natação Ter/Qui', '2018-12-27 16:00:00', '2018-12-27 17:00:00', 0, NULL, 10, 12, 4, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1683,7 +2169,7 @@ CREATE TABLE IF NOT EXISTS `evento__detalhes` (
   `desconto` double NOT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=29 ;
 
 --
 -- Dumping data for table `evento__detalhes`
@@ -1705,7 +2191,14 @@ INSERT INTO `evento__detalhes` (`id`, `created_at`, `updated_at`, `evento_id`, `
 (19, NULL, NULL, 22, 5, 4545, 60, 272700, 0, '2018-05-22 14:07:32'),
 (18, NULL, NULL, 22, 10, 50045, 666, 33329970, 0, '2018-05-22 14:07:32'),
 (20, '2018-06-07 18:35:29', NULL, 513, 3, 2500.11, 20, 50002.200000000004, 0, NULL),
-(21, '2018-06-12 02:05:14', NULL, 528, 5, 4.5, 7, 31.5, 0, NULL);
+(21, '2018-06-12 02:05:14', NULL, 528, 5, 4.5, 7, 31.5, 0, NULL),
+(22, '2018-06-25 00:29:11', NULL, 529, 5, 3.99, 5, 19.950000000000003, 0, NULL),
+(23, '2018-06-25 12:24:27', NULL, 531, 5, 3.99, 5, 19.950000000000003, 0, NULL),
+(24, '2018-07-29 16:21:25', NULL, 610, 2, 3.25, 10, 30, 2.5, NULL),
+(25, '2018-08-01 12:46:47', NULL, 649, 3, 3, 10, 30, 0, NULL),
+(26, '2018-08-01 12:46:47', NULL, 649, 4, 2.7, 200, 520, 20, NULL),
+(27, '2018-08-01 12:46:47', NULL, 649, 5, 3.99, 150, 598.5, 0, NULL),
+(28, '2018-08-01 12:50:44', NULL, 650, 2, 3.25, 10, 32.5, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -1745,6 +2238,7 @@ INSERT INTO `fornecedores` (`id`, `nome`, `documento`, `tipo_documento`, `nome_c
 
 CREATE TABLE IF NOT EXISTS `matriculas` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `tipoatividade_id` int(11) NOT NULL,
   `atividade_id` int(11) NOT NULL,
   `usuario_id` int(11) NOT NULL,
   `data_matricula` date NOT NULL,
@@ -1754,19 +2248,31 @@ CREATE TABLE IF NOT EXISTS `matriculas` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `matriculas`
 --
 
-INSERT INTO `matriculas` (`id`, `atividade_id`, `usuario_id`, `data_matricula`, `mensalidade`, `desconto`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 3, 3, '2018-03-26', 30000, 0, '2018-03-26 11:08:49', NULL, '2018-03-26 11:11:57'),
-(2, 3, 1, '2018-03-20', 50000, 20000, '2018-03-26 11:09:29', NULL, '2018-03-26 11:11:43'),
-(3, 2, 2, '2018-03-26', 50000, 30000, '2018-03-26 11:57:21', NULL, NULL),
-(4, 2, 4, '2018-03-26', 20000, 0, '2018-03-26 11:57:51', NULL, NULL),
-(5, 1, 3, '2018-03-26', 100000, 0, '2018-03-26 12:00:17', NULL, NULL),
-(6, 1, 4, '2018-06-21', 123, 3, '2018-05-17 09:29:36', '2018-06-21 18:14:06', NULL);
+INSERT INTO `matriculas` (`id`, `tipoatividade_id`, `atividade_id`, `usuario_id`, `data_matricula`, `mensalidade`, `desconto`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 0, 3, 3, '2018-03-26', 30000, 0, '2018-03-26 11:08:49', NULL, '2018-03-26 11:11:57'),
+(2, 0, 3, 1, '2018-03-20', 50000, 20000, '2018-03-26 11:09:29', NULL, '2018-03-26 11:11:43'),
+(3, 0, 2, 2, '2018-03-26', 50000, 30000, '2018-03-26 11:57:21', NULL, NULL),
+(4, 0, 2, 4, '2018-03-26', 20000, 0, '2018-03-26 11:57:51', NULL, NULL),
+(5, 0, 1, 3, '2018-03-26', 100000, 0, '2018-03-26 12:00:17', NULL, NULL),
+(6, 0, 1, 4, '2018-06-21', 123, 3, '2018-05-17 09:29:36', '2018-06-21 18:14:06', NULL),
+(7, 0, 7, 7, '2018-07-08', 0, 7, '2018-07-08 20:03:33', NULL, '2018-08-16 00:20:39'),
+(8, 0, 3, 5, '2018-07-08', 0, 0, '2018-07-08 20:10:29', NULL, '2018-08-16 00:18:19'),
+(9, 0, 3, 4, '2018-07-08', 97, 7, '2018-07-08 20:20:27', NULL, NULL),
+(10, 0, 9, 1, '2018-07-29', 120, 90, '2018-07-29 16:54:35', NULL, NULL),
+(11, 8, 7, 5, '2018-01-08', 150, 20, '2018-08-01 13:10:38', '2018-08-14 06:00:38', '2018-08-16 00:18:19'),
+(12, 3, 1, 5, '2018-08-13', 0, 0, '2018-08-13 21:39:38', NULL, '2018-08-16 00:18:19'),
+(13, 14, 11, 4, '2018-08-15', 0, 0, '2018-08-15 22:15:58', NULL, '2018-08-16 00:20:39'),
+(14, 14, 11, 8, '2018-08-15', 0, 0, '2018-08-15 23:59:13', NULL, '2018-08-16 00:20:39'),
+(15, 14, 11, 2, '2018-08-15', 0, 10, '2018-08-15 23:59:48', NULL, '2018-08-16 00:20:39'),
+(16, 14, 11, 1, '2018-08-16', 0, 0, '2018-08-16 00:07:37', NULL, '2018-08-16 00:20:39'),
+(17, 14, 11, 6, '2018-08-16', 60, 0, '2018-08-16 00:13:58', NULL, NULL),
+(18, 8, 12, 1, '2018-08-16', 97, 0, '2018-08-16 18:28:45', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -1779,7 +2285,7 @@ CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=67 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=75 ;
 
 --
 -- Dumping data for table `migrations`
@@ -1844,7 +2350,12 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (63, '2018_05_24_185310_alter_table_eventos_add_professorid', 22),
 (64, '2018_06_02_184824_alter_table_dependentes_rename_fields', 23),
 (65, '2018_06_24_092559_alter_table_usuarios_drop_fields', 24),
-(66, '2018_06_24_094016_alter_table_usuarios_add_fields', 25);
+(66, '2018_06_24_094016_alter_table_usuarios_add_fields', 25),
+(70, '2018_07_08_193927_alter_table_matriculas_add_tipoatividadeid', 26),
+(71, '2018_08_13_170802_alter_table_atividades_rename_dtcancel', 27),
+(72, '2018_08_16_002851_create_table_convites', 28),
+(73, '2018_08_16_225631_alter_table_cms_users', 29),
+(74, '2018_08_22_113712_alter_table_dependentes_add_matricula', 30);
 
 -- --------------------------------------------------------
 
@@ -1872,8 +2383,7 @@ INSERT INTO `produtos` (`id`, `nome`, `valor`, `fornecedor_id`, `created_at`, `u
 (2, 'Coca-Cola Garrafa 1L', 3.25, 1, '2018-03-06 00:10:11', '2018-06-21 17:41:40', NULL),
 (3, 'Água Mineral Garrafa 1L', 3.00, 1, '2018-03-06 00:10:32', '2018-06-12 02:20:54', NULL),
 (4, 'Cerveja Skol Lata 350ml', 2.70, 1, '2018-03-26 10:21:39', '2018-06-12 02:12:55', NULL),
-(5, 'Cerveja Heineken Longneck 355ml', 3.99, 2, '2018-03-26 10:22:40', '2018-06-12 02:11:05', NULL),
-(10, 'moa', 50045.00, 1, NULL, '2018-04-25 08:30:40', '2018-06-12 02:19:05');
+(5, 'Cerveja Heineken Longneck 355ml', 3.99, 2, '2018-03-26 10:22:40', '2018-06-12 02:11:05', NULL);
 
 -- --------------------------------------------------------
 
@@ -1894,7 +2404,7 @@ CREATE TABLE IF NOT EXISTS `professores` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `professores`
@@ -1903,7 +2413,8 @@ CREATE TABLE IF NOT EXISTS `professores` (
 INSERT INTO `professores` (`id`, `nome`, `documento`, `tipo_documento`, `telefone`, `celular`, `email`, `hora_aula`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Pardal', '001.002.004-55', 'CPF', '', '', '', 74.9, '2018-03-26 10:30:11', '2018-06-21 17:46:21', NULL),
 (2, 'Raimundo Nonato', '123456-97', 'RG', '', '', '', 100, '2018-03-26 10:30:51', '2018-06-17 22:44:23', NULL),
-(3, 'Xavier', '123.321.222-01', 'CPF', '', '', '', 70.5, '2018-03-29 16:17:06', '2018-06-17 22:43:54', NULL);
+(3, 'Xavier', '123.321.222-01', 'CPF', '', '', '', 70.5, '2018-03-29 16:17:06', '2018-06-17 22:43:54', NULL),
+(4, 'Mestre Xi Fu', '999.999.999-99', 'CPF', '(71) 5433-0999', '(71) 99087-6665', '', 0, '2018-08-15 22:00:49', '2018-08-16 14:34:29', NULL);
 
 -- --------------------------------------------------------
 
@@ -1919,16 +2430,16 @@ CREATE TABLE IF NOT EXISTS `socios` (
   `nome` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
   `matricula` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `funcao` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cpf` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cpf` varchar(14) COLLATE utf8_unicode_ci DEFAULT NULL,
   `rg` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
   `endereco` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
   `bairro` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cidade` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `estado` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cep` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telefone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `celular` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cep` varchar(9) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `telefone` varchar(14) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `celular` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `ramal` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -1953,23 +2464,23 @@ CREATE TABLE IF NOT EXISTS `socios` (
 
 INSERT INTO `socios` (`id`, `created_at`, `updated_at`, `deleted_at`, `nome`, `matricula`, `funcao`, `cpf`, `rg`, `data_nascimento`, `endereco`, `bairro`, `cidade`, `estado`, `cep`, `telefone`, `celular`, `email`, `ramal`, `sexo`, `estado_civil`, `nacionalidade`, `naturalidade`, `lotacao`, `unidade`, `profissao`, `areacompetencia_id`, `categoria_id`, `cobranca_id`, `outra_matricula`, `data_adesao`, `obs`) VALUES
 (1, '2018-03-11 04:03:53', '2018-03-11 09:39:02', NULL, 'Tony Montana', '1982', 'Administrador', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 11, 1, '', '1960-12-31', ''),
-(2, '2018-03-11 04:11:41', '2018-03-14 07:12:24', NULL, 'Fred Flintstones', 'YabbaDabbaDoo', '', '', '', '1900-12-14', '', '', '', '', '', '', '', '', '', 'M', 'C', '', '', '', '', '', 3, 14, 3, '', '1900-12-21', ''),
+(2, '2018-03-11 04:11:41', '2018-03-14 07:12:24', '2018-08-16 14:35:33', 'Fred Flintstones', 'YabbaDabbaDoo', '', '', '', '1900-12-14', '', '', '', '', '', '', '', '', '', 'M', 'C', '', '', '', '', '', 3, 14, 3, '', '1900-12-21', ''),
 (3, '2018-05-23 05:26:29', NULL, '2018-05-23 05:29:56', 'PALOMA SANTANA DA SILVA MOREIRA', '', '', '', '', '1999-07-21', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 14, 3, '', '0000-00-00', ''),
 (4, '2018-05-30 14:25:55', '2018-05-30 14:29:28', '2018-06-08 18:14:56', 'Vitola Freirinha', '', '', '', '', '0000-00-00', 'Rua da Gratidão', '', 'Salvador', 'BA', '41650-19', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 4, '', '1969-12-31', ''),
 (5, '2018-06-02 19:01:54', NULL, NULL, 'Vitor Alberto Smith Freire', '', '', '', '', '1969-12-31', '', '', '', '', '', '', '', '', '', 'Masculino', 'Casado(a)', '', '', '', '', '', 3, 9, 4, '', '1969-12-31', ''),
-(6, '2018-06-02 19:15:26', NULL, NULL, 'Moa', '', '', '', '', '1983-04-03', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
-(7, '2018-06-02 19:40:37', NULL, NULL, 'Bob Pai', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', 'Masculino', '', '', '', '', '', '', 3, 11, 1, '', '0000-00-00', ''),
-(8, '2018-06-02 19:44:03', '2018-06-02 19:45:50', NULL, 'Mr M', '', '', '', '', '2018-06-02', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 4, '', '0000-00-00', ''),
-(9, '2018-06-02 19:48:36', NULL, NULL, 'Luamar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
-(10, '2018-06-03 19:59:11', NULL, NULL, 'Vitolão', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 5, '', '0000-00-00', ''),
-(11, '2018-06-03 20:04:44', NULL, NULL, 'Neymar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 11, 4, '', '0000-00-00', ''),
-(12, '2018-06-03 21:09:23', NULL, NULL, 'Walter', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 10, 4, '', '0000-00-00', ''),
-(13, '2018-06-04 20:37:26', NULL, NULL, 'Mahatma', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 5, '', '0000-00-00', ''),
+(6, '2018-06-02 19:15:26', NULL, '2018-08-16 14:35:33', 'Moa', '', '', '', '', '1983-04-03', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 3, 10, 1, '', '0000-00-00', ''),
+(7, '2018-06-02 19:40:37', '2018-07-03 13:39:14', '2018-08-16 14:35:33', 'Bob Pai', '', '', '', '', '1901-12-02', '', '', '', '', '', '', '', '', '', 'Masculino', '', '', '', '', '', '', 3, 11, 1, '', '1901-12-05', ''),
+(8, '2018-06-02 19:44:03', '2018-06-02 19:45:50', '2018-08-16 14:35:33', 'Mr M', '', '', '', '', '2018-06-02', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 4, '', '0000-00-00', ''),
+(9, '2018-06-02 19:48:36', NULL, '2018-08-16 14:35:33', 'Luamar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
+(10, '2018-06-03 19:59:11', NULL, '2018-08-16 14:35:33', 'Vitolão', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 14, 5, '', '0000-00-00', ''),
+(11, '2018-06-03 20:04:44', NULL, '2018-08-16 14:35:33', 'Neymar', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 11, 4, '', '0000-00-00', ''),
+(12, '2018-06-03 21:09:23', '2018-08-16 14:37:24', NULL, 'Walter Branco', '', '', '', '', '1967-08-26', '', '', 'Belo Horizonte', 'MG', '', '', '', '', '', 'Masculino', 'Casado(a)', 'Brasileira', 'Mineira', '', '', '', 2, 10, 4, '', '2004-04-27', ''),
+(13, '2018-06-04 20:37:26', NULL, '2018-08-16 14:35:33', 'Mahatma', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 5, '', '0000-00-00', ''),
 (14, '2018-06-04 21:54:54', NULL, '2018-06-08 18:14:56', 'Vitor Alberto Smith', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 3, '', '0000-00-00', ''),
-(15, '2018-06-05 17:46:49', NULL, NULL, 'Goku', '', '', '', '', '1975-11-26', '', '', '', 'BA', '', '', '', '', '', 'Feminino', 'União Estável', '', '', '', '', '', 1, 10, 1, '', '2018-06-05', ''),
+(15, '2018-06-05 17:46:49', NULL, '2018-06-25 00:00:14', 'Goku', '', '', '', '', '1975-11-26', '', '', '', 'BA', '', '', '', '', '', 'Feminino', 'União Estável', '', '', '', '', '', 1, 10, 1, '', '2018-06-05', ''),
 (16, '2018-06-06 11:30:51', NULL, '2018-06-12 00:08:30', 'Sem data', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 11, 1, '', '0000-00-00', ''),
-(17, '2018-06-07 17:07:25', NULL, NULL, 'Joca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 1, '', '0000-00-00', ''),
-(18, '2018-06-07 17:13:49', NULL, NULL, 'Andreca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 19, 4, '', '0000-00-00', ''),
+(17, '2018-06-07 17:07:25', NULL, '2018-08-16 14:35:33', 'Joca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 1, 19, 1, '', '0000-00-00', ''),
+(18, '2018-06-07 17:13:49', NULL, '2018-08-16 14:35:33', 'Andreca', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 19, 4, '', '0000-00-00', ''),
 (19, '2018-06-07 17:19:11', NULL, '2018-06-08 18:14:56', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
 (20, '2018-06-07 17:20:20', NULL, '2018-06-08 18:14:56', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
 (21, '2018-06-07 17:51:26', NULL, '2018-06-08 18:12:17', 'Luciana', '', '', '', '', '0000-00-00', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 2, 9, 1, '', '0000-00-00', ''),
@@ -2007,7 +2518,7 @@ CREATE TABLE IF NOT EXISTS `tipo_atividades` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=14 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `tipo_atividades`
@@ -2016,17 +2527,18 @@ CREATE TABLE IF NOT EXISTS `tipo_atividades` (
 INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 'Capoeira', 40.13, '2018-03-08 09:47:58', '2018-03-08 09:47:58', NULL),
 (2, 'Dança de Salão', 50.00, '2018-03-08 09:47:59', '2018-03-08 09:47:59', NULL),
-(3, 'Futebol de Campo', 0.00, '2018-03-08 09:47:59', '2018-03-08 09:47:59', NULL),
+(3, 'Futebol de Campo', 150.00, '2018-03-08 09:47:59', '2018-08-01 13:06:59', NULL),
 (4, 'Futebol Society', 0.00, '2018-03-08 09:47:59', '2018-03-08 09:47:59', NULL),
 (5, 'Futebol de Mesa', 0.00, '2018-03-08 09:48:00', '2018-03-08 09:48:00', NULL),
 (6, 'Handebol', 0.00, '2018-03-08 09:48:00', '2018-03-08 09:48:00', NULL),
 (7, 'Karate', 40.13, '2018-03-08 09:48:00', '2018-03-08 09:48:00', NULL),
-(8, 'Natação', 0.00, '2018-03-08 09:48:00', '2018-03-08 09:48:00', NULL),
-(9, 'Patinação', 50.00, '2018-03-08 09:48:01', '2018-03-08 09:48:01', NULL),
+(8, 'Natação', 97.00, '2018-03-08 09:48:00', '2018-07-08 19:59:51', NULL),
+(9, 'Patinação', 50.00, '2018-03-08 09:48:01', '2018-03-08 09:48:01', '2018-08-14 05:16:36'),
 (10, 'Pilates', 0.00, '2018-03-08 09:48:01', '2018-03-08 09:48:01', NULL),
 (11, 'Tai Chi Chuan', 20.00, '2018-03-08 09:48:01', '2018-03-08 09:48:01', NULL),
 (12, 'Jiu-jitsu', 80.00, '2018-03-26 08:01:01', NULL, NULL),
-(13, 'Zumba', 100.00, '2018-03-26 08:02:29', NULL, NULL);
+(13, 'Zumba', 100.00, '2018-03-26 08:02:29', NULL, NULL),
+(14, 'yoga', 60.00, '2018-08-15 21:57:56', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -2037,16 +2549,16 @@ INSERT INTO `tipo_atividades` (`id`, `descricao`, `mensalidade`, `created_at`, `
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(256) COLLATE utf8_unicode_ci NOT NULL,
-  `cpf` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cpf` varchar(14) COLLATE utf8_unicode_ci DEFAULT NULL,
   `rg` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `data_nascimento` date DEFAULT NULL,
   `endereco` varchar(256) COLLATE utf8_unicode_ci DEFAULT NULL,
   `bairro` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cidade` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `estado` varchar(2) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cep` varchar(8) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telefone` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `celular` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `cep` varchar(9) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `telefone` varchar(14) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `celular` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sexo` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `estado_civil` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -2058,7 +2570,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
 
 --
 -- Dumping data for table `usuarios`
@@ -2069,7 +2581,10 @@ INSERT INTO `usuarios` (`id`, `nome`, `cpf`, `rg`, `data_nascimento`, `endereco`
 (2, 'Pato Donald', '', '', '1931-12-24', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 4, '', '2018-03-26 10:35:52', NULL, NULL),
 (3, 'Seu Boneco', '', '', '1984-10-30', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 4, '', '2018-03-26 10:36:36', NULL, NULL),
 (4, 'Margarida', '', '', '1945-05-21', '', '', '', '', '', '', '', '', NULL, NULL, NULL, '', 1, '', '2018-03-26 10:37:09', NULL, NULL),
-(5, 'Bolsonaro 2018', '12314312343', '3214234234', '2001-05-31', 'rua do ai quem quer', 'ogro gogo', 'melao', 'do', '54665464', '5450000045454', '4546405450', 'chota12@genitallia.c', NULL, NULL, NULL, '', 3, '', '2018-05-17 09:59:57', '2018-06-21 18:11:24', NULL);
+(5, 'Bolsonaro 2018', '12314312343', '3214234234', '2001-05-31', 'rua do ai quem quer', 'ogro gogo', 'melao', 'do', '54665464', '5450000045454', '4546405450', 'chota12@genitallia.c', NULL, NULL, NULL, '', 3, '', '2018-05-17 09:59:57', '2018-06-21 18:11:24', '2018-08-16 00:17:03'),
+(6, 'Vitor Alberto Smith Freire', '', '', '1969-12-31', '', '', 'Salvador', 'BA', '', '', '', '', 'Masculino', 'União Estável', 'AB-', 'Paraguaio', 5, '', '2018-06-24 10:11:07', NULL, NULL),
+(7, 'Walter White', '', '', '2018-06-24', '', '', 'Salvador', 'BA', '', '', '', '', 'Masculino', 'Divorciado(a)', 'O+', 'Brasileira', 1, '', '2018-06-24 22:58:18', NULL, NULL),
+(8, 'Meredith Grey', '12312312312', '05931283', '1985-02-01', '', '', 'Salvador', 'BA', '', '', '', '', 'Feminino', 'Solteiro(a)', 'O+', 'Brasileira', 1, '', '2018-06-24 23:33:56', NULL, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

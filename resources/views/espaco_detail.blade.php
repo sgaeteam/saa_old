@@ -96,14 +96,14 @@
 								<div class="box-body" id="parent-form-area">
 									<style type="text/css">
 										#table-detail tr td:first-child {
-											font-weight: bold;
+											font-weight: normal;
 											width: 25%;
 										}
 									</style>
 									<div class='table-responsive'>
 										<table id='table-detail' class="table table-striped table-bordered">
 											<thead>
-													<th>Título</th>
+													<th>Descrição</th>
 													<th>Tipo</th>
 													<th>Responsável</th>
 													<th>Início</th>

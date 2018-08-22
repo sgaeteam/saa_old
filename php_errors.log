@@ -697,3 +697,10 @@
 [16-Aug-2018 00:06:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
 [16-Aug-2018 00:06:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminMatriculasController.php on line 50
 [16-Aug-2018 17:25:53 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[19-Aug-2018 09:18:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ''];' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 43
+[21-Aug-2018 14:26:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/storage/framework/views/3c0cc50630a25bd296580812777b1dc7acef8914.php on line 122
+[21-Aug-2018 14:29:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /home/ubuntu/workspace/storage/framework/views/3c0cc50630a25bd296580812777b1dc7acef8914.php on line 123
+[21-Aug-2018 14:33:24 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'red' (T_STRING), expecting ',' or ';' in /home/ubuntu/workspace/storage/framework/views/3c0cc50630a25bd296580812777b1dc7acef8914.php on line 122
+[21-Aug-2018 14:48:08 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/storage/framework/views/3c0cc50630a25bd296580812777b1dc7acef8914.php on line 116
+[21-Aug-2018 16:03:22 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminProfessoresController.php on line 352
+[21-Aug-2018 16:20:59 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0

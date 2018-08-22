@@ -12,7 +12,7 @@
 			# START CONFIGURATION DO NOT REMOVE THIS LINE
 			$this->title_field = "id";
 			$this->limit = "20";
-			$this->orderby = "id,desc";
+			$this->orderby = "dependente_dtnasc,asc";
 			$this->global_privilege = false;
 			$this->button_table_action = true;
 			$this->button_bulk_action = true;
@@ -33,6 +33,7 @@
 			$this->col[] = ["label"=>"Nome","name"=>"dependente_nome"];
 			$this->col[] = ["label"=>"Sexo","name"=>"dependente_sexo"];
 			$this->col[] = ["label"=>"Data Nascimento","name"=>"dependente_dtnasc","callback_php"=>'str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->dependente_dtnasc)))'];
+			$this->col[] = ["label"=>"Idade","name"=>"dependente_dtnasc","callback_php"=>'str_replace(date("Y"),null,date("Y-m-d")-$row->dependente_dtnasc)'];
 			$this->col[] = ["label"=>"Grau","name"=>"dependente_grau"];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -123,6 +124,8 @@
 	        | 
 	        */
 	        $this->table_row_color = array();     	          
+			$this->table_row_color[] = ['condition'=>'date("Y-m-d") - [dependente_dtnasc] >= 24 & [dependente_grau] == "Filho(a)"',"color"=>"danger"];
+			$this->table_row_color[] = ['condition'=>'date("Y-m-d") - [dependente_dtnasc] >= 18 & date("Y-m-d") - [dependente_dtnasc] < 24 & [dependente_grau] == "Filho(a)"',"color"=>"warning"];
 
 	        
 	        /*
