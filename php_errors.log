@@ -704,3 +704,51 @@
 [21-Aug-2018 14:48:08 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '<' in /home/ubuntu/workspace/storage/framework/views/3c0cc50630a25bd296580812777b1dc7acef8914.php on line 116
 [21-Aug-2018 16:03:22 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/ubuntu/workspace/app/Http/Controllers/AdminProfessoresController.php on line 352
 [21-Aug-2018 16:20:59 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
+[23-Aug-2018 09:31:23 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 10:04:29 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 10:09:12 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 10:09:56 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 10:11:26 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 908
+[23-Aug-2018 19:55:13 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 20:13:58 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 20:36:25 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 20:54:11 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 20:57:15 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 21:14:05 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 21:44:37 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 905
+[23-Aug-2018 22:10:42 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 22:11:35 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on boolean in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 796
+[23-Aug-2018 22:55:22 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '31' (T_LNUMBER), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 39
+[23-Aug-2018 23:51:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:52:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:53:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:54:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:55:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:55:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:55:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 37
+[23-Aug-2018 23:55:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 38
+[24-Aug-2018 10:59:10 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'date' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 38
+[24-Aug-2018 10:59:20 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'date' (T_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 38
+[24-Aug-2018 16:06:25 America/Sao_Paulo] PHP Fatal error:  Class 'Dependente' not found in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 26
+[24-Aug-2018 16:47:38 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '{' in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 30
+[24-Aug-2018 16:47:59 America/Sao_Paulo] PHP Fatal error:  Class 'App\Carbon\Carbon' not found in /home/ubuntu/workspace/app/Dependente.php on line 19
+[24-Aug-2018 16:49:02 America/Sao_Paulo] PHP Fatal error:  Class 'Carbon' not found in /home/ubuntu/workspace/app/Dependente.php on line 20
+[24-Aug-2018 16:51:54 America/Sao_Paulo] PHP Fatal error:  Class 'Carbon' not found in /home/ubuntu/workspace/app/Dependente.php on line 20
+[24-Aug-2018 16:55:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '/', expecting ',' or ';' in /home/ubuntu/workspace/app/Dependente.php on line 6
+[24-Aug-2018 17:25:08 America/Sao_Paulo] PHP Fatal error:  Class 'App\Http\Controllers\CRUDBooster' not found in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 32
+[24-Aug-2018 19:30:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 25

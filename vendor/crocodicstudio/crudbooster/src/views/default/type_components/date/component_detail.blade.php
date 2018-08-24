@@ -1,1 +1,1 @@
-{{ str_replace("30/11/-0001",null,date("d/m/Y",strtotime($value))) }}
+{{ str_replace("31/12/1969",null,str_replace("30/11/-0001","",date("d/m/Y",strtotime($value)))) }}

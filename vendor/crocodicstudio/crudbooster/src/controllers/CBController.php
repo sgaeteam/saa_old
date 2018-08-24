@@ -790,12 +790,10 @@ class CBController extends Controller {
 			}
 
 			if($di['type']=='date') {
-				if ($request_all[$name] <> "") {
-					 $mydate = $request_all[$name];
+					 $request_all[$name] <> "" ? $mydate = $request_all[$name] : $mydate = '00/00/0000';
 				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
 				     $dateFormat=$date->format('Y-m-d');
-				     $request_all[$name] = $dateFormat;
-				}
+				     $request_all[$name] = str_replace("-0001-11-30",null,$dateFormat);
 			}	
 
 			if(@$di['validation']) {
@@ -899,12 +897,10 @@ class CBController extends Controller {
 			}
 			
 			if($ro['type']=='date') {
-				if ($inputdata <> "") {
-					 $mydate = $inputdata;
+					 $inputdata <> "" ? $mydate = $inputdata : $mydate = '00/00/0000';
 				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
 				     $dateFormat=$date->format('Y-m-d');
-				     $inputdata = $dateFormat;
-				}
+				     $inputdata = str_replace("-0001-11-30",null,$dateFormat);
 			}			
 
 			if($ro['type']=='child') { 

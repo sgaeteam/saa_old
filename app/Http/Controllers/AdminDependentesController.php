@@ -32,10 +32,11 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Nome","name"=>"dependente_nome"];
 			$this->col[] = ["label"=>"Sexo","name"=>"dependente_sexo"];
-			$this->col[] = ["label"=>"Data Nascimento","name"=>"dependente_dtnasc","callback_php"=>'str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->dependente_dtnasc)))'];
-			$this->col[] = ["label"=>"Idade","name"=>"dependente_dtnasc","callback_php"=>'str_replace(date("Y"),null,date("Y-m-d")-$row->dependente_dtnasc)'];
+			$this->col[] = ["label"=>"Data Nascimento","name"=>"dependente_dtnasc","callback_php"=>'str_replace("31/12/1969",null,str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->dependente_dtnasc))))'];
+			$this->col[] = ["label"=>"Idade","name"=>"dependente_dtnasc","callback_php"=>'Carbon\Carbon::parse($row->dependente_dtnasc)->diffInYears(Carbon\Carbon::now())'];
 			$this->col[] = ["label"=>"Grau","name"=>"dependente_grau"];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
+			$this->col[] = ["label"=>"Comprovação Matrícula","name"=>"data_comprovante","callback_php"=>'str_replace("31/12/1969",null,str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->data_comprovante))))'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -45,6 +46,8 @@
 			$this->form[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
 			$this->form[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Cônjuge;Filho(a)'];
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Matrícula','name'=>'matricula','type'=>'text','validation'=>'min:1|max:20','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Comprovada em','name'=>'data_comprovante','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 
@@ -124,8 +127,8 @@
 	        | 
 	        */
 	        $this->table_row_color = array();     	          
-			$this->table_row_color[] = ['condition'=>'date("Y-m-d") - [dependente_dtnasc] >= 24 & [dependente_grau] == "Filho(a)"',"color"=>"danger"];
-			$this->table_row_color[] = ['condition'=>'date("Y-m-d") - [dependente_dtnasc] >= 18 & date("Y-m-d") - [dependente_dtnasc] < 24 & [dependente_grau] == "Filho(a)"',"color"=>"warning"];
+			$this->table_row_color[] = ['condition'=>'Carbon\Carbon::parse([dependente_dtnasc])->diffInYears(Carbon\Carbon::now()) >= 24 && [dependente_grau] == "Filho(a)"',"color"=>"danger"];
+			$this->table_row_color[] = ['condition'=>'Carbon\Carbon::parse([dependente_dtnasc])->diffInYears(Carbon\Carbon::now()) >= 18 && Carbon\Carbon::parse([dependente_dtnasc])->diffInYears(Carbon\Carbon::now()) < 24 && [dependente_grau] == "Filho(a)" && (int)[data_comprovante] <> date("Y")',"color"=>"warning"];
 
 	        
 	        /*
