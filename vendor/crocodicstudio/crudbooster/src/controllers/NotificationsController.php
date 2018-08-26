@@ -33,14 +33,14 @@ class NotificationsController extends CBController {
         $read_notification_url = url(config('crudbooster.ADMIN_PATH')).'/notifications/read';
 
         $this->col = array();		        
-		$this->col[] = array("label"=>"Content","name"=>"content","callback_php"=>'"<a href=\"'.$read_notification_url.'/$row->id\">$row->content</a>"' );	
-        $this->col[] = array('label'=>'Read','name'=>'is_read','callback_php'=>'($row->is_read)?"<span class=\"label label-default\">Already Read</span>":"<span class=\"label label-danger\">NEW</span>"');	
+		$this->col[] = array("label"=>"Conteúdo","name"=>"content","callback_php"=>'"<a href=\"'.$read_notification_url.'/$row->id\">$row->content</a>"' );	
+        $this->col[] = array('label'=>'Ler','name'=>'is_read','callback_php'=>'($row->is_read)?"<span class=\"label label-default\">Mensagem Lida</span>":"<span class=\"label label-danger\">NOVA</span>"');	
 
 		$this->form = array();		
-		$this->form[] = array("label"=>"Content","name"=>"content","type"=>"text"   );
-		$this->form[] = array("label"=>"Icon","name"=>"icon","type"=>"text"   );
-		$this->form[] = array("label"=>"Notification Command","name"=>"notification_command","type"=>"textarea"   );
-		$this->form[] = array("label"=>"Is Read","name"=>"is_read","type"=>"text"   );
+		$this->form[] = array("label"=>"Conteúdo","name"=>"content","type"=>"text"   );
+		$this->form[] = array("label"=>"Ícone","name"=>"icon","type"=>"text"   );
+		$this->form[] = array("label"=>"Comando de Notificação","name"=>"notification_command","type"=>"textarea"   );
+		$this->form[] = array("label"=>"Está lida?","name"=>"is_read","type"=>"text"   );
      
     }
 
