@@ -21,7 +21,7 @@ class CBHook extends Controller {
 		| Gerar notificações aos usuários sobre Dependentes com pendências.
 		| ----------------------------------------------------------------*/	
 
-		$ultNotifDependenteRealizada = DB::table('cms_notifications')->where('url', 'like', '%dependentes%')->latest()->first();
+		$ultNotifDependenteRealizada = DB::table('cms_notifications')->where('url', 'like', '%dependentes%')->whereNull('deleted_at')->latest()->first();
 
 		if ( date('Y-m-d',strtotime($ultNotifDependenteRealizada->created_at)) < date("Y-m-d") )
 		{

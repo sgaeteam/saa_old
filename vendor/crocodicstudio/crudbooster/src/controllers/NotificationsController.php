@@ -51,6 +51,7 @@ class NotificationsController extends CBController {
             ->orWhere('id_cms_users',CRUDBooster::myId())
             ->orderby('id','desc')
             ->where('is_read',0)
+            ->whereNull('deleted_at')
             ->take(25)->get();            
         
         $total = count($rows);

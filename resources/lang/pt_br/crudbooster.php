@@ -174,7 +174,7 @@ return [
     'copyright'           => 'Copyright',
     'powered_by'          => 'Desenvolvido por',
 
-    'notification_you_have'     => 'você tem',
+    'notification_you_have'     => 'Você tem',
     'notification_notification' => 'Notificações',
     'notification_new'          => 'Você tem uma nova notificação!',
 
