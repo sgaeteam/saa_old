@@ -49,7 +49,8 @@
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Matrícula','name'=>'matricula','type'=>'text','validation'=>'min:1|max:20','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Comprovada em','name'=>'data_comprovante','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Foto','name'=>'foto','type'=>'upload','validation'=>'image|max:1000','width'=>'col-sm-10','help'=>'A resolu&ccedil;&atilde;o recomendada &eacute; 200x200 px'];
+			$this->form[] = ['label'=>'Foto','name'=>'foto','type'=>'upload','validation'=>'image|max:1000','width'=>'col-sm-10','help'=>'A resolução recomendada é 200x200 px'];
+			$this->form[] = ['label'=>'Anexo','name'=>'anexo','type'=>'upload','validation'=>'max:1000','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -61,6 +62,8 @@
 			//$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
 			//$this->form[] = ['label'=>'Matrícula','name'=>'matricula','type'=>'text','validation'=>'min:1|max:20','width'=>'col-sm-10'];
 			//$this->form[] = ['label'=>'Comprovada em','name'=>'data_comprovante','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Foto','name'=>'foto','type'=>'upload','validation'=>'image|max:1000','width'=>'col-sm-10','help'=>'A resolução recomendada é 200x200 px'];
+			//$this->form[] = ['label'=>'Anexo','name'=>'anexo','type'=>'upload','validation'=>'max:1000','width'=>'col-sm-10'];
 			# OLD END FORM
 
 			/* 
