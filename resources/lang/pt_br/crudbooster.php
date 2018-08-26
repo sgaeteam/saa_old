@@ -24,6 +24,7 @@ return [
     'text_dashboard'                 => 'Painel de Controle',
     'text_prefix_option'             => '** Por favor selecione',
     'text_loading'                   => 'Carregando... Por favor aguarde',
+    'text_delete'                    => 'Deletar',
     'message_after_logout'           => 'Obrigado, vejo você mais tarde!',
     'message_forgot_password'        => 'Enviamos nova senha para seu e-mail, verifique a caixa de entrada ou de spam!',
     'page_not_found'                 => 'Oops! Página não encontrada',
