@@ -37,6 +37,7 @@
 			$this->col[] = ["label"=>"Grau","name"=>"dependente_grau"];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Comprovação Matrícula","name"=>"data_comprovante","callback_php"=>'str_replace("31/12/1969",null,str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->data_comprovante))))'];
+			$this->col[] = ["label"=>"Foto","name"=>"foto","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -48,8 +49,19 @@
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Matrícula','name'=>'matricula','type'=>'text','validation'=>'min:1|max:20','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Comprovada em','name'=>'data_comprovante','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Foto','name'=>'foto','type'=>'upload','validation'=>'image|max:1000','width'=>'col-sm-10','help'=>'A resolu&ccedil;&atilde;o recomendada &eacute; 200x200 px'];
 			# END FORM DO NOT REMOVE THIS LINE
 
+			# OLD START FORM
+			//$this->form = [];
+			//$this->form[] = ['label'=>'Nome','name'=>'dependente_nome','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Data Nascimento','name'=>'dependente_dtnasc','type'=>'date','validation'=>'required|date','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Sexo','name'=>'dependente_sexo','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
+			//$this->form[] = ['label'=>'Grau','name'=>'dependente_grau','type'=>'select','validation'=>'required|min:1|max:255','width'=>'col-sm-10','dataenum'=>'Cônjuge;Filho(a)'];
+			//$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
+			//$this->form[] = ['label'=>'Matrícula','name'=>'matricula','type'=>'text','validation'=>'min:1|max:20','width'=>'col-sm-10'];
+			//$this->form[] = ['label'=>'Comprovada em','name'=>'data_comprovante','type'=>'date','validation'=>'date','width'=>'col-sm-10'];
+			# OLD END FORM
 
 			/* 
 	        | ---------------------------------------------------------------------- 
