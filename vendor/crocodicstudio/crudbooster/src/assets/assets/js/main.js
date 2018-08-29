@@ -81,7 +81,7 @@
 
 			if($(".datetimepicker").length > 0) {
 				$(".datetimepicker").daterangepicker({
-					minDate: '1900-01-01',
+					minDate: '01/01/1900',
 					singleDatePicker: true, 
 				    showDropdowns: true,
 				    timePicker:true,
@@ -89,7 +89,7 @@
 				    timePickerIncrement: 5,
 				    timePickerSeconds: false,
 				    autoApply: true,
-					format:'YYYY-MM-DD HH:mm'
+					format:'DD/MM/YYYY HH:mm'
 				})
 			}
 

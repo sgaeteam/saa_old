@@ -5,6 +5,7 @@
 	use Route;
 	use DB;
 	use CRUDBooster;
+	use Carbon\Carbon;
 	use App\Evento;
 
 	class AdminEventosController extends \crocodicstudio\crudbooster\controllers\CBController {
@@ -35,8 +36,8 @@
 			$this->col[] = ["label"=>"Responsável","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Espaço","name"=>"espaco_id","join"=>"espacos,nome"];
 			$this->col[] = ["label"=>"Descrição do Evento","name"=>"titulo"];
-			$this->col[] = ["label"=>"Início","name"=>"start_date","callback_php"=>'date("d/m/Y | H:i",strtotime($row->start_date))'];
-			$this->col[] = ["label"=>"Término","name"=>"end_date","callback_php"=>'date("d/m/Y | H:i",strtotime($row->end_date))'];	
+			$this->col[] = ["label"=>"Início","name"=>"start_date","callback_php"=>'str_replace("30/11/-0001 | 00:00",null,date("d/m/Y | H:i",strtotime($row->start_date)))'];
+			$this->col[] = ["label"=>"Término","name"=>"end_date","callback_php"=>'str_replace("30/11/-0001 | 00:00",null,date("d/m/Y | H:i",strtotime($row->end_date)))'];	
 			$this->col[] = ["label"=>"Total","name"=>"total","callback_php"=>'"R$ ".number_format([total],2,",",".")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 			
@@ -299,13 +300,12 @@
 	    public function hook_before_add(&$postdata) {        
 
 	        // Verifica se o espaço já está reservado para o período escolhido
-	        $eventoAgendado = $this->checkDisponibilidade($postdata);
+	        $eventoAgendado = $this->checkDisponibilidade($postdata,null);
 
     	    if (isset($eventoAgendado)) {
     	    	
-    	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y | H:i');
-    	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y | H:i');
-
+    	    	$inicio = Carbon::parse($eventoAgendado->start_date)->format('d/m/Y | H:i');
+    	    	$fim	= Carbon::parse($eventoAgendado->end_date)->format('d/m/Y | H:i');
 
 				if(Request::ajax()) {
 					$res = response()->json(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->send();
@@ -341,23 +341,21 @@
 	    | 
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
-	        //Your code here
-	        
+
 	        // Verifica se o espaço já está reservado para o período escolhido
-	        $eventoAgendado = $this->checkDisponibilidade($postdata);
+	        $eventoAgendado = $this->checkDisponibilidade($postdata,$id);
 
     	    if (isset($eventoAgendado)) {
     	    	
     	    	$inicio = \Carbon\Carbon::parse($eventoAgendado->start_date)->format('d/m/Y | H:i');
     	    	$fim	= \Carbon\Carbon::parse($eventoAgendado->end_date)->format('d/m/Y | H:i');
 
-
 				if(Request::ajax()) {
 					$res = response()->json(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->send();
 					exit;
 				}
 				else{
-					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->withInput();
+					$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_add_event_data_failed')."<b>".$eventoAgendado->titulo." (".$inicio." a ".$fim.")"."</b>",'message_type'=>'danger'])->withInput(Request::except(['start_date','end_date']));
 					\Session::driver()->save();
 					$res->send();
 		        	exit;
@@ -431,30 +429,61 @@
 				})->first();
 		  dd(DB::getQueryLog());
 		*/	    
-		public function checkDisponibilidade(array $request) {
+		public function checkDisponibilidade(array $request, $id) {
 
-			$inicio 	= date("Y-m-d G:i A",strtotime(str_replace('/', '-', $request['start_date'])));
-			$fim 		= date("Y-m-d G:i A",strtotime(str_replace('/', '-', $request['end_date'])));
 			$espaco 	= $request['espaco_id'];
-			
-			$evento = Evento::where(function ($query) use ($inicio, $espaco) {
-									  $query->where('start_date'	, '<='	, $inicio);
-									  $query->where('end_date'		, '>='	, $inicio);
-									  $query->where('espaco_id'		, '='	, $espaco);
-									  $query->whereNull('deleted_at');
-							})
-							->orWhere(function ($query) use ($fim, $espaco) {
-									  $query->where('start_date'	,  '<='	, $fim);
-									  $query->where('end_date'		,  '>='	, $fim);
-									  $query->where('espaco_id'		,  '='	, $espaco);
-									  $query->whereNull('deleted_at');   
-							})
-							->orWhere(function ($query) use ($inicio, $fim, $espaco) {
-									  $query->where('start_date'	,  '<='	, $fim);
-									  $query->where('end_date'		,  '>='	, $inicio);
-									  $query->where('espaco_id'		,  '='	, $espaco);
-									  $query->whereNull('deleted_at');   										  
-					  })->first();
+		
+			if (isset($id)) {
+				
+				$inicio = $request['start_date'];
+				$fim	= $request['end_date'];
+
+				$evento = Evento::where(function ($query) use ($inicio, $espaco, $id) {
+										  $query->where('start_date'	, '<='	, $inicio);
+										  $query->where('end_date'		, '>='	, $inicio);
+										  $query->where('espaco_id'		, '='	, $espaco);
+										  $query->where('id'			, '<>'	, $id);
+										  $query->whereNull('deleted_at');
+								})
+								->orWhere(function ($query) use ($fim, $espaco, $id) {
+										  $query->where('start_date'	,  '<='	, $fim);
+										  $query->where('end_date'		,  '>='	, $fim);
+										  $query->where('espaco_id'		,  '='	, $espaco);
+										  $query->where('id'			,  '<>'	, $id);
+										  $query->whereNull('deleted_at');   
+								})
+								->orWhere(function ($query) use ($inicio, $fim, $espaco, $id) {
+										  $query->where('start_date'	,  '<='	, $fim);
+										  $query->where('end_date'		,  '>='	, $inicio);
+										  $query->where('espaco_id'		,  '='	, $espaco);
+										  $query->where('id'			,  '<>'	, $id);
+										  $query->whereNull('deleted_at');   										  
+						  })->first();				
+			}
+			else {
+				
+				$inicio = Carbon::parse($request['start_date'])->format('Y-m-d H:i:s');
+				$fim	= Carbon::parse($request['end_date'])->format('Y-m-d H:i:s');
+
+				$evento = Evento::where(function ($query) use ($inicio, $espaco) {
+										  $query->where('start_date'	, '<='	, $inicio);
+										  $query->where('end_date'		, '>='	, $inicio);
+										  $query->where('espaco_id'		, '='	, $espaco);
+										  $query->whereNull('deleted_at');
+								})
+								->orWhere(function ($query) use ($fim, $espaco) {
+										  $query->where('start_date'	,  '<='	, $fim);
+										  $query->where('end_date'		,  '>='	, $fim);
+										  $query->where('espaco_id'		,  '='	, $espaco);
+										  $query->whereNull('deleted_at');   
+								})
+								->orWhere(function ($query) use ($inicio, $fim, $espaco) {
+										  $query->where('start_date'	,  '<='	, $fim);
+										  $query->where('end_date'		,  '>='	, $inicio);
+										  $query->where('espaco_id'		,  '='	, $espaco);
+										  $query->whereNull('deleted_at');   										  
+						  })->first();
+			}
 
 	        if(isset($evento)) {
 	        	

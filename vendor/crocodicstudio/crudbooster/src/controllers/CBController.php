@@ -794,7 +794,11 @@ class CBController extends Controller {
 				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
 				     $dateFormat=$date->format('Y-m-d');
 				     $request_all[$name] = str_replace("-0001-11-30",null,$dateFormat);
-			}	
+			}
+
+			if($di['type']=='datetime') {
+				$request_all[$name]  <> "" ? $request_all[$name] = \Carbon\Carbon::createFromFormat('d/m/Y H:i',$request_all[$name])->format('Y-m-d H:i:s') : null;
+			}			
 
 			if(@$di['validation']) {
 
@@ -854,7 +858,7 @@ class CBController extends Controller {
 				$res = response()->json(['message'=>trans('crudbooster.alert_validation_error',['error'=>implode(', ',$message_all)]),'message_type'=>'warning'])->send();
 				exit;
 			}else{
-				$res = redirect()->back()->with("errors",$message)->with(['message'=>trans('crudbooster.alert_validation_error',['error'=>implode(', ',$message_all)]),'message_type'=>'warning'])->withInput();
+				$res = redirect()->back()->with("errors",$message)->with(['message'=>trans('crudbooster.alert_validation_error',['error'=>implode(', ',$message_all)]),'message_type'=>'warning'])->withInput(Request::except(['start_date','end_date']));
 				\Session::driver()->save();
 				$res->send();
 	        	exit;
@@ -901,8 +905,12 @@ class CBController extends Controller {
 				     $date = DateTime::createFromFormat('d/m/Y', $mydate);
 				     $dateFormat=$date->format('Y-m-d');
 				     $inputdata = str_replace("-0001-11-30",null,$dateFormat);
-			}			
+			}	
 
+			if($ro['type']=='datetime') {
+				$inputdata <> "" ? $inputdata = \Carbon\Carbon::createFromFormat('d/m/Y H:i',$inputdata)->format('Y-m-d H:i:s') : null;
+			}
+			
 			if($ro['type']=='child') { 
 				continue;
 			}
@@ -1196,9 +1204,8 @@ class CBController extends Controller {
 		{
 		    $this->arr['updated_at'] = date('Y-m-d H:i:s');
 		}
-		
 
-		$this->hook_before_edit($this->arr,$id);		
+		$this->hook_before_edit($this->arr,$id);
 		DB::table($this->table)->where($this->primary_key,$id)->update($this->arr);		
 
 		//Looping Data Input Again After Insert

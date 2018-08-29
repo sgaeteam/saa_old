@@ -103,6 +103,12 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'start_date' => [
+            'after' => 'O campo Início deve ser uma data posterior a hoje.',
+        ],
+        'data_inicio' => [
+            'after' => 'O campo Início deve ser uma data posterior ou igual a hoje.',
+        ],        
     ],
 
     /*
@@ -116,6 +122,11 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+            'start_date'  => 'Início',
+            'end_date'    => 'Término',
+            'data_inicio' => 'Início',
+            'data_fim'    => 'Término',            
+    ],
 
 ];

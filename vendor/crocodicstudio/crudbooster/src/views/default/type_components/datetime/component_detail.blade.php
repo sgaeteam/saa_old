@@ -1,1 +1,1 @@
-{{ date("d/m/Y | H:i", strtotime($value)) }}
+{{ str_replace("30/11/-0001 | 00:00",null,date("d/m/Y | H:i", strtotime($value))) }}
