@@ -422,6 +422,8 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'AlterTableAtividadesRenameDtcancel' => __DIR__ . '/../..' . '/database/migrations/2018_08_13_170802_alter_table_atividades_rename_dtcancel.php',
         'AlterTableCmsNotificationsDeletedat' => __DIR__ . '/../..' . '/database/migrations/2018_08_26_083442_alter_table_cms_notifications_deletedat.php',
         'AlterTableCmsUsers' => __DIR__ . '/../..' . '/database/migrations/2018_08_16_225631_alter_table_cms_users.php',
+        'AlterTableConvitesAddFields' => __DIR__ . '/../..' . '/database/migrations/2018_08_30_102749_alter_table_convites_add_fields.php',
+        'AlterTableConvitesAddImpresso' => __DIR__ . '/../..' . '/database/migrations/2018_08_30_120752_alter_table_convites_add_impresso.php',
         'AlterTableDependentesAddAnexoComprovanteMatricula' => __DIR__ . '/../..' . '/database/migrations/2018_08_26_035249_alter_table_dependentes_add_anexo_comprovante_matricula.php',
         'AlterTableDependentesAddFoto' => __DIR__ . '/../..' . '/database/migrations/2018_08_26_033638_alter_table_dependentes_add_foto.php',
         'AlterTableDependentesAddMatricula' => __DIR__ . '/../..' . '/database/migrations/2018_08_22_113712_alter_table_dependentes_add_matricula.php',

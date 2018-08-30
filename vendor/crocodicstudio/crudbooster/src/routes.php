@@ -61,7 +61,8 @@ Route::group(['middleware'=>['web','\crocodicstudio\crudbooster\middlewares\CBBa
 		
 	// Rotas personalizadas do negócio (By M97 | https://laracasts.com/discuss/channels/laravel/please-explain-naming-controller-routes-uses-as ):
 	Route::get('atividades/agendar/{id}', ['uses'=>'AdminAtividadesController@agendar','as'=>'atividade.agendar']);	
-	Route::get('atividades/suspender/{id}', ['uses'=>'AdminAtividadesController@suspender','as'=>'atividade.suspender']);	
+	Route::get('atividades/suspender/{id}', ['uses'=>'AdminAtividadesController@suspender','as'=>'atividade.suspender']);
+	Route::get('convites/imprimir/{id}', ['uses'=>'AdminConvitesController@imprimir','as'=>'convite.imprimir']);	
 });
 
 

@@ -471,7 +471,7 @@
 						</div>
 						<div class="panel-footer" align="right">
 							<input type='button' class='btn btn-default' id="btn-reset-form-<?php echo e($name); ?>" onclick="resetForm<?php echo e($name); ?>()" value="<?php echo e(trans('crudbooster.button_reset')); ?>"/>
-							<input type='button' id='btn-add-table-<?php echo e($name); ?>' class='btn btn-primary' onclick="addToTable<?php echo e($name); ?>()" value='<?php echo e(trans('crudbooster.button_add')); ?>'/>
+							<input type='button' id='btn-add-table-<?php echo e($name); ?>' class='btn btn-primary' onclick="addToTable<?php echo e($name); ?>()" value="<?php echo e(trans('crudbooster.button_add')); ?>"/>
 						</div>
 					</div>
 				</div>
@@ -557,7 +557,12 @@
 										}									
 									}else{
 										echo "<span class='td-label'>";
-										echo $d->{$col['name']};
+										if (!is_int($d->{$col['name']})){
+                    						echo "R$ ".number_format($d->{$col['name']},2,",","."); 
+                    					}
+                    					else{
+											echo $d->{$col['name']};
+                    					}
 										echo "</span>";
 										echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{$col['name']}."'/>";
 									}

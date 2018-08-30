@@ -84,7 +84,7 @@
                     echo "<span class='td-label'>";
                     $data_extenso = str_replace('0000-00-00',null,Carbon\Carbon::parse($d->{$col['name']})->format('d/m/Y')); 
 										if (!is_null($data_extenso)) {
-                      echo($data_extenso." (".Carbon\Carbon::parse($d->{$col['name']})->diff(Carbon\Carbon::now())->format('%y anos, %m meses e %d dias').")");
+                      echo($data_extenso." (".Carbon\Carbon::parse($d->{$col['name']})->diffInYears(Carbon\Carbon::now()).' anos'.")");
 										}															   
                     echo "</span>";
                     echo "<input type='hidden' name='".$name."-".$col['name']."[]' value='".$d->{$col['name']}."'/>";

@@ -164,7 +164,6 @@
 	        $this->script_js = "
 	        	$(function() {
 	        	
-	        			        		
 		        	$('#id input').priceFormat({
 						prefix: 'R$',
 						centsSeparator: ',',
@@ -174,16 +173,18 @@
 		  
 	        		setInterval(function() {
 		        		
-		        		var total_consumo = 0.0;
+		        		var total_consumo = 0.00;
+		        		
 		        		$('#table-consumo tbody .sub_total').each(function() {
-		        			var amount = parseFloat($(this).text());	
+		        			var amount = parseFloat( (($(this).text()).replace(',','.')).replace(/[^0-9-.]/g, '') );
 		        			total_consumo += amount;
 		        		})
 		        		
-		        		var total_espaco = 0.0;
+		        		var total_espaco = 0.00;
+		        		
 		        		total_espaco = (parseFloat($('#espaco_valor').val()) || 0) - (parseFloat($('#espaco_desconto').val()) || 0);
 		        		
-		        		$('#total').val(total_consumo+total_espaco||0);
+		        		$('#total').val((total_consumo+total_espaco).toFixed(2));
       		
 	        		},500);
 	        		

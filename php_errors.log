@@ -15,3 +15,8 @@
 [28-Aug-2018 23:37:34 America/Sao_Paulo] PHP Fatal error:  Class 'Carbon' not found in /home/ubuntu/workspace/storage/framework/views/83fefd734c086dfa2a06fd4d454eda76345935e1.php on line 1
 [29-Aug-2018 00:53:49 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ':' in /home/ubuntu/workspace/resources/lang/pt_br/validation.php on line 18
 [29-Aug-2018 10:34:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/ubuntu/workspace/resources/lang/pt_br/validation.php on line 119
+[29-Aug-2018 21:09:00 America/Sao_Paulo] PHP Fatal error:  Call to a member function format() on integer in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 87
+[29-Aug-2018 21:36:46 America/Sao_Paulo] PHP Fatal error:  Call to undefined function bcadd() in /home/ubuntu/workspace/storage/framework/views/11b548f055bcc1e65b369b3d87ed84af894440c4.php on line 95
+[30-Aug-2018 12:38:53 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 346
+[30-Aug-2018 12:39:03 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 346
+[30-Aug-2018 12:39:13 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 346

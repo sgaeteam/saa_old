@@ -18,9 +18,9 @@
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
-			$this->button_edit = true;
+			$this->button_edit = false;
 			$this->button_delete = true;
-			$this->button_detail = true;
+			$this->button_detail = false;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
@@ -31,18 +31,18 @@
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
-			$this->col[] = ["label"=>"Saldo Mensal","name"=>"saldo_mensal"];
-			$this->col[] = ["label"=>"Retirados","name"=>"retirados"];
-			$this->col[] = ["label"=>"Última Retirada","name"=>"ultima_retirada","callback_php"=>'date("d/m/Y",strtotime($row->ultima_retirada))'];
+			$this->col[] = ["label"=>"Data de Emissão","name"=>"created_at","callback_php"=>'date("d/m/Y",strtotime($row->created_at))'];
+			$this->col[] = ["label"=>"Data de Expiração","name"=>"data_expiracao","callback_php"=>'date("d/m/Y",strtotime($row->data_expiracao))'];
+			$this->col[] = ["label"=>"Impresso","name"=>"impresso","callback_php"=>'($row->impresso == 1 ? "Sim" : "Não")'];
+			$this->col[] = ["label"=>"Código de Validação","name"=>"codigo_validacao"];
+			$this->col[] = ["label"=>"Emissor","name"=>"user_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
-			$this->form[] = ['label'=>'Saldo Mensal','name'=>'saldo_mensal','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10','value'=>'4'];
-			$this->form[] = ['label'=>'Retirados','name'=>'retirados','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Última Retirada','name'=>'ultima_retirada','type'=>'date','validation'=>'required|date','width'=>'col-sm-10', 'value' => date("m/d/Y")];
 			# END FORM DO NOT REMOVE THIS LINE
+
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -69,8 +69,9 @@
 	        | @color 	   = Default is primary. (primary, warning, succecss, info)     
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
-	        */
-	        $this->addaction = array();
+	        */ 
+	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[impresso] == '0'",'confirmation' => true];
+
 
 
 	        /* 
@@ -251,7 +252,9 @@
 	    */
 	    public function hook_before_add(&$postdata) {        
 	        //Your code here
-
+    		$postdata['data_expiracao'] = \Carbon\Carbon::now()->endOfMonth();
+			$postdata['user_id'] = CRUDBooster::myId();
+			$postdata['codigo_validacao'] = uniqid($postdata['id'], false);
 	    }
 
 	    /* 
@@ -316,8 +319,35 @@
 	    }
 
 
-
 	    //By the way, you can still create your own method in here... :) 
+		public function imprimir($id) {
+			
+			$this->cbLoader();
+			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
+			
+			$erro = "Moacir ainda não encontrou a solução para gerar o PDF!";
+			
+			if (isset($erro)) {
+				
+				CRUDBooster::redirect(CRUDBooster::mainpath(),trans("crudbooster.alert_impressao_failed"),'danger');
+			}
 
+			$convite = [];
+			$convite['codigo_validacao'] = $row->codigo_validacao;
+			$convite['socio_id']		 = $row->socio_id;	
+			$convite['user_id'] 		 = $row->user_id;
+
+			// inserir a chamada da impressão aqui...
+		
+			DB::table($this->table)
+	        ->where($this->primary_key,$id)
+	        ->where('impresso', 0)
+	        ->whereNull('deleted_at')
+	        ->update(array('impresso'=>'1'));
+	        
+			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
+			
+			return redirect()->back()->with(['message_type'=>'success','message'=>trans("crudbooster.alert_impressao_ok")]);
+		}		
 
 	}
