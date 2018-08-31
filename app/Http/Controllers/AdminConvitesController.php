@@ -319,26 +319,17 @@
 	    }
 
 
-	    //By the way, you can still create your own method in here... :) 
+	    //By the way, you can still create your own method in here... :) https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/
 		public function imprimir($id) {
 			
 			$this->cbLoader();
 			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
 			
-			$erro = "Moacir ainda não encontrou a solução para gerar o PDF!";
-			
-			if (isset($erro)) {
-				
-				CRUDBooster::redirect(CRUDBooster::mainpath(),trans("crudbooster.alert_impressao_failed"),'danger');
-			}
-
 			$convite = [];
 			$convite['codigo_validacao'] = $row->codigo_validacao;
 			$convite['socio_id']		 = $row->socio_id;	
 			$convite['user_id'] 		 = $row->user_id;
 
-			// inserir a chamada da impressão aqui...
-		
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)
 	        ->where('impresso', 0)
@@ -347,7 +338,7 @@
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			
-			return redirect()->back()->with(['message_type'=>'success','message'=>trans("crudbooster.alert_impressao_ok")]);
+			return \PDF::loadView('reports.convite', compact('$convite'))->setPaper('a4', 'landscape')->download('convite.pdf');
 		}		
 
 	}
