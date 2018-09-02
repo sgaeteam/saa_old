@@ -1,0 +1,58 @@
+*{margin: 0px; padding: 0px;}
+.convite{
+    width: 975px;
+    height: 630px;
+    margin: 5px;
+    float: left;
+    font-family: Lato,Helvetica,Arial,sans-serif;
+    margin-left: calc(50% - 487.5px);
+}
+.text-center{text-align: center;}
+.img-back-convite{
+    width: 115%;
+    z-index: 0;
+    position: relative;
+    height: 124%;
+}
+.conteudo-convite{
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    margin: 181px auto;
+    float: left;
+    width: 975px;
+    height: 630px;
+}
+.titulo-convite{
+    color: #000000;
+    font-size: 50px;
+    margin: 20px 0px 20px 20%;
+}
+.detalhes-convite{
+    color: #000000;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 8px;
+    line-height: 26px;
+}
+.nome-socio{
+    font-size: 22px;
+    font-weight: bold;
+}
+.evento{
+    font-size: 20px;
+    font-weight: bold;
+}
+.mais-detalhes-convite{
+    font-size: 14px;
+    font-weight: normal;
+    margin: 18px;
+    color: #000000;;
+    font-style: italic;
+}
+.data-convite{
+    font-size: 16px;
+    font-weight: normal;
+    margin: 34px 0px 22px 50%;
+    color: #000000;
+}

@@ -3,34 +3,32 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
         <title>Convite</title>
-
-        <!--Custon CSS-->
-        <link rel="stylesheet" href="https://academy.especializati.com.br/assets/site/css/certificate.css">
-
-        <!--Favicon-->
-        <link rel="icon" type="image/png" href="https://academy.especializati.com.br/assets/site/imgs/favicon.png">
+        <link href="{{ asset("css/convite.css") }}" rel="stylesheet" type="text/css" />
+        
     </head>
     <body>
-
-        <div class="certificado">
-            <img src="https://academy.especializati.com.br/assets/site/imgs/img-back-certificado-especializati.png" class="img-back-cert" alt="Certificado Digital EspecializaTi">
-
-            <div class="conteudo-certificado text-center">
-                <h1 class="titulo-certificado">CONVITE</h1>
-                    <h2 class="detalhes-certificado">
-                        Certificamos que o sócio <span class="nome-aluno">Carlos Ferreira</span> entregou o <br>
-                        este convite para o <span class="curso">Evento tal </span> no dia dd/mm/yyyy às hh24:mi:ss horas.
+        <div class="convite">
+            <img src="{{asset('images/convite-moldura.png') }}" class="img-back-convite" alt="Convite de sócios" align="middle">
+            <div class="conteudo-convite text-center">
+                <h1 class="titulo-convite">CONVITE</h1>
+                    <br>
+                    <h2 class="detalhes-convite">
+                        Com muita alegria, que nosso clube emite este convite a seu sócio para que seja cedido a um convidado.<br>
                     </h2>
-    
-                    <h3 class="mais-detalhes-certificado">
-                        Convite nº <b>{{$convite->codigo_validacao}}</b> para verificar se é um convite válido: sgaeteam.sgc.com.br/verificar-convite
+                    <div>
+                     <ul>
+                            <li><b>Número do convite:  {{$id}}</b></li>
+                            <li><b>Emitido para o sócio:  {{$user_id}}</b></li>
+                            <li><b>Evento: </b></li>
+                            <li><b>Data da emissão: {{$created_at}}</b></li>
+                            <li><b>Válido até: {{Carbon\Carbon::parse($data_expiracao)->format('d/m/Y')}}</b></li>
+                        </ul>
+                    </div>
+                    <h3 class="mais-detalhes-convite">
+                        A autenticidade deste convite poderá ser verificada com o código de validação número <b>{{$codigo_validacao}}</b>
+                        Consulte em: sgaeteam.sgc.com.br/verificar-convite ou leia o código de barrass abaixo.
                     </h3>
-                <h4 class="data-certificado">
-                    Válido de dd/mm/yyy até dd/mm/yyyy
-                </h4>
             </div>
-
-        </div><!--Convite-->
-
+        </div>
     </body>
 </html>

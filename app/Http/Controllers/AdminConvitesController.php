@@ -319,16 +319,20 @@
 	    }
 
 
-	    //By the way, you can still create your own method in here... :) https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/
+	    //By the way, you can still create your own method in here... :)
+		//Referências: https://github.com/barryvdh/laravel-dompdf e https://blog.especializati.com.br/gerar-pdf-no-laravel-com-dompdf/
 		public function imprimir($id) {
 			
 			$this->cbLoader();
 			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
 			
 			$convite = [];
+			$convite['id']               = $row->id;
 			$convite['codigo_validacao'] = $row->codigo_validacao;
 			$convite['socio_id']		 = $row->socio_id;	
 			$convite['user_id'] 		 = $row->user_id;
+			$convite['created_at']       = $row->created_at;
+			$convite['data_expiracao']   = $row->data_expiracao;
 
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)
@@ -338,7 +342,7 @@
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			
-			return \PDF::loadView('reports.convite', compact('$convite'))->setPaper('a4', 'landscape')->download('convite.pdf');
+			return \PDF::loadView('reports.convite', $convite)->setPaper('a4', 'landscape')->download('convite_numero_'.$row->id.'.pdf');
 		}		
 
 	}
