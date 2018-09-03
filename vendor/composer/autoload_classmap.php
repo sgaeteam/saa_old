@@ -41,6 +41,7 @@ return array(
     'AlterTableCmsUsers' => $baseDir . '/database/migrations/2018_08_16_225631_alter_table_cms_users.php',
     'AlterTableConvitesAddFields' => $baseDir . '/database/migrations/2018_08_30_102749_alter_table_convites_add_fields.php',
     'AlterTableConvitesAddImpresso' => $baseDir . '/database/migrations/2018_08_30_120752_alter_table_convites_add_impresso.php',
+    'AlterTableConvitesAddNumConvite' => $baseDir . '/database/migrations/2018_09_03_000825_alter_table_convites_add_num_convite.php',
     'AlterTableDependentesAddAnexoComprovanteMatricula' => $baseDir . '/database/migrations/2018_08_26_035249_alter_table_dependentes_add_anexo_comprovante_matricula.php',
     'AlterTableDependentesAddFoto' => $baseDir . '/database/migrations/2018_08_26_033638_alter_table_dependentes_add_foto.php',
     'AlterTableDependentesAddMatricula' => $baseDir . '/database/migrations/2018_08_22_113712_alter_table_dependentes_add_matricula.php',

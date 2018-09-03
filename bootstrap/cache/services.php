@@ -29,6 +29,7 @@
     25 => 'App\\Providers\\RouteServiceProvider',
     26 => 'crocodicstudio\\crudbooster\\CRUDBoosterServiceProvider',
     27 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
+    28 => 'Barryvdh\\DomPDF\\ServiceProvider',
   ),
   'eager' => 
   array (
@@ -48,6 +49,7 @@
     13 => 'App\\Providers\\RouteServiceProvider',
     14 => 'crocodicstudio\\crudbooster\\CRUDBoosterServiceProvider',
     15 => 'MaddHatter\\LaravelFullcalendar\\ServiceProvider',
+    16 => 'Barryvdh\\DomPDF\\ServiceProvider',
   ),
   'deferred' => 
   array (

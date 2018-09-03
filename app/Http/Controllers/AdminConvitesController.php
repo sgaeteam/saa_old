@@ -4,6 +4,7 @@
 	use Request;
 	use DB;
 	use CRUDBooster;
+	use App\Convite;
 
 	class AdminConvitesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -70,7 +71,7 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */ 
-	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[impresso] == '0'",'confirmation' => true];
+	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth() && [impresso] == '0'",'confirmation' => true];
 
 
 
@@ -251,10 +252,36 @@
 	    |
 	    */
 	    public function hook_before_add(&$postdata) {        
-	        //Your code here
-    		$postdata['data_expiracao'] = \Carbon\Carbon::now()->endOfMonth();
-			$postdata['user_id'] = CRUDBooster::myId();
-			$postdata['codigo_validacao'] = uniqid($postdata['id'], false);
+	        
+	        // Verifica se o Sócio já alcançou o limite mensal de convites emitidos
+	        
+	        $inicio = \Carbon\Carbon::now()->startOfMonth();
+	        $fim	= \Carbon\Carbon::now()->endOfMonth();
+
+	        $convitesEmitidosMes = Convite::where('socio_id',$postdata['socio_id'])
+	        						 	  ->where('created_at'		, '>='	, $inicio)
+	        							  ->where('created_at'		, '<='	, $fim)
+	        							  ->whereNull('deleted_at')
+	        							  ->get()->count();
+	        
+	        $totalConvitesSocio = DB::table('categorias')->join('socios','categorias.id','=','socios.categoria_id')
+											    			  ->select('categorias.convites')
+											        		  ->where('socios.id',$postdata['socio_id'])
+											    			  ->first();
+
+	        if($convitesEmitidosMes <= $totalConvitesSocio->convites) {							 
+	    		$postdata['data_expiracao'] = \Carbon\Carbon::now()->endOfMonth();
+				$postdata['user_id'] = CRUDBooster::myId();
+				$postdata['codigo_validacao'] = uniqid($postdata['id'], false);
+				$postdata['num_convite'] = ($convitesEmitidosMes+1)."/".$totalConvitesSocio->convites;
+	        } 
+	        
+	        else {
+				$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_emissao_convites_failed')."<b>"." (Total permitido: ".$totalConvitesSocio->convites.")"."</b>",'message_type'=>'danger'])->withInput();
+				\Session::driver()->save();
+				$res->send();
+	        	exit;
+	        }
 	    }
 
 	    /* 
@@ -324,15 +351,20 @@
 		public function imprimir($id) {
 			
 			$this->cbLoader();
-			$row = DB::table($this->table)->where($this->primary_key,$id)->first();
-			
+
+			$row = DB::table($this->table)->join('socios','convites.socio_id','=','socios.id')
+						    			  ->select('socios.nome as socio', 'convites.*')
+						        		  ->whereNull('convites.deleted_at')
+						    			  ->where('convites.id',$id)->first();
 			$convite = [];
 			$convite['id']               = $row->id;
 			$convite['codigo_validacao'] = $row->codigo_validacao;
-			$convite['socio_id']		 = $row->socio_id;	
+			$convite['socio']			 = $row->socio;	
 			$convite['user_id'] 		 = $row->user_id;
-			$convite['created_at']       = $row->created_at;
+			$convite['created_at']       = \Carbon\Carbon::parse($row->created_at)->format('d/m/Y');
 			$convite['data_expiracao']   = $row->data_expiracao;
+			$convite['num_convite'] 	 = $row->num_convite;
+
 
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)

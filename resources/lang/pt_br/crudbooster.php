@@ -59,6 +59,7 @@ return [
     'alert_add_event_data_failed'    => 'Falha ao salvar os dados! O espaço escolhido já possui reserva no período indicado: ',
     'alert_agendamento_failed'       => 'Falha ao salvar os dados! A atividade escolhida não possui horário de início definido!',  
     'alert_impressao_failed'         => 'Falha na impressão do convite!',  
+    'alert_emissao_convites_failed'  => 'Falha ao salvar os dados! Excedida a emissão mensal de convites para o Sócio escolhido!',  
     'alert_matricula_failed'         => 'Falha ao salvar os dados! O usuário já possui matrícula para a atividade escolhida!',  
     'alert_agendamento_ok'           => 'A atividade foi agendada com sucesso!',
     'alert_impressao_ok'             => 'O convite foi impresso com sucesso!',  
