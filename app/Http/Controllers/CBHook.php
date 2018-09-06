@@ -25,9 +25,30 @@ class CBHook extends Controller {
 
 		if ( date('Y-m-d',strtotime($ultNotifDependenteRealizada->created_at)) < date("Y-m-d") )
 		{
-			$destinatarios = (array) DB::table('cms_users')->whereNull('deleted_at')->value('id');
-			$dependentes = Dependente::where('dependente_grau','Filho(a)')->whereNull('deleted_at')->get();
-
+			$destinatario = (array) CRUDBooster::myId();
+			$notificacoesPendentes = DB::table('cms_notifications')->where('id_cms_users',$destinatario)->where('url', 'like', '%dependentes%')->whereNull('deleted_at')->where('is_read',0)->get();
+			
+			if (isset($notificacoesPendentes)) 
+			{
+				global $ignorarIds;
+				$ignorarIds = array();
+				
+				foreach ($notificacoesPendentes as $pendencia) 
+				{
+					$array = explode("/",$pendencia->url);
+					array_push($ignorarIds,$array[6]);
+				}
+			}
+			
+			if (isset($ignorarIds))
+			{
+				$dependentes = Dependente::where('dependente_grau','Filho(a)')->whereNull('deleted_at')->whereNotIn('id',$ignorarIds)->get();
+			}
+			else 
+			{
+				$dependentes = Dependente::where('dependente_grau','Filho(a)')->whereNull('deleted_at')->get();
+			}
+			
 			foreach ($dependentes as $dependente) 
 			{
 			   $msg = $dependente->verificaPendencia();
@@ -36,7 +57,7 @@ class CBHook extends Controller {
 			   {
 					$config['content'] = $msg;
 					$config['to'] = CRUDBooster::adminPath().'/dependentes/edit/'.$dependente->id;
-					$config['id_cms_users'] = $destinatarios;
+					$config['id_cms_users'] = $destinatario;
 					CRUDBooster::sendNotification($config);	
 			   }
 			   

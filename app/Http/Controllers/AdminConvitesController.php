@@ -35,6 +35,7 @@
 			$this->col[] = ["label"=>"Data de Emissão","name"=>"created_at","callback_php"=>'date("d/m/Y",strtotime($row->created_at))'];
 			$this->col[] = ["label"=>"Data de Expiração","name"=>"data_expiracao","callback_php"=>'date("d/m/Y",strtotime($row->data_expiracao))'];
 			$this->col[] = ["label"=>"Impresso","name"=>"impresso","callback_php"=>'($row->impresso == 1 ? "Sim" : "Não")'];
+			$this->col[] = ["label"=>"Número do Convite","name"=>"num_convite"];
 			$this->col[] = ["label"=>"Código de Validação","name"=>"codigo_validacao"];
 			$this->col[] = ["label"=>"Emissor","name"=>"user_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
@@ -261,16 +262,15 @@
 	        $convitesEmitidosMes = Convite::where('socio_id',$postdata['socio_id'])
 	        						 	  ->where('created_at'		, '>='	, $inicio)
 	        							  ->where('created_at'		, '<='	, $fim)
-	        							  ->whereNull('deleted_at')
 	        							  ->get()->count();
 	        
 	        $totalConvitesSocio = DB::table('categorias')->join('socios','categorias.id','=','socios.categoria_id')
-											    			  ->select('categorias.convites')
-											        		  ->where('socios.id',$postdata['socio_id'])
-											    			  ->first();
+										    			 ->select('categorias.convites')
+										        		 ->where('socios.id',$postdata['socio_id'])
+										    			 ->first();
 
-	        if($convitesEmitidosMes <= $totalConvitesSocio->convites) {							 
-	    		$postdata['data_expiracao'] = \Carbon\Carbon::now()->endOfMonth();
+	        if($convitesEmitidosMes < $totalConvitesSocio->convites) {							 
+	    		$postdata['data_expiracao'] = $fim;
 				$postdata['user_id'] = CRUDBooster::myId();
 				$postdata['codigo_validacao'] = uniqid($postdata['id'], false);
 				$postdata['num_convite'] = ($convitesEmitidosMes+1)."/".$totalConvitesSocio->convites;
