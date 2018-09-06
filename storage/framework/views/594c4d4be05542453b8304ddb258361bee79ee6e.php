@@ -557,7 +557,7 @@
 										}									
 									}else{
 										echo "<span class='td-label'>";
-										if (!is_int($d->{$col['name']})){
+										if (is_float($d->{$col['name']})){
                     						echo "R$ ".number_format($d->{$col['name']},2,",","."); 
                     					}
                     					else{

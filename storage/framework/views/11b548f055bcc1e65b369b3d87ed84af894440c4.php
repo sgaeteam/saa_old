@@ -82,8 +82,8 @@
                     }
                   }elseif ($col['type']=='date') {
                     echo "<span class='td-label'>";
-                    $data_extenso = str_replace('0000-00-00',null,Carbon\Carbon::parse($d->{$col['name']})->format('d/m/Y')); 
-										if (!is_null($data_extenso)) {
+                    $data_extenso = str_replace('30/11/-0001', null, str_replace('0000-00-00',null,Carbon\Carbon::parse($d->{$col['name']})->format('d/m/Y'))); 
+										if ((!is_null($data_extenso)) && ($data_extenso <> "")) {
                       echo($data_extenso." (".Carbon\Carbon::parse($d->{$col['name']})->diffInYears(Carbon\Carbon::now()).' anos'.")");
 										}															   
                     echo "</span>";

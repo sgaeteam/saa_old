@@ -33,7 +33,7 @@
 			$this->col[] = ["label"=>"Nome","name"=>"dependente_nome"];
 			$this->col[] = ["label"=>"Sexo","name"=>"dependente_sexo"];
 			$this->col[] = ["label"=>"Data Nascimento","name"=>"dependente_dtnasc","callback_php"=>'str_replace("31/12/1969",null,str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->dependente_dtnasc))))'];
-			$this->col[] = ["label"=>"Idade","name"=>"dependente_dtnasc","callback_php"=>'Carbon\Carbon::parse($row->dependente_dtnasc)->diffInYears(Carbon\Carbon::now())'];
+			$this->col[] = ["label"=>"Idade","name"=>"dependente_dtnasc","callback_php"=>'Carbon\Carbon::parse($row->dependente_dtnasc)->diffInYears(Carbon\Carbon::now()) == date("Y") ? null : Carbon\Carbon::parse($row->dependente_dtnasc)->diffInYears(Carbon\Carbon::now())'];
 			$this->col[] = ["label"=>"Grau","name"=>"dependente_grau"];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Comprovação Matrícula","name"=>"data_comprovante","callback_php"=>'str_replace("31/12/1969",null,str_replace("30/11/-0001",null,date("d/m/Y",strtotime($row->data_comprovante))))'];
