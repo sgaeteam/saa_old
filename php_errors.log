@@ -29,3 +29,4 @@
 [05-Sep-2018 01:46:01 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 37
 [05-Sep-2018 01:50:44 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 38
 [06-Sep-2018 03:40:31 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '' ? null : Carbon\Carbon::pars' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminDependentesController.php on line 36
+[08-Sep-2018 14:43:00 America/Sao_Paulo] PHP Fatal error:  Call to undefined function App\Http\Controllers\first() in /home/ubuntu/workspace/app/Http/Controllers/CBHook.php on line 50

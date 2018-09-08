@@ -17,7 +17,14 @@ class Dependente extends Model
     
     public function getIdade() 
     {
-        return Carbon::parse($this->dependente_dtnasc)->diffInYears(Carbon::now());  
+        if(($this->dependente_dtnasc == '0000-00-00') || ($this->dependente_dtnasc == null))
+        {
+            return 0;
+        }
+        else
+        {
+            return Carbon::parse($this->dependente_dtnasc)->diffInYears(Carbon::now());  
+        }
     }
     
     public function verificaPendencia() 
