@@ -16,9 +16,9 @@
                         Com muita alegria, que nosso clube emite este convite a seu sócio para que seja cedido a um convidado.<br>
                     </h2>
                     <div>
-                     <ul>
-                            <li><b>Número do convite:  {{$num_convite}}</b></li>
-                            <li><b>Emitido para o sócio:  {{$socio}}</b></li>
+                         <ul>
+                            <li><b>Número do convite: {{$num_convite}}</b></li>
+                            <li><b>Emitido para o sócio: {{$socio}}</b></li>
                             <li><b>Evento: </b></li>
                             <li><b>Data da emissão: {{$created_at}}</b></li>
                             <li><b>Válido até: {{Carbon\Carbon::parse($data_expiracao)->format('d/m/Y')}}</b></li>
@@ -26,8 +26,10 @@
                     </div>
                     <h3 class="mais-detalhes-convite">
                         A autenticidade deste convite poderá ser verificada com o código de validação número <b>{{$codigo_validacao}}</b>
-                        Consulte em: sgaeteam.sgc.com.br/verificar-convite ou leia o código de barras abaixo.
+                        Consulte em: www.sgc.com.br/verificar-convite
                     </h3>
+                    <img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(Request::url()))!!} ">
+                    <p>Escanei o QrCode para ir direto a página de verificação.</p>
             </div>
         </div>
     </body>
