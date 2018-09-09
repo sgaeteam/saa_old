@@ -374,7 +374,7 @@
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			
-			return \PDF::loadView('reports.convite', $convite)->setPaper('a4', 'landscape')->download('convite_numero_'.$row->id.'.pdf');
+			return \PDF::loadView('reports.convite', $convite)->setPaper('a4', 'portrait')->download('convite_numero_'.$row->id.'.pdf');
 		}		
 
 	}
