@@ -34,7 +34,8 @@
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
 			$this->col[] = ["label"=>"Data de Emissão","name"=>"created_at","callback_php"=>'date("d/m/Y",strtotime($row->created_at))'];
 			$this->col[] = ["label"=>"Data de Expiração","name"=>"data_expiracao","callback_php"=>'date("d/m/Y",strtotime($row->data_expiracao))'];
-			$this->col[] = ["label"=>"Impresso","name"=>"impresso","callback_php"=>'($row->impresso == 1 ? "Sim" : "Não")'];
+			$this->col[] = ["label"=>"Data de Impressão","name"=>"data_impressao","callback_php"=>'str_replace("31/12/1969",null,date("d/m/Y",strtotime($row->data_impressao)))'];
+			$this->col[] = ["label"=>"Data de Utilização","name"=>"data_utilizada","callback_php"=>'str_replace("31/12/1969",null,date("d/m/Y",strtotime($row->data_utilizada)))'];
 			$this->col[] = ["label"=>"Número do Convite","name"=>"num_convite"];
 			$this->col[] = ["label"=>"Código de Validação","name"=>"codigo_validacao"];
 			$this->col[] = ["label"=>"Emissor","name"=>"user_id","join"=>"cms_users,name"];
@@ -72,7 +73,7 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */ 
-	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth() && [impresso] == '0'",'confirmation' => true];
+	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth() || is_null([data_utilizada])",'confirmation' => true];
 
 
 
@@ -368,9 +369,9 @@
 
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)
-	        ->where('impresso', 0)
+	        ->whereNull('data_impressao')
 	        ->whereNull('deleted_at')
-	        ->update(array('impresso'=>'1'));
+	        ->update(array('data_impressao'=>\Carbon\Carbon::now()));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			
