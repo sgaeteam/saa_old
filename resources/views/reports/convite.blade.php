@@ -188,12 +188,12 @@
                                                    <div style="text-align:
                                                       center;">O Clube 2004 através de seu sócio {{$socio}},
                                                       tem a honra de convidá-lo para um dia entre {{$created_at}} 
-                                                      e {{Carbon\Carbon::parse($data_expiracao)->format('d/m/Y')}}, a frequentar nossas dependências.<br>
-                                                      Certos de sua valiosa participação, contamos com sua presença
+                                                      e {{$data_expiracao}}, a frequentar nossas dependências.<br>
+                                                      Certos de sua valiosa participação, contamos com sua presença!
                                                       <span style="line-height: 0;
                                                          display: none;"></span><span style="line-height:
                                                          0; display:
-                                                         none;"></span>!
+                                                         none;"></span>
                                                    </div>
                                                 </div>
                                              </td>
@@ -236,7 +236,8 @@
                                                    <br>
                                                    Código de validação: {{$codigo_validacao}}
                                                    <br>
-                                                   	
+                                                   Válido até: {{$data_expiracao}}
+                                                   <br>
                                                    </a>
                                                 </td>
                                              </tr>

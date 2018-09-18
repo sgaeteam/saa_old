@@ -33,3 +33,165 @@
 [14-Sep-2018 13:43:28 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '31' (T_LNUMBER), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 37
 [14-Sep-2018 13:44:58 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '31' (T_LNUMBER), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 37
 [14-Sep-2018 13:49:29 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '31' (T_LNUMBER), expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 76
+[16-Sep-2018 02:45:19 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 381
+[16-Sep-2018 02:45:28 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 381
+[16-Sep-2018 02:46:03 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Barryvdh\DomPDF\PDF::setOrientation() in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 381
+[16-Sep-2018 09:44:46 America/Sao_Paulo] PHP Fatal error:  Cannot use isset() on the result of an expression (you can use "null !== expression" instead) in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 349
+[16-Sep-2018 09:45:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 349
+[16-Sep-2018 09:45:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 349
+[16-Sep-2018 10:05:44 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:05:54 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:06:04 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:06:14 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:06:24 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:06:34 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 10:06:42 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ')' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 323
+[16-Sep-2018 12:11:30 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:11:40 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:11:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:12:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:18 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:29 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:13:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:14:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:15:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:16:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:17:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:18:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:17 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:19:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:20:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:21:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:16 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:22:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:08 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:17 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:29 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:47 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:23:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:18 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:27 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:24:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:25:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:26:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:27:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:28:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:37 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:29:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:30:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:17 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:31:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:06 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:15 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:35 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:32:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:17 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:25 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:36 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:46 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:33:56 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:34:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[16-Sep-2018 12:34:13 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';', expecting ']' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 47
+[17-Sep-2018 20:12:18 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$downloadPending' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 246
+[17-Sep-2018 20:12:22 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected '$downloadPending' (T_VARIABLE), expecting '(' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 246
+[17-Sep-2018 20:30:45 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 249
+[17-Sep-2018 20:30:55 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 249
+[17-Sep-2018 20:31:05 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 249
+[17-Sep-2018 20:32:37 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Barryvdh\DomPDF\PDF::loadView('reports.convite_nominal', Array)->setPaper('a4', 'portrait')->download('convite_numero_'.37.'.pdf);() in /home/ubuntu/workspace/vendor/barryvdh/laravel-dompdf/src/Facade.php on line 25
+[18-Sep-2018 04:58:38 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Dompdf\Dompdf::download() in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 264
+[18-Sep-2018 05:07:24 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 243
+[18-Sep-2018 05:07:33 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 243
+[18-Sep-2018 05:07:43 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected ';' in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 243
+[18-Sep-2018 05:13:55 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Dompdf\Dompdf::download() in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 261
+[18-Sep-2018 05:15:08 America/Sao_Paulo] PHP Fatal error:  Call to undefined method Dompdf\Dompdf::download() in /home/ubuntu/workspace/app/Http/Controllers/AdminConvitesController.php on line 261

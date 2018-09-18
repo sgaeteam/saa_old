@@ -5,6 +5,7 @@
 	use DB;
 	use CRUDBooster;
 	use App\Convite;
+use Dompdf\Dompdf;
 
 	class AdminConvitesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -19,9 +20,9 @@
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
 			$this->button_add = true;
-			$this->button_edit = false;
-			$this->button_delete = true;
-			$this->button_detail = false;
+			$this->button_edit = true;
+			$this->button_delete = false;
+			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
@@ -44,8 +45,11 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Sócio','name'=>'socio_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'socios,nome','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Convidado','name'=>'nome','type'=>'text','validation'=>'string','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'string','width'=>'col-sm-9','dataenum'=>'Masculino;Feminino'];
+			$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'string','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Data Prevista','name'=>'data_prevista','type'=>'date','validation'=>'date|after:yesterday','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
-
 
 			/* 
 	        | ---------------------------------------------------------------------- 
@@ -73,7 +77,9 @@
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */ 
-	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'success','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"[created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth() || is_null([data_utilizada])",'confirmation' => true];
+	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'warning','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_utilizada] == null",'confirmation' => true];
+			$this->addaction[] = ['label'=>'Utilizar','icon'=>'fa fa-thumbs-up ','color'=>'danger','url'=>CRUDBooster::mainpath('utilizar').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_impressao] <> null && [data_utilizada] == null",'confirmation' => true];
+
 
 
 
@@ -222,7 +228,7 @@
 	        //Your code here
 	            
 	    }
-
+	    
 
 	    /*
 	    | ---------------------------------------------------------------------- 
@@ -232,8 +238,7 @@
 	    |
 	    */
 	    public function hook_query_index(&$query) {
-	        //Your code here
-	            
+			//Your code here
 	    }
 
 	    /*
@@ -269,13 +274,13 @@
 										    			 ->select('categorias.convites')
 										        		 ->where('socios.id',$postdata['socio_id'])
 										    			 ->first();
-
-	        if($convitesEmitidosMes < $totalConvitesSocio->convites) {							 
+			
+			if($convitesEmitidosMes < $totalConvitesSocio->convites) {							 
 	    		$postdata['data_expiracao'] = $fim;
 				$postdata['user_id'] = CRUDBooster::myId();
 				$postdata['codigo_validacao'] = uniqid($postdata['id'], false);
-				$postdata['num_convite'] = ($convitesEmitidosMes+1)."/".$totalConvitesSocio->convites;
-	        } 
+				$postdata['num_convite'] =($convitesEmitidosMes+1)."/".$totalConvitesSocio->convites; 
+	        }
 	        
 	        else {
 				$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_emissao_convites_failed')."<b>"." (Total permitido: ".$totalConvitesSocio->convites.")"."</b>",'message_type'=>'danger'])->withInput();
@@ -306,7 +311,19 @@
 	    | 
 	    */
 	    public function hook_before_edit(&$postdata,$id) {        
-	        //Your code here
+	    
+	    	$conviteEditavel = Convite::whereNull('data_impressao')
+	        				  	      ->whereNull('deleted_at')
+	        						  ->where('data_expiracao','>=', \Carbon\Carbon::now())
+	        						  ->where('id',$id)
+	        						  ->first();
+	    	
+	    	if ($conviteEditavel === null) {
+				$res = redirect()->back()->with(['message'=>trans('crudbooster.alert_edit_convite_failed'),'message_type'=>'danger'])->withInput();
+				\Session::driver()->save();
+				$res->send();
+	        	exit;
+	    	}	        
 
 	    }
 
@@ -331,7 +348,7 @@
 	    */
 	    public function hook_before_delete($id) {
 	        //Your code here
-
+	
 	    }
 
 	    /* 
@@ -363,10 +380,12 @@
 			$convite['socio']			 = $row->socio;	
 			$convite['user_id'] 		 = $row->user_id;
 			$convite['created_at']       = \Carbon\Carbon::parse($row->created_at)->format('d/m/Y');
-			$convite['data_expiracao']   = $row->data_expiracao;
+			$convite['data_expiracao']   = \Carbon\Carbon::parse($row->data_expiracao)->format('d/m/Y');
 			$convite['num_convite'] 	 = $row->num_convite;
-
-
+			$convite['nome'] 			 = $row->nome;
+			$convite['cpf'] 			 = $row->cpf;
+			$convite['data_prevista'] 	 = \Carbon\Carbon::parse($row->data_prevista)->format('d/m/Y');
+			
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)
 	        ->whereNull('data_impressao')
@@ -374,8 +393,31 @@
 	        ->update(array('data_impressao'=>\Carbon\Carbon::now()));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
+
+			if (($convite['nome'] !== "")) {
+	    		return \PDF::loadView('reports.convite_nominal', $convite)->setPaper('a4', 'portrait')->download('convite_numero_'.$row->id.'.pdf');
+			}	
+	    	else {
+	    	    return \PDF::loadView('reports.convite', $convite)->setPaper('a4', 'portrait')->download('convite_numero_'.$row->id.'.pdf');
+			}
 			
-			return \PDF::loadView('reports.convite', $convite)->setPaper('a4', 'portrait')->download('convite_numero_'.$row->id.'.pdf');
+			return redirect()->back()->with(['message_type'=>'success','message'=>trans("crudbooster.alert_impressao_ok")]);			
+		}
+		
+		public function utilizar($id) {
+			
+			$this->cbLoader();
+
+			DB::table($this->table)
+	        ->where($this->primary_key,$id)
+	        ->whereNull('data_utilizada')
+	        ->whereNull('deleted_at')
+	        ->update(array('data_utilizada'=>\Carbon\Carbon::now()));
+	        
+			CRUDBooster::insertLog(trans("crudbooster.log_utilizar_convite",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
+			
+			return redirect()->back()->with(['message_type'=>'success','message'=>trans("crudbooster.alert_utilizar_convite_ok")]);
 		}		
+		
 
 	}
