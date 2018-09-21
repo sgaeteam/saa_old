@@ -447,6 +447,7 @@ class ComposerStaticInit41dda61acfa7e9573b1ac77ffcd70b1d
         'AlterTableMatriculasAddTipoatividadeid' => __DIR__ . '/../..' . '/database/migrations/2018_07_08_193927_alter_table_matriculas_add_tipoatividadeid.php',
         'AlterTableSociosAddFoto' => __DIR__ . '/../..' . '/database/migrations/2018_08_26_015157_alter_table_socios_add_foto.php',
         'AlterTableUsuariosAddFields' => __DIR__ . '/../..' . '/database/migrations/2018_06_24_094016_alter_table_usuarios_add_fields.php',
+        'AlterTableUsuariosAddFoto' => __DIR__ . '/../..' . '/database/migrations/2018_09_21_004546_alter_table_usuarios_add_foto.php',
         'AlterTableUsuariosDropFields' => __DIR__ . '/../..' . '/database/migrations/2018_06_24_092559_alter_table_usuarios_drop_fields.php',
         'AreaCompetenciasTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AreaCompetenciasTableSeeder.php',
         'AtividadesTableSeeder' => __DIR__ . '/../..' . '/database/seeds/AtividadesTableSeeder.php',

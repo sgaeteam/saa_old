@@ -53,6 +53,7 @@ return array(
     'AlterTableMatriculasAddTipoatividadeid' => $baseDir . '/database/migrations/2018_07_08_193927_alter_table_matriculas_add_tipoatividadeid.php',
     'AlterTableSociosAddFoto' => $baseDir . '/database/migrations/2018_08_26_015157_alter_table_socios_add_foto.php',
     'AlterTableUsuariosAddFields' => $baseDir . '/database/migrations/2018_06_24_094016_alter_table_usuarios_add_fields.php',
+    'AlterTableUsuariosAddFoto' => $baseDir . '/database/migrations/2018_09_21_004546_alter_table_usuarios_add_foto.php',
     'AlterTableUsuariosDropFields' => $baseDir . '/database/migrations/2018_06_24_092559_alter_table_usuarios_drop_fields.php',
     'AreaCompetenciasTableSeeder' => $baseDir . '/database/seeds/AreaCompetenciasTableSeeder.php',
     'AtividadesTableSeeder' => $baseDir . '/database/seeds/AtividadesTableSeeder.php',

@@ -35,6 +35,7 @@
 			$this->col[] = ["label"=>"Telefone","name"=>"telefone"];
 			$this->col[] = ["label"=>"Celular","name"=>"celular"];
 			$this->col[] = ["label"=>"Cobrança","name"=>"cobranca_id","join"=>"cobrancas,descricao"];
+			$this->col[] = ["label"=>"Foto","name"=>"foto","image"=>true];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -57,6 +58,7 @@
 			$this->form[] = ['label'=>'Grupo Sanguíneo','name'=>'grupo_sanguineo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'AB+;AB-;A+;A-;B+;B-;O+;O-'];			
 			$this->form[] = ['label'=>'Cobrança','name'=>'cobranca_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'cobrancas,descricao'];
 			$this->form[] = ['label'=>'Obs','name'=>'obs','type'=>'textarea','validation'=>'string|min:5|max:5000','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Foto','name'=>'foto','type'=>'upload','validation'=>'image|max:1000','width'=>'col-sm-10','help'=>'A resolu&ccedil;&atilde;o recomendada &eacute; 200x200 px'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 
