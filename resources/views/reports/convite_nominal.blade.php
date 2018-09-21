@@ -44,8 +44,7 @@
                                                    none; box-sizing: border-box; font-family: arial;
                                                    width: 100%; text-align: center; color:
                                                    rgb(102,102,102); font-size: 16px; cursor: text;" target="_blank"><span style="font-weight: normal;
-                                                   color: #666;">Clube 2004
-                                                   ;)</span></a>
+                                                   color: #666;"><img src="{{asset('images/logo_cepe.png')}}"></span></a>
                                                 </h2>
                                              </td>
                                           </tr>
