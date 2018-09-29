@@ -33,13 +33,13 @@ use Dompdf\Dompdf;
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
 			$this->col[] = ["label"=>"Sócio","name"=>"socio_id","join"=>"socios,nome"];
+			$this->col[] = ["label"=>"Número do Convite","name"=>"num_convite"];
 			$this->col[] = ["label"=>"Data de Emissão","name"=>"created_at","callback_php"=>'date("d/m/Y",strtotime($row->created_at))'];
 			$this->col[] = ["label"=>"Data de Expiração","name"=>"data_expiracao","callback_php"=>'date("d/m/Y",strtotime($row->data_expiracao))'];
+			$this->col[] = ["label"=>"Emissor","name"=>"user_id","join"=>"cms_users,name"];
+			$this->col[] = ["label"=>"Código de Validação","name"=>"codigo_validacao"];
 			$this->col[] = ["label"=>"Data de Impressão","name"=>"data_impressao","callback_php"=>'str_replace("31/12/1969",null,date("d/m/Y",strtotime($row->data_impressao)))'];
 			$this->col[] = ["label"=>"Data de Utilização","name"=>"data_utilizada","callback_php"=>'str_replace("31/12/1969",null,date("d/m/Y",strtotime($row->data_utilizada)))'];
-			$this->col[] = ["label"=>"Número do Convite","name"=>"num_convite"];
-			$this->col[] = ["label"=>"Código de Validação","name"=>"codigo_validacao"];
-			$this->col[] = ["label"=>"Emissor","name"=>"user_id","join"=>"cms_users,name"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -48,7 +48,7 @@ use Dompdf\Dompdf;
 			$this->form[] = ['label'=>'Convidado','name'=>'nome','type'=>'text','validation'=>'string','width'=>'col-sm-9'];
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'string','width'=>'col-sm-9','dataenum'=>'Masculino;Feminino'];
 			$this->form[] = ['label'=>'CPF','name'=>'cpf','type'=>'text','validation'=>'string','width'=>'col-sm-9'];
-			$this->form[] = ['label'=>'Data Prevista','name'=>'data_prevista','type'=>'date','validation'=>'date|after:yesterday','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Data Agendada','name'=>'data_prevista','type'=>'date','validation'=>'date|after:yesterday','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			/* 
@@ -77,9 +77,10 @@ use Dompdf\Dompdf;
 	        | @showIf 	   = If condition when action show. Use field alias. e.g : [id] == 1
 	        | 
 	        */ 
-	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'warning','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_utilizada] == null",'confirmation' => true];
-			$this->addaction[] = ['label'=>'Utilizar','icon'=>'fa fa-thumbs-up ','color'=>'danger','url'=>CRUDBooster::mainpath('utilizar').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_impressao] <> null && [data_utilizada] == null",'confirmation' => true];
-
+			$this->addaction[] = ['label'=>'Utilizou?','icon'=>'fa fa-thumbs-up ','color'=>'info','url'=>CRUDBooster::mainpath('utilizar').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_impressao] <> null && [data_utilizada] == null",'confirmation' => true];
+			$this->addaction[] = ['label'=>'Convite utilizado','color'=>'danger', 'showIf'=>"[data_utilizada] != ''"];
+	        $this->addaction[] = ['label'=>'Imprimir','icon'=>'fa fa-print','color'=>'warning','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_utilizada] == null && [data_impressao] == null",'confirmation' => true];
+	        $this->addaction[] = ['label'=>'Reimprimir','icon'=>'fa fa-print','color'=>'warning','url'=>CRUDBooster::mainpath('imprimir').'/[id]','showIf'=>"([created_at] >= \Carbon\Carbon::now()->startOfMonth() && [created_at] <= \Carbon\Carbon::now()->endOfMonth()) && [data_utilizada] == null && [data_impressao] != null",'confirmation' => true];
 
 
 
@@ -151,7 +152,8 @@ use Dompdf\Dompdf;
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
+		 	$this->script_js = null;
+					    
 
 
             /*

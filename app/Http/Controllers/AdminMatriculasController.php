@@ -47,6 +47,7 @@
 			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','parent_select'=>'tipoatividade_id','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10', 'value' => date("m/d/Y")];
+			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','value' => 0.0];
 			$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','value' => 0.0];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -148,8 +149,8 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-	        $this->script_js = NULL;
-
+			$this->script_js = NULL;
+		
 
             /*
 	        | ---------------------------------------------------------------------- 

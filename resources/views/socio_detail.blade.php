@@ -85,96 +85,62 @@
 		</div>
 		
 		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-pagamentos">
+			
 			<ul class="timeline timeline-inverse">
-				<!-- timeline time label -->
-				<li class="time-label">
-					<span class="bg-red">
-						10 Feb. 2014
-					</span>
-				</li>
-				<!-- /.timeline-label -->
-				<!-- timeline item -->
-				<li>
-				<i class="fa fa-envelope bg-blue"></i>
-
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> 12:05</span>
-
-					<h3 class="timeline-header"><a href="#">Support Team</a> sent you an email</h3>
-
-					<div class="timeline-body">
-					Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles,
-					weebly ning heekya handango imeem plugg dopplr jibjab, movity
-					jajah plickers sifteo edmodo ifttt zimbra. Babblely odeo kaboodle
-					quora plaxo ideeli hulu weebly balihoo...
-					</div>
-					<div class="timeline-footer">
-					<a class="btn btn-primary btn-xs">Read more</a>
-					<a class="btn btn-danger btn-xs">Delete</a>
-					</div>
-				</div>
-				</li>
-				<!-- END timeline item -->
-				<!-- timeline item -->
-				<li>
-				<i class="fa fa-user bg-aqua"></i>
-
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> 5 mins ago</span>
-
-					<h3 class="timeline-header no-border"><a href="#">Sarah Young</a> accepted your friend request
-					</h3>
-				</div>
-				</li>
-				<!-- END timeline item -->
-				<!-- timeline item -->
-				<li>
-				<i class="fa fa-comments bg-yellow"></i>
-
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> 27 mins ago</span>
-
-					<h3 class="timeline-header"><a href="#">Jay White</a> commented on your post</h3>
-
-					<div class="timeline-body">
-					Take me to your leader!
-					Switzerland is small and neutral!
-					We are more like Germany, ambitious and misunderstood!
-					</div>
-					<div class="timeline-footer">
-					<a class="btn btn-warning btn-flat btn-xs">View comment</a>
-					</div>
-				</div>
-				</li>
-				<!-- END timeline item -->
-				<!-- timeline time label -->
-				<li class="time-label">
-					<span class="bg-green">
-						3 Jan. 2014
-					</span>
-				</li>
-				<!-- /.timeline-label -->
-				<!-- timeline item -->
-				<li>
-				<i class="fa fa-camera bg-purple"></i>
-
-				<div class="timeline-item">
-					<span class="time"><i class="fa fa-clock-o"></i> 2 days ago</span>
-
-					<h3 class="timeline-header"><a href="#">Mina Lee</a> uploaded new photos</h3>
-
-					<div class="timeline-body">
-					<img src="http://placehold.it/150x100" alt="..." class="margin">
-					<img src="http://placehold.it/150x100" alt="..." class="margin">
-					<img src="http://placehold.it/150x100" alt="..." class="margin">
-					<img src="http://placehold.it/150x100" alt="..." class="margin">
-					</div>
-				</div>
-				</li>
-				<!-- END timeline item -->
-				<li>
-				<i class="fa fa-clock-o bg-gray"></i>
-				</li>
+				@php 
+					$results = [];
+			        $meses = array('1' => 'Janeiro', 
+				    			   '2' => 'Fevereiro',
+						           '3' => 'Março',
+						           '4' => 'Abril',
+						           '5' => 'Maio',
+						           '6' => 'Junho',
+						           '7' => 'Julho',
+								   '8' => 'Agosto',						        
+								   '9' => 'Setembro',
+								  '10' => 'Outubro',
+								  '11' => 'Novembro',
+								  '12' => 'Dezembro');
+				@endphp
+				
+				@foreach($pagamentos_socios as $pagamento)
+					@php
+						$ano = \Carbon\Carbon::parse($pagamento->data_referencia)->format(Y);
+						$mes = \Carbon\Carbon::parse($pagamento->data_referencia)->format(n);
+						$periodo = $meses[$mes].' / '.$ano;
+						$valores = ["periodo" => $periodo, "data_pagamento" => $pagamento->data_pagamento, "tipo_pagamento" => $pagamento->tipo_pagamento,  "valor_pago" => $pagamento->valor_pago];
+						array_push($results,$valores);
+					@endphp
+				@endforeach
+				
+				@for ($i = 12; $i >= 1; $i--)
+					<li class="time-label">
+						@php
+							$existePagamento = array_search($meses[$i].' / '.date('Y'), array_column($results, 'periodo'));
+							$dataPagamento = \Carbon\Carbon::parse($results[$existePagamento]['data_pagamento'])->format('d/m/Y');
+							$tipoPagamento = $results[$existePagamento]['tipo_pagamento'];
+							$valorPago = str_replace('.',',',$results[$existePagamento]['valor_pago']);
+							
+						    if ($existePagamento === false) 
+						    {
+								 echo '<span class="bg-red">';
+						    	 echo $meses[$i].' / '.date('Y');
+						    	 echo '</span>';
+							}
+							else
+							{
+							  	 echo '<span class="bg-green">';
+						    	 echo   $meses[$i].' / '.date('Y');
+						    	 echo '</span>';
+						    	 echo '<li><i class="fa fa-clock-o bg-gray"></i>';
+						    	 echo '<div class="timeline-item">';
+								 echo ' <span class="time"><i class="fa fa-clock-o"></i> '.$dataPagamento.'</span>';
+								 echo '	<h3 class="timeline-header">Pagamento realizado no valor de R$ '.$valorPago.' ('.$tipoPagamento.'). Ver <a href="#">detalhes</a>.</h3>';
+								 echo '</div></li>';
+							}	 
+						@endphp
+					</li>	
+				@endfor
 			</ul>
 			<!--<div class="text-center p30"><i class="fa fa-list-alt" style="font-size: 100px;"></i> <br> No posts to show</div>-->
 		</div>

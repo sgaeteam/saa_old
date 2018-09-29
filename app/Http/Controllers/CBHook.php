@@ -16,9 +16,14 @@ class CBHook extends Controller {
 	|
 	*/
 	public function afterLogin() {
+		
+		/*-----------------------------------------------------------------
+		| Resgata o último recibo automático gerado e registra na Sessão
+		| ----------------------------------------------------------------*/	
+		
 
 		/*-----------------------------------------------------------------
-		| Gerar notificações aos usuários sobre Dependentes com pendências.
+		| Gerar notificações aos usuários sobre Dependentes com pendências
 		| ----------------------------------------------------------------*/	
 
 		$destinatario = (array) CRUDBooster::myId();
@@ -67,7 +72,7 @@ class CBHook extends Controller {
 		}
 		
 		/*-----------------------------------------------------------------
-		| Gerar notificações aos usuários sobre Pagamentos com pendências.
+		| Gerar notificações aos usuários sobre Pagamentos com pendências
 		| ----------------------------------------------------------------*/	
 		
 	}

@@ -25,4 +25,5 @@ class Socio extends Model
     {
         return $this->hasMany('App\Dependente');
     }     
+    
 }

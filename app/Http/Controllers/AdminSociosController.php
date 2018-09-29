@@ -60,7 +60,7 @@
 			$this->form[] = ['label'=>'Ramal','name'=>'ramal','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Sexo','name'=>'sexo','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Masculino;Feminino'];
 			$this->form[] = ['label'=>'Estado Civil','name'=>'estado_civil','type'=>'select','validation'=>'min:1|max:255','width'=>'col-sm-10','dataenum'=>'Solteiro(a);Casado(a);União Estável;Divorciado(a);Separado(a);Viúvo(a)'];
-			$this->form[] = ['label'=>'Nacionalidade','name'=>'nacionalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Nacionalidade','name'=>'nacionalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10', 'value'=>'Brasileira'];
 			$this->form[] = ['label'=>'Naturalidade','name'=>'naturalidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Lotação','name'=>'lotacao','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Unidade','name'=>'unidade','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
@@ -378,6 +378,7 @@
 			$data['$page_menu'] = Route::getCurrentRoute()->getActionName();
 			$data['page_title'] = trans("crudbooster.detail_data_page_title",['module'=>$module->name,'name'=>$row->{$this->title_field}]);
 			$data['row'] = DB::table('socios')->where('id',$id)->first();
+			$data['pagamentos_socios'] = DB::table('pagamentos_socios')->where('socio_id',$id)->whereNull('deleted_at')->orderby('data_referencia','asc')->get();
 			$data['dependentes'] = DB::table('dependentes')->where('socio_id',$id)->whereNull('deleted_at')->get();
 			$data['command'] = 'detail';
 			$data['id'] = $id;
