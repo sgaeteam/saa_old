@@ -85,8 +85,8 @@
                 <div class="links">
                     <a href="https://laravel.com/docs">Documentation</a>
                     <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://saa-sgaeteam.c9users.io/admin/login">CrudBooster</a>
-                    <a href="https://saa-sgaeteam.c9users.io/phpmyadmin">PhpMyAdmin</a>
+                    <a href="{{ url('/admin/login') }}">CrudBooster</a>
+                    <a href="{{ secure_url('/phpmyadmin') }}">PhpMyAdmin</a>
                     <a href="https://github.com/sgaeteam/saa">GitHub</a>
                 </div>
             </div>

@@ -610,3 +610,5 @@
 [13-Oct-2018 09:11:57 America/Sao_Paulo] PHP Fatal error:  Undefined class constant 'getCurrentRoute' in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 132
 [13-Oct-2018 09:13:53 America/Sao_Paulo] PHP Fatal error:  Method Illuminate\View\View::__toString() must not throw an exception in /home/ubuntu/workspace/vendor/crocodicstudio/crudbooster/src/controllers/CBController.php on line 0
 [13-Oct-2018 10:10:26 America/Sao_Paulo] PHP Parse error:  syntax error, unexpected 'bg' (T_STRING) in /home/ubuntu/workspace/storage/framework/views/1bdf23618029499dac9ac1e6697e0e63151fe3ec.php on line 136
+[18-Mar-2019 17:38:51 America/Sao_Paulo] PHP Fatal error:  Call to undefined function urls() in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 90
+[18-Mar-2019 17:39:01 America/Sao_Paulo] PHP Fatal error:  Call to undefined function safe() in /home/ubuntu/workspace/storage/framework/views/82ce4810cc43d475da65137a82f6b956bd019073.php on line 90
