@@ -2,7 +2,7 @@
 	@if($form['parent_select'])
 	<script type="text/javascript">
 		$(function() {			
-			$('#{{$form['parent_select']}}').change(function() {
+			$("#{{$form['parent_select']}}").change(function() {
 				var $current = $("#{{$form['name']}}");
 				var parent_id = $(this).val();
 				var fk_name = "{{$form['parent_select']}}";
@@ -29,7 +29,7 @@
 				}								
 			})
 
-			$('#{{$form['parent_select']}}').trigger('change');
+			$("#{{$form['parent_select']}}").trigger('change');
 			$("#{{$form['name']}}").trigger('change');
 		})
 	</script>
@@ -45,6 +45,7 @@
 					if(@$form['dataquery']):
 
 						$query = DB::select(DB::raw($form['dataquery']));
+						
 						if($query) {
 							foreach($query as $q) {
 								$selected = ($value == $q->value)?"selected":"";

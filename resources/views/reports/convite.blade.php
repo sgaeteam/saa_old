@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="padding: 0px; margin: 0px;" lang="pt_br">
+<html style="padding: 10px; margin: 15px;" lang="pt_br">
    <head> 
        <meta charset="UTF-8" />
         <style>
@@ -72,34 +72,6 @@
                                                    border-style:
                                                    solid;">
                                              </td>
-                                          </tr>
-                                       </tbody>
-                                    </table>
-                                 </td>
-                              </tr>
-                           </tbody>
-                        </table>
-                        <table style="border-collapse: collapse;
-                           border-spacing: 0; box-sizing: border-box;
-                           min-height: 40px; position: relative; width: 100%;
-                           max-width: 600px; padding-bottom: 0px;
-                           padding-left: 0px; padding-right: 0px;
-                           padding-top: 0px; text-align: center;">
-                           <tbody>
-                              <tr>
-                                 <td style="border-collapse: collapse;
-                                    font-family: Arial; padding: 0px; line-height:
-                                    0px; mso-line-height-rule: exactly;">
-                                    <table width="100%" style="border-collapse: collapse;
-                                       border-spacing: 0; font-family: Arial;">
-                                       <tbody>
-                                          <tr>
-                                            <td align="center" style="border-collapse:
-                                                collapse; line-height: 0px; padding: 0;
-                                                mso-line-height-rule: exactly;"><a target="_blank" style="display: block; text-decoration: none;
-                                                box-sizing: border-box; font-family: arial; width:
-                                                100%;"><img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(Request::url()))!!} "></a>
-                                            </td>
                                           </tr>
                                        </tbody>
                                     </table>
@@ -185,10 +157,10 @@
                                                    170%; text-align: left; color: #666; word-wrap:
                                                    break-word;">
                                                    <div style="text-align:
-                                                      center;">O Clube 2004 através de seu sócio {{$socio}},
-                                                      tem a honra de convidá-lo para um dia entre {{$created_at}} 
-                                                      e {{$data_expiracao}}, a frequentar nossas dependências.<br>
-                                                      Certos de sua valiosa participação, contamos com sua presença!
+                                                      justify;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;O Clube 2004 através do(a) sócio(a) {{$socio}},
+                                                      tem a honra de convidá-lo(a) para um dia entre {{$created_at}} 
+                                                      e {{$data_expiracao}}, frequentar nossas dependências.<br><br>
+                                                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Certos de sua valiosa participação, contamos com sua presença!
                                                       <span style="line-height: 0;
                                                          display: none;"></span><span style="line-height:
                                                          0; display:
@@ -213,7 +185,7 @@
                                  <td style="border-collapse: collapse; font-family:
                                     Arial; padding: 10px 260px;">
                                     <div style="font-family: Arial; text-align:
-                                       center;">
+                                       justify;">
                                        <table style="border-collapse:
                                           collapse; border-spacing: 0; background-color:
                                           rgb(64,190,255); border-radius: 10px; color:
@@ -224,8 +196,8 @@
                                              inline-block;">
                                              <tr style="display:
                                                 inline-block;">
-                                                <td align="center" style="border-collapse: collapse; display:
-                                                   inline-block; padding: 15px 20px;"><a target="_blank" style="display: inline-block;
+                                                <td align="justify" style="border-collapse: collapse; display:
+                                                   inline-block; padding: 5px 10px;"><a target="_blank" style="display: inline-block;
                                                    text-decoration: none; box-sizing: border-box;
                                                    font-family: arial; color: #fff; font-size: 15px;
                                                    font-weight: bold; margin: 0px; padding: 0px;
@@ -274,6 +246,34 @@
                         </table>
                         <table style="border-collapse: collapse;
                            border-spacing: 0; box-sizing: border-box;
+                           min-height: 40px; position: relative; width: 100%;
+                           max-width: 600px; padding-bottom: 0px;
+                           padding-left: 0px; padding-right: 0px;
+                           padding-top: 0px; text-align: center;">
+                           <tbody>
+                              <tr>
+                                 <td style="border-collapse: collapse;
+                                    font-family: Arial; padding: 0px; line-height:
+                                    0px; mso-line-height-rule: exactly;">
+                                    <table width="100%" style="border-collapse: collapse;
+                                       border-spacing: 0; font-family: Arial;">
+                                       <tbody>
+                                          <tr>
+                                            <td align="center" style="border-collapse:
+                                                collapse; line-height: 0px; padding: 0;
+                                                mso-line-height-rule: exactly;"><a target="_blank" style="display: block; text-decoration: none;
+                                                box-sizing: border-box; font-family: arial; width:
+                                                100%;"><img src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate(Request::url()))!!} "></a>
+                                            </td>
+                                          </tr>
+                                       </tbody>
+                                    </table>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>                        
+                        <table style="border-collapse: collapse;
+                           border-spacing: 0; box-sizing: border-box;
                            min-height: 40px; position: relative; width:
                            100%;">
                            <tbody>
@@ -297,11 +297,11 @@
                                                       rgb(120,113,99);"></span>Contatos
                                                    </div>
                                                    <a style="text-align: center;display:block;
-                                                      color: rgb(120,113,99);" href="callto:(71) 9999-9999">(71) 9999-9999
+                                                      color: rgb(120,113,99);" href="callto:(71)  3232-2004">(71)  3232-2004
                                                     </a>
                                                        <a style="text-align: center;display:block; color:
-                                                      rgb(120,113,99);" href="mailto:clube@clube.com.br">
-                                                       clube@iclube.com.br
+                                                      rgb(120,113,99);" href="mailto:raimundajk@ig.com.br">
+                                                       raimundajk@ig.com.br
                                                        </a>
                                                 </div>
                                              </td>

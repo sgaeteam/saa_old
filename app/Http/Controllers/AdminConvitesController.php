@@ -5,7 +5,7 @@
 	use DB;
 	use CRUDBooster;
 	use App\Convite;
-use Dompdf\Dompdf;
+	use Dompdf\Dompdf;
 
 	class AdminConvitesController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -386,7 +386,7 @@ use Dompdf\Dompdf;
 			$convite['num_convite'] 	 = $row->num_convite;
 			$convite['nome'] 			 = $row->nome;
 			$convite['cpf'] 			 = $row->cpf;
-			$convite['data_prevista'] 	 = \Carbon\Carbon::parse($row->data_prevista)->format('d/m/Y');
+			$convite['data_prevista'] 	 = $row->data_prevista == "0000-00-00" ? null :  \Carbon\Carbon::parse($row->data_prevista)->format('d/m/Y');
 			
 			DB::table($this->table)
 	        ->where($this->primary_key,$id)
@@ -397,6 +397,9 @@ use Dompdf\Dompdf;
 			CRUDBooster::insertLog(trans("crudbooster.log_imprimir",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 
 			if (($convite['nome'] !== "")) {
+				if (is_null($convite['data_prevista'])) {
+					$convite['data_prevista'] = " a ser definido até ".$convite['data_expiracao'].", ";	
+				}
 	    		return \PDF::loadView('reports.convite_nominal', $convite)->setPaper('a4', 'portrait')->download('convite_numero_'.$row->id.'.pdf');
 			}	
 	    	else {

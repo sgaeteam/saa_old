@@ -108,9 +108,9 @@
 													<th>Professor</th>													
 													<th>Agendado</th>
 													<th>Início</th>
-													<th>Fim</th>
+													<th>Término</th>
 													<th>Duração</th>
-													<th>Dias da Semana</th>
+													<th>Horários</th>
 											</thead>
 											<tbody>
 												@foreach($atividades as $atividade)
@@ -126,27 +126,7 @@
 														<td>{{Carbon\Carbon::parse($atividade->data_inicio)->format('d/m/Y')}}</td>
 														<td>{{Carbon\Carbon::parse($atividade->data_fim)->format('d/m/Y')}}</td>
 														<td>{{Carbon\Carbon::parse($atividade->duracao)->format('H:i')}}</td>
-														<td>
-															@php
-																$agendaSemanal = array();
-																
-																$atividade->hora_inicio_dom == '00:00:00' ? null : $agendaSemanal[0]=' Dom ';
-																$atividade->hora_inicio_seg == '00:00:00' ? null : $agendaSemanal[1]=' Seg ';
-																$atividade->hora_inicio_ter == '00:00:00' ? null : $agendaSemanal[2]=' Ter ';
-																$atividade->hora_inicio_qua == '00:00:00' ? null : $agendaSemanal[3]=' Qua ';
-																$atividade->hora_inicio_qui == '00:00:00' ? null : $agendaSemanal[4]=' Qui ';
-																$atividade->hora_inicio_sex == '00:00:00' ? null : $agendaSemanal[5]=' Sex ';
-																$atividade->hora_inicio_sab == '00:00:00' ? null : $agendaSemanal[6]=' Sab ';
-																
-																$dias = null;
-																
-																foreach($agendaSemanal as $diaSemana){ 
-																    $dias .= $diaSemana.'|';
-																}
-																
-																echo rtrim($dias,'|');
-															@endphp
-														</td>
+														<td>{{$atividade->horarios}}</td>
 													</tr>	
 												@endforeach
 											</tbody>	

@@ -1,1 +1,1 @@
-<?php echo e('R$ '.number_format($value,2,",",".")); ?>
+<?php echo e((is_string($value) === true ? $value :'R$ '.number_format($value,2,",","."))); ?>

@@ -25,7 +25,7 @@
 			$this->button_add = true;
 			$this->button_edit = false;
 			$this->button_delete = true;
-			$this->button_detail = false;
+			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
@@ -183,16 +183,16 @@
 								data: '',
 								url: url_destino,
 								success: function(response) {
-					        		$('#mensalidade').val(response.mensalidade);
+					        		$('#mensalidade').val(response.mensalidade.toFixed(2));
 					        		var valor_total = parseFloat(response.mensalidade);
 									var acrescimo = parseFloat($('#acrescimo').val()) ||0;
 					    			var desconto = parseFloat($('#desconto').val()) ||0;					        		
 					        		var qt_parcela = parseInt($('#qt_meses').val()) ||0;
 					        		var total = 0;
 									if( !isNaN(valor_total) ) total = (valor_total*qt_parcela)+acrescimo-desconto;
-					        		$('#valor_total').val(total);
+					        		$('#valor_total').val((total.toFixed(2)));
 									if( qt_parcela == 0 ) qt_parcela = 1;
-					        		$('#valor_pago').val(total/qt_parcela);	
+					        		$('#valor_pago').val((total/qt_parcela).toFixed(2));	
 
 								},
 								error: function(jqXHR, textStatus, errorThrown) {}
@@ -236,8 +236,8 @@
 					    	}
 					    }
 					    
-		        		$('#valor_total').val(total);
-		        		$('#valor_pago').val(total/qt_parcela);
+		        		$('#valor_total').val(total.toFixed(2));
+		        		$('#valor_pago').val((total/qt_parcela).toFixed(2));
 					});	
 
 					$('#desconto').on('change', function(response) {
@@ -260,8 +260,8 @@
 					    	}
 					    }
 					    
-		        		$('#valor_total').val(total);
-		        		$('#valor_pago').val(total/qt_parcela);
+		        		$('#valor_total').val(total.toFixed(2));
+		        		$('#valor_pago').val((total/qt_parcela).toFixed(2));
 					});						
 					
 					$('#qt_meses').on('change', function(response) {
@@ -284,8 +284,8 @@
 					    	}
 					    }
 					    
-		        		$('#valor_total').val(total);
-		        		$('#valor_pago').val(total/qt_parcela);
+		        		$('#valor_total').val(total.toFixed(2));
+		        		$('#valor_pago').val((total/qt_parcela).toFixed(2));
 					});					
 
 				});		
@@ -403,14 +403,14 @@
         	unset($postdata['qt_meses']);
         	unset($postdata['valor_total']);
         	
-        	$postdata['cobranca_id'] = Socio::find($postdata['socio_id'])->cobranca_id;
-	        $postdata['user_id'] = CRUDBooster::myId();  
-	        $postdata['mensalidade'] = $this->getMensalidadeSocio($postdata['socio_id']);
-        	$postdata['acrescimo'] = round($postdata['acrescimo']/$this->qt_parcela, 2);
-			$postdata['desconto'] = round($postdata['desconto']/$this->qt_parcela, 2);
-	        $postdata['valor_pago'] = round($postdata['mensalidade']+$postdata['acrescimo']-$postdata['desconto'],2); 
+        	$postdata['cobranca_id']	= Socio::find($postdata['socio_id'])->cobranca_id;
+	        $postdata['user_id']		= CRUDBooster::myId();  
+	        $postdata['mensalidade']	= $this->getMensalidadeSocio($postdata['socio_id']);
+        	$postdata['acrescimo']		= round($postdata['acrescimo']/$this->qt_parcela, 2);
+			$postdata['desconto']		= round($postdata['desconto']/$this->qt_parcela, 2);
+	        $postdata['valor_pago'] 	= round($postdata['mensalidade']+$postdata['acrescimo']-$postdata['desconto'],2); 
 			$postdata['data_pagamento'] = \Carbon\Carbon::now()->format('Y-m-d');	        	        
-			$ultimo_pagamento = $this->getUltimoPagamentoSocio($postdata['socio_id']);
+			$ultimo_pagamento			= $this->getUltimoPagamentoSocio($postdata['socio_id']);
 		
 			if (isset($ultimo_pagamento)) 
 			{

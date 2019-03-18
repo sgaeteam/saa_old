@@ -4,9 +4,13 @@
 
         <?php if(CRUDBooster::getCurrentMethod() != 'getProfile' && $button_cancel): ?>
           <?php if(g('return_url')): ?>
-          <p><a title='Return' href='<?php echo e(g("return_url")); ?>'><i class='fa fa-chevron-circle-left '></i> &nbsp; <?php echo e(trans("crudbooster.form_back_to_list",['module'=>CRUDBooster::getCurrentModule()->name])); ?></a></p>       
+            <?php if(g('return_url') == 'javascript:history.back()'): ?>
+              <p><a title='Voltar' href='<?php echo e(g("return_url")); ?>'><i class='fa fa-chevron-circle-left '></i> &nbsp; <?php echo e(trans("crudbooster.button_back")); ?></a></p>       
+            <?php else: ?> 
+              <p><a title='Voltar' href='<?php echo e(g("return_url")); ?>'><i class='fa fa-chevron-circle-left '></i> &nbsp; <?php echo e(trans("crudbooster.form_back_to_list",['module'=>CRUDBooster::getCurrentModule()->name])); ?></a></p>       
+          <?php endif; ?>  
           <?php else: ?>
-          <p><a title='Main Module' href='<?php echo e(CRUDBooster::mainpath()); ?>'><i class='fa fa-chevron-circle-left '></i> &nbsp; <?php echo e(trans("crudbooster.form_back_to_list",['module'=>CRUDBooster::getCurrentModule()->name])); ?></a></p>       
+            <p><a title='Main Module' href='<?php echo e(CRUDBooster::mainpath()); ?>'><i class='fa fa-chevron-circle-left '></i> &nbsp; <?php echo e(trans("crudbooster.form_back_to_list",['module'=>CRUDBooster::getCurrentModule()->name])); ?></a></p>       
           <?php endif; ?>
         <?php endif; ?>
         

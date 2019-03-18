@@ -38,7 +38,7 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Descricao','name'=>'descricao','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','decimals'=>'2','dec_point'=>'.'];
+			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'required|min:0','width'=>'col-sm-10','decimals'=>'2'];
 			$this->form[] = ['label'=>'Convites','name'=>'convites','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 

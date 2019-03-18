@@ -66,6 +66,7 @@ Route::group(['middleware'=>['web','\crocodicstudio\crudbooster\middlewares\CBBa
 	Route::get('convites/utilizar/{id}', ['uses'=>'AdminConvitesController@utilizar','as'=>'convite.utilizar']);
 	Route::get('pagamentos_socios/mensalidade/{id}', ['uses'=>'AdminPagamentosSociosController@getMensalidadeSocio','as'=>'socio.mensalidade']);
 	Route::get('pagamentos_socios/ultimopagamento/{id}', ['uses'=>'AdminPagamentosSociosController@getUltimoPagamentoSocio','as'=>'socio.ultimopagamento']);
+	Route::get('matriculas/mensalidade_atividade/{id}', ['uses'=>'AdminMatriculasController@getMensalidadeTipoAtividade','as'=>'matricula.mensalidade']);
 });
 
 

@@ -49,7 +49,7 @@
 			$this->form[] = ['label'=>'Telefone','name'=>'telefone','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Celular','name'=>'celular','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'min:1|max:255|email|unique:professores','width'=>'col-sm-10','placeholder'=>'Por favor digite um endereço de e-mail válido'];
-			$this->form[] = ['label'=>'Hora Aula','name'=>'hora_aula','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','decimals'=>'2','dec_point'=>'.'];
+			$this->form[] = ['label'=>'Hora Aula','name'=>'hora_aula','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','decimals'=>'2'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
@@ -359,7 +359,7 @@
 						            ->join('espacos', 'atividades.espaco_id', '=', 'espacos.id')
 									->join('tipo_atividades', 'atividades.tipoatividade_id', '=', 'tipo_atividades.id')
 						            ->select('atividades.*', 'espacos.nome as espaco', 'tipo_atividades.descricao as tipo')
-						            ->where('atividades.professor_id',$id)->whereNull('atividades.deleted_at')->orderBy('atividades.data_inicio', 'desc')->get();			
+						            ->where('atividades.professor_id',$id)->whereNull('atividades.deleted_at')->orderBy('atividades.data_fim', 'desc')->get();			
 			$data['command'] = 'detail';
 		    //Please use cbView method instead view method from laravel
 			Session::put('current_row_id',$id);

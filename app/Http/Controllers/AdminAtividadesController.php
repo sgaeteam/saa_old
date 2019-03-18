@@ -40,9 +40,10 @@
 			$this->col[] = ["label"=>"Professor","name"=>"professor_id","join"=>"professores,nome"];
 			$this->col[] = ["label"=>"Tipo de atividade","name"=>"tipoatividade_id","join"=>"tipo_atividades,descricao"];
 			$this->col[] = ["label"=>"Descrição da Atividade","name"=>"titulo"];
-			$this->col[] = ["label"=>"Sigla","name"=>"sigla"];
 			$this->col[] = ["label"=>"Início","name"=>"data_inicio","callback_php"=>'date("d/m/Y",strtotime($row->data_inicio))'];
+			$this->col[] = ["label"=>"Término","name"=>"data_fim","callback_php"=>'date("d/m/Y",strtotime($row->data_fim))'];
 			$this->col[] = ["label"=>"Duração","name"=>"duracao","callback_php"=>'date("H:i",strtotime($row->duracao))'];
+			$this->col[] = ["label"=>"Horários","name"=>"horarios"];
 			$this->col[] = ["label"=>"Agendado","name"=>"agendado","callback_php"=>'($row->agendado == 1 ? "Sim" : "Não")'];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
@@ -371,6 +372,23 @@
 				
 				CRUDBooster::redirect(CRUDBooster::mainpath(),trans("crudbooster.alert_agendamento_failed"),'danger');
 			}
+			
+			 $agenda = [];
+		 	 $row->hora_inicio_dom == '00:00:00' ? null : $agenda[0]=' Dom: '.\Carbon\Carbon::parse($row->hora_inicio_dom)->format('H:i').' ';
+			 $row->hora_inicio_seg == '00:00:00' ? null : $agenda[1]=' Seg: '.\Carbon\Carbon::parse($row->hora_inicio_seg)->format('H:i').' ';
+			 $row->hora_inicio_ter == '00:00:00' ? null : $agenda[2]=' Ter: '.\Carbon\Carbon::parse($row->hora_inicio_ter)->format('H:i').' ';
+			 $row->hora_inicio_qua == '00:00:00' ? null : $agenda[3]=' Qua: '.\Carbon\Carbon::parse($row->hora_inicio_qua)->format('H:i').' ';
+			 $row->hora_inicio_qui == '00:00:00' ? null : $agenda[4]=' Qui: '.\Carbon\Carbon::parse($row->hora_inicio_qui)->format('H:i').' ';
+			 $row->hora_inicio_sex == '00:00:00' ? null : $agenda[5]=' Sex: '.\Carbon\Carbon::parse($row->hora_inicio_sex)->format('H:i').' ';
+			 $row->hora_inicio_sab == '00:00:00' ? null : $agenda[6]=' Sab: '.\Carbon\Carbon::parse($row->hora_inicio_sab)->format('H:i').' ';
+			 
+			 $horarios = null;
+			 
+			 foreach($agenda as $dia) { 
+			     $horarios .= $dia.'|';
+			 }
+			 $horarios = rtrim($horarios,'|');
+
 
 			$atividade = [];
 			$atividade['espaco_id'] 		= $row->espaco_id;
@@ -380,7 +398,8 @@
 			$atividade['total']				= 0.0;			
 			$atividade['all_day']			= 0;
 			$atividade['espaco_valor']		= 0.0;			
-			$atividade['espaco_desconto']	= 0.0;			
+			$atividade['espaco_desconto']	= 0.0;
+			$atividade['horarios']			= $horarios; 
 
 			$begin = new DateTime($row->data_inicio);
 			$end = new DateTime($row->data_fim);
@@ -444,7 +463,7 @@
 	        ->where($this->primary_key,$atividade['atividade_id'])
 	        ->where('agendado', 0)
 	        ->whereNull('deleted_at')
-	        ->update(array('agendado'=>'1','data_suspensao'=>null));
+	        ->update(array('agendado'=>'1','data_suspensao'=>null,'horarios'=>$horarios));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_agendar",['name'=>$atividade['atividade_id'],'module'=>CRUDBooster::getCurrentModule()->name]));
 			
@@ -498,7 +517,7 @@
 	        ->whereNull('deleted_at')
 	        ->where($this->primary_key,$id)
 	        ->where('agendado','1')
-	        ->update(array('agendado'=>'0','data_suspensao'=>$hoje));
+	        ->update(array('agendado'=>'0','data_suspensao'=>$hoje,'horarios'=>null));
 	        
 			CRUDBooster::insertLog(trans("crudbooster.log_suspender",['name'=>$id,'module'=>CRUDBooster::getCurrentModule()->name]));
 			
@@ -527,6 +546,12 @@
 											       ->whereNull('eventos.deleted_at')
 											       ->orderBy('eventos.start_date', 'asc')
 											       ->get();
+			$data['matriculados'] = DB::table('matriculas')->leftJoin('usuarios', 'matriculas.usuario_id', '=', 'usuarios.id')
+												        ->select('matriculas.*','usuarios.nome as usuario')
+												        ->where('matriculas.atividade_id',$id)
+												        ->whereNull('matriculas.deleted_at')
+												        ->orderBy('usuarios.nome', 'asc')
+												        ->get();
 			$data['command'] = 'detail';
 		    //Please use cbView method instead view method from laravel
 			Session::put('current_row_id',$id);

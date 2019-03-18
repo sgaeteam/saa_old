@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+	use Illuminate\Support\Facades\Route;
 	use Session;
 	use Request;
 	use DB;
@@ -44,10 +45,10 @@
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
 			$this->form[] = ['label'=>'Tipo de Atividade','type'=>'select','name'=>'tipoatividade_id','datatable'=>'tipo_atividades,descricao','datatable_where'=>'`deleted_at` is null','datatable_format'=>"descricao,' (R$ ',mensalidade,')'"];			
-			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','parent_select'=>'tipoatividade_id','datatable_where'=>'`deleted_at` is null'];
+			$this->form[] = ['label'=>'Atividade','name'=>'atividade_id','type'=>'select','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'atividades,titulo','parent_select'=>'tipoatividade_id'];
 			$this->form[] = ['label'=>'Usuário','name'=>'usuario_id','type'=>'select2','validation'=>'required|integer|min:0','width'=>'col-sm-10','datatable'=>'usuarios,nome','datatable_where'=>'`deleted_at` is null'];
 			$this->form[] = ['label'=>'Data Matrícula','name'=>'data_matricula','type'=>'date','validation'=>'required|date','width'=>'col-sm-10', 'value' => date("m/d/Y")];
-			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','value' => 0.0];
+			$this->form[] = ['label'=>'Mensalidade','name'=>'mensalidade','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','readonly'=>'true'];
 			$this->form[] = ['label'=>'Desconto','name'=>'desconto','type'=>'money','validation'=>'min:0','width'=>'col-sm-10','value' => 0.0];
 			# END FORM DO NOT REMOVE THIS LINE
 
@@ -149,9 +150,37 @@
 	        | $this->script_js = "function() { ... }";
 	        |
 	        */
-			$this->script_js = NULL;
-		
+			$this->script_js = "
+				$(document).ready(function() {
+				
+				    $('#tipoatividade_id').change(function(){
+				    
+				        // Pega o valor do select selecionado
+				        var valor_select = $(this).val();
+						
+						if (valor_select == '') {
+							$('#mensalidade').val('');	
+						}
+						
+						else {
+					        var url_destino = 'mensalidade_atividade/'+valor_select;
 
+							$.ajax({
+								type: 'get',
+								dataType: 'json',
+								processData: false,
+								data: '',
+								url: url_destino,
+								success: function(response) {
+					        		$('#mensalidade').val(response.mensalidade.toFixed(2));
+								},
+								error: function(jqXHR, textStatus, errorThrown) {}
+							});
+						}
+				    });	
+				});
+			";				
+			
             /*
 	        | ---------------------------------------------------------------------- 
 	        | Include HTML Code before index table 
@@ -394,9 +423,9 @@
 			$atividade 		= $request['atividade_id'];
 
 			$matricula = Matricula::where(function ($query) use ($usuario, $tipoatividade, $atividade) {
-								   $query->where('usuario_id'	  , '=', $usuario);
+								   $query->where('usuario_id'	   , '=', $usuario);
 								   $query->where('tipoatividade_id', '=', $tipoatividade);
-								   $query->where('atividade_id'	  , '=', $atividade);
+								   $query->where('atividade_id'	   , '=', $atividade);
 								   $query->whereNull('deleted_at');
 					     })->first();
 
@@ -407,5 +436,23 @@
 	       
 	        return null; // Nova matricula!
 		}	
+
+		// Resgata a Mensalidade devida pelo Tipo de Atividade escolhida	
+		public function getMensalidadeTipoAtividade($id){
+			
+			$mensalidade = DB::table('tipo_atividades')->where('id',$id)->value('mensalidade');
+
+			if(Request::ajax()) {
+
+				return response()->json(['mensalidade' => $mensalidade]);
+
+			}
+			else{
+								
+				return $mensalidade;
+				
+			}
+		}
+
 		
 	}

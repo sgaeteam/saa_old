@@ -12,6 +12,7 @@
     
 	<ul data-toggle="ajax-tab" class="nav nav-tabs profile" role="tablist">
 		<li class="active"><a role="tab" data-toggle="tab" class="active" href="#tab-general-info" data-target="#tab-info"><i class="fa fa-bars"></i> Informa&ccedil;&otilde;es Gerais</a></li>
+		<li class=""><a role="tab" data-toggle="tab" href="#tab-matriculados" data-target="#tab-matriculados"><i class="fa fa-users"></i> Matriculados</a></li>
 		<li class=""><a role="tab" data-toggle="tab" href="#tab-eventos" data-target="#tab-eventos"><i class="fa fa-calendar-check-o"></i> Agendamentos</a></li>
 	</ul>
 
@@ -82,6 +83,50 @@
 				</div>
 			</div>
 		</div>
+
+		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-matriculados">
+			<div class="tab-content">
+				<div class="panel infolist">
+					<div class="panel-body">
+				        <div class="panel panel-default" id="tab-info">
+				           <div class="panel-heading">
+				             <strong><i class='{{CRUDBooster::getCurrentModule()->icon}}'></i> {!! $page_title or "Page Title" !!}</strong>
+				           </div> 
+				
+				           <div class="panel-body" style="padding:20px 0px 0px 0px">
+				           	
+								<div class="box-body" id="parent-form-area">
+									<style type="text/css">
+										#table-detail tr td:first-child {
+											font-weight: normal;
+											width: 25%;
+										}
+									</style>
+									<div class='table-responsive'>
+										<table id='table-detail' class="table table-striped table-bordered">
+											<thead>
+													<th>Usuário</th>
+													<th>Data de Matrícula</th>
+											</thead>
+											<tbody>
+												@foreach($matriculados as $matriculado)
+													<tr>
+														<td>{{$matriculado->usuario}}</td>
+														<td>{{Carbon\Carbon::parse($matriculado->data_matricula)->format('d/m/Y')}}</td>
+													</tr>
+												@endforeach
+											</tbody>	
+										</table>
+									</div>
+								</div>
+								<div class="box-footer" style="background: #F5F5F5">  
+								</div>	
+							</div>	
+						</div>		
+					</div>			
+				</div>
+			</div>
+		</div>
 		
 		<div role="tabpanel" class="tab-pane fade in p20 bg-white" id="tab-eventos">
 			<div class="tab-content">
@@ -129,6 +174,7 @@
 															    echo $semana[$data];
 															@endphp
 														</td>
+													</tr>
 												@endforeach
 											</tbody>	
 										</table>

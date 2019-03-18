@@ -12,7 +12,7 @@
     
 	<ul data-toggle="ajax-tab" class="nav nav-tabs profile" role="tablist">
 		<li class="active"><a role="tab" data-toggle="tab" class="active" href="#tab-general-info" data-target="#tab-info"><i class="fa fa-bars"></i> Informa&ccedil;&otilde;es Gerais</a></li>
-		<li class=""><a role="tab" data-toggle="tab" href="#tab-pagamentos" data-target="#tab-pagamentos"><i class="fa fa-money"></i> Pagamentos</a></li>
+		<li class=""><a role="tab" data-toggle="tab" href="#tab-pagamentos" data-target="#tab-pagamentos"><i class="fa fa-money"></i> Pagamentos em @php echo date('Y') @endphp</a></li>
 		<li class=""><a role="tab" data-toggle="tab" href="#tab-dependentes" data-target="#tab-dependentes"><i class="fa fa-smile-o"></i> Dependentes</a></li>
 	</ul>
 
@@ -108,7 +108,7 @@
 						$ano = \Carbon\Carbon::parse($pagamento->data_referencia)->format(Y);
 						$mes = \Carbon\Carbon::parse($pagamento->data_referencia)->format(n);
 						$periodo = $meses[$mes].' / '.$ano;
-						$valores = ["periodo" => $periodo, "data_pagamento" => $pagamento->data_pagamento, "tipo_pagamento" => $pagamento->tipo_pagamento,  "valor_pago" => $pagamento->valor_pago];
+						$valores = ["id" => $pagamento->id, "periodo" => $periodo, "data_pagamento" => $pagamento->data_pagamento, "tipo_pagamento" => $pagamento->tipo_pagamento,  "valor_pago" => $pagamento->valor_pago];
 						array_push($results,$valores);
 					@endphp
 				@endforeach
@@ -120,6 +120,7 @@
 							$dataPagamento = \Carbon\Carbon::parse($results[$existePagamento]['data_pagamento'])->format('d/m/Y');
 							$tipoPagamento = $results[$existePagamento]['tipo_pagamento'];
 							$valorPago = str_replace('.',',',$results[$existePagamento]['valor_pago']);
+							$pagamentoId = $results[$existePagamento]['id'];
 							
 						    if ($existePagamento === false) 
 						    {
@@ -129,13 +130,16 @@
 							}
 							else
 							{
+								 $return_url = "javascript:history.back()#tab-pagamentos";
+								 $link = CRUDBooster::adminPath('pagamentos_socios/detail/'.$pagamentoId).'?return_url='.$return_url;
+
 							  	 echo '<span class="bg-green">';
 						    	 echo   $meses[$i].' / '.date('Y');
 						    	 echo '</span>';
 						    	 echo '<li><i class="fa fa-clock-o bg-gray"></i>';
 						    	 echo '<div class="timeline-item">';
 								 echo ' <span class="time"><i class="fa fa-clock-o"></i> '.$dataPagamento.'</span>';
-								 echo '	<h3 class="timeline-header">Pagamento realizado no valor de R$ '.$valorPago.' ('.$tipoPagamento.'). Ver <a href="#">detalhes</a>.</h3>';
+								 echo '	<h1 class="timeline-header">Pagamento realizado no valor de R$ '.number_format($valorPago,2,",",".").' ('.$tipoPagamento.'). Ver <a href='.$link.'>detalhes</a>.</h1>';
 								 echo '</div></li>';
 							}	 
 						@endphp
